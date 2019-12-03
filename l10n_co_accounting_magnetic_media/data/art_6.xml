@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- 1001 -->
+        <record id="l10n_co_accounting_media_magnetic_art_dist_6" model="magnetic.media">
+            <field name="code">ART. 6</field>
+            <field name="name">retenciones de ICA que que nos practicaron</field>
+            <field name="smaller_amount">0</field>
+            <field name="query">SELECT date as "Vigencia",
+	vat_type as "Tipo de documento",
+	vat as "Número de documento de identificación",
+	name as "Nombres y Apellidos o Razón Social",
+	street as "Dirección de Notificación",
+	phone as "Teléfono",
+	email as "Dirección de correo electronico (email)",
+	city_id as "Código ciudad o municipio (codificación DANE)",
+	state_id as "Código Departamento (codificación DANE)",
+	J as "Monto del pago sin incluir IVA",
+	K as "Tarifa Aplicada",
+	L as "Monto que le Retuvieron Anualmente"
+	FROM (
+SELECT aml.date, rp.vat_type, rp.vat, rp.name, rp.street,
+			rp.phone, rp.email, rcsc.code as city_id,
+			rcs.code as state_id,
+			(CASE WHEN mmlc.sequence = 'J' AND mmlc.type = 'd' THEN SUM(aml.debit)
+				WHEN mmlc.sequence = 'J' AND mmlc.type = 'c' THEN SUM(aml.credit)
+				WHEN mmlc.sequence = 'J' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+			) as J,
+			(CASE WHEN mmlc.sequence = 'K' AND mmlc.type = 'd' THEN SUM(aml.debit)
+				WHEN mmlc.sequence = 'K' AND mmlc.type = 'c' THEN SUM(aml.credit)
+				WHEN mmlc.sequence = 'K' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+			) as K,
+			(CASE WHEN mmlc.sequence = 'L' AND mmlc.type = 'd' THEN SUM(aml.debit)
+				WHEN mmlc.sequence = 'L' AND mmlc.type = 'c' THEN SUM(aml.credit)
+				WHEN mmlc.sequence = 'L' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+			) as L
+		FROM
+			magnetic_media mm
+			INNER JOIN magnetic_media_lines mml ON mml.magnetic_id = mm.id
+			INNER JOIN magnetic_media_lines_concepts mmlc ON mmlc.line_id = mml.id
+			INNER JOIN ( select aammlcr.account_account_id as account_id, aammlcr.magnetic_media_lines_concepts_id as concept_id
+							from account_account_magnetic_media_lines_concepts_rel aammlcr
+						UNION ALL
+						 select aaat.account_account_id as account_id, mmlcaat.concept_ids as concept_id
+							from magnetic_media_lines_concepts_account_account_tag mmlcaat
+							inner join account_account_tag aat on aat.id = mmlcaat.tag_ids
+							inner join account_account_account_tag aaat on aaat.account_account_tag_id = aat.id
+						) as aa on aa.concept_id = mmlc.id
+			LEFT JOIN account_move_line aml ON aml.account_id = aa.account_id
+			LEFT JOIN res_partner rp ON rp.id = aml.partner_id
+			LEFT JOIN res_country_state_city rcsc ON rcsc.id = rp.city_id
+			LEFT JOIN res_country_state rcs ON rcs.id = rp.state_id
+			WHERE mm.id = {id} AND aml.date BETWEEN '{date_from}' AND '{date_to}'
+			GROUP BY aml.date, rp.vat_type, rp.vat, rp.name, rp.street,
+			rp.phone, rp.email, rcsc.code, mmlc.sequence, mmlc.type,
+			rcs.code) as datos</field>
+        </record>
+    </data>
+</odoo>

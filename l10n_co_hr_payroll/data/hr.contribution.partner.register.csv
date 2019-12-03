@@ -1,0 +1,121 @@
+id,register_id,code,partner_id,code2
+co_contribution_partner_EPS_EAS016,EPS,EAS016,890904996,Empresas Públicas de Medellín Departamento Médico
+co_contribution_partner_EPS_EAS027,EPS,EAS027,800112806,Fondo de Ferrocarriles Nacionales de Colombia (EPS)
+co_contribution_partner_EPS_EPS001,EPS,EPS001,830113831,Aliansalud EPS (Antes Colmédica)
+co_contribution_partner_EPS_EPS002,EPS,EPS002,800130907,Salud Total
+co_contribution_partner_EPS_EPS003,EPS,EPS003,800140949,Cafesalud
+co_contribution_partner_EPS_EPS005,EPS,EPS005,800251440,Sanitas
+co_contribution_partner_EPS_EPS008,EPS,EPS008,860066942,Compensar
+co_contribution_partner_EPS_EPS010,EPS,EPS010,800088702,EPS Sura
+co_contribution_partner_EPS_EPS012,EPS,EPS012,890303093,Comfenalco Valle
+co_contribution_partner_EPS_EPS016,EPS,EPS016,805000427,Coomeva
+co_contribution_partner_EPS_EPS017,EPS,EPS017,830003564,Famisanar
+co_contribution_partner_EPS_EPS018,EPS,EPS018,805001157,S.O.S. Servicio Occidental de Salud S.A.
+co_contribution_partner_EPS_EPS023,EPS,EPS023,830009783,Cruz Blanca
+co_contribution_partner_EPS_EPS033,EPS,EPS033,830074184,Saludvida
+co_contribution_partner_EPS_EPS037,EPS,EPS037,900156264,Nueva E.P.S.
+co_contribution_partner_EPS_MIN001,EPS,MIN001,900462447,Fosyga
+co_contribution_partner_EPS_MIN002,EPS,MIN002,900462447,Fosyga Régimen de Excepción
+co_contribution_partner_EPS_MIN003,EPS,MIN003,900462447,Fosyga Residente Exterior o Régimen Subsidiado
+co_contribution_partner_EPS_RES005,EPS,RES005,890102257,Universidad del Atlántico
+co_contribution_partner_EPS_RES006,EPS,RES006,890203183,Universidad Industrial de Santander
+co_contribution_partner_EPS_RES007,EPS,RES007,890399010,Universidad del Valle
+co_contribution_partner_EPS_RES008,EPS,RES008,899999063,Universidad Nacional de Colombia
+co_contribution_partner_EPS_RES009,EPS,RES009,891500319,Universidad del Cauca
+co_contribution_partner_EPS_RES011,EPS,RES011,890980040,Universidad de Antioquia
+co_contribution_partner_EPS_RES012,EPS,RES012,891080031,Universidad de Córdoba
+co_contribution_partner_EPS_RES014,EPS,RES014,891800330,Universidad Pedagógica - UPTC
+co_contribution_partner_EPS_EPSC03,EPS,EPSC03,800140949,Cafesalud- Movilidad
+co_contribution_partner_EPS_EPSC22,EPS,EPSC22,899999107,Convida
+co_contribution_partner_EPS_EPSC25,EPS,EPSC25,891856000,Capresoca
+co_contribution_partner_EPS_EPSC34,EPS,EPSC34,900298372,Capital Salud
+co_contribution_partner_EPS_EPSIC1,EPS,EPSIC1,824001398,Dusakawi
+co_contribution_partner_EPS_EPSIC2,EPS,EPSIC2,812002376,Manexka
+co_contribution_partner_EPS_EPSIC3,EPS,EPSIC3,817001773,A.I.C.
+co_contribution_partner_EPS_EPSIC4,EPS,EPSIC4,839000495,Anas Wayuu
+co_contribution_partner_EPS_EPSIC5,EPS,EPSIC5,837000084,Mallamas
+co_contribution_partner_EPS_EPSIC6,EPS,EPSIC6,809008362, Pijaosalud
+co_contribution_partner_EPS_ESSC02,EPS,ESSC02,811004055, Emdisalud
+co_contribution_partner_EPS_ESSC07,EPS,ESSC07,806008394, Mutual Ser
+co_contribution_partner_EPS_ESSC18,EPS,ESSC18,814000337, Emssanar
+co_contribution_partner_EPS_ESSC24,EPS,ESSC24,800249241, Coosalud
+co_contribution_partner_EPS_ESSC33,EPS,ESSC33,804002105,Comparta
+co_contribution_partner_EPS_ESSC62,EPS,ESSC62,817000248, Asmet Salud
+co_contribution_partner_EPS_ESSC76,EPS,ESSC76,818000140, Ambuq
+co_contribution_partner_EPS_ESSC91,EPS,ESSC91,832000760, Ecoopsos
+co_contribution_partner_EPS_EPS 040,EPS,EPS 040,900604350,Savia Salud
+co_contribution_partner_EPS_CCFC09,EPS,CCFC09,891800213,Comfaboy
+co_contribution_partner_EPS_CCFC15,EPS,CCFC15,891080005, Comfacor
+co_contribution_partner_EPS_CCFC20,EPS,CCFC20,891600091, Comfachoco
+co_contribution_partner_EPS_CCFC23,EPS,CCFC23,892115006,Comfamiliar Guajira
+co_contribution_partner_EPS_CCFC24,EPS,CCFC24,891180008, Comfamilar Huila
+co_contribution_partner_EPS_CCFC27,EPS,CCFC27,891280008, Comfamiliar de Nariño
+co_contribution_partner_EPS_CCFC33,EPS,CCFC33,892200015,Comfasucre
+co_contribution_partner_EPS_CCFC53,EPS,CCFC53,860045904,Comfacundi
+co_contribution_partner_EPS_CCFC55,EPS,CCFC55,890102044, Cajacopi Atlántico
+co_contribution_partner_AFP_230201,AFP,230201,800229739,Protección
+co_contribution_partner_AFP_230301,AFP,230301,800224808,Porvenir
+co_contribution_partner_AFP_230901,AFP,230901,800253055,Old Mutual
+co_contribution_partner_AFP_230904,AFP,230904,830125132,Old Mutual Alternativo
+co_contribution_partner_AFP_231001,AFP,231001,800227940,Colfondos
+co_contribution_partner_AFP_25-2,AFP,25-2,860007379,Caxdac
+co_contribution_partner_AFP_25-3,AFP,25-3,899999734,Fonprecon
+co_contribution_partner_AFP_25-7,AFP,25-7,800216278,Pensiones de Antioquia
+co_contribution_partner_AFP_25-14,AFP,25-14,900336004,Colpensiones
+co_contribution_partner_ARL_14-4,ARL,14-4,860002183,Colpatria ARP
+co_contribution_partner_ARL_14-7,ARL,14-7,860002503,Seguros Bolívar
+co_contribution_partner_ARL_14-8,ARL,14-8,860022137,Seguros de Vida Aurora
+co_contribution_partner_ARL_14-17,ARL,14-17,860503617,Alfa
+co_contribution_partner_ARL_14-18,ARL,14-18,860008645,Liberty
+co_contribution_partner_ARL_14-23,ARL,14-23,860011153,Positiva Compañía de Seguros
+co_contribution_partner_ARL_14-25,ARL,14-25,800226175,Colmena
+co_contribution_partner_ARL_14-28,ARL,14-28,800256161,ARP Sura (Antes Suratep)
+co_contribution_partner_ARL_14-29,ARL,14-29,830008686,La Equidad Seguros
+co_contribution_partner_ARL_14-30,ARL,14-30,830054904,Mapfre Colombia Vida Seguros S.A.
+co_contribution_partner_CCF_CCF02,CCF,CCF02,890900840,Comfamiliar Camacol
+co_contribution_partner_CCF_CCF03,CCF,CCF03,890900842,Comfenalco Antioquia
+co_contribution_partner_CCF_CCF04,CCF,CCF04,890900841,Comfama
+co_contribution_partner_CCF_CCF05,CCF,CCF05,890102044,Cajacopi Atlántico
+co_contribution_partner_CCF_CCF06,CCF,CCF06,890102002,Combarranquilla
+co_contribution_partner_CCF_CCF07,CCF,CCF07,890101994,Comfamiliar Atlántico
+co_contribution_partner_CCF_CCF08,CCF,CCF08,890480023,Comfenalco Cartagena
+co_contribution_partner_CCF_CCF09,CCF,CCF09,890480110,Comfamiliar Cartagena
+co_contribution_partner_CCF_CCF10,CCF,CCF10,891800213,Comfaboy
+co_contribution_partner_CCF_CCF11,CCF,CCF11,890806490,Confamiliares
+co_contribution_partner_CCF_CCF13,CCF,CCF13,891190047,Comfaca
+co_contribution_partner_CCF_CCF14,CCF,CCF14,891500182,Comfacauca
+co_contribution_partner_CCF_CCF15,CCF,CCF15,892399989,Comfacesar
+co_contribution_partner_CCF_CCF16,CCF,CCF16,891080005,Comfacor
+co_contribution_partner_CCF_CCF21,CCF,CCF21,860013570,Cafam
+co_contribution_partner_CCF_CCF22,CCF,CCF22,860007336,Colsubsidio
+co_contribution_partner_CCF_CCF24,CCF,CCF24,860066942,Compensar
+co_contribution_partner_CCF_CCF26,CCF,CCF26,860045904,Comfacundi
+co_contribution_partner_CCF_CCF29,CCF,CCF29,891600091,ComfaChocó
+co_contribution_partner_CCF_CCF30,CCF,CCF30,892115006,Comfamiliar Guajira
+co_contribution_partner_CCF_CCF32,CCF,CCF32,891180008,Comfamiliar Huila
+co_contribution_partner_CCF_CCF33,CCF,CCF33,891780093,Cajamag
+co_contribution_partner_CCF_CCF34,CCF,CCF34,892000146,Cofrem
+co_contribution_partner_CCF_CCF35,CCF,CCF35,891280008,Comfamiliar Nariño
+co_contribution_partner_CCF_CCF36,CCF,CCF36,890500675,Comfaoriente
+co_contribution_partner_CCF_CCF37,CCF,CCF37,890500516,Comfanorte
+co_contribution_partner_CCF_CCF38,CCF,CCF38,890270275,Cafaba
+co_contribution_partner_CCF_CCF39,CCF,CCF39,890200106,Cajasan
+co_contribution_partner_CCF_CCF40,CCF,CCF40,890201578,Comfenalco Santander
+co_contribution_partner_CCF_CCF41,CCF,CCF41,892200015,Comfasucre
+co_contribution_partner_CCF_CCF43,CCF,CCF43,890000381,Comfenalco Quindío
+co_contribution_partner_CCF_CCF44,CCF,CCF44,891480000,Comfamiliar Risaralda
+co_contribution_partner_CCF_CCF46,CCF,CCF46,890704737,Cafasur
+co_contribution_partner_CCF_CCF48,CCF,CCF48,800211025,Comfatolima
+co_contribution_partner_CCF_CCF50,CCF,CCF50,890700148,Comfenalco Tolima
+co_contribution_partner_CCF_CCF56,CCF,CCF56,890303093,Comfenalco Valle
+co_contribution_partner_CCF_CCF57,CCF,CCF57,890303208,Comfandi
+co_contribution_partner_CCF_CCF63,CCF,CCF63,891200337,Comfamiliar Putumayo
+co_contribution_partner_CCF_CCF64,CCF,CCF64,892400320,Cajasai 
+co_contribution_partner_CCF_CCF65,CCF,CCF65,800003122,Cafamaz 
+co_contribution_partner_CCF_CCF67,CCF,CCF67,800219488,Comfiar 
+co_contribution_partner_CCF_CCF68,CCF,CCF68,800231969,Comcaja 
+co_contribution_partner_CCF_CCF69,CCF,CCF69,844003392,Comfacasanare 
+co_contribution_partner_ESAP_PAESAP,ESAP,PAESAP,899999054,ESAP
+co_contribution_partner_ICBF_PAICBF,ICBF,PAICBF,899999239,ICBF
+co_contribution_partner_MIN_EDU_PAMIED,MIN_EDU,PAMIED,899999001,MEN
+co_contribution_partner_SENA_PASENA,SENA,PASENA,899999034,SENA

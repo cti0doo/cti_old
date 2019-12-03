@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_user_massive_ie,ie.massive,model_ie_massive,ie_massive.user_ie,1,1,1,1
+access_user_massive_lines_ie,ie.massive.lines,model_ie_massive_lines,ie_massive.user_ie,1,1,1,1
+access_user_massive_lines_condition_ie,ie.massive.lines.condition,model_ie_massive_lines_condition,ie_massive.user_ie,1,1,1,1
+access_user_massive_map_ie,ie.massive.map,model_ie_massive_map,ie_massive.user_ie,1,1,1,1
+access_user_massive_filter_ie,ie.massive.filter,model_ie_massive_filter,ie_massive.user_ie,1,1,1,1

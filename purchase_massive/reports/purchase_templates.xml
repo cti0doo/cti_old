@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <template id="purchase_massive.report_purchasmassive" name="purchase_massive">
+        <t t-call="web.html_container">
+            <t t-foreach="docs" t-as="o">
+                <t t-call="web.external_layout">
+                    <div class="page">
+                        <h2>Purchase massive #
+                            <span t-field="o.name"/>
+                        </h2>
+
+                        <div class="row mt32 mb32">
+                            <div t-if="o.date" class="col-3">
+                                <strong>Date order:</strong>
+                                <p t-field="o.date"/>
+                            </div>
+                            <div t-if="o.product_id" class="col-3">
+                                <strong>Product:</strong>
+                                <p t-field="o.product_id"/>
+                            </div>
+                            <div t-if="o.picking_type_id" class="col-3">
+                                <strong>Picking type:</strong>
+                                <p t-field="o.picking_type_id"/>
+                            </div>
+                            <div t-if="o.transport_id" class="col-3">
+                                <strong>Transport:</strong>
+                                <p t-field="o.transport_id"/>
+                            </div>
+                            <div t-if="o.product_transport_id" class="col-3">
+                                <strong>Product transport:</strong>
+                                <p t-field="o.product_transport_id"/>
+                            </div>
+                            <div t-if="o.purchase_id" class="col-3">
+                                <strong>Transport order:</strong>
+                                <p t-field="o.purchase_id"/>
+                            </div>
+                        </div>
+
+                        <table class="table table-condensed">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <strong>Partner</strong>
+                                    </th>
+                                    <th>
+                                        <strong>Quantity</strong>
+                                    </th>
+                                    <th class="text-center">
+                                        <strong>Price unit</strong>
+                                    </th>
+                                    <th class="text-right">
+                                        <strong>Price total</strong>
+                                    </th>
+                                    <th class="text-right">
+                                        <strong>Purchase order</strong>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.line_ids" t-as="line">
+                                    <td>
+                                        <span t-field="line.partner_id"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="line.quantity"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="line.price_unit"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="line.price_total"/>
+                                    </td>
+                                    <td class="text-right">
+                                        <span t-field="line.purchase_id"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </t>
+            </t>
+        </t>
+    </template>
+</odoo>

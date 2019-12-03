@@ -1,0 +1,127 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+
+        <record model="ir.ui.view" id="ie_massive_view">
+            <field name="name">Import/Export massive</field>
+            <field name="model">ie.massive</field>
+            <field name="arch" type="xml">
+                <tree string="Import/Export massive">
+                    <field name="name"/>
+                    <field name="url" groups="ie_massive.avanced_ie"/>
+                    <field name="port" groups="ie_massive.avanced_ie"/>
+                    <field name="user" groups="ie_massive.avanced_ie"/>
+                    <field name="password" password="True"/>
+                    <field name="database" groups="ie_massive.avanced_ie"/>
+                    <!--<field name="services"/>-->
+                </tree>
+            </field>
+        </record>
+
+        <!-- form view definition -->
+        <record model="ir.ui.view" id="ie_massive_form">
+            <field name="name">ie.massive.form</field>
+            <field name="model">ie.massive</field>
+            <field name="arch" type="xml">
+                <form string="Import/Export massive">
+                    <header>
+                        <button name="import_action" string="Import" type="object"/>
+                        <button name="export_action" string="Export" type="object"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <group>
+                                <field name="name"/>
+                                <field name="url" groups="ie_massive.avanced_ie"/>
+                                <field name="port" groups="ie_massive.avanced_ie"/>
+                            </group>
+                            <group groups="ie_massive.avanced_ie">
+                                <field name="user"/>
+                                <field name="password" password="True"/>
+                                <field name="database"/>
+                            </group>
+                        </group>
+                        <notebook>
+                            <page string="Lines">
+                                <field name="line_ids">
+                                    <tree string="Lines">
+                                        <field name="process"/>
+                                        <field name="description"/>
+                                        <field name="condition"/>
+                                        <field name="model_id"/>
+                                        <field name="to_update"/>
+                                        <field name="to_load"/>
+                                        <field name="to_create"/>
+                                        <field name="time_real" widget="float_time"/>
+                                        <field name="record_quantity"/>
+                                        <field name="create_quantity"/>
+                                        <field name="write_quantity"/>
+                                        <!--<field name="time_record" widget="float_time"/>-->
+                                        <field name="write_date"/>
+                                        <field name="file"/>
+                                    </tree>
+                                    <form string="Lines">
+                                        <group colspan="4">
+                                            <group>
+                                                <field name="process"/>
+                                                <field name="description"/>
+                                                <field name="condition"/>
+                                                <field name="model_id"/>
+                                            </group>
+                                            <group>
+                                                <field name="file" filename="filename"/>
+                                                <field name="filename" invisible="1"/>
+                                                <field name="to_update"/>
+                                                <field name="to_load"/>
+                                                <field name="to_create"/>
+                                            </group>
+                                        </group>
+                                        <notebook>
+                                            <page string="Errors">
+                                                <field name="errors_file" filename="errors_filename"/>
+                                                <field name="errors_filename" invisible="1"/>
+                                                <group colspan="4">
+                                                    <field name="errors" nolabel="1" readonly="1"/>
+                                                </group>
+                                            </page>
+                                            <page string="Mapp">
+                                                <field name="map_ids">
+                                                    <tree string="Map" editable="buttom">
+                                                        <field name="fields"/>
+                                                        <field name="origin"/>
+                                                        <field name="destination"/>
+                                                    </tree>
+                                                </field>
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>
+                            </page>
+                        </notebook>
+                    </sheet>
+                    <!--<div class="oe_chatter">-->
+                    <!--<field name="message_follower_ids" widget="mail_followers"/>-->
+                    <!--<field name="activity_ids" widget="mail_activity"/>-->
+                    <!--<field name="message_ids" widget="mail_thread"/>-->
+                    <!--</div>-->
+                </form>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="ie_massive_action_window">
+            <field name="name">Import/Export massive</field>
+            <field name="res_model">ie.massive</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Import/Export massive" id="ir_massive_menu_parent" sequence="10" groups="user_ie"
+                  web_icon="ie_massive,static/description/icon.png"/>
+
+        <menuitem name="Import/Export massive" id="ir_massive_menu" sequence="10"
+                  parent="ir_massive_menu_parent"
+                  action="ie_massive_action_window"
+                  groups="user_ie"/>
+
+    </data>
+</odoo>

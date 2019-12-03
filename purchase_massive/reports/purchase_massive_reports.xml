@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report
+                string="Purchase massive"
+                id="action_report_purchase_massive"
+                model="massive.purchase"
+                report_type="qweb-pdf"
+                name="purchase_massive.report_purchasmassive"
+                file="purchase_massive.report_purchasmassive"
+                print_report_name="'Purchase massive Order - %s' % (object.name)"
+        />
+    </data>
+</odoo>

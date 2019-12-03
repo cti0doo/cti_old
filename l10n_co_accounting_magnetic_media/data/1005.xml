@@ -1,0 +1,92 @@
+<odoo>
+    <data>
+        <!-- 1005 -->
+        <record id="l10n_co_accounting_media_magnetic_1005" model="magnetic.media">
+            <field name="code">1005</field>
+            <field name="name">1005 - IVA Descontable</field>
+            <field name="smaller_amount">100</field>
+            <field name="query">SELECT
+                A as "Tipo documento",
+                B as "Número identificación del informado",
+                C as "DV",
+                D as "Primer apellido del informado",
+                E as "Segundo apellido del informado",
+                F as "Primer nombre del informado",
+                G as "Segundo nombre del informado",
+                H as "Razón social del informado",
+                SUM(I) as "Impuesto descontable",
+                SUM(J) as "IVA resultante por devoluciones en ventas anuladas, rescindidas o resueltas"
+                FROM
+                (
+                SELECT
+                rp.vat_type as A,
+                rp.vat as B,
+                rp.vat_vd as C,
+                rp.firstname as D,
+                rp.other_name as E,
+                rp.lastname as F,
+                rp.other_lastname as G,
+                rp.name as H,
+                (
+                CASE WHEN mmlc.sequence = 'I' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'I' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'I' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as I,
+                (
+                CASE WHEN mmlc.sequence = 'J' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'J' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'J' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as J
+                FROM
+                 magnetic_media mm
+                INNER JOIN magnetic_media_lines mml ON mml.magnetic_id = mm.id
+                INNER JOIN magnetic_media_lines_concepts mmlc ON mmlc.line_id = mml.id
+                inner join (
+                select aammlcr.account_account_id as account_id, aammlcr.magnetic_media_lines_concepts_id as concept_id
+                from account_account_magnetic_media_lines_concepts_rel aammlcr
+                union all
+                select aaat.account_account_id as account_id, mmlcaat.concept_ids as concept_id
+                from magnetic_media_lines_concepts_account_account_tag mmlcaat
+                inner join account_account_tag aat on aat.id = mmlcaat.tag_ids
+                inner join account_account_account_tag aaat on aaat.account_account_tag_id = aat.id
+                ) as aa on aa.concept_id = mmlc.id
+                INNER JOIN account_move_line aml ON aml.account_id = aa.account_id
+                LEFT JOIN res_partner rp ON rp.id = aml.partner_id
+                LEFT JOIN res_country_state rcs ON rcs.id = rp.state_id
+                LEFT JOIN res_country_state_city rcsc ON rcsc.id = rp.city_id
+                LEFT JOIN res_country rc ON rc.id = rp.country_id
+                WHERE
+                mm.id = {id}
+                AND aml.date BETWEEN '{date_from}'
+                AND '{date_to}'
+                GROUP BY
+                mml.code,
+                rp.vat_type,
+                rp.vat,
+                rp.vat_vd,
+                rp.firstname,
+                rp.other_name,
+                rp.lastname,
+                rp.other_lastname,
+                rp.name,
+                rp.street,
+                rcs.code,
+                rcsc.code,
+				mmlc.sequence,
+                mmlc.type,
+                mm.smaller_amount
+                ) as datos
+                GROUP BY
+                A,
+                B,
+                C,
+                D,
+                E,
+                F,
+                G,
+                H,
+                I,
+                J</field>
+        </record>
+    </data>
+</odoo>

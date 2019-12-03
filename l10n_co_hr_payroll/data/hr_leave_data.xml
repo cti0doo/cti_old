@@ -1,0 +1,82 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+
+        <record model="hr.leave.type" id="PAI_LEA">
+            <field name="name">Paid Leave</field>
+            <field name="code">PAI_LEA</field>
+            <field name="validation_type">both</field>
+            <field name="limit">True</field>
+            <field name="timesheet_generate">False</field>
+            <field name="color_name">red</field>
+        </record>
+
+        <record model="hr.leave.type" id="EPS_INA">
+            <field name="name">EPS Inability</field>
+            <field name="code">EPS_INA</field>
+            <field name="validation_type">both</field>
+            <field name="limit">True</field>
+            <field name="timesheet_generate">False</field>
+            <field name="color_name">red</field>
+        </record>
+
+        <record model="hr.leave.type" id="EPS_INA_180">
+            <field name="name">EPS Inability > 180 days (SALUD 50%)</field>
+            <field name="code">EPS_INA_180</field>
+            <field name="validation_type">both</field>
+            <field name="limit">True</field>
+            <field name="timesheet_generate">False</field>
+            <field name="color_name">red</field>
+        </record>
+
+        <record model="hr.leave.type" id="MAT_LIC">
+            <field name="name">Maternity License</field>
+            <field name="code">MAT_LIC</field>
+            <field name="validation_type">both</field>
+            <field name="limit">True</field>
+            <field name="timesheet_generate">False</field>
+            <field name="color_name">red</field>
+        </record>
+
+        <record model="hr.leave.type" id="EPS_INA_SUB">
+            <field name="name">EPS Inability Subsidie</field>
+            <field name="code">EPS_INA_SUB</field>
+            <field name="validation_type">both</field>
+            <field name="limit">True</field>
+            <field name="timesheet_generate">False</field>
+            <field name="color_name">lavender</field>
+        </record>
+
+
+        <!-- Sick leave -->
+        <record model="hr.leave.type" id="ARL_INA">
+            <field name="name">ARL Inability</field>
+            <field name="code">ARL_INA</field>
+            <field name="validation_type">both</field>
+            <field name="limit">True</field>
+            <field name="timesheet_generate">False</field>
+            <field name="color_name">red</field>
+        </record>
+
+        <!--Absences Unpaid Leave -->
+        <record model="hr.leave.type" id="ABS">
+            <field name="name">Absences</field>
+            <field name="code">ABS</field>
+            <field name="validation_type">both</field>
+            <field name="limit">True</field>
+            <field name="timesheet_generate">False</field>
+            <field name="color_name">brown</field>
+        </record>
+
+        <!--Vacations -->
+        <record model="hr.leave.type" id="VAC">
+            <field name="name">Vacations</field>
+            <field name="code">VAC</field>
+            <field name="validation_type">both</field>
+            <field name="limit">True</field>
+            <field name="timesheet_generate">False</field>
+            <field name="color_name">brown</field>
+        </record>
+
+    </data>
+</odoo>

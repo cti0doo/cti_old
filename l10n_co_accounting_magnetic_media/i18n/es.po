@@ -1,0 +1,268 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* l10n_co_accounting_magnetic_media
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-25 15:55+0000\n"
+"PO-Revision-Date: 2019-06-25 11:02-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__tag_ids
+msgid "Account Tags"
+msgstr "Etiqueta de la cuenta"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__account_ids
+msgid "Accounts"
+msgstr "Cuentas"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model_terms:ir.ui.view,arch_db:l10n_co_accounting_magnetic_media.magnetic_media_view_form_view
+#: selection:magnetic.media,state:0
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model_terms:ir.ui.view,arch_db:l10n_co_accounting_magnetic_media.magnetic_media_wizard_view
+msgid "Cancelar"
+msgstr "Cancelar"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media__code
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines__code
+msgid "Code"
+msgstr "Código"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,help:l10n_co_accounting_magnetic_media.field_magnetic_media__code
+#: model:ir.model.fields,help:l10n_co_accounting_magnetic_media.field_magnetic_media_lines__code
+msgid "Code for magnetic media format"
+msgstr "Código para el formato de medios magnéticos"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__name
+msgid "Concept name"
+msgstr "Nombre del concepto"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines__concept_ids
+#: model_terms:ir.ui.view,arch_db:l10n_co_accounting_magnetic_media.magnetic_media_view_form_view
+msgid "Concepts"
+msgstr "Conceptos"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model_terms:ir.ui.view,arch_db:l10n_co_accounting_magnetic_media.magnetic_media_view_form_view
+#: selection:magnetic.media,state:0
+msgid "Confirm"
+msgstr "Confirmar"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media__create_uid
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines__create_uid
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__create_uid
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_wizard__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media__create_date
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines__create_date
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__create_date
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_wizard__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: l10n_co_accounting_magnetic_media
+#: selection:magnetic.media.lines.concepts,type:0
+msgid "Credit"
+msgstr "Crédito"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_wizard__date_from
+msgid "Date from"
+msgstr "Fecha desde"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_wizard__date_to
+msgid "Date to"
+msgstr "Fecha"
+
+#. module: l10n_co_accounting_magnetic_media
+#: selection:magnetic.media.lines.concepts,type:0
+msgid "Debit"
+msgstr "Débito"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media__display_name
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines__display_name
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__display_name
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_wizard__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: l10n_co_accounting_magnetic_media
+#: selection:magnetic.media,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model_terms:ir.ui.view,arch_db:l10n_co_accounting_magnetic_media.magnetic_media_view_form_view
+#: model_terms:ir.ui.view,arch_db:l10n_co_accounting_magnetic_media.magnetic_media_wizard_view
+msgid "Export"
+msgstr "Exportar"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media__id
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines__id
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__id
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_wizard__id
+msgid "ID"
+msgstr ""
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media____last_update
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines____last_update
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts____last_update
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_wizard____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media__write_uid
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines__write_uid
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__write_uid
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_wizard__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media__write_date
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines__write_date
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__write_date
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_wizard__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines__name
+msgid "Line name"
+msgstr "Nombre"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media__line_ids
+#: model_terms:ir.ui.view,arch_db:l10n_co_accounting_magnetic_media.magnetic_media_view_form_view
+msgid "Lines"
+msgstr "Líneas"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model,name:l10n_co_accounting_magnetic_media.model_magnetic_media
+msgid "Magnetic Media"
+msgstr "Medios magnéticos"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model,name:l10n_co_accounting_magnetic_media.model_magnetic_media_lines
+msgid "Magnetic Media Lines"
+msgstr "Lineas de médios magnéticos"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model,name:l10n_co_accounting_magnetic_media.model_magnetic_media_lines_concepts
+msgid "Magnetic Media Lines Concepts"
+msgstr "Concepto de medios mágneticos"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model,name:l10n_co_accounting_magnetic_media.model_magnetic_media_wizard
+msgid "Magnetic Media Wizard"
+msgstr "Asistente para medios magnéticos"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.actions.act_window,name:l10n_co_accounting_magnetic_media.magnetic_media_view_action
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines__magnetic_id
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__line_id
+#: model:ir.ui.menu,name:l10n_co_accounting_magnetic_media.magnetic_media_view_menu_conf
+#: model_terms:ir.ui.view,arch_db:l10n_co_accounting_magnetic_media.magnetic_media_view_form_view
+#: model_terms:ir.ui.view,arch_db:l10n_co_accounting_magnetic_media.magnetic_media_view_tree_view
+#: model_terms:ir.ui.view,arch_db:l10n_co_accounting_magnetic_media.magnetic_media_wizard_view
+msgid "Magnetic media"
+msgstr "Medios mágneticos"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media__smaller_amount
+msgid "Minor amounts"
+msgstr "Cuantías menores"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,help:l10n_co_accounting_magnetic_media.field_magnetic_media__name
+msgid "Name for magnetic media format"
+msgstr "Código para el formato de medios magnéticos"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media__query
+#: model_terms:ir.ui.view,arch_db:l10n_co_accounting_magnetic_media.magnetic_media_view_form_view
+msgid "Query"
+msgstr "Consulta"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media__state
+msgid "State"
+msgstr "Estado"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,help:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__name
+msgid "The name of the concepts of magnetic media"
+msgstr "Nombre para concepto de medios mágneticos"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,help:l10n_co_accounting_magnetic_media.field_magnetic_media_lines__name
+msgid "The name of the line must be indicated for each concept of magnetic media"
+msgstr "El nombre de la línea debe indicarse para cada concepto de medio magnético"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,help:l10n_co_accounting_magnetic_media.field_magnetic_media__smaller_amount
+msgid "The value must be indicated for minor amounts"
+msgstr "El valor debe indicarse para cuantías menores"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model_terms:ir.ui.view,arch_db:l10n_co_accounting_magnetic_media.magnetic_media_view_form_view
+msgid "To draft"
+msgstr "Pasar a borrador"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,field_description:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,help:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__sequence
+msgid "You must indicate the sequence as it will be shown in the media format"
+msgstr "Debe indicar la secuencia tal como se mostrará en el formato de medios"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,help:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__tag_ids
+msgid "You must select the account tags that apply to this concept"
+msgstr "Debes seleccionar las etiquetas de cuenta que se aplican a este concepto"
+
+#. module: l10n_co_accounting_magnetic_media
+#: model:ir.model.fields,help:l10n_co_accounting_magnetic_media.field_magnetic_media_lines_concepts__account_ids
+msgid "You must select the accounts that apply to this concept"
+msgstr "Debes seleccionar las cuentas que apliquen a este concepto"

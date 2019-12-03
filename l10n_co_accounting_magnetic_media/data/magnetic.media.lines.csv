@@ -1,0 +1,102 @@
+id,code,name,magnetic_id:id
+l10n_co_mml_1001_5002,5002,Honorarios de renta no laboral,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5003,5003,Comisiones de renta no laboral,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5004,5004,Servicios de renta no laboral,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5005,5005,Arrendamientos,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5006,5006,Intereses y rendimientos financieros,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5007,5007,Compra de activos movibles (E.T. Artículo 60),l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5008,5008,Compra de activos fijos (E.T. Artículo 60),l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5010,5010,"Los pagos o abonos en cuenta por concepto de aportes parafiscales al Sena, a las Cajas de Compensación Familiar y al Instituto Colombiano de Bienestar Familiar.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5011,5011,"Los pagos o abonos en cuenta efectuados a las empresas promotoras de salud EPS y los aportes al Sistema de Riesgos Laborales, incluidos los aportes del trabajador.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5012,5012,"Los pagos o abonos en cuenta por concepto de aportes obligatorios para pensiones efectuados a los Fondos de Pensiones, incluidos los aportes del trabajador, en el concepto 5012.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5013,5013,"Las donaciones en dinero efectuadas, a las entidades señaladas en los artículos 125, 125-4, 126-2 y 158-1 del Estatuto Tributario y la establecida en el artículo 16 de la Ley 814 de 2003, y demás que determine la ley.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5014,5014,"Las donaciones en activos diferentes a dinero efectuadas a las entidades señaladas en los artículos 125, 125-4, 126-2 y 158-1 del Estatuto Tributario y la establecida en el artículo 16 de la Ley 814 de 2003, y demás que determine la ley.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5015,5015,El valor de los impuestos solicitados como deducción.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5016,5016,Los demás costos y deducciones.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5018,5018,El importe de las primas de reaseguros pagados o abonados en cuenta.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5019,5019,El monto de las amortizaciones realizadas.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5023,5023,El valor acumulado de los pagos o abonos en cuenta al exterior por asistencia técnica.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5024,5024,El valor acumulado de los pagos o abonos en cuenta al exterior por marcas.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5025,5025,El valor acumulado de los pagos o abonos en cuenta al exterior por patentes.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5026,5026,El valor acumulado de los pagos o abonos en cuenta al exterior por regalías.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5027,5027,El valor acumulado de los pagos o abonos en cuenta al exterior por servicios técnicos.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5028,5028,El valor acumulado de la devolución de pagos o abonos en cuenta y retenciones correspondientes a operaciones de años anteriores.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5029,5029,Gastos pagados por anticipado por Compras,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5030,5030,Gastos pagados por anticipado por Honorarios de renta no laboral,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5031,5031,Gastos pagados por anticipado por Comisiones de renta no laboral,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5032,5032,Gastos pagados por anticipado por Servicios de renta no laboral,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5033,5033,Gastos pagados por anticipado por arrendamientos,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5034,5034,Gastos pagados por anticipado por Intereses y rendimientos financieros,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5035,5035,Gastos pagados por anticipado por otros conceptos,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5043,5043,El valor de las participaciones o dividendos pagados o abonados en cuenta en calidad de exigibles.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5044,5044,"El pago por loterías, rifas, apuestas y similares.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5045,5045,Retención sobre ingresos de tarjetas débito y crédito.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5046,5046,Enajenación de activos fijos de personas naturales ante oficinas de tránsito y otras entidades autorizadas.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5047,5047,El importe de los siniestros por lucro cesante pagados o abonados en cuenta.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5048,5048,El importe de los siniestros por daño emergente pagados o abonados en cuenta.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5059,5059,"El pago o abono en cuenta realizado a cada uno de los cooperados, del valor del Fondo para revalorización de aportes.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5053,5053,Retenciones practicadas a título de timbre.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5054,5054,"La devolución de retenciones a título de impuesto de timbre, correspondientes a operaciones de años anteriores.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5055,5055,Viáticos,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5056,5056,Gastos de representación,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5058,5058,"El valor de los aportes, tasas y contribuciones solicitados como deducción.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5060,5060,Redención de inversiones en lo que corresponde al rembolso del capital por títulos de capitalización.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5061,5061,"Las utilidades pagadas o abonadas en cuenta, cuando el beneficiario es diferente al fideicomitente.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5063,5063,Intereses y rendimientos financieros pagados,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5064,5064,Devoluciones de saldos de aportes pensionales pagados.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5065,5065,Excedentes pensionales de libre disponibilidad componente de capital pagados.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5066,5066,El valor del impuesto al consumo solicitado como deducción.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1001_5067,5067,El valor acumulado de los pagos o abonos en cuenta al exterior por consultoría.,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1001
+l10n_co_mml_1003_1301,1301,Retención por salarios prestaciones y demás pagos laborales,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1003
+l10n_co_mml_1003_1302,1302,Retención por ventas,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1003
+l10n_co_mml_1003_1303,1303,Retención por servicios,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1003
+l10n_co_mml_1003_1302,1302,Retención por ventas,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1003
+l10n_co_mml_1003_1303,1303,Retención por servicios,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1003
+l10n_co_mml_1003_1304,1304,Retención por honorarios,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1003
+l10n_co_mml_1003_1305,1305,Retención por comisiones,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1003
+l10n_co_mml_1003_1306,1306,Retención por intereses y rendimientos financieros,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1003
+l10n_co_mml_1003_1307,1307,Retención por arrendamientos,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1003
+l10n_co_mml_1007_4001,4001,Ingresos brutos de actividades ordinarias,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1007
+l10n_co_mml_1007_4002,4002,Otros ingresos brutos,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1007
+l10n_co_mml_1007_4003,4003,Ingresos por intereses y rendimientos financieros,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1007
+l10n_co_mml_1007_4004,4004,Ingresos por intereses correspondientes a creditos hipotecarios,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1007
+l10n_co_mml_1007_4005,4005,Ingresos a través de consorcio o uniones temporales,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1007
+l10n_co_mml_1007_4006,4006,Ingresos a través de mandato o administración delegada,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1007
+l10n_co_mml_1007_4007,4007,"Ingresos a través de exploración y explotación de hidrocarburos, gases y minerales",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1007
+l10n_co_mml_1007_4008,4008,Ingresos a través de fiducias,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1007
+l10n_co_mml_1007_4009,4009,Ingresos a través de terceros ( Beneficio),l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1007
+l10n_co_mml_1007_4011,4011,Ingresos a través de joint venture,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1007
+l10n_co_mml_1007_4012,4012,Ingresos a través de cuentas de participación,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1007
+l10n_co_mml_1007_4013,4013,Ingresos a través de convenios de colaboración con entidades públicas,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1007
+l10n_co_mml_1008_1315,1315,El valor total del saldo de las cuentas por cobrar a clientes,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1008
+l10n_co_mml_1008_1316,1316,"El valor total del saldo de las cuentas por cobrar a accionistas, socios, comuneros, cooperados y compañías vinculadas",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1008
+l10n_co_mml_1008_1317,1317,El valor total de otras cuentas por cobrar,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1008
+l10n_co_mml_1008_1318,1318,"El valor total del saldo fiscal de la deterioro de cartera, identificándolo con el NIT del deudor.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1008
+l10n_co_mml_1009_2201,2201,El valor del saldo de los pasivos con proveedores,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1009
+l10n_co_mml_1009_2202,2202,El valor del saldo de los pasivos con compañías vinculadas accionistas y socios,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1009
+l10n_co_mml_1009_2203,2203,El valor del saldo de las obligaciones financieras,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1009
+l10n_co_mml_1009_2204,2204,"El valor del saldo de los pasivos por impuestos, gravámenes y tasas",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1009
+l10n_co_mml_1009_2205,2205,El valor del saldo de los pasivos laborales,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1009
+l10n_co_mml_1009_2207,2207,"El valor del saldo del pasivo determinado por el cálculo actuarial, con el NIT del informante",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1009
+l10n_co_mml_1009_2208,2208,"El valor de los pasivos respaldados en documento de fecha cierta,",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1009
+l10n_co_mml_1009_2209,2209,El valor de los pasivos exclusivos de las compañías de seguros,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1009
+l10n_co_mml_1009_2206,2206,El valor del saldo de los demás pasivos,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1009
+l10n_co_mml_1011_9200,9200,"Exención de IVA en venta de alcohol carburante. E.T., art. 477, num. 1.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1011
+l10n_co_mml_1011_9201,9201,"Exención de IVA en venta de biocombustible. E.T., art. 477, num. 2.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1011
+l10n_co_mml_1011_9202,9202,"Exención de IVA venta de libros y revistas de carácter científico y cultural. E.T., art. 478.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1011
+l10n_co_mml_1011_9203,9203,"Exención por prestación servicios en el país utilizados en el exterior. E.T., art. 481, lit. c.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1011
+l10n_co_mml_1011_9204,9204,"Exención por prestación de servicios turísticos a extranjeros en el territorio colombiano. E.T., art. 481, lit. d.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1011
+l10n_co_mml_1011_9205,9205,"Exención de IVA por cuadernos subpartida 48.20.20.00.00, diarios, publicaciones periódicas, impresos, demás subpartida 49.02. E.T., art. 481, lit. f.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1011
+l10n_co_mml_1011_9206,9206,"Exención de IVA por servicio de conexión estrato 1 y 2. E.T., art. 481, lit. h.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1011
+l10n_co_mml_1011_9207,9207,"Exención de IVA en venta de municiones y material de guerra y elementos pertenecientes a Fuerzas Militares y Policía Nacional. E.T., art. 477, num. 3.",l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1011
+l10n_co_mml_1012_1200,1200,Valor patrimonial de los bonos,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1012
+l10n_co_mml_1012_1201,1201,Valor patrimonial de los certificados de depósito,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1012
+l10n_co_mml_1012_1202,1202,Valor patrimonial de los títulos,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1012
+l10n_co_mml_1012_1203,1203,Valor patrimonial de los derechos fiduciarios,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1012
+l10n_co_mml_1012_1204,1204,Valor patrimonial de las demás inversiones poseídas,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1012
+l10n_co_mml_1012_1205,1205,Valor patrimonial de las acciones o aportes poseídas en otra sociedad,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1012
+l10n_co_mml_1012_1110,1110,saldos cuentas corrientes y/o ahorros,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1012
+l10n_co_mml_1012_1115,1115,saldos cuentas corrientes y/o ahorros poseidas en el exterior,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1012
+l10n_co_mml_1005_1005,1005,Impuesto descontable,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1005
+l10n_co_mml_1006_1006,1006,1006 - IVA Generado,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_1006
+l10n_co_mml_2276_2276,2276,Pagos por salarios y otros gastos laborales,l10n_co_accounting_magnetic_media.l10n_co_accounting_media_magnetic_2276

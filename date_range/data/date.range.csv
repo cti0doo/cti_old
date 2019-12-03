@@ -1,0 +1,10 @@
+id,code,name,type_id:id,date_start,date_end
+co_date_range_0,2011,2011,co_date_range_type_0,2011-01-01,2011-12-31
+co_date_range_1,2012,2012,co_date_range_type_0,2012-01-01,2012-12-31
+co_date_range_2,2013,2013,co_date_range_type_0,2013-01-01,2013-12-31
+co_date_range_3,2014,2014,co_date_range_type_0,2014-01-01,2014-12-31
+co_date_range_4,2015,2015,co_date_range_type_0,2015-01-01,2015-12-31
+co_date_range_5,2016,2016,co_date_range_type_0,2016-01-01,2016-12-31
+co_date_range_6,2017,2017,co_date_range_type_0,2017-01-01,2017-12-31
+co_date_range_7,2018,2018,co_date_range_type_0,2018-01-01,2018-12-31
+co_date_range_8,2019,2019,co_date_range_type_0,2019-01-01,2019-12-31

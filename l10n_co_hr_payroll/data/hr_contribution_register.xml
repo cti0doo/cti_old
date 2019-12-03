@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- CONTRIBUTIONS -->
+
+        <record model='res.partner' id='REGISTER_COMPANY'>
+            <field name='name'>Company</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_EMPLOYEE'>
+            <field name='name'>Employee</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_EPS'>
+            <field name='name'>EPS</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_ARL'>
+            <field name='name'>ARL</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_AFP'>
+            <field name='name'>AFP</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_AFC'>
+            <field name='name'>AFC</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_CCF'>
+            <field name='name'>CCF</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_ESAP'>
+            <field name='name'>ESAP</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_ICBF'>
+            <field name='name'>ICBF</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_SENA'>
+            <field name='name'>SENA</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_MIN_EDU'>
+            <field name='name'>MIN_EDU</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_EXE_JUD'>
+            <field name='name'>EXE_JUD</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_FEE_JUD'>
+            <field name='name'>FEE_JUD</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_OTH_JUD'>
+            <field name='name'>OTH_JUD</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_COO'>
+            <field name='name'>COO</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_FON'>
+            <field name='name'>FON</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_OTH_ASO'>
+            <field name='name'>OTH_ASO</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_LOA'>
+            <field name='name'>LOA</field>
+        </record>
+
+
+        <record model='res.partner' id='REGISTER_INS_LOA'>
+            <field name='name'>INS</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_LAB_LOA'>
+            <field name='name'>LOA</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_HOU_LOA'>
+            <field name='name'>HOU LOA</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_CAR_LOA'>
+            <field name='name'>CAR_LOA</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_EDU_LOA'>
+            <field name='name'>EDU_LOA</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_MED_LOA'>
+            <field name='name'>MED_LOAn</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_CAL_LOA'>
+            <field name='name'>CAL_LOA</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_REC_LOA'>
+            <field name='name'>REC_LOA</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_VAR_LOA'>
+            <field name='name'>VAR_LOA</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_OTH_LOA'>
+            <field name='name'>OTH_LOA</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_CON_MAT_LOA'>
+            <field name='name'>CON_MAT_LOA</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_POS_CON_LOA'>
+            <field name='name'>POS_LOA</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_OTH_LOA'>
+            <field name='name'>OTH_LOA</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_INS'>
+            <field name='name'>INS</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_FUN_INS'>
+            <field name='name'>FUN_INS</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_OTH_INS'>
+            <field name='name'>OTH_INS</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_IND_UNI'>
+            <field name='name'>IND_UNI</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_SEC_UNI'>
+            <field name='name'>SEC_UNI</field>
+        </record>
+        <record model='res.partner' id='REGISTER_REG_UNI'>
+            <field name='name'>REG_UNI</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_CTY_UNI'>
+            <field name='name'>CTY_UNI</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_SUB_UNI'>
+            <field name='name'>SUB_UNI</field>
+        </record>
+
+        <record model='res.partner' id='REGISTER_OTH_UNI'>
+            <field name='name'>OTH_UNI</field>
+        </record>
+
+    </data>
+</odoo>

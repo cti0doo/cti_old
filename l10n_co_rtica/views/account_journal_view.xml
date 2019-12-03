@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="account_journal_resolution">
+            <field name="name">account.journal.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="l10n_co_account_extended.account_journal_resolution"></field>
+            <field name="arch" type="xml">
+                <field name="resolution" position="after">
+                    <field name="city_id"/>
+                    <field name="city_mrp_id" attrs="{'invisible':[('type','!=','sale')]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
+

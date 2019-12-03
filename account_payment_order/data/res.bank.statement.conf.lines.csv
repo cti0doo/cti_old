@@ -1,0 +1,9 @@
+id,bank_id:id,sequence,name,field,position,parse
+l10n_co_bank_st_bc_1,l10n_co_location.co_bank_007,0,Fecha,date,0,"str(datetime.now())[0:4]+'-'+str(result.split('/')[1])+'-'+result.split('/')[0]"
+l10n_co_bank_st_bc_2,l10n_co_location.co_bank_007,10,Descripción,name,1,
+l10n_co_bank_st_bc_4,l10n_co_location.co_bank_007,15,Referencia,ref,2,
+l10n_co_bank_st_bc_3,l10n_co_location.co_bank_007,20,Monto,amount,4,"result.replace(',','')"
+l10n_co_bank_st_bc_5,l10n_co_location.co_bank_013,0,Fecha,date,0,"str(result.split('-')[2])+'-'+str(result.split('-')[1])+'-'+result.split('-')[0]"
+l10n_co_bank_st_bc_6,l10n_co_location.co_bank_013,10,Descripción,name,4,
+l10n_co_bank_st_bc_7,l10n_co_location.co_bank_013,15,Referencia,ref,5,
+l10n_co_bank_st_bc_8,l10n_co_location.co_bank_013,20,Monto,amount,6,

@@ -1,0 +1,6 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_payment_order_payment_order,account_payment_order,model_account_payment_order,base.group_user,1,1,1,1
+access_res_bank_conf,access_res_bank_conf,model_res_bank_conf,base.group_user,1,1,1,1
+access_res_bank_statement_conf_lines,access_res_bank_statement_conf_lines,model_res_bank_statement_conf_lines,base.group_user,1,1,1,1
+access_account_payment_order_type,account_payment_order_type,model_account_payment_order_type,base.group_user,1,1,1,1
+
