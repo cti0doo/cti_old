@@ -39,7 +39,7 @@ class HrPayslipLineExtended(models.Model):
         partner_id = self.slip_id.employee_id.address_home_id.id
         for rg in self.slip_id.contract_id.register_ids:
             if rg.register_id.id == register.id:
-                partner_id = rg.partner_id.id
+                partner_id = rg.id
         if not partner_id:
             raise Warning('The contract %s has no defined contribution registry for %s' % (
                 self.slip_id.contract_id.name, register.name))

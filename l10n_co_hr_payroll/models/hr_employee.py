@@ -69,7 +69,7 @@ class HRContractRegisterLineExtended(models.Model):
     def _get_partners(self):
         partner = []
         for x in self.register_id:
-            partner.append(x.partner_id.id)
+            partner.append(x.id)
         return {'domain': {'partner_id': [('id', 'in', tuple(partner))]}}
 
     contract_id = fields.Many2one('hr.contract', string='Contract')
