@@ -3,7 +3,7 @@
 {
     "name": "Date Range",
     "summary": "Manage all kind of date range",
-    "version": "13.0.3",
+    "version": "13.1.0",
     "category": "Uncategorized",
     "website": "https://github.com/oca/server-ux",
     "author": "ACSONE SA/NV, Odoo Community Association (OCA)",
@@ -15,9 +15,6 @@
         "security/date_range_security.xml",
         "views/assets.xml",
         "views/date_range_view.xml",
-        "data/date.range.type.csv",
-        "data/date.range.csv",
-        "data/date.range.attribute.csv",
         "wizard/date_range_generator.xml",
     ],
     "qweb": ["static/src/xml/date_range.xml"],

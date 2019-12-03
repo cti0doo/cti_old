@@ -1,28 +1,28 @@
-id,code,name,description,value,range_id:id
-co_date_range_attribute_0,SMMLV,SMMLV,Salario Minimo Mensual Legal Vigente,532500,co_date_range_0
-co_date_range_attribute_1,UVR,UVR,Unidad Valor Representativo,25132,co_date_range_0
-co_date_range_attribute_2,AT,AT,Auxilio Transporte,63600,co_date_range_0
-co_date_range_attribute_3,SMMLV,SMMLV,Salario Minimo Mensual Legal Vigente,566700,co_date_range_1
-co_date_range_attribute_4,UVR,UVR,Unidad Valor Representativo,26049,co_date_range_1
-co_date_range_attribute_5,AT,AT,Auxilio Transporte,67800,co_date_range_1
-co_date_range_attribute_6,SMMLV,SMMLV,Salario Minimo Mensual Legal Vigente,589500,co_date_range_2
-co_date_range_attribute_7,UVR,UVR,Unidad Valor Representativo,26841,co_date_range_2
-co_date_range_attribute_8,AT,AT,Auxilio Transporte,70500,co_date_range_2
-co_date_range_attribute_9,SMMLV,SMMLV,Salario Minimo Mensual Legal Vigente,616000,co_date_range_3
-co_date_range_attribute_10,UVR,UVR,Unidad Valor Representativo,27485,co_date_range_3
-co_date_range_attribute_11,AT,AT,Auxilio Transporte,72000,co_date_range_3
-co_date_range_attribute_12,SMMLV,SMMLV,Salario Minimo Mensual Legal Vigente,644336,co_date_range_4
-co_date_range_attribute_13,UVR,UVR,Unidad Valor Representativo,28279,co_date_range_4
-co_date_range_attribute_14,AT,AT,Auxilio Transporte,73944,co_date_range_4
-co_date_range_attribute_15,SMMLV,SMMLV,Salario Minimo Mensual Legal Vigente,684454,co_date_range_5
-co_date_range_attribute_16,UVR,UVR,Unidad Valor Representativo,29753,co_date_range_5
-co_date_range_attribute_17,AT,AT,Auxilio Transporte,77700,co_date_range_5
-co_date_range_attribute_18,SMMLV,SMMLV,Salario Minimo Mensual Legal Vigente,737717,co_date_range_6
-co_date_range_attribute_19,UVR,UVR,Unidad Valor Representativo,31859,co_date_range_6
-co_date_range_attribute_20,AT,AT,Auxilio Transporte,83140,co_date_range_6
-co_date_range_attribute_21,SMMLV,SMMLV,Salario Minimo Mensual Legal Vigente,781242,co_date_range_7
-co_date_range_attribute_22,UVR,UVR,Unidad Valor Representativo,33156,co_date_range_7
-co_date_range_attribute_23,AT,AT,Auxilio Transporte,88211,co_date_range_7
-co_date_range_attribute_24,SMMLV,SMMLV,Salario Minimo Mensual Legal Vigente,814000,co_date_range_8
-co_date_range_attribute_25,UVR,UVR,Unidad Valor Representativo,34000,co_date_range_8
-co_date_range_attribute_26,AT,AT,Auxilio Transporte,85000,co_date_range_8
+name,description,value,range_id
+SMMLV,Salario Minimo Mensual Legal Vigente,532500,2011
+UVR,Unidad Valor Representativo,25132,2011
+AT,Auxilio Transporte,63600,2011
+SMMLV,Salario Minimo Mensual Legal Vigente,566700,2012
+UVR,Unidad Valor Representativo,26049,2012
+AT,Auxilio Transporte,67800,2012
+SMMLV,Salario Minimo Mensual Legal Vigente,589500,2013
+UVR,Unidad Valor Representativo,26841,2013
+AT,Auxilio Transporte,70500,2013
+SMMLV,Salario Minimo Mensual Legal Vigente,616000,2014
+UVR,Unidad Valor Representativo,27485,2014
+AT,Auxilio Transporte,72000,2014
+SMMLV,Salario Minimo Mensual Legal Vigente,644336,2015
+UVR,Unidad Valor Representativo,28279,2015
+AT,Auxilio Transporte,73944,2015
+SMMLV,Salario Minimo Mensual Legal Vigente,684454,2016
+UVR,Unidad Valor Representativo,29753,2016
+AT,Auxilio Transporte,77700,2016
+SMMLV,Salario Minimo Mensual Legal Vigente,737717,2017
+UVR,Unidad Valor Representativo,31859,2017
+AT,Auxilio Transporte,83140,2017
+SMMLV,Salario Minimo Mensual Legal Vigente,781242,2018
+UVR,Unidad Valor Representativo,33156,2018
+AT,Auxilio Transporte,88211,2018
+SMMLV,Salario Minimo Mensual Legal Vigente,814000,2019
+UVR,Unidad Valor Representativo,34000,2019
+AT,Auxilio Transporte,85000,2019

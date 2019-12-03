@@ -14,8 +14,6 @@ class DateRange(models.Model):
     def _default_company(self):
         return self.env.company
 
-
-    code = fields.Char(string='Code', required=True)
     name = fields.Char(required=True, translate=True)
     date_start = fields.Date(string="Start date", required=True)
     date_end = fields.Date(string="End date", required=True)
@@ -36,8 +34,6 @@ class DateRange(models.Model):
         "removing it.",
         default=True,
     )
-
-    attributes_ids = fields.One2many('date.range.attribute', 'range_id', string='Range Attributes')
 
     _sql_constraints = [
         (
@@ -121,22 +117,3 @@ class DateRange(models.Model):
     def get_domain(self, field_name):
         self.ensure_one()
         return [(field_name, ">=", self.date_start), (field_name, "<=", self.date_end)]
-
-class DateRangeAttribute(models.Model):
-    _name = 'date.range.attribute'
-    _description = 'Date Range Attribute'
-
-    def _default_company(self):
-        return self.env.company
-
-    company_id = fields.Many2one(comodel_name='res.company', string='Company',
-                                 index=True, default=_default_company)
-    code = fields.Char(string='Code', required=True,
-                       help='The code that will be used on the attribute')
-    name = fields.Char(string='Name', required=True,
-                       help='The name that will be used on the attribute')
-    description = fields.Char(string='Description', required=True,
-                              help='The description that will be used on the attribute')
-    value = fields.Char(string='Value', required=True,
-                        help="The attribute's value", )
-    range_id = fields.Many2one('date.range', string='Date Range', ondelete='cascade')

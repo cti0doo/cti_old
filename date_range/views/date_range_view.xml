@@ -42,7 +42,6 @@
                             <group string="Attributes">
                                 <field name="attributes_ids" nolabel="1" widget="one2many_list" mode="tree">
                                     <tree string="Invoice Lines" editable="bottom">
-                                        <field name="code"/>
                                         <field name="name"/>
                                         <field name="description"/>
                                         <field name="value"/>
