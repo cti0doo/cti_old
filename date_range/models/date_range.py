@@ -23,9 +23,12 @@ class DateRange(models.Model):
         index=1,
         required=True,
         ondelete="restrict",
-        domain="['|', ('company_id', '=', company_id), " "('company_id', '=', False)]"
+        domain="['|', ('company_id', '=', company_id), " "('company_id', '=', False)]",
+        store=True,
+        compute="_compute_type_id",
+        readonly=False,
     )
-    type_name = fields.Char(related="type_id.name", store=True, string="Type Name", readonly=True)
+    type_name = fields.Char(related="type_id.name", store=True, string="Type Name")
     company_id = fields.Many2one(
         comodel_name="res.company", string="Company", index=1, default=_default_company
     )
@@ -38,7 +41,7 @@ class DateRange(models.Model):
     _sql_constraints = [
         (
             "date_range_uniq",
-            "unique (name,type_id,company_id)",
+            "unique (name,type_id, company_id)",
             "A date range must be unique per company !",
         )
     ]
@@ -51,13 +54,6 @@ class DateRange(models.Model):
             and self.type_id.company_id != self.company_id
         ):
             self.type_id = self.env["date.range.type"]
-
-    @api.onchange('company_id', 'type_id')
-    def _onchange_company_id(self):
-        if self.company_id and self.type_id.company_id and \
-                self.type_id.company_id != self.company_id:
-            self._cache.update(
-                self._convert_to_cache({'type_id': False}, update=True))
 
     @api.constrains("company_id", "type_id")
     def _check_company_id_type_id(self):

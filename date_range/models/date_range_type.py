@@ -27,8 +27,6 @@ class DateRangeType(models.Model):
     )
     date_range_ids = fields.One2many("date.range", "type_id", string="Ranges")
 
-    fiscal_year = fields.Boolean(string='Is fiscal year?', default=False)
-
     _sql_constraints = [
         (
             "date_range_type_uniq",
@@ -56,16 +54,3 @@ class DateRangeType(models.Model):
                         )
                         % (rec.date_range_ids.name_get()[0][1])
                     )
-
-    def unlink(self):
-        """
-        Cannot delete a date_range_type with 'fiscal_year' flag = True
-        """
-        for rec in self:
-            if rec.fiscal_year:
-                raise ValidationError(
-                    _('You cannot delete a date range type with '
-                      'flag "fiscal_year"')
-                )
-            else:
-                super(DateRangeType, rec).unlink()
