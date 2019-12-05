@@ -15,7 +15,7 @@
     'version': '13.0.1',
     'sequence': 30,
     # any module necessary for this one to work correctlyi
-    'depends': ['l10n_co_account_uvt', 'sale','l10n_co_account_extended'],
+    'depends': ['sale','l10n_co_account_extended'],
     # always loaded
     'data': [
         # security

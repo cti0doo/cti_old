@@ -11,7 +11,7 @@
     'category': 'MRP',
     'website': 'https://www.cti.com.co',
     'images': [],
-    'depends': ['account', 'quality_control','mrp','l10n_co_account_uvt','l10n_co_account_extended'],
+    'depends': ['account', 'quality_control','mrp','l10n_co_account_extended'],
     'data': [
         'security/ir.model.access.csv',
         'data/concepts_quality_data.xml',
