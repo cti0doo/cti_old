@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ESTRUCTURA SALARIAL CON TODOS LOS REQUISITOS -->
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_CESANTIAS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>NOMINA_LEY_CESANTIAS</field>
+            <field name='name'>Nomina Cesantías</field>
+            <!--<field name='parent_id' ref=''/>-->
+        </record>
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_PRIMA_SEMESTRAL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>NOMINA_LEY_PRIMA_SEMESTRAL</field>
+            <field name='name'>Nomina Prima Semestral</field>
+            <!--<field name='parent_id' ref=''/>-->
+        </record>
+
+        <record model='hr.payroll.structure.template' id='SOLIDARIO_NOMINA_LEY_INTEGRAL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='code'>NOMINA_LEY_INTEGRAL</field>
+            <field name='name'>Nomina Integral</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('SOLIDARIO_SMMLV'),ref('SOLIDARIO_IBC_EPS_INTEGRAL'),
+                                                                                ref('SOLIDARIO_IBC_AFP_INTEGRAL'),
+                                                                                ref('SOLIDARIO_IBC_CCF_INTEGRAL'),
+                                                                                ref('SOLIDARIO_IBC_ARL_INTEGRAL'),
+                                                                                ref('SOLIDARIO_SAL_CON_INTEGRAL'),
+                                                                                ref('SOLIDARIO_BAS_SAL_INTEGRAL'),
+                                                                                ref('SOLIDARIO_SUBSIDIO_INCAPACIDAD_SALUD_INTEGRAL'),
+                                                                                ref('SOLIDARIO_PEMISO_REMUNERADO_INTEGRAL'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_INTEGRAL'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_180_INTEGRAL'),
+                                                                                ref('SOLIDARIO_LICENCIA_MATERNIDAD_INTEGRAL'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_ARL_INTEGRAL'),
+                                                                                ref('SOLIDARIO_AJUSTE_SALARIO_INTEGRAL'),
+                                                                                ref('SOLIDARIO_COMISIONES_INTEGRAL'),
+                                                                                ref('SOLIDARIO_VIATICOS_INTEGRAL'),
+                                                                                ref('SOLIDARIO_VACACIONES_DEVENGADAS_INTEGRAL'),
+                                                                                ref('SOLIDARIO_AUXILIOS_SALARIO_INTEGRAL'),
+                                                                                ref('SOLIDARIO_SUBSIDIOS_INTEGRAL'),
+                                                                                ref('SOLIDARIO_PRESTAMO_INTEGRAL'),
+                                                                                ref('SOLIDARIO_SALUD_INTEGRAL'),
+                                                                                ref('SOLIDARIO_AFP_INTEGRAL'),
+                                                                                ref('SOLIDARIO_AFP_VOLUNTARIA_INTEGRAL'),
+                                                                                ref('SOLIDARIO_FONDO_SOLIDARIDAD_INTEGRAL'),
+                                                                                ref('SOLIDARIO_RETENCION_FUENTE_INTEGRAL'),
+                                                                                ref('SOLIDARIO_SALUD_EMPLEADOR_INTEGRAL'),
+                                                                                ref('SOLIDARIO_AFP_EMPLEADOR_INTEGRAL'),
+                                                                                ref('SOLIDARIO_VACACIONES_PESO_INTEGRAL'),
+                                                                                ref('SOLIDARIO_CCF_INTEGRAL'),
+                                                                                ref('SOLIDARIO_ARL_INTEGRAL'),
+                                                                                ref('SOLIDARIO_IBC_SENA_ICBF_INTEGRAL'),
+                                                                                ref('SOLIDARIO_SENA_INTEGRAL'),
+                                                                                ref('SOLIDARIO_ICBF_INTEGRAL'),
+                                                                                ref('SOLIDARIO_NETO_PAGAR_INTEGRAL'),
+                                                                                ref('SOLIDARIO_PORCIENTO_DESCUENTOS_INTEGRAL'),
+                                                                                ref('SOLIDARIO_TOT_PAY_INTEGRAL'),
+                                                                                ])]"/>
+        </record>
+
+        <record model='hr.payroll.structure.template' id='SOLIDARIO_NOMINA_SENA_LECTIVA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='code'>NOMINA_SENA_LECTIVA</field>
+            <field name='name'>Aprendiz SENA Etapa Lectiva</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('SOLIDARIO_SMMLV'),ref('SOLIDARIO_SAL_CON_ADMIN'),
+                                                                                ref('SOLIDARIO_BAS_SAL_ADMIN'),
+                                                                                ref('SOLIDARIO_SALUD_EMPLEADOR_ADMIN'),
+                                                                                ref('SOLIDARIO_SUBSIDIO_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('SOLIDARIO_PEMISO_REMUNERADO_ADMIN'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_180_ADMIN'),
+                                                                                ref('SOLIDARIO_LICENCIA_MATERNIDAD_ADMIN'),
+                                                                                ref('SOLIDARIO_NETO_PAGAR_ADMIN'),
+                                                                                ref('SOLIDARIO_TOT_PAY_ADMIN'),
+                                                                                ])]"/>
+        </record>
+
+        <record model='hr.payroll.structure.template' id='SOLIDARIO_NOMINA_SENA_PRODUCTIVA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='code'>NOMINA_SENA_PRODUCTIVA</field>
+            <field name='name'>Aprendiz SENA Etapa Productiva</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('SOLIDARIO_SMMLV'),ref('SOLIDARIO_IBC_ARL_ADMIN'),
+                                                                                ref('SOLIDARIO_SAL_CON_ADMIN'),
+                                                                                ref('SOLIDARIO_BAS_SAL_ADMIN'),
+                                                                                ref('SOLIDARIO_SALUD_EMPLEADOR_ADMIN'),
+                                                                                ref('SOLIDARIO_SUBSIDIO_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('SOLIDARIO_PEMISO_REMUNERADO_ADMIN'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_180_ADMIN'),
+                                                                                ref('SOLIDARIO_LICENCIA_MATERNIDAD_ADMIN'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_ARL_ADMIN'),
+                                                                                ref('SOLIDARIO_ARL_ADMIN'),
+                                                                                ref('SOLIDARIO_NETO_PAGAR_ADMIN'),
+                                                                                ref('SOLIDARIO_TOT_PAY_ADMIN'),
+                                                                                ])]"/>
+        </record>
+
+        <record model='hr.payroll.structure.template' id='SOLIDARIO_NOMINA_LEY_AFPADO'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='code'>NOMINA_LEY_AFPADO</field>
+            <field name='name'>Nomina Pensionados</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('SOLIDARIO_SMMLV'),ref('SOLIDARIO_IBC_EPS_ADMIN'),
+                                                                                ref('SOLIDARIO_IBC_AFP_ADMIN'),
+                                                                                ref('SOLIDARIO_IBC_CCF_ADMIN'),
+                                                                                ref('SOLIDARIO_IBC_ARL_ADMIN'),
+                                                                                ref('SOLIDARIO_SAL_CON_ADMIN'),
+                                                                                ref('SOLIDARIO_BAS_SAL_ADMIN'),
+                                                                                ref('SOLIDARIO_SUBSIDIO_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('SOLIDARIO_PEMISO_REMUNERADO_ADMIN'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_180_ADMIN'),
+                                                                                ref('SOLIDARIO_LICENCIA_MATERNIDAD_ADMIN'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_ARL_ADMIN'),
+                                                                                ref('SOLIDARIO_COMISIONES_ADMIN'),
+                                                                                ref('SOLIDARIO_BONIFICACION_ADMIN'),
+                                                                                ref('SOLIDARIO_HORAS_EXTRA_ADMIN'),
+                                                                                ref('SOLIDARIO_VIATICOS_ADMIN'),
+                                                                                ref('SOLIDARIO_VACACIONES_DEVENGADAS_ADMIN'),
+                                                                                ref('SOLIDARIO_PRIMA_DEVENGADAS_ADMIN'),
+                                                                                ref('SOLIDARIO_AUXILIOS_SALARIO_ADMIN'),
+                                                                                ref('SOLIDARIO_SUBSIDIOS_ADMIN'),
+                                                                                ref('SOLIDARIO_AUXILIO_TRANSPORTE_ADMIN'),
+                                                                                ref('SOLIDARIO_PRESTAMO_ADMIN'),
+                                                                                ref('SOLIDARIO_SALUD_ADMIN'),
+                                                                                ref('SOLIDARIO_RETENCION_FUENTE_ADMIN'),
+                                                                                ref('SOLIDARIO_SALUD_EMPLEADOR_ADMIN'),
+                                                                                ref('SOLIDARIO_CESANTIAS_ADMIN'),
+                                                                                ref('SOLIDARIO_INTERES_CESANTIAS_DEVENGADAS_ADMIN'),
+                                                                                ref('SOLIDARIO_INTERES_CESANTIAS_ADMIN'),
+                                                                                ref('SOLIDARIO_PRIMA_SERVICIO_ADMIN'),
+                                                                                ref('SOLIDARIO_VACACIONES_PESO_ADMIN'),
+                                                                                ref('SOLIDARIO_CCF_ADMIN'),
+                                                                                ref('SOLIDARIO_ARL_ADMIN'),
+                                                                                ref('SOLIDARIO_IBC_SENA_ICBF_ADMIN'),
+                                                                                ref('SOLIDARIO_SENA_ADMIN'),
+                                                                                ref('SOLIDARIO_ICBF_ADMIN'),
+                                                                                ref('SOLIDARIO_NETO_PAGAR_ADMIN'),
+                                                                                ref('SOLIDARIO_PORCIENTO_DESCUENTOS_ADMIN'),
+                                                                                ref('SOLIDARIO_TOT_PAY_ADMIN'),
+                                                                                ])]"/>
+        </record>
+
+        <record model='hr.payroll.structure.template' id='SOLIDARIO_NOMINA_LEY_ADMIN'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='code'>NOMINA_LEY</field>
+            <field name='name'>Nomina Administrativa</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('SOLIDARIO_SMMLV'),ref('SOLIDARIO_IBC_EPS_ADMIN'),
+                                                                                ref('SOLIDARIO_IBC_AFP_ADMIN'),
+                                                                                ref('SOLIDARIO_IBC_CCF_ADMIN'),
+                                                                                ref('SOLIDARIO_IBC_ARL_ADMIN'),
+                                                                                ref('SOLIDARIO_SAL_CON_ADMIN'),
+                                                                                ref('SOLIDARIO_BAS_SAL_ADMIN'),
+                                                                                ref('SOLIDARIO_SUBSIDIO_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('SOLIDARIO_PEMISO_REMUNERADO_ADMIN'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_ADMIN'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_180_ADMIN'),
+                                                                                ref('SOLIDARIO_LICENCIA_MATERNIDAD_ADMIN'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_ARL_ADMIN'),
+                                                                                ref('SOLIDARIO_AJUSTE_SALARIO_ADMIN'),
+                                                                                ref('SOLIDARIO_COMISIONES_ADMIN'),
+                                                                                ref('SOLIDARIO_BONIFICACION_ADMIN'),
+                                                                                ref('SOLIDARIO_HORAS_EXTRA_ADMIN'),
+                                                                                ref('SOLIDARIO_VIATICOS_ADMIN'),
+                                                                                ref('SOLIDARIO_VACACIONES_DEVENGADAS_ADMIN'),
+                                                                                ref('SOLIDARIO_PRIMA_DEVENGADAS_ADMIN'),
+                                                                                ref('SOLIDARIO_AUXILIOS_SALARIO_ADMIN'),
+                                                                                ref('SOLIDARIO_SUBSIDIOS_ADMIN'),
+                                                                                ref('SOLIDARIO_AUXILIO_TRANSPORTE_ADMIN'),
+                                                                                ref('SOLIDARIO_PRESTAMO_ADMIN'),
+                                                                                ref('SOLIDARIO_SALUD_ADMIN'),
+                                                                                ref('SOLIDARIO_AFP_ADMIN'),
+                                                                                ref('SOLIDARIO_AFP_VOLUNTARIA_ADMIN'),
+                                                                                ref('SOLIDARIO_FONDO_SOLIDARIDAD_ADMIN'),
+                                                                                ref('SOLIDARIO_RETENCION_FUENTE_ADMIN'),
+                                                                                ref('SOLIDARIO_SALUD_EMPLEADOR_ADMIN'),
+                                                                                ref('SOLIDARIO_AFP_EMPLEADOR_ADMIN'),
+                                                                                ref('SOLIDARIO_CESANTIAS_ADMIN'),
+                                                                                ref('SOLIDARIO_INTERES_CESANTIAS_DEVENGADAS_ADMIN'),
+                                                                                ref('SOLIDARIO_INTERES_CESANTIAS_ADMIN'),
+                                                                                ref('SOLIDARIO_PRIMA_SERVICIO_ADMIN'),
+                                                                                ref('SOLIDARIO_VACACIONES_PESO_ADMIN'),
+                                                                                ref('SOLIDARIO_CCF_ADMIN'),
+                                                                                ref('SOLIDARIO_ARL_ADMIN'),
+                                                                                ref('SOLIDARIO_IBC_SENA_ICBF_ADMIN'),
+                                                                                ref('SOLIDARIO_SENA_ADMIN'),
+                                                                                ref('SOLIDARIO_ICBF_ADMIN'),
+                                                                                ref('SOLIDARIO_NETO_PAGAR_ADMIN'),
+                                                                                ref('SOLIDARIO_PORCIENTO_DESCUENTOS_ADMIN'),
+                                                                                ref('SOLIDARIO_TOT_PAY_ADMIN'),
+                                                                                ])]"/>
+        </record>
+
+        <record model='hr.payroll.structure.template' id='SOLIDARIO_NOMINA_LEY_VENTAS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='code'>NOMINA_LEY_VENTAS</field>
+            <field name='name'>Nomina Venta</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('SOLIDARIO_SMMLV'),ref('SOLIDARIO_IBC_EPS_VENTAS'),
+                                                                                ref('SOLIDARIO_IBC_AFP_VENTAS'),
+                                                                                ref('SOLIDARIO_IBC_CCF_VENTAS'),
+                                                                                ref('SOLIDARIO_IBC_ARL_VENTAS'),
+                                                                                ref('SOLIDARIO_SAL_CON_VENTAS'),
+                                                                                ref('SOLIDARIO_BAS_SAL_VENTAS'),
+                                                                                ref('SOLIDARIO_SUBSIDIO_INCAPACIDAD_SALUD_VENTAS'),
+                                                                                ref('SOLIDARIO_PEMISO_REMUNERADO_VENTAS'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_VENTAS'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_180_VENTAS'),
+                                                                                ref('SOLIDARIO_LICENCIA_MATERNIDAD_VENTAS'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_ARL_VENTAS'),
+                                                                                ref('SOLIDARIO_AJUSTE_SALARIO_VENTAS'),
+                                                                                ref('SOLIDARIO_COMISIONES_VENTAS'),
+                                                                                ref('SOLIDARIO_BONIFICACION_VENTAS'),
+                                                                                ref('SOLIDARIO_HORAS_EXTRA_VENTAS'),
+                                                                                ref('SOLIDARIO_VIATICOS_VENTAS'),
+                                                                                ref('SOLIDARIO_VACACIONES_DEVENGADAS_VENTAS'),
+                                                                                ref('SOLIDARIO_PRIMA_DEVENGADAS_VENTAS'),
+                                                                                ref('SOLIDARIO_AUXILIOS_SALARIO_VENTAS'),
+                                                                                ref('SOLIDARIO_SUBSIDIOS_VENTAS'),
+                                                                                ref('SOLIDARIO_AUXILIO_TRANSPORTE_VENTAS'),
+                                                                                ref('SOLIDARIO_PRESTAMO_VENTAS'),
+                                                                                ref('SOLIDARIO_SALUD_VENTAS'),
+                                                                                ref('SOLIDARIO_AFP_VENTAS'),
+                                                                                ref('SOLIDARIO_AFP_VOLUNTARIA_VENTAS'),
+                                                                                ref('SOLIDARIO_FONDO_SOLIDARIDAD_VENTAS'),
+                                                                                ref('SOLIDARIO_RETENCION_FUENTE_VENTAS'),
+                                                                                ref('SOLIDARIO_SALUD_EMPLEADOR_VENTAS'),
+                                                                                ref('SOLIDARIO_AFP_EMPLEADOR_VENTAS'),
+                                                                                ref('SOLIDARIO_CESANTIAS_VENTAS'),
+                                                                                ref('SOLIDARIO_INTERES_CESANTIAS_DEVENGADAS_VENTAS'),
+                                                                                ref('SOLIDARIO_INTERES_CESANTIAS_VENTAS'),
+                                                                                ref('SOLIDARIO_PRIMA_SERVICIO_VENTAS'),
+                                                                                ref('SOLIDARIO_VACACIONES_PESO_VENTAS'),
+                                                                                ref('SOLIDARIO_CCF_VENTAS'),
+                                                                                ref('SOLIDARIO_ARL_VENTAS'),
+                                                                                ref('SOLIDARIO_IBC_SENA_ICBF_VENTAS'),
+                                                                                ref('SOLIDARIO_SENA_VENTAS'),
+                                                                                ref('SOLIDARIO_ICBF_VENTAS'),
+                                                                                ref('SOLIDARIO_NETO_PAGAR_VENTAS'),
+                                                                                ref('SOLIDARIO_PORCIENTO_DESCUENTOS_VENTAS'),
+                                                                                ref('SOLIDARIO_TOT_PAY_VENTAS'),
+                                                                                ])]"/>
+        </record>
+
+        <record model='hr.payroll.structure.template' id='SOLIDARIO_NOMINA_LEY_PRODUCCION'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='code'>NOMINA_LEY_PRODUCCION</field>
+            <field name='name'>Nomina Produccion</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('SOLIDARIO_SMMLV'),ref('SOLIDARIO_IBC_EPS_PRODUCCION'),
+                                                                                ref('SOLIDARIO_IBC_AFP_PRODUCCION'),
+                                                                                ref('SOLIDARIO_IBC_CCF_PRODUCCION'),
+                                                                                ref('SOLIDARIO_IBC_ARL_PRODUCCION'),
+                                                                                ref('SOLIDARIO_SAL_CON_PRODUCCION'),
+                                                                                ref('SOLIDARIO_BAS_SAL_PRODUCCION'),
+                                                                                ref('SOLIDARIO_SUBSIDIO_INCAPACIDAD_SALUD_PRODUCCION'),
+                                                                                ref('SOLIDARIO_PEMISO_REMUNERADO_PRODUCCION'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_PRODUCCION'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_SALUD_180_PRODUCCION'),
+                                                                                ref('SOLIDARIO_LICENCIA_MATERNIDAD_PRODUCCION'),
+                                                                                ref('SOLIDARIO_INCAPACIDAD_ARL_PRODUCCION'),
+                                                                                ref('SOLIDARIO_AJUSTE_SALARIO_PRODUCCION'),
+                                                                                ref('SOLIDARIO_COMISIONES_PRODUCCION'),
+                                                                                ref('SOLIDARIO_BONIFICACION_PRODUCCION'),
+                                                                                ref('SOLIDARIO_HORAS_EXTRA_PRODUCCION'),
+                                                                                ref('SOLIDARIO_VIATICOS_PRODUCCION'),
+                                                                                ref('SOLIDARIO_VACACIONES_DEVENGADAS_PRODUCCION'),
+                                                                                ref('SOLIDARIO_PRIMA_DEVENGADAS_PRODUCCION'),
+                                                                                ref('SOLIDARIO_AUXILIOS_SALARIO_PRODUCCION'),
+                                                                                ref('SOLIDARIO_SUBSIDIOS_PRODUCCION'),
+                                                                                ref('SOLIDARIO_AUXILIO_TRANSPORTE_PRODUCCION'),
+                                                                                ref('SOLIDARIO_PRESTAMO_PRODUCCION'),
+                                                                                ref('SOLIDARIO_SALUD_PRODUCCION'),
+                                                                                ref('SOLIDARIO_AFP_PRODUCCION'),
+                                                                                ref('SOLIDARIO_AFP_VOLUNTARIA_PRODUCCION'),
+                                                                                ref('SOLIDARIO_FONDO_SOLIDARIDAD_PRODUCCION'),
+                                                                                ref('SOLIDARIO_RETENCION_FUENTE_PRODUCCION'),
+                                                                                ref('SOLIDARIO_SALUD_EMPLEADOR_PRODUCCION'),
+                                                                                ref('SOLIDARIO_AFP_EMPLEADOR_PRODUCCION'),
+                                                                                ref('SOLIDARIO_CESANTIAS_PRODUCCION'),
+                                                                                ref('SOLIDARIO_INTERES_CESANTIAS_DEVENGADAS_PRODUCCION'),
+                                                                                ref('SOLIDARIO_INTERES_CESANTIAS_PRODUCCION'),
+                                                                                ref('SOLIDARIO_PRIMA_SERVICIO_PRODUCCION'),
+                                                                                ref('SOLIDARIO_VACACIONES_PESO_PRODUCCION'),
+                                                                                ref('SOLIDARIO_CCF_PRODUCCION'),
+                                                                                ref('SOLIDARIO_ARL_PRODUCCION'),
+                                                                                ref('SOLIDARIO_IBC_SENA_ICBF_PRODUCCION'),
+                                                                                ref('SOLIDARIO_SENA_PRODUCCION'),
+                                                                                ref('SOLIDARIO_ICBF_PRODUCCION'),
+                                                                                ref('SOLIDARIO_NETO_PAGAR_PRODUCCION'),
+                                                                                ref('SOLIDARIO_PORCIENTO_DESCUENTOS_PRODUCCION'),
+                                                                                ref('SOLIDARIO_TOT_PAY_PRODUCCION'),
+                                                                                ])]"/>
+        </record>
+
+    </data>
+</odoo>

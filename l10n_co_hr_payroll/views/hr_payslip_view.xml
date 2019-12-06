@@ -1,0 +1,121 @@
+<?xml version='1.0' encoding='utf-8'?>
+<odoo>
+    <data>
+
+        <record id="view_cancel_payslip_form" model="ir.ui.view">
+            <field name="name">view.cancel.payslip.form</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll.view_hr_payslip_form"/>
+            <field name="arch" type="xml">
+                <button name="action_payslip_cancel" position="before">
+                    <button name="action_payslip_advance" type="object" string="Generate advance" class="oe_highlight"/>
+                </button>
+                <button name="action_payslip_cancel" position="attributes">
+                    <attribute name="states">draft,verify,done</attribute>
+                </button>
+                <xpath expr="//form/sheet/group[1]" position="replace">
+                    <group col="4">
+                        <field name="date_range_fy"/>
+                        <field name="date_range"/>
+                        <label for="date_from" string="Period"/>
+                        <div>
+                            <field name="date_from" class="oe_inline"/>
+                            -
+                            <field name="date_to" class="oe_inline"/>
+                        </div>
+                        <field name="contract_id"
+                               domain="[('employee_id','=',employee_id),('date_start','&lt;=',date_to),'|',('date_end','&gt;=',date_from),('date_end','=',False)]"
+                               context="{'default_employee_id': employee_id}"/>
+                        <field name="number"/>
+                        <field name="struct_id" attrs="{'required':[('contract_id','&lt;&gt;',False)]}"/>
+                        <field name="name"/>
+                        <field name="credit_note"/>
+                    </group>
+                </xpath>
+                <xpath expr="//form/sheet/notebook/page[1]/field/tree/field[@name='sequence']" position="after">
+                    <field name="holiday_id" invisible="True"/>
+                </xpath>
+                <field name="line_ids" position="replace">
+                    <field name="line_ids">
+                        <tree string="Salary Structure" editable="bottom" decoration-info="total == 0">
+                            <field name="salary_rule_id"/>
+                            <field name="code"/>
+                            <field name="category_id"/>
+                            <field name="quantity"/>
+                            <field name="rate"/>
+                            <field name="amount"/>
+                            <field name="total"/>
+                        </tree>
+                    </field>
+                </field>
+                <field name="worked_days_line_ids" position="replace">
+                    <field name="worked_days_line_ids">
+                        <tree string="Worked Days">
+                            <field name="name"/>
+                            <field name="code"/>
+                            <field name="number_of_days" sum="Total Working Days"/>
+                            <field name="number_of_hours"/>
+                            <field name="contract_id"/>
+                            <field name="sequence" invisible="True"/>
+                        </tree>
+                        <form>
+                            <page string="Worked Day">
+                                <group col="4">
+                                    <field name="name"/>
+                                    <field name="code"/>
+                                    <field name="sequence"/>
+                                    <field name="number_of_days"/>
+                                    <field name="number_of_hours"/>
+                                    <field name="contract_id"/>
+                                </group>
+                                <separator string="Leaves"/>
+                                <group col="4">
+                                    <field name="leave_ids" nolabel="1" readonly="1">
+                                        <tree string="Leaves">
+                                            <field name="display_name"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                        </form>
+                    </field>
+                </field>
+            </field>
+        </record>
+
+        <record id="payslip_advance_form" model="ir.ui.view">
+            <field name="name">hr.payslip.move.advance.form</field>
+            <field name="model">hr.payslip</field>
+            <field name="inherit_id" ref="hr_payroll_account.hr_payslip_view_form"/>
+            <field name="arch" type="xml">
+                <field name="move_id" position="after">
+                    <field name="move_advance_id"/>
+                </field>
+            </field>
+        </record>
+
+        <record id="view_hr_payslip_line_pivot" model="ir.ui.view">
+            <field name="name">hr.payslip.line.pivot</field>
+            <field name="model">hr.payslip.line</field>
+            <field name="arch" type="xml">
+                <pivot string="Budget Analysis" disable_linking="True">
+                    <field name="employee_id" type="row"/>
+                    <field name="category_id" type="col"/>
+                    <field name="code" type="col"/>
+                    <field name="amount" type="measure"/>
+                </pivot>
+            </field>
+        </record>
+
+
+        <record id="action_payslip_detail" model="ir.actions.act_window">
+            <field name="name">Payslip Detail</field>
+            <field name="res_model">hr.payslip.line</field>
+            <field name="view_mode">pivot</field>
+            <field name="help">Payslip detail.</field>
+        </record>
+
+        <menuitem name="Payslips Detail" action="action_payslip_detail" id="menu_action_payslip_detail"
+                  parent="hr_payroll.menu_hr_payroll_root" sequence="20"/>
+    </data>
+</odoo>

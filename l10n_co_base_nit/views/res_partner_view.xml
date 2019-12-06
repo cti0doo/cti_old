@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_partner_form">
+            <field name="name">res.partner.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="vat" position="replace">
+                </field>
+                <xpath expr="//group" position="before">
+                    <group col="4" colspan="2" string="Datos personales">
+                        <field name="vat_type" required="1"/>
+                        <field name="vat" placeholder="No. ej. 900301230" nolabel="1"
+                               attrs="{'required': [('vat_type','!=','43')]}"/>
+                        <field name="vat_vd" nolabel="1" placeholder="dv" style="width: 15%"
+                               attrs="{'required':[('vat_type','=','31')],'invisible':[('vat_type','!=','31')]}"
+                               help="Dígito de Verificación"/>
+                    </group>
+                </xpath>
+                <xpath expr="//group/group/field[@name='type']" position="after">
+                    <field name="stock_holder"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="res_partner_kanban_view">
+            <field name="name">res.partner.kanban</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.res_partner_kanban_view"/>
+            <field name="arch" type="xml">
+                <!--
+                <xpath expr="//field[@name='display_name']" position="after">
+                    <field name="vat"/>
+                </xpath>
+                -->
+                <xpath expr="//templates//ul//li" position="before">
+                    <li t-if="record.vat.raw_value and !record.function.raw_value">
+                        <field name="vat"/>
+                    </li>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+

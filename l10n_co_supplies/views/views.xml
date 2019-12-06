@@ -1,0 +1,168 @@
+<odoo>
+    <data>
+        <record id="view_supplies_order_tree" model="ir.ui.view">
+            <field name="name">sale.order.tree</field>
+            <field name="model">sale.order</field>
+            <field name="priority">2</field>
+            <field name="arch" type="xml">
+                <tree string="Supplies Orders" decoration-bf="message_needaction==True"
+                      decoration-muted="state=='cancel'">
+                    <field name="message_needaction" invisible="1"/>
+                    <field name="name" string="Order Number"/>
+                    <field name="date_order" string="Date supplies"/>
+                    <field name="partner_id"/>
+                    <field name="user_id" string="Responsible"/>
+                    <field name="invoice_status"/>
+                    <field name="state"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="view_order_supplies_form" model="ir.ui.view">
+            <field name="name">sale.order.supplies.view.form.inherit</field>
+            <field name="model">sale.order</field>
+            <field name="inherit_id" ref="sale.view_order_form"/>
+            <field name="arch" type="xml">
+                <field name="payment_term_id" position="after">
+                    <field name="supplies" invisible="True"/>
+                </field>
+                <field name="payment_term_id" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </field>
+                <xpath expr="//field[@name='order_line']/form//field[@name='qty_invoiced']" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//label[@for='qty_invoiced']" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='invoice_lines']" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree//field[@name='qty_invoiced']" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='price_unit']" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree//field[@name='price_unit']" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='tax_id']" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree//field[@name='tax_id']" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/form//field[@name='price_subtotal']" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </xpath>
+                <xpath expr="//field[@name='order_line']/tree//field[@name='price_subtotal']" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </xpath>
+
+                <field name="tax_id" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </field>
+                <field name="amount_untaxed" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </field>
+                <field name="amount_tax" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </field>
+                <field name="amount_total" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </field>
+                <label for="amount_total" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </label>
+                <xpath expr="//notebook/page[2]" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </xpath>
+                <field name="partner_invoice_id" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </field>
+                <field name="partner_shipping_id" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </field>
+                <field name="partner_shipping_id" position="after">
+                    <field name="warehouse_id"/>
+                </field>
+                <field name="pricelist_id" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </field>
+                <xpath expr="//field[@name='order_line']/tree//field[@name='discount']" position="attributes">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </xpath>
+                <label for="invoice_lines">
+                    <attribute name="invisible">context.get('supplies')</attribute>
+                </label>
+                <field name="note" position="attributes">
+                    <attribute name="placeholder"></attribute>
+                </field>
+                <xpath expr="//header" position="replace">
+                    <header>
+                        <button name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice"
+                                type="action" class="btn-primary"
+                                attrs="{'invisible': ['|',('invoice_status', '!=', 'to invoice'),('supplies','=',True)]}"/>
+                        <button name="%(sale.action_view_sale_advance_payment_inv)d" string="Create Invoice"
+                                type="action" context="{'default_advance_payment_method': 'percentage'}"
+                                attrs="{'invisible': ['|',('invoice_status', '!=', 'no'), '|', ('state', '!=', 'sale'),('supplies','=',True)]}"/>
+                        <button name="action_quotation_send" string="Send by Email" type="object" states="draft"
+                                class="btn-primary"/>
+                        <button name="print_quotation" string="Print" type="object" states="draft" class="btn-primary"/>
+                        <button name="action_confirm" states="sent" string="Confirm" class="btn-primary o_sale_confirm"
+                                type="object"/>
+                        <button name="action_confirm" states="draft" string="Confirm" class="o_sale_confirm"
+                                type="object"/>
+                        <button name="print_quotation" string="Print" type="object" states="sent,sale"/>
+                        <button name="action_quotation_send" string="Send by Email" type="object" states="sent,sale"/>
+                        <button name="action_cancel" states="draft,sent,sale" type="object" string="Cancel"/>
+                        <button name="action_draft" states="cancel" type="object" string="Set to Draft"/>
+                        <button name="action_done" type="object" string="Lock" states="sale"
+                                help="If the sale is locked, you can not modify it anymore. However, you will still be able to invoice or deliver."/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,sent,sale"/>
+                    </header>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="action_suplies_orders" model="ir.actions.act_window">
+            <field name="name">Supplies Orders</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">sale.order</field>
+            <field name="view_mode">tree,kanban,form,calendar,pivot,graph</field>
+            <field name="search_view_id" ref="sale.sale_order_view_search_inherit_sale"/>
+            <field name="view_id" ref="l10n_co_supplies.view_supplies_order_tree"/>
+            <field name="context">{'default_supplies':True,'supplies': True}</field>
+            <field name="domain">[('supplies', '=', True)]</field>
+            <field name="help" type="html">
+                <p class="oe_view_nocontent_create">
+                    Create a Quotation, the first step of a new sale.
+                </p>
+                <p>
+                    Once the quotation is confirmed, it becomes a sales order.
+                    You'll be able to invoice it and collect payments.
+                    From the <i>Sales Orders</i> menu, you can track delivery
+                    orders or services.
+                </p>
+            </field>
+        </record>
+
+        <menuitem id="menu_stock_inventory_supplies" name="Supplies" parent="stock.menu_stock_root" sequence="6"/>
+
+        <menuitem action="action_suplies_orders"
+                  id="menu_supplies_order" parent="menu_stock_inventory_supplies" name="Supplies Order"
+                  sequence="14" groups="sales_team.group_sale_salesman,sales_team.group_sale_manager"/>
+
+        <record id="view_res_partner_supply_form" model="ir.ui.view">
+            <field name="name">res.partner.supply.view.form.inherit</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <field name="ref" position="after">
+                    <field name="supply"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

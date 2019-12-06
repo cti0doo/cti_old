@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Transfer accounts -->
+    <record id="co_puc_com_110599" model="account.account.template">
+        <field name="name">Transferencias Internas</field>
+        <field name="code">110599</field>
+        <field name="user_type_id" ref="account.data_account_type_liquidity"/>
+        <field name="reconcile" eval="True"/>
+    </record>
+    <record id="co_puc_fin_110599" model="account.account.template">
+        <field name="name">REMESAS EN TRÁNSITO</field>
+        <field name="code">110599</field>
+        <field name="user_type_id" ref="account.data_account_type_liquidity"/>
+        <field name="reconcile" eval="True"/>
+    </record>
+    <record id="co_puc_sol_110599" model="account.account.template">
+        <field name="name">REMESAS EN TRÁNSITO</field>
+        <field name="code">110599</field>
+        <field name="user_type_id" ref="account.data_account_type_liquidity"/>
+        <field name="reconcile" eval="True"/>
+    </record>
+    <record id="co_niif_fin_110599" model="account.account.template">
+        <field name="name">REMESAS EN TRÁNSITO</field>
+        <field name="code">110599</field>
+        <field name="user_type_id" ref="account.data_account_type_liquidity"/>
+        <field name="reconcile" eval="True"/>
+    </record>
+    <record id="co_niif_sol_110599" model="account.account.template">
+        <field name="name">REMESAS EN TRÁNSITO</field>
+        <field name="code">110599</field>
+        <field name="user_type_id" ref="account.data_account_type_liquidity"/>
+        <field name="reconcile" eval="True"/>
+    </record>
+
+    <!-- Chart templates -->
+    <record id="l10n_co_chart_template_comercial" model="account.chart.template">
+        <field name="name">COLOMBIA - PUC COMERCIAL</field>
+        <field name="property_account_receivable_id:id">co_puc_com_130505</field>
+        <field name="property_account_payable_id:id">co_puc_com_220505</field>
+        <field name="use_anglo_saxon">True</field>
+   </record>
+    <record id="l10n_co_chart_template_solidario" model="account.chart.template">
+        <field name="name">COLOMBIA - PUC SOLIDARIO</field>
+        <field name="property_account_receivable_id:id">co_puc_sol_140505</field>
+        <field name="property_account_payable_id:id">co_puc_sol_243505</field>
+        <field name="use_anglo_saxon">True</field>
+    </record>
+    <record id="l10n_co_chart_template_financiero" model="account.chart.template">
+        <field name="name">COLOMBIA - PUC FINANCIERO</field>
+        <field name="property_account_receivable_id:id">co_puc_fin_140505</field>
+        <field name="property_account_payable_id:id">co_puc_fin_241005</field>
+        <field name="use_anglo_saxon">True</field>
+   </record>
+    <record id="l10n_co_chart_template_niif_financiero" model="account.chart.template">
+        <field name="name">COLOMBIA - NIIF FINANCIERO</field>
+        <field name="property_account_receivable_id:id">co_niif_fin_140505</field>
+        <field name="property_account_payable_id:id">co_niif_fin_241005</field>
+        <field name="use_anglo_saxon">True</field>
+   </record>
+    <record id="l10n_co_chart_template_niif_solidario" model="account.chart.template">
+        <field name="name">COLOMBIA - NIIF SOLIDARIO</field>
+        <field name="property_account_receivable_id:id">co_niif_sol_140505</field>
+        <field name="property_account_payable_id:id">co_niif_sol_242005</field>
+        <field name="use_anglo_saxon">True</field>
+   </record>
+    <!-- Chart templates -->
+    <record id="l10n_co_chart_template_comercial" model="account.chart.template">
+        <field name="name">COLOMBIA - PUC COMERCIAL</field>
+        <field name="bank_account_code_prefix">1110</field>
+        <field name="cash_account_code_prefix">1105</field>
+        <field name="transfer_account_code_prefix">1105</field>
+        <field name="currency_id" ref="base.COP"/>
+    </record>
+    <record id="l10n_co_chart_template_solidario" model="account.chart.template">
+        <field name="name">COLOMBIA - PUC SOLIDARIO</field>
+        <field name="bank_account_code_prefix">1110</field>
+        <field name="cash_account_code_prefix">1105</field>
+        <field name="transfer_account_code_prefix">1105</field>
+        <field name="currency_id" ref="base.COP"/>
+    </record>
+    <record id="l10n_co_chart_template_financiero" model="account.chart.template">
+        <field name="name">COLOMBIA - PUC FINANCIERO</field>
+        <field name="bank_account_code_prefix">1110</field>
+        <field name="cash_account_code_prefix">1105</field>
+        <field name="transfer_account_code_prefix">1105</field>
+        <field name="currency_id" ref="base.COP"/>
+    </record>
+    <record id="l10n_co_chart_template_niif_financiero" model="account.chart.template">
+        <field name="name">COLOMBIA - NIIF FINANCIERO</field>
+        <field name="bank_account_code_prefix">1110</field>
+        <field name="cash_account_code_prefix">1105</field>
+        <field name="transfer_account_code_prefix">1105</field>
+        <field name="currency_id" ref="base.COP"/>
+    </record>
+    <record id="l10n_co_chart_template_niif_solidario" model="account.chart.template">
+        <field name="name">COLOMBIA - NIIF SOLIDARIO</field>
+        <field name="bank_account_code_prefix">1110</field>
+        <field name="cash_account_code_prefix">1105</field>
+        <field name="transfer_account_code_prefix">1105</field>
+        <field name="currency_id" ref="base.COP"/>
+    </record>
+
+    <!-- Chart account assign -->
+    <record id="co_puc_com_110599" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_comercial"/>
+    </record>
+    <!-- Solidario -->
+    <record id="co_puc_sol_110599" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_solidario"/>
+    </record>
+    <!-- Financiero -->
+    <record id="co_puc_fin_110599" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_financiero"/>
+    </record>
+    <!-- NIIF Financiero -->
+    <record id="co_niif_fin_110599" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_niif_financiero"/>
+    </record>
+    <!-- NIIF Solidario -->
+    <record id="co_niif_sol_110599" model="account.account.template">
+        <field name="chart_template_id" ref="l10n_co_chart_template_niif_solidario"/>
+    </record>
+
+</odoo>

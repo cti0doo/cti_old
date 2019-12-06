@@ -1,0 +1,4 @@
+suds-jurko
+pandas
+firebase-admin
+phonenumbers

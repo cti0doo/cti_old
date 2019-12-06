@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="account_tax_ciiu_form_view">
+            <field name="name">account.ciiu.form</field>
+            <field name="model">account.ciiu</field>
+            <field name="arch" type="xml">
+                <form string="CIIU">
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="description"/>
+                        </group>
+                        <notebook>
+                            <page string="Lines">
+                                <group>
+                                    <field name="line_ids">
+                                        <tree string="Lines" editable="buttom">
+                                            <field name="tax_id"/>
+                                            <field name="city_id"/>
+                                        </tree>
+                                    </field>
+                                </group>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="account_tax_ciiu_tree_view">
+            <field name="name">account.ciiu.tree</field>
+            <field name="model">account.ciiu</field>
+            <field name="arch" type="xml">
+                <tree string="Configuracion para informes de impuestos">
+                    <field name="name"/>
+                    <field name="description"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="account_tax_ciiu_action">
+            <field name="name">CIIU</field>
+            <field name="res_model">account.ciiu</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="account_tax_ciiu_menu" name="CIIU" parent="account.account_account_menu"
+                  action="account_tax_ciiu_action"/>
+
+        <record model="ir.ui.view" id="res_partner_ciiu_form">
+            <field name="name">res.partner.ciiu.form</field>
+            <field name="inherit_id" ref="account.view_partner_property_form"/>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <field name="property_account_position_id" position="after">
+                    <field name="ciiu_id"
+                           attrs="{'required': [('parent_id','=',False),'|',('customer', '=' , True),('supplier','=',True)]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

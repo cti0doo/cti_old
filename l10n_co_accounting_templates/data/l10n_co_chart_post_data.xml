@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="l10n_co_chart_template_comercial" model="account.chart.template">
+         <field name="default_pos_receivable_account_id" ref="co_puc_com_220505" />
+     </record>
+    <record id="l10n_co_chart_template_solidario" model="account.chart.template">
+         <field name="default_pos_receivable_account_id" ref="co_puc_sol_140505" />
+     </record>
+    <record id="l10n_co_chart_template_financiero" model="account.chart.template">
+         <field name="default_pos_receivable_account_id" ref="co_puc_fin_140505" />
+     </record>
+    <record id="l10n_co_chart_template_niif_solidario" model="account.chart.template">
+         <field name="default_pos_receivable_account_id" ref="co_niif_sol_140505" />
+     </record>
+    <record id="l10n_co_chart_template_niif_financiero" model="account.chart.template">
+         <field name="default_pos_receivable_account_id" ref="co_niif_fin_140505" />
+     </record>
+</odoo>
+

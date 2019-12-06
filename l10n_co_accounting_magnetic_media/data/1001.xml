@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- 1001 -->
+        <record id="l10n_co_accounting_media_magnetic_1001" model="magnetic.media">
+            <field name="code">1001</field>
+            <field name="name">1001 - Pagos o abonos en cuenta y retenciones practicadas</field>
+            <field name="smaller_amount">100000</field>
+            <field name="query">SELECT
+                A as "Concepto",
+                B as "Tipo documento",
+                C as "Número de identificación de informado",
+                D as "Primer apellido del informado",
+                E as "Segundo apellido del informado",
+                F as "Primer nombre del informado",
+                G as "Segundo nombre del informado",
+                H as "Nombre informado",
+                I as "Dirección",
+                J as "Código departamento",
+                K as "Código municipio",
+                L as "Código país",
+                SUM(M) as "Pago o abono en cuenta deducible",
+                SUM(N) as "Pago o abono en cuenta no deducible",
+                SUM(O) as "Iva mayor valor del costo o gasto deducible",
+                SUM(P) as "Iva mayor valor del costo o gasto no deducible",
+                SUM(Q) as "Retención en la fuente practicada en renta",
+                SUM(R) as "Retención en la fuente asumida en renta",
+                SUM(S) as "Retención en la fuente practicada IVA régimen común",
+                SUM(T) as "Retención en la fuente practicada IVA no domiciliados"
+                FROM
+                (
+                SELECT
+                mml.code as A,
+                rp.vat_type as B,
+                rp.vat as C,
+                rp.firstname as D,
+                rp.other_name as E,
+                rp.lastname as F,
+                rp.other_lastname as G,
+                rp.name as H,
+                rp.street as I,
+                rcs.code as J,
+                rcsc.code as K,
+                rc.code as L,
+                (
+                CASE WHEN mmlc.sequence = 'M' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'M' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'M' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as M,
+                (
+                CASE WHEN mmlc.sequence = 'N' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'N' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'N' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as N,
+                (
+                CASE WHEN mmlc.sequence = 'O' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'O' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'O' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit)END
+                ) as O,
+                (
+                CASE WHEN mmlc.sequence = 'P' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'P' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'P' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit)END
+                ) as P,
+                (
+                CASE WHEN mmlc.sequence = 'Q' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'Q' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'Q' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit)END
+                ) as Q,
+                (
+                CASE WHEN mmlc.sequence = 'R' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'R' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'R' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as R,
+                (
+                CASE WHEN mmlc.sequence = 'S' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'S' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'S' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as S,
+                (
+                CASE WHEN mmlc.sequence = 'T' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'T' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'T' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as T
+                FROM
+                magnetic_media mm
+                INNER JOIN magnetic_media_lines mml ON mml.magnetic_id = mm.id
+                INNER JOIN magnetic_media_lines_concepts mmlc ON mmlc.line_id = mml.id
+                inner join (
+                select aammlcr.account_account_id as account_id, aammlcr.magnetic_media_lines_concepts_id as concept_id
+                from account_account_magnetic_media_lines_concepts_rel aammlcr
+                union all
+                select aaat.account_account_id as account_id, mmlcaat.concept_ids as concept_id
+                from magnetic_media_lines_concepts_account_account_tag mmlcaat
+                inner join account_account_tag aat on aat.id = mmlcaat.tag_ids
+                inner join account_account_account_tag aaat on aaat.account_account_tag_id = aat.id
+                ) as aa on aa.concept_id = mmlc.id
+                INNER JOIN account_move_line aml ON aml.account_id = aa.account_id
+                LEFT JOIN res_partner rp ON rp.id = aml.partner_id
+                LEFT JOIN res_country_state rcs ON rcs.id = rp.state_id
+                LEFT JOIN res_country_state_city rcsc ON rcsc.id = rp.city_id
+                LEFT JOIN res_country rc ON rc.id = rp.country_id
+                WHERE
+                mm.id = {id}
+                AND aml.date BETWEEN '{date_from}'
+                AND '{date_to}'
+                GROUP BY
+                mml.code,
+                rp.vat_type,
+                rp.vat,
+                rp.firstname,
+                rp.other_name,
+                rp.lastname,
+                rp.other_lastname,
+                rp.name,
+                rp.street,
+                rcs.code,
+                rcsc.code,
+                rc.code,
+                mmlc.sequence,
+                mmlc.type,
+                mm.smaller_amount
+                HAVING
+                abs(SUM(aml.debit - aml.credit))::float > mm.smaller_amount::float
+                UNION
+                SELECT
+                mml.code as A,
+                '43' as B,
+                '222222222' as C,
+                '7' as D,
+                'CUANTIAS MENORES' as E,
+                'CUANTIAS MENORES' as F,
+                'CUANTIAS MENORES' as G,
+                'CUANTIAS MENORES' as H,
+                NULL as I,
+                NULL as J,
+                NULL as K,
+                NULL as L,
+                (
+                CASE WHEN mmlc.sequence = 'M' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'M' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'M' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as M,
+                (
+                CASE WHEN mmlc.sequence = 'N' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'N' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'N' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as N,
+                (
+                CASE WHEN mmlc.sequence = 'O' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'O' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'O' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as O,
+                (
+                CASE WHEN mmlc.sequence = 'P' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'P' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'P' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as P,
+                (
+                CASE WHEN mmlc.sequence = 'Q' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'Q' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'Q' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as Q,
+                (
+                CASE WHEN mmlc.sequence = 'R' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'R' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'R' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as R,
+                (
+                CASE WHEN mmlc.sequence = 'S' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'S' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'S' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as S,
+                (
+                CASE WHEN mmlc.sequence = 'T' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'T' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'T' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as T
+                FROM
+                magnetic_media mm
+                INNER JOIN magnetic_media_lines mml ON mml.magnetic_id = mm.id
+                INNER JOIN magnetic_media_lines_concepts mmlc ON mmlc.line_id = mml.id
+                inner join (
+                select aammlcr.account_account_id as account_id, aammlcr.magnetic_media_lines_concepts_id as concept_id
+                from account_account_magnetic_media_lines_concepts_rel aammlcr
+                union all
+                select aaat.account_account_id as account_id, mmlcaat.concept_ids as concept_id
+                from magnetic_media_lines_concepts_account_account_tag mmlcaat
+                inner join account_account_tag aat on aat.id = mmlcaat.tag_ids
+                inner join account_account_account_tag aaat on aaat.account_account_tag_id = aat.id
+                ) as aa on aa.concept_id = mmlc.id
+                LEFT JOIN account_move_line aml ON aml.account_id = aa.account_id
+                LEFT JOIN res_partner rp ON rp.id = aml.partner_id
+                LEFT JOIN res_country_state rcs ON rcs.id = rp.state_id
+                LEFT JOIN res_country_state_city rcsc ON rcsc.id = rp.city_id
+                LEFT JOIN res_country rc ON rc.id = rp.country_id
+                WHERE
+                mm.id = {id}
+                AND aml.date BETWEEN '{date_from}'
+                AND '{date_to}'
+                GROUP BY
+                mml.code,
+                rp.vat_type,
+                rp.vat,
+                rp.vat_vd,
+                rp.name,
+                rp.street,
+                rcs.code,
+                rcsc.code,
+                rc.code,
+                mmlc.sequence,
+                mmlc.type,
+                mm.smaller_amount
+                HAVING
+                abs(SUM(aml.debit - aml.credit))::float &lt; mm.smaller_amount::float
+                ) as datos
+                GROUP BY
+                A,
+                B,
+                C,
+                D,
+                E,
+                F,
+                G,
+                H,
+                I,
+                J,
+                K,
+                L
+                ORDER BY C</field>
+        </record>
+    </data>
+</odoo>

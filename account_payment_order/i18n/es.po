@@ -1,0 +1,595 @@
+# Translation of Odoo Server.
+# This file contains the translation of the following modules:
+# 	* account_payment_order
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Odoo Server 12.0+e\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2019-06-20 14:26+0000\n"
+"PO-Revision-Date: 2019-06-20 09:28-0500\n"
+"Last-Translator: <>\n"
+"Language-Team: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: \n"
+"Language: es\n"
+"X-Generator: Poedit 2.2.3\n"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_bank_statement_import_txt
+msgid "<i class=\"fa fa-download mr4\"/>Import Sample Template"
+msgstr "<i class=\"fa fa-download mr4\"/>Importar Plantilla de Muestra"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_type__account_ids
+msgid "Account"
+msgstr "Cuenta"
+
+#. module: account_payment_order
+#: model:ir.model,name:account_payment_order.model_account_payment_order
+msgid "Account Payment Order"
+msgstr "Orden de pago"
+
+#. module: account_payment_order
+#: model:ir.model,name:account_payment_order.model_account_payment_order_type
+msgid "Account Payment Order Type"
+msgstr "Tipo de orden de pago"
+
+#. module: account_payment_order
+#: model:ir.model,name:account_payment_order.model_account_payment_order_wizard
+msgid "Account Payment Order Wizard"
+msgstr "Asistente de orden de pago"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_wizard__journal_id
+msgid "Account journal"
+msgstr "Diario"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__move_id
+msgid "Account move"
+msgstr "Asiento contable"
+
+#. module: account_payment_order
+#: model:ir.actions.act_window,name:account_payment_order.action_payment_order
+msgid "Account payment order"
+msgstr "Orden de pago"
+
+#. module: account_payment_order
+#: model:ir.actions.act_window,name:account_payment_order.action_payment_order_type
+msgid "Account payment order type"
+msgstr "Tipo de orden de pago"
+
+#. module: account_payment_order
+#: model:ir.actions.act_window,name:account_payment_order.action_account_payment_order_wizard
+msgid "Account payment order wizard"
+msgstr "Asistente de orden de pago"
+
+#. module: account_payment_order
+#: selection:res.partner.bank,type:0
+msgid "Accountant"
+msgstr "Contador"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_wizard_form_view
+msgid "Add move"
+msgstr "Añadir movimiento"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__adjust
+msgid "Adjust"
+msgstr "Ajustar"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Adjust: Left"
+msgstr "Ajustar: Izquierda"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__amount
+msgid "Amount"
+msgstr "Importe"
+
+#. module: account_payment_order
+#: model:ir.model,name:account_payment_order.model_res_bank
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__bank_id
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__bank_h_id
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__bank_id
+msgid "Bank"
+msgstr "Banco"
+
+#. module: account_payment_order
+#: model:ir.model,name:account_payment_order.model_res_partner_bank
+msgid "Bank Accounts"
+msgstr "Cuentas bancarias"
+
+#. module: account_payment_order
+#: model:ir.model,name:account_payment_order.model_res_bank_conf
+msgid "Bank Configuration Lines"
+msgstr "Líneas de configuración"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__bank_f_id
+msgid "Bank Footer"
+msgstr "Pie de página"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__bank_h_id
+msgid "Bank Header"
+msgstr "Encabezado"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment__res_bank_id
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__res_bank_id
+msgid "Bank account"
+msgstr "Cuenta bancaria"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__file
+msgid "Bank file"
+msgstr "Archivo"
+
+#. module: account_payment_order
+#: model:ir.model,name:account_payment_order.model_res_bank_statement_conf_lines
+msgid "Banks Statements Configuration"
+msgstr "Configuración de extractos"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Body"
+msgstr "Contenido"
+
+#. module: account_payment_order
+#: selection:account.payment.order,state:0
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_form_view
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_wizard_form_view
+msgid "Cancel"
+msgstr "Cancelar"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__character
+msgid "Character fill"
+msgstr "Carácter de relleno"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Character fill: 0"
+msgstr "Carácter de relleno"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank__conf_ids
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Configuration"
+msgstr "Configuración"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_form_view
+msgid "Create file"
+msgstr "Generar archivo de dispersión"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__create_uid
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_type__create_uid
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_wizard__create_uid
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__create_uid
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__create_uid
+msgid "Created by"
+msgstr "Creado por"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__create_date
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_type__create_date
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_wizard__create_date
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__create_date
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__create_date
+msgid "Created on"
+msgstr "Creado el"
+
+#. module: account_payment_order
+#: selection:res.partner.bank,type:0
+msgid "Current"
+msgstr "Actual"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__date
+#: selection:res.bank.conf,type_format:0
+msgid "Date"
+msgstr "Fecha"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_wizard__date_maturity
+msgid "Date maturity"
+msgstr "Fecha de vencimiento"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__description
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_form_view
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Description"
+msgstr "Descripción"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__display_name
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_type__display_name
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_wizard__display_name
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__display_name
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__display_name
+msgid "Display Name"
+msgstr "Nombre mostrado"
+
+#. module: account_payment_order
+#: selection:account.payment.order,state:0
+msgid "Draft"
+msgstr "Borrador"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "En format: %Y%m%d"
+msgstr "En formato %Y%m%d"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "En function: get_sequence"
+msgstr "En método: get_sequence"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "En function: payment"
+msgstr "En método payment"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "En function: payment_line"
+msgstr "En método: payment_line"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank__statement_ids
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Extract statement"
+msgstr "Extractos bancarios"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Extracts file"
+msgstr "Archivo de extractos"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__field
+msgid "Field"
+msgstr "Campo"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__date_file
+msgid "Fields date"
+msgstr "Fecha"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__filename
+msgid "Filename"
+msgstr "Nombre de archivo"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Footer"
+msgstr "Pie de página"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank__footer_ids
+msgid "Footer Configuration"
+msgstr "Pie de página"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__format
+msgid "Format"
+msgstr "Formato"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__function
+msgid "Function"
+msgstr "Función"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_form_view
+msgid "Get payment"
+msgstr "Obtener cuentas por pagar"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Header"
+msgstr "Encabezado"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank__header_ids
+msgid "Header Configuration"
+msgstr "Encabezado"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__id
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_type__id
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_wizard__id
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__id
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__id
+msgid "ID"
+msgstr "Identificación"
+
+#. module: account_payment_order
+#: model:ir.model,name:account_payment_order.model_account_bank_statement_import
+msgid "Import Bank Statement"
+msgstr "Importar extracto bancario"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__journal_id
+msgid "Journal"
+msgstr "Diario"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order____last_update
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_type____last_update
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_wizard____last_update
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf____last_update
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines____last_update
+msgid "Last Modified on"
+msgstr "Última modificación en"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__write_uid
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_type__write_uid
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_wizard__write_uid
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__write_uid
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__write_uid
+msgid "Last Updated by"
+msgstr "Última actualización por"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__write_date
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_type__write_date
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_wizard__write_date
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__write_date
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__write_date
+msgid "Last Updated on"
+msgstr "Última actualización el"
+
+#. module: account_payment_order
+#: selection:res.bank.conf,adjust:0
+msgid "Left"
+msgstr "Izquierda"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Legend"
+msgstr "Leyenda"
+
+#. module: account_payment_order
+#: selection:res.bank.conf,type_format:0
+msgid "Money"
+msgstr "Moneda"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_wizard__move_ids
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_form_view
+msgid "Moves"
+msgstr "Movimientos"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__name
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_type__name
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__name
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__name
+msgid "Name"
+msgstr "Nombre"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment__order_id
+msgid "Order payment"
+msgstr "Orden de pago"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__parse
+msgid "Parse"
+msgstr "Analizar"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order_wizard__partner_id
+msgid "Partner"
+msgstr "Empresa"
+
+#. module: account_payment_order
+#: model_terms:ir.actions.act_window,help:account_payment_order.action_payment_order
+#: model:ir.ui.menu,name:account_payment_order.menu_action_account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_form_view
+msgid "Payment order"
+msgstr "Orden de pago"
+
+#. module: account_payment_order
+#: model_terms:ir.actions.act_window,help:account_payment_order.action_payment_order_type
+#: model:ir.ui.menu,name:account_payment_order.menu_action_account_payment_order_type
+msgid "Payment order type"
+msgstr "Tipo de orden de pago"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_wizard_form_view
+msgid "Payment order wizard"
+msgstr "Asistente de orden de pago"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_form_view
+msgid "Payment's description"
+msgstr "Descripción de pagos"
+
+#. module: account_payment_order
+#: model:ir.model,name:account_payment_order.model_account_payment
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__payment_ids
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_form_view
+msgid "Payments"
+msgstr "Pagos"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Payments file"
+msgstr "Archivo de pagos"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid ""
+"Permite acceder a los campos de cada pago (línea de orden de\n"
+"                                                        pago)"
+msgstr ""
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Permite acceder a los campos de cada pago (línea de orden de pago)"
+msgstr ""
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Permite acceder a los campos de la orden de pago"
+msgstr ""
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Permite alinear el texto a la izquierda."
+msgstr ""
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid ""
+"Permite establecer el formato AAAAMMYY al campo fecha, indicando\n"
+"                                                        el tipo de formato Date."
+msgstr ""
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Permite establecer el formato AAAAMMYY al campo fecha, indicando el tipo de formato Date."
+msgstr ""
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Permite limitar el texto a 15 caracteres."
+msgstr ""
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Permite obtener la secuencia del pago realizado ese dia."
+msgstr ""
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Permite rellenar el texto con ceros hasta el size indicado."
+msgstr ""
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__position
+msgid "Position"
+msgstr "Posición"
+
+#. module: account_payment_order
+#: selection:account.payment.order,state:0
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_form_view
+msgid "Posted"
+msgstr "Publicado"
+
+#. module: account_payment_order
+#: selection:res.bank.conf,type:0
+msgid "Python"
+msgstr ""
+
+#. module: account_payment_order
+#: selection:res.bank.conf,adjust:0
+msgid "Right"
+msgstr ""
+
+#. module: account_payment_order
+#: selection:res.partner.bank,type:0
+msgid "Saving"
+msgstr "Ahorro"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank__separator_columns
+msgid "Separator columns"
+msgstr "Separador de columnas"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__sequence
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_statement_conf_lines__sequence
+msgid "Sequence"
+msgstr "Secuencia"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__size
+msgid "Size"
+msgstr "Tamaño"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Size: 15"
+msgstr "Tamaño: 15"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__state
+msgid "State"
+msgstr "Estado"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__bank_ids
+msgid "Suggested banks"
+msgstr "Bancos sugeridos"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_bank_statement_import_txt
+msgid "TEXT FILE (.TXT)"
+msgstr "Archivo de texto (.txt)"
+
+#. module: account_payment_order
+#: selection:res.bank.conf,type:0
+msgid "Text"
+msgstr "Texto"
+
+#. module: account_payment_order
+#: sql_constraint:res.partner.bank:0
+msgid "The account number must be unique, this one is already assigned to another partner."
+msgstr "El número de cuenta debe ser único, este se encuentra asignado a otro tercero."
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.res_bank_configuration
+msgid "Tips"
+msgstr "Sugerencias"
+
+#. module: account_payment_order
+#: model_terms:ir.ui.view,arch_db:account_payment_order.account_payment_order_form_view
+msgid "To draft"
+msgstr "Pasar a borrador"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_payment_order__type
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__type
+msgid "Type"
+msgstr "Tipo"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_account_setup_bank_manual_config__type
+#: model:ir.model.fields,field_description:account_payment_order.field_res_partner_bank__type
+msgid "Type Extended"
+msgstr "Tipo extendido"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank_conf__type_format
+msgid "Type format"
+msgstr "Tipo de formato"
+
+#. module: account_payment_order
+#: model:ir.model.fields,help:account_payment_order.field_res_bank_conf__sequence
+msgid "Use to arrange calculation sequence"
+msgstr "Use la secuencia para ordenar"
+
+#. module: account_payment_order
+#: model:ir.model.fields,field_description:account_payment_order.field_res_bank__valid_line
+msgid "Valid line?"
+msgstr "Validar lineas?"
+
+#. module: account_payment_order
+#: code:addons/account_payment_order/models/models.py:118
+#, python-format
+msgid "the bank of the account {} has no configuration for bank file"
+msgstr "La cuenta bancaria {} no tiene configuración para generar el archivo de dispersión."

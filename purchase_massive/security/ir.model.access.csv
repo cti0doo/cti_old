@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_massive_purchase,purchase.massive,model_massive_purchase,purchase_massive.user_purchase_massive,1,1,1,1

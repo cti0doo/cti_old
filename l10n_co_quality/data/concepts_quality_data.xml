@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="concepts_quality000" model="concepts.quality">
+            <field name="code">000</field>
+            <field name="name">PAGO POR CALIDAD COMPOSICIONAL</field>
+            <field name="amount">0</field>
+            <field name="code_python">protein, fat, st = 0, 0, 0
+protein_total, fat_total = 0, 0
+protein_gr_total, fat_gr_total, st_total = 0, 0, 0
+if invoice.partner_id.state_id.code in ('15', '17', '19', '25', '52', '66', '76'):  # region 1
+    protein = 22.48
+    fat = 7.49
+    st = 7.95
+else:  # if invoice.partner_id.state_id.code in ('20'): #region 2:
+    protein = 20.28
+    fat = 6.75
+    st = 7.54
+
+for ci in invoice.ci_id:
+    if invoice.type_test == '1':
+        if ci.point_id.fat:
+            fat_total = ci.qna3
+        if ci.point_id.protein:
+            protein_total = ci.qna3
+    elif invoice.type_test == '2':
+        if ci.point_id.st:
+            st_total = ci.qna3
+if fat_total > 0:
+    fat_gr_total = (fat_total * 10.32) + fat
+if protein_total > 0:
+    protein_gr_total = (protein_total * 10.32) + protein
+
+if invoice.type_test == '1':
+    total = fat_gr_total + protein_gr_total + st_total
+else:
+    total = st * 10.32 * st_total
+
+result = total</field>
+        </record>
+
+        <record id="concepts_quality001" model="concepts.quality">
+            <field name="code">001</field>
+            <field name="name">CALIDAD HIGIENICA</field>
+            <field name="amount">0</field>
+            <field name="code_python">total,transport = 0,0
+if invoice.quality_ids:
+  for line in invoice.quality_ids:
+    if line.point_id.hygienic_quality:
+      if line.measure in range(0,25000):
+        total += 96
+      elif line.measure in range(25001,50000):
+        total += 83
+      elif line.measure in range(50001,75000):
+        total += 68
+      elif line.measure in range(75001,100000):
+        total += 48
+    if line.point_id.transport:
+      total += line.measure
+result = total</field>
+        </record>
+
+        <record id="concepts_quality002" model="concepts.quality">
+            <field name="code">002</field>
+            <field name="name">CALIDAD SANITARIA</field>
+            <field name="amount">0</field>
+            <field name="code_python">total=0
+if invoice.quality_ids:
+  for line in invoice.quality_ids:
+    if line.point_id.sanitary_quality:
+      if line.measure == 1:
+        total += 20
+      elif line.measure == 2:
+        total += 10
+    if line.point_id.certificate:
+        total += line.measure
+result = total</field>
+        </record>
+        <record id="concepts_quality003" model="concepts.quality">
+            <field name="code">003</field>
+            <field name="name">TRANSPORTE</field>
+            <field name="amount">0</field>
+            <field name="code_python">total = 0
+if invoice.quality_ids:
+    for line in invoice.quality_ids:
+        if line.point_id.transport:
+            if line.measure == 1:
+                if invoice.partner_id.distance in (1, 2):
+                    total = -10
+                elif invoice.partner_id.distance == 3:
+                    total = -11
+                elif invoice.partner_id.distance in (4, 5):
+                    total = -13
+                elif invoice.partner_id.distance == 6:
+                    total = -16
+                elif invoice.partner_id.distance == 7:
+                    total = -17
+                elif invoice.partner_id.distance == 8:
+                    total = -18
+                elif invoice.partner_id.distance == 9:
+                    total = -20
+                elif invoice.partner_id.distance in (10, 11):
+                    total = -23
+            elif line.measure == 2:
+                if invoice.partner_id.distance == 1:
+                    total = -17
+                elif invoice.partner_id.distance == 2:
+                    total = -23
+                elif invoice.partner_id.distance == 3:
+                    total = -27
+                elif invoice.partner_id.distance == 4:
+                    total = -31
+                elif invoice.partner_id.distance == 5:
+                    total = -33
+                elif invoice.partner_id.distance == 6:
+                    total = -36
+                elif invoice.partner_id.distance == 7:
+                    total = -41
+                elif invoice.partner_id.distance == 8:
+                    total = -45
+                elif invoice.partner_id.distance == 9:
+                    total = -47
+                elif invoice.partner_id.distance == 10:
+                    total = -51
+                elif invoice.partner_id.distance == 11:
+                    total = -54
+                elif invoice.partner_id.distance == 12:
+                    total = -57
+                elif invoice.partner_id.distance == 13:
+                    total = -62
+                elif invoice.partner_id.distance == 14:
+                    total = -65
+                elif invoice.partner_id.distance == 15:
+                    total = -67
+                elif invoice.partner_id.distance == 16:
+                    total = -71
+            elif line.measure == 3:
+                if invoice.partner_id.distance == 1:
+                    total = -27
+                elif invoice.partner_id.distance == 2:
+                    total = -32
+                elif invoice.partner_id.distance == 3:
+                    total = -36
+                elif invoice.partner_id.distance == 4:
+                    total = -42
+                elif invoice.partner_id.distance == 5:
+                    total = -47
+                elif invoice.partner_id.distance == 6:
+                    total = -53
+                elif invoice.partner_id.distance == 7:
+                    total = -56
+                elif invoice.partner_id.distance == 8:
+                    total = -62
+                elif invoice.partner_id.distance == 9:
+                    total = -66
+                elif invoice.partner_id.distance == 10:
+                    total = -71
+                elif invoice.partner_id.distance == 11:
+                    total = -78
+                elif invoice.partner_id.distance == 12:
+                    total = -82
+                elif invoice.partner_id.distance == 13:
+                    total = -89
+                elif invoice.partner_id.distance == 14:
+                    total = -92
+                elif invoice.partner_id.distance == 15:
+                    total = -97
+                elif invoice.partner_id.distance == 16:
+                    total = -103
+            elif line.measure == 4:
+                if invoice.partner_id.distance == 1:
+                    total = -35
+                elif invoice.partner_id.distance == 2:
+                    total = -42
+                elif invoice.partner_id.distance == 3:
+                    total = -49
+                elif invoice.partner_id.distance == 4:
+                    total = -56
+                elif invoice.partner_id.distance == 5:
+                    total = -65
+                elif invoice.partner_id.distance == 6:
+                    total = -71
+                elif invoice.partner_id.distance == 7:
+                    total = -80
+                elif invoice.partner_id.distance == 8:
+                    total = -86
+                elif invoice.partner_id.distance == 9:
+                    total = -92
+                elif invoice.partner_id.distance == 10:
+                    total = -99
+                elif invoice.partner_id.distance == 11:
+                    total = -110
+                elif invoice.partner_id.distance == 12:
+                    total = -114
+                elif invoice.partner_id.distance == 13:
+                    total = -122
+                elif invoice.partner_id.distance == 14:
+                    total = -132
+                elif invoice.partner_id.distance == 15:
+                    total = -138
+                elif invoice.partner_id.distance == 16:
+                    total = -145
+            elif line.measure == 5:
+                if invoice.partner_id.distance == 1:
+                    total = -58
+                elif invoice.partner_id.distance == 2:
+                    total = -75
+                elif invoice.partner_id.distance == 3:
+                    total = -86
+                elif invoice.partner_id.distance == 4:
+                    total = -98
+                elif invoice.partner_id.distance == 5:
+                    total = -112
+                elif invoice.partner_id.distance == 6:
+                    total = -123
+                elif invoice.partner_id.distance == 7:
+                    total = -138
+                elif invoice.partner_id.distance == 8:
+                    total = -149
+                elif invoice.partner_id.distance == 9:
+                    total = -164
+                elif invoice.partner_id.distance == 10:
+                    total = -176
+                elif invoice.partner_id.distance == 11:
+                    total = -188
+                elif invoice.partner_id.distance == 12:
+                    total = -203
+                elif invoice.partner_id.distance == 13:
+                    total = -215
+                elif invoice.partner_id.distance == 14:
+                    total = -227
+                elif invoice.partner_id.distance == 15:
+                    total = -242
+                elif invoice.partner_id.distance == 16:
+                    total = -255
+result = total</field>
+        </record>
+        <record id="concepts_quality999" model="concepts.quality">
+            <field name="code">999</field>
+            <field name="name">AJUSTE</field>
+            <field name="amount">0</field>
+            <field name="code_python">result=0</field>
+        </record>
+    </data>
+</odoo>
+

@@ -1,0 +1,90 @@
+id,name,type,full_name
+rpi_mrp_s01,"Agricultura, ganadería, caza y actividades de servicios conexas ",mrp,"Agricultura, ganadería, caza y actividades de servicios conexas "
+rpi_mrp_s02,Silvicultura y extracción de madera,mrp,Silvicultura y extracción de madera
+rpi_mrp_s03,Pesca y acuicultura,mrp,Pesca y acuicultura
+rpi_mrp_s05,Extracción de carbón de piedra y lignito,mrp,Extracción de carbón de piedra y lignito
+rpi_mrp_s06,Extracción de petróleo crudo y gas natural,mrp,Extracción de petróleo crudo y gas natural
+rpi_mrp_s07,Extracción de minerales metalíferos,mrp,Extracción de minerales metalíferos
+rpi_mrp_s08,Extracción de otras minas y canteras,mrp,Extracción de otras minas y canteras
+rpi_mrp_s09,Actividades de servicios de apoyo para la explotación de minas y canteras,mrp,Actividades de servicios de apoyo para la explotación de minas y canteras
+rpi_mrp_s10,Elaboración de productos alimenticios,mrp,Elaboración de productos alimenticios
+rpi_mrp_s11,Elaboración de bebidas,mrp,Elaboración de bebidas
+rpi_mrp_s12,Elaboración de productos de tabaco,mrp,Elaboración de productos de tabaco
+rpi_mrp_s13,Fabricación de productos textiles,mrp,Fabricación de productos textiles
+rpi_mrp_s14,Confección de prendas de vestir,mrp,Confección de prendas de vestir
+rpi_mrp_s15,"Curtido y recurtido de cueros; fabricación de calzado; fabricación de artículos de viaje, maletas, bolsos de mano y artículos similares, y fabricación de artículos de talabartería y guarnicionería; adobo y teñido de pieles",mrp,"Curtido y recurtido de cueros; fabricación de calzado; fabricación de artículos de viaje, maletas, bolsos de mano y artículos similares, y fabricación de artículos de talabartería y guarnicionería; adobo y teñido de pieles"
+rpi_mrp_s16,"Transformación de la madera y fabricación de productos de madera y de corcho, excepto muebles; fabricación de artículos de cestería y espartería",mrp,"Transformación de la madera y fabricación de productos de madera y de corcho, excepto muebles; fabricación de artículos de cestería y espartería"
+rpi_mrp_s17,"Fabricación de papel, cartón y productos de papel y cartón",mrp,"Fabricación de papel, cartón y productos de papel y cartón"
+rpi_mrp_s18,Actividades de impresión y de producción de copias a partir de grabaciones originales,mrp,Actividades de impresión y de producción de copias a partir de grabaciones originales
+rpi_mrp_s19,"Coquización, fabricación de productos de la refinación del petróleo y actividad de mezcla de combustibles",mrp,"Coquización, fabricación de productos de la refinación del petróleo y actividad de mezcla de combustibles"
+rpi_mrp_s20,Fabricación de sustancias y productos químicos,mrp,Fabricación de sustancias y productos químicos
+rpi_mrp_s21,"Fabricación de productos farmacéuticos, sustancias químicas medicinales y productos botánicos de uso farmacéutico",mrp,"Fabricación de productos farmacéuticos, sustancias químicas medicinales y productos botánicos de uso farmacéutico"
+rpi_mrp_s22,Fabricación de productos de caucho y de plástico,mrp,Fabricación de productos de caucho y de plástico
+rpi_mrp_s23,Fabricación de otros productos minerales no metálicos,mrp,Fabricación de otros productos minerales no metálicos
+rpi_mrp_s24,Fabricación de productos metalúrgicos básicos,mrp,Fabricación de productos metalúrgicos básicos
+rpi_mrp_s25,"Fabricación de productos elaborados de metal, excepto maquinaria y equipo",mrp,"Fabricación de productos elaborados de metal, excepto maquinaria y equipo"
+rpi_mrp_s26,"Fabricación de productos informáticos, electrónicos y ópticos",mrp,"Fabricación de productos informáticos, electrónicos y ópticos"
+rpi_mrp_s27,Fabricación de aparatos y equipo eléctrico,mrp,Fabricación de aparatos y equipo eléctrico
+rpi_mrp_s28,Fabricación de maquinaria y equipo n.c.p.,mrp,Fabricación de maquinaria y equipo n.c.p.
+rpi_mrp_s29,"Fabricación de vehículos automotores, remolques y semirremolques",mrp,"Fabricación de vehículos automotores, remolques y semirremolques"
+rpi_mrp_s30,Fabricación de otros tipos de equipo de transporte,mrp,Fabricación de otros tipos de equipo de transporte
+rpi_mrp_s31,"Fabricación de muebles, colchones y somieres",mrp,"Fabricación de muebles, colchones y somieres"
+rpi_mrp_s32,Otras industrias manufactureras,mrp,Otras industrias manufactureras
+rpi_mrp_s33,"Instalación, mantenimiento y reparación especializado de maquinaria y equipo",mrp,"Instalación, mantenimiento y reparación especializado de maquinaria y equipo"
+rpi_srv_s35,"Suministro de electricidad, gas, vapor y aire acondicionado",srv,"Suministro de electricidad, gas, vapor y aire acondicionado"
+rpi_srv_s36,"Captación, tratamiento y distribución de agua",srv,"Captación, tratamiento y distribución de agua"
+rpi_srv_s37,Evacuación y tratamiento de aguas residuales,srv,Evacuación y tratamiento de aguas residuales
+rpi_srv_s38,"Recolección, tratamiento y disposición de desechos, recuperación de materiales",srv,"Recolección, tratamiento y disposición de desechos, recuperación de materiales"
+rpi_srv_s39,Actividades de saneamiento ambiental y otros servicios de gestión de desechos,srv,Actividades de saneamiento ambiental y otros servicios de gestión de desechos
+rpi_srv_s41,Construcción de edificios,srv,Construcción de edificios
+rpi_srv_s42,Obras de ingeniería civil,srv,Obras de ingeniería civil
+rpi_srv_s43,Actividades especializadas para la construcción de edificios y obras de ingeniería civil,srv,Actividades especializadas para la construcción de edificios y obras de ingeniería civil
+rpi_mrk_s45,"Comercio, mantenimiento y reparación de vehículos automotores y motocicletas, sus partes, piezas y accesorios",mrk,"Comercio, mantenimiento y reparación de vehículos automotores y motocicletas, sus partes, piezas y accesorios"
+rpi_mrk_s46,"Comercio al por mayor y en comisión o por contrata, excepto el comercio de vehículos automotores y motocicletas",mrk,"Comercio al por mayor y en comisión o por contrata, excepto el comercio de vehículos automotores y motocicletas"
+rpi_mrk_s47,"Comercio al por menor (incluso el comercio al por menor de combustibles), excepto el de vehículos automotores y motocicletas",mrk,"Comercio al por menor (incluso el comercio al por menor de combustibles), excepto el de vehículos automotores y motocicletas"
+rpi_srv_s49,Transporte terrestre; transporte por tuberías,srv,Transporte terrestre; transporte por tuberías
+rpi_srv_s50,Transporte acuático,srv,Transporte acuático
+rpi_srv_s51,Transporte aéreo,srv,Transporte aéreo
+rpi_srv_s52,Almacenamiento y actividades complementarias al transporte,srv,Almacenamiento y actividades complementarias al transporte
+rpi_srv_s53,Correo y servicios de mensajería,srv,Correo y servicios de mensajería
+rpi_srv_s55,Alojamiento,srv,Alojamiento
+rpi_srv_s56,Actividades de servicios de comidas y bebidas,srv,Actividades de servicios de comidas y bebidas
+rpi_srv_s58,Actividades de edición,srv,Actividades de edición
+rpi_srv_s59,"Actividades cinematográficas, de video y producción de programas de televisión, grabación de sonido y edición de música",srv,"Actividades cinematográficas, de video y producción de programas de televisión, grabación de sonido y edición de música"
+rpi_srv_s60,"Actividades de programación, transmisión y/o difusión",srv,"Actividades de programación, transmisión y/o difusión"
+rpi_srv_s61,Telecomunicaciones,srv,Telecomunicaciones
+rpi_srv_s62,"Desarrollo de sistemas informáticos (planificación, análisis, diseño, programación, pruebas), consultoría informática y actividades relacionadas",srv,"Desarrollo de sistemas informáticos (planificación, análisis, diseño, programación, pruebas), consultoría informática y actividades relacionadas"
+rpi_srv_s63,Actividades de servicios de información,srv,Actividades de servicios de información
+rpi_srv_s64,"Actividades de servicios financieros, excepto las de seguros y de pensiones",srv,"Actividades de servicios financieros, excepto las de seguros y de pensiones"
+rpi_srv_s65,"Actividades de servicios financieros, excepto las de seguros y de pensiones",srv,"Actividades de servicios financieros, excepto las de seguros y de pensiones"
+rpi_srv_s66,"Seguros (incluso el reaseguro), seguros sociales y fondos de pensiones, excepto la seguridad social",srv,"Seguros (incluso el reaseguro), seguros sociales y fondos de pensiones, excepto la seguridad social"
+rpi_srv_s67,Actividades auxiliares de las actividades de servicios financieros,srv,Actividades auxiliares de las actividades de servicios financieros
+rpi_srv_s68,Actividades inmobiliarias,srv,Actividades inmobiliarias
+rpi_srv_s69,Actividades jurídicas y de contabilidad,srv,Actividades jurídicas y de contabilidad
+rpi_srv_s70,Actividades de administración empresarial; actividades de consultoría de gestión,srv,Actividades de administración empresarial; actividades de consultoría de gestión
+rpi_srv_s71,Actividades de arquitectura e ingeniería; ensayos y análisis técnicos,srv,Actividades de arquitectura e ingeniería; ensayos y análisis técnicos
+rpi_srv_s72,Investigación científica y desarrollo,srv,Investigación científica y desarrollo
+rpi_srv_s73,Publicidad y estudios de mercado,srv,Publicidad y estudios de mercado
+rpi_srv_s74,"Otras actividades profesionales, científicas y técnicas",srv,"Otras actividades profesionales, científicas y técnicas"
+rpi_srv_s75,Actividades veterinarias,srv,Actividades veterinarias
+rpi_srv_s77,Actividades de alquiler y arrendamiento,srv,Actividades de alquiler y arrendamiento
+rpi_srv_s78,Actividades de empleo,srv,Actividades de empleo
+rpi_srv_s79,"Actividades de las agencias de viajes, operadores turísticos, servicios de reserva y actividades relacionadas",srv,"Actividades de las agencias de viajes, operadores turísticos, servicios de reserva y actividades relacionadas"
+rpi_srv_s80,Actividades de seguridad e investigación privada,srv,Actividades de seguridad e investigación privada
+rpi_srv_s81,"Actividades de servicios a edificios y paisajismo (jardines, zonas verdes)",srv,"Actividades de servicios a edificios y paisajismo (jardines, zonas verdes)"
+rpi_srv_s82,Actividades administrativas y de apoyo de oficina y otras actividades de apoyo a las empresas,srv,Actividades administrativas y de apoyo de oficina y otras actividades de apoyo a las empresas
+rpi_srv_s84,Administración pública y defensa; planes de seguridad social de afiliación obligatoria,srv,Administración pública y defensa; planes de seguridad social de afiliación obligatoria
+rpi_srv_s85,Educación,srv,Educación
+rpi_srv_s86,Actividades de atención de la salud humana,srv,Actividades de atención de la salud humana
+rpi_srv_s87,Actividades de atención residencial medicalizada,srv,Actividades de atención residencial medicalizada
+rpi_srv_s88,Actividades de asistencia social sin alojamiento,srv,Actividades de asistencia social sin alojamiento
+rpi_srv_s90,"Actividades creativas, artísticas y de entretenimiento",srv,"Actividades creativas, artísticas y de entretenimiento"
+rpi_srv_s91,"Actividades de bibliotecas, archivos, museos y otras actividades culturales",srv,"Actividades de bibliotecas, archivos, museos y otras actividades culturales"
+rpi_srv_s92,Actividades de juegos de azar y apuestas,srv,Actividades de juegos de azar y apuestas
+rpi_srv_s93,Actividades deportivas y actividades recreativas y de esparcimiento,srv,Actividades deportivas y actividades recreativas y de esparcimiento
+rpi_srv_s94,Actividades de asociaciones,srv,Actividades de asociaciones
+rpi_srv_s95,"Mantenimiento y reparación de computadores, efectos personales y enseres domésticos",srv,"Mantenimiento y reparación de computadores, efectos personales y enseres domésticos"
+rpi_srv_s96,Otras actividades de servicios personales,srv,Otras actividades de servicios personales
+rpi_srv_s97,Actividades de los hogares individuales como empleadores de personal doméstico,srv,Actividades de los hogares individuales como empleadores de personal doméstico
+rpi_srv_s98,Actividades no diferenciadas de los hogares individuales como productores de bienes y servicios para uso propio,srv,Actividades no diferenciadas de los hogares individuales como productores de bienes y servicios para uso propio
+rpi_srv_s99,Actividades de organizaciones y entidades extraterritoriales,srv,Actividades de organizaciones y entidades extraterritoriales

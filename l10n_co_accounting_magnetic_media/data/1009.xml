@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- 1001 -->
+        <record id="l10n_co_accounting_media_magnetic_1009" model="magnetic.media">
+            <field name="code">1009</field>
+            <field name="name">1009 - Saldos de cuentas por pagar</field>
+            <field name="smaller_amount">100000</field>
+            <field name="query">SELECT
+                A as "Concepto",
+                B as "Tipo documento",
+                C as "Número identificación del acreedor",
+                D as "DV",
+                E as "Primer apellido del acreedor",
+                F as "Segundo apellido del acreedor",
+                G as "Primer nombre del acreedor",
+                H as "Segundo nombre del acreedor",
+                I as "Razón social del acreedor",
+                J as "Direccion del acreedor",
+                K as "Código departamento",
+                L as "Código municipio",
+                M as "País de residencia o domicilio",
+                SUM(N) as "Saldo cuentas por pagar al 31-12"
+                FROM
+                (
+                SELECT
+                mml.code as A,
+                rp.vat_type as B,
+                rp.vat as C,
+                rp.vat_vd as D,
+                rp.firstname as E,
+                rp.other_name as F,
+                rp.lastname as G,
+                rp.other_lastname as H,
+                rp.name as I,
+                rp.street as J,
+                rcs.code as K,
+                rcsc.code as L,
+                rc.name as M,
+                (
+                CASE WHEN mmlc.sequence = 'N' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'N' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'N' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as N
+                FROM
+                 magnetic_media mm
+                INNER JOIN magnetic_media_lines mml ON mml.magnetic_id = mm.id
+                INNER JOIN magnetic_media_lines_concepts mmlc ON mmlc.line_id = mml.id
+                inner join (
+                select aammlcr.account_account_id as account_id, aammlcr.magnetic_media_lines_concepts_id as concept_id
+                from account_account_magnetic_media_lines_concepts_rel aammlcr
+                union all
+                select aaat.account_account_id as account_id, mmlcaat.concept_ids as concept_id
+                from magnetic_media_lines_concepts_account_account_tag mmlcaat
+                inner join account_account_tag aat on aat.id = mmlcaat.tag_ids
+                inner join account_account_account_tag aaat on aaat.account_account_tag_id = aat.id
+                ) as aa on aa.concept_id = mmlc.id
+                INNER JOIN account_move_line aml ON aml.account_id = aa.account_id
+                LEFT JOIN res_partner rp ON rp.id = aml.partner_id
+                LEFT JOIN res_country_state rcs ON rcs.id = rp.state_id
+                LEFT JOIN res_country_state_city rcsc ON rcsc.id = rp.city_id
+                LEFT JOIN res_country rc ON rc.id = rp.country_id
+                WHERE
+                mm.id = {id}
+                AND aml.date BETWEEN '{date_from}'
+                AND '{date_to}'
+                GROUP BY
+                mml.code,
+                rp.vat_type,
+                rp.vat,
+                rp.vat_vd,
+                rp.firstname,
+                rp.other_name,
+                rp.lastname,
+                rp.other_lastname,
+                rp.name,
+                rp.street,
+                rcs.code,
+                rcsc.code,
+                rc.name,
+				mmlc.sequence,
+                mmlc.type,
+                mm.smaller_amount
+                HAVING
+                abs(SUM(aml.debit-aml.credit))::float > mm.smaller_amount::float
+                UNION
+                SELECT
+                mml.code as A,
+                '43' as B,
+                '222222222' as C,
+                '7' as D,
+                'CUANTIAS MENORES' as E,
+				'' as F,
+				'' as G,
+				'' as H,
+				'' as I,
+                NULL as J,
+                NULL as K,
+                NULL as L,
+                NULL as M,
+                (
+                CASE WHEN mmlc.sequence = 'N' AND mmlc.type = 'd' THEN SUM(aml.debit)
+                WHEN mmlc.sequence = 'N' AND mmlc.type = 'c' THEN SUM(aml.credit)
+                WHEN mmlc.sequence = 'N' AND mmlc.type = 'sf' THEN SUM(aml.debit-aml.credit) END
+                ) as N
+                FROM
+                 magnetic_media mm
+                INNER JOIN magnetic_media_lines mml ON mml.magnetic_id = mm.id
+                INNER JOIN magnetic_media_lines_concepts mmlc ON mmlc.line_id = mml.id
+                inner join (
+                select aammlcr.account_account_id as account_id, aammlcr.magnetic_media_lines_concepts_id as concept_id
+                from account_account_magnetic_media_lines_concepts_rel aammlcr
+                union all
+                select aaat.account_account_id as account_id, mmlcaat.concept_ids as concept_id
+                from magnetic_media_lines_concepts_account_account_tag mmlcaat
+                inner join account_account_tag aat on aat.id = mmlcaat.tag_ids
+                inner join account_account_account_tag aaat on aaat.account_account_tag_id = aat.id
+                ) as aa on aa.concept_id = mmlc.id
+                INNER JOIN account_move_line aml ON aml.account_id = aa.account_id
+                WHERE
+                mm.id = {id}
+                AND aml.date BETWEEN '{date_from}'
+                AND '{date_to}'
+                GROUP BY
+                mml.code,
+                mmlc.sequence,
+                mmlc.type,
+                mm.smaller_amount
+                HAVING
+                abs(SUM(aml.debit-aml.credit))::float &lt; mm.smaller_amount::float
+                ) as datos
+                GROUP BY
+                A,
+                B,
+                C,
+                D,
+                E,
+                F,
+                G,
+                H,
+                I,
+                J,
+                K,
+                L,
+                M</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record id="magnetic_media_view_form_view" model="ir.ui.view">
+            <field name="name">magnetic.media.form</field>
+            <field name="model">magnetic.media</field>
+            <field name="arch" type="xml">
+                <form string="Magnetic media">
+                    <header>
+                        <button name="confirm" type="object" string="Confirm" states="draft"/>
+                        <button name="cancel" type="object" string="Cancel" states="confirm"/>
+                        <button name="to_draft" type="object" string="To draft" states="cancel"/>
+                        <button name="export" type="object" string="Export" states="confirm"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,confirm,cancel"/>
+                    </header>
+                    <sheet>
+                        <group>
+                            <field name="code"/>
+                            <field name="name"/>
+                            <field name="smaller_amount"/>
+                        </group>
+                        <notebook>
+                            <page string="Lines">
+                                <field name="line_ids">
+                                    <tree string="Lines">
+                                        <field name="code"/>
+                                        <field name="name"/>
+                                        <field name="concept_ids"/>
+                                    </tree>
+                                    <form>
+                                        <group>
+                                            <field name="code"/>
+                                            <field name="name"/>
+                                        </group>
+                                        <notebook>
+                                            <page string="Concepts">
+                                                <group>
+                                                    <field name="concept_ids">
+                                                        <tree string="Concepts">
+                                                            <field name="sequence"/>
+                                                            <field name="name"/>
+                                                            <field name="type"/>
+                                                        </tree>
+                                                        <form>
+                                                            <group string="Concepts">
+                                                                <field name="sequence"/>
+                                                                <field name="name"/>
+                                                                <field name="type"/>
+                                                                <field name="account_ids"/>
+                                                                <field name="tag_ids" widget="many2many_tags"/>
+                                                            </group>
+                                                        </form>
+                                                    </field>
+                                                </group>
+                                            </page>
+                                        </notebook>
+                                    </form>
+                                </field>
+                            </page>
+                            <page string="Query">
+                                <field name="query" required="True" widget="ace" options="{'mode': 'python'}"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="magnetic_media_view_tree_view">
+            <field name="name">magnetic.media.tree</field>
+            <field name="model">magnetic.media</field>
+            <field name="arch" type="xml">
+                <tree string="Magnetic media">
+                    <field name="name"/>
+                    <field name="line_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="magnetic_media_view_action">
+            <field name="name">Magnetic media</field>
+            <field name="res_model">magnetic.media</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem id="magnetic_media_view_menu_conf" sequence="6" name="Magnetic media"
+                  parent="account.menu_finance_reports"
+                  action="magnetic_media_view_action"/>
+
+
+        <!-- WIZARD -->
+        <record id="magnetic_media_wizard_view" model="ir.ui.view">
+            <field name="name">Magnetic media</field>
+            <field name="model">magnetic.media.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Magnetic media">
+                    <group>
+                        <field name="date_from"/>
+                        <field name="date_to"/>
+                    </group>
+                    <footer>
+                        <button name="export" string="Export" type="object" class="oe_highlight"/>
+                        <button string="Cancelar" class="oe_link" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+    </data>
+</odoo>

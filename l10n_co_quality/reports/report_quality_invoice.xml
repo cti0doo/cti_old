@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <report id="act_mrp_invoice_report_pdf" model="account.invoice" string="Invoice Detail" report_type="qweb-pdf"
+                name="l10n_co_quality.report_mrp_invoice"
+                file="l10n_co_quality.report_mrp_invoice"/>
+        <template id="report_mrp_invoice">
+            <t t-name="l10n_co_quality.report_mrp_invoice">
+                <!--<t t-call="report.external_layout">-->
+                <div class="page">
+                    <t t-foreach="docs" t-as="o">
+                        <div align="center" style="font-size:10px;">
+                            <table class="table">
+                                <tr>
+                                    <td>Proveedor:
+                                        <span t-field="o.partner_id.parent_id"/>
+                                    </td>
+                                    <td>Hato:
+                                        <span t-field="o.partner_id"/>
+                                    </td>
+                                    <td>NIT :
+                                        <span t-field="o.partner_id.parent_id.vat"/>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Direccion:
+                                        <span t-field="o.partner_id.street"/>
+                                    </td>
+                                    <td>Ciudad:
+                                        <span t-field="o.partner_id.state_id"/>
+                                        -
+                                        <span t-field="o.partner_id.country_id"/>
+                                    </td>
+                                    <td><span t-field="o.partner_id.distance"/></td>
+ <!--                                   <td>
+                                        <t t-foreach="o.ci_id" t-as="ci">
+                                            <t t-if="ci.qc_question_id.distance">
+                                                Distancia:
+                                                <span t-field="ci.avg"/>
+                                            </t>
+                                        </t>
+                                    </td> -->
+                                </tr>
+                            </table>
+                            <center>
+                                <strong>Promedios de Litros Mensuales - Año (2016)</strong>
+                            </center>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Enero</th>
+                                        <th>Febrero</th>
+                                        <th>Marzo</th>
+                                        <th>Abril</th>
+                                        <th>Mayo</th>
+                                        <th>Junio</th>
+                                        <th>Julio</th>
+                                        <th>Agosto</th>
+                                        <th>Septiembre</th>
+                                        <th>Octubre</th>
+                                        <th>Noviembre</th>
+                                        <th>Diciembre</th>
+                                        <th>Acumulado</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <t t-set="t_acum" t-value="0"/>
+                                        <t t-foreach="o.mim_id" t-as="mim">
+                                            <t t-set="t_acum"
+                                               t-value="mim.m1+mim.m2+mim.m3+mim.m4+mim.m5+mim.m6+mim.m7+mim.m8+mim.m9+mim.m10+mim.m11+mim.m12"/>
+                                            <td>
+                                                <span t-field="mim.m1"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="mim.m2"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="mim.m3"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="mim.m4"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="mim.m5"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="mim.m6"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="mim.m7"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="mim.m8"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="mim.m9"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="mim.m10"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="mim.m11"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="mim.m12"/>
+                                            </td>
+                                            <td>
+                                                <span t-esc="t_acum"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div align="center" style="font-size:10px;">
+                            <center>
+                                <strong>Información composicional (RESOLUCIÓN 017 DE 2012 del Ministerio de
+                                    Agricultura)(Ultimas 3 Quincenas)
+                                </strong>
+                            </center>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Product</th>
+                                        <th>QC Test Question</th>
+                                        <th>Fortnight 1</th>
+                                        <th>Fortnight 2</th>
+                                        <th>Fortnight 3</th>
+                                        <th>Average</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.ci_id" t-as="ci">
+                                        <t t-if="ci.avg != 0">
+                                            <tr>
+                                                <td>
+                                                    <span t-field="ci.product_id"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="ci.qc_question_id"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="ci.qna1"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="ci.qna2"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="ci.qna3"/>
+                                                </td>
+                                                <td>
+                                                    <span t-field="ci.avg"/>
+                                                </td>
+                                            </tr>
+                                        </t>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div align="center" style="font-size:10px;">
+                            <center>
+                                <strong>Detalle de Recepción Diaria de Leche</strong>
+                            </center>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>VlrLitro</th>
+                                        <th>01</th>
+                                        <th>02</th>
+                                        <th>03</th>
+                                        <th>04</th>
+                                        <th>05</th>
+                                        <th>06</th>
+                                        <th>07</th>
+                                        <th>08</th>
+                                        <th>09</th>
+                                        <th>10</th>
+                                        <th>11</th>
+                                        <th>12</th>
+                                        <th>13</th>
+                                        <th>14</th>
+                                        <th>15</th>
+                                        <th>AverageLts</th>
+                                        <th>TLts</th>
+                                        <th>Total</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <t t-set="t_value" t-value="0"/>
+                                        <t t-set="t_total_value" t-value="0"/>
+                                        <t t-set="t_total" t-value="0"/>
+                                        <t t-foreach="o.dr_id" t-as="dr">
+                                            <t t-set="t_value" t-value="dr.value"/>
+                                            <td>
+                                                <span t-field="dr.value"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d1"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d2"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d3"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d4"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d5"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d6"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d7"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d8"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d9"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d10"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d11"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d12"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d13"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d14"/>
+                                            </td>
+                                            <td>
+                                                <span t-field="dr.d15"/>
+                                            </td>
+                                            <td>
+                                                <!--aqui va el promedio-->
+                                            </td>
+                                            <t t-set="t_total_value" t-value="t_total_value+dr.total_value"/>
+                                            <td>
+                                                <span t-field="dr.total_value"/>
+                                            </td>
+                                            <t t-set="t_total" t-value="t_total+dr.total"/>
+                                            <td>
+                                                <span t-field="dr.total"/>
+                                            </td>
+                                        </t>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div align="center" style="font-size:10px;">
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Calidad de la leche</th>
+                                        <th>Leche</th>
+                                        <th>
+                                            <span t-esc="t_value"/>
+                                        </th>
+                                        <th>Total Litros</th>
+                                        <th>
+                                            <span t-esc="t_total_value"/>
+                                        </th>
+                                        <th>Total $$$</th>
+                                        <th>
+                                            <span t-esc="t_total"/>
+                                        </th>
+                                    </tr>
+                                </thead>
+                                <thead>
+                                    <tr>
+                                        <th>Cpto</th>
+                                        <th>Descripción del Concepto</th>
+                                        <th colspan="6"/>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr t-foreach="o.cq_id" t-as="concepts">
+                                        <td>
+                                            <span t-field="concepts.code"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="concepts.name"/>
+                                        </td>
+                                        <td colspan="6">
+                                            <span t-field="concepts.amount"/>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <t t-set="net_amount" t-value="t_total"/>
+                        <div align="center" style="font-size:10px;">
+                            <center>
+                                <strong>Detalle de liquidación</strong>
+                            </center>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Cpto</th>
+                                        <th>Descripción del Concepto</th>
+                                        <th>Fecha Liq</th>
+                                        <th>#Lts</th>
+                                        <th>Precio</th>
+                                        <th>Cuota</th>
+                                        <th>Devengados</th>
+                                        <th>Deducciones</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-set="net_amount" t-value="t_total"/>
+                                    <t t-foreach="o.invoice_line_ids" t-as="lines">
+                                        <t t-set="product" t-value="lines.product_id"/>
+                                    </t>
+                                    <tr>
+                                        <td>
+                                            <span t-field="docs.invoice_line_ids[0].product_id.code"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="docs.invoice_line_ids[0].product_id.name"/>
+                                        </td>
+                                        <td>
+                                            <span t-field="docs[0].date_invoice"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="t_total_value"/>
+                                        </td>
+                                        <td>
+                                            <span t-esc="t_value"/>
+                                        </td>
+                                        <td>0</td>
+                                        <td>
+                                            <span t-esc="t_total"/>
+                                        </td>
+                                        <td>0</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div align="center" style="font-size:10px;">
+                            <center>
+                                <strong>Detalle de Impuestos</strong>
+                            </center>
+                            <table class="table table-condensed">
+                                <thead>
+                                    <tr>
+                                        <th>Cpto</th>
+                                        <th>Importe</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <t t-foreach="o.tax_line_ids" t-as="tax_lines">
+                                        <tr>
+                                            <td>
+                                                <span t-field="tax_lines.name"/>
+                                            </td>
+                                            <t t-set="net_amount" t-value="net_amount+tax_lines.amount"/>
+                                            <td>
+                                                <span t-field="tax_lines.amount"/>
+                                            </td>
+                                        </tr>
+                                    </t>
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="row" align="right">
+                            <h2>Neto a pagar:
+
+                                <t t-esc="net_amount"/>
+                            </h2>
+                        </div>
+                    </t>
+                </div>
+                <!--</t>-->
+            </t>
+        </template>
+    </data>
+</odoo>

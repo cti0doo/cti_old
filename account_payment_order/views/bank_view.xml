@@ -1,0 +1,179 @@
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="res_bank_configuration">
+            <field name="name">res.bank.form</field>
+            <field name="model">res.bank</field>
+            <field name="inherit_id" ref="base.view_res_bank_form"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//form//group[2]" position="after">
+                    <notebook>
+                        <page string="Payments file">
+                            <notebook>
+                                <page string="Header">
+                                    <field name="header_ids">
+                                        <tree string="Configuration" editable="bottom">
+                                            <field name="sequence"/>
+                                            <field name="name"/>
+                                            <field name="type"/>
+                                            <field name="size"/>
+                                            <field name="adjust"/>
+                                            <field name="character"/>
+                                            <field name="function"/>
+                                            <field name="format"/>
+                                            <field name="type_format"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                                <page string="Body">
+                                    <field name="conf_ids">
+                                        <tree string="Configuration" editable="bottom">
+                                            <field name="sequence"/>
+                                            <field name="name"/>
+                                            <field name="type"/>
+                                            <field name="size"/>
+                                            <field name="adjust"/>
+                                            <field name="character"/>
+                                            <field name="function"/>
+                                            <field name="format"/>
+                                            <field name="type_format"/>
+                                        </tree>
+                                    </field>
+                                </page>
+                                <page string="Legend">
+                                    <group>
+                                        <table class="table">
+                                            <thead>
+                                                <tr>
+                                                    <th>Tips</th>
+                                                    <th>Description</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td>En function: payment</td>
+                                                    <td>Permite acceder a los campos de la orden de pago</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>En function: payment_line</td>
+                                                    <td>Permite acceder a los campos de cada pago (línea de orden de
+                                                        pago)
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>En format: %Y%%m%d</td>
+                                                    <td>Permite establecer el formato AAAAMMYY al campo fecha, indicando
+                                                        el tipo de formato Date.
+                                                    </td>
+                                                </tr>
+                                                <tr>
+                                                    <td>En function: get_sequence</td>
+                                                    <td>Permite obtener la secuencia del pago realizado ese dia.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Size: 15</td>
+                                                    <td>Permite limitar el texto a 15 caracteres.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Adjust: Left</td>
+                                                    <td>Permite alinear el texto a la izquierda.</td>
+                                                </tr>
+                                                <tr>
+                                                    <td>Character fill: 0</td>
+                                                    <td>Permite rellenar el texto con ceros hasta el size indicado.</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </group>
+                                </page>
+                            </notebook>
+                        </page>
+                        <page string="Extracts file">
+                            <group>
+                                <field name="valid_line"/>
+                                <field name="separator_columns"/>
+                            </group>
+                            <field name="statement_ids">
+                                <tree string="Extract statement" editable="bottom">
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="field"/>
+                                    <field name="position"/>
+                                    <field name="parse"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Footer">
+                            <field name="footer_ids">
+                                <tree string="Footer" editable="bottom">
+                                    <field name="sequence"/>
+                                    <field name="name"/>
+                                    <field name="type"/>
+                                    <field name="size"/>
+                                    <field name="adjust"/>
+                                    <field name="character"/>
+                                    <field name="function"/>
+                                    <field name="format"/>
+                                    <field name="type_format"/>
+                                </tree>
+                            </field>
+                        </page>
+                        <page string="Legend">
+                            <group>
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th>Tips</th>
+                                            <th>Description</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>En function: payment</td>
+                                            <td>Permite acceder a los campos de la orden de pago</td>
+                                        </tr>
+                                        <tr>
+                                            <td>En function: payment_line</td>
+                                            <td>Permite acceder a los campos de cada pago (línea de orden de pago)</td>
+                                        </tr>
+                                        <tr>
+                                            <td>En format: %Y%%m%d</td>
+                                            <td>Permite establecer el formato AAAAMMYY al campo fecha, indicando el tipo de formato Date.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>En function: get_sequence</td>
+                                            <td>Permite obtener la secuencia del pago realizado ese dia.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Size: 15</td>
+                                            <td>Permite limitar el texto a 15 caracteres.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Adjust: Left</td>
+                                            <td>Permite alinear el texto a la izquierda.</td>
+                                        </tr>
+                                        <tr>
+                                            <td>Character fill: 0</td>
+                                            <td>Permite rellenar el texto con ceros hasta el size indicado.</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </group>
+                        </page>
+                    </notebook>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="res_partner_bank_configuration">
+            <field name="name">res.partner.bank.form</field>
+            <field name="model">res.partner.bank</field>
+            <field name="inherit_id" ref="base.view_partner_bank_form"></field>
+            <field name="arch" type="xml">
+                <field name="bank_id" position="before">
+                    <field name="partner_id"/>
+                    <field name="type"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

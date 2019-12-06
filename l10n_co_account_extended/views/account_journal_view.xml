@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="account_journal_resolution">
+            <field name="name">account.journal.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"></field>
+            <field name="arch" type="xml">
+                <field name="account_control_ids" position="after">
+                    <field name="resolution"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
+

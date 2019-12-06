@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="view_employee_form" model="ir.ui.view">
+            <field name="name">hr.employee.form</field>
+            <field name="model">hr.employee</field>
+            <field name="inherit_id" ref="hr.view_employee_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='address_home_id']" position="attributes">
+                    <attribute name="required">True</attribute>
+                </xpath>
+            </field>
+        </record>
+        <record id="view_contract_payslip_form" model="ir.ui.view">
+            <field name="name">hr.contract.payslip.form</field>
+            <field name="model">hr.contract</field>
+            <field name="inherit_id" ref="hr_contract.hr_contract_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//page[@name='information']" position="after">
+                    <page string="Contribution register">
+                        <group>
+                            <field name="register_ids">
+                                <tree editable="buttom">
+                                    <field name="register_id"/>
+                                    <field name="partner_id"/>
+                                </tree>
+                            </field>
+                        </group>
+                    </page>
+                    <page string="Payslip history" name="payslip_history">
+                        <field name="payslip_ids" readonly="True"/>
+                    </page>
+                    <page string="Deductible">
+                        <field name="deductible_ids">
+                            <tree string="Deductible" editable="buttom">
+                                <field name="type"/>
+                                <field name="amount"/>
+                                <field name="date_from"/>
+                                <field name="date_to"/>
+                            </tree>
+                        </field>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>  

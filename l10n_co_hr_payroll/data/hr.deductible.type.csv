@@ -1,0 +1,27 @@
+id,code,name,tope
+co_deductible_AFC,AFC,AFC,316.66
+co_deductible_DEP,DEP,Dependants,32
+co_deductible_MED,MED,Prepaid Medicine,16
+co_deductible_HOU,HOU,Housing Interest,100
+co_deductible_AFP_VOL,AFP_VOL,Volunteer Pension,316.66
+co_deductible_KND,KND,Payment IN Kind,100
+co_deductible_OTH_EXC,OTH_EXC,Other Exempt Incomes,100
+co_deductible_OTH,OTH,Other Deductions,100
+co_deductible_HOU_LOA,HOU_LOA,Housing Loan,100
+co_deductible_CAR_LOA,CAR_LOA,Car Loan,100
+co_deductible_EDU_LOA,EDU_LOA,Educational Loan,100
+co_deductible_MED_LOA,MED_LOA,Medical Loan,100
+co_deductible_CAL_LOA,CAL_LOA,Calamity Loan,100
+co_deductible_REC_LOA,REC_LOA,Recreational Loan,100
+co_deductible_VAR_LOA,VAR_LOA,Variety Loan,100
+co_deductible_OTH_LOA,OTH_LOA,Other Loan,100
+co_deductible_INS,INS,Insurance,100
+co_deductible_OTH_INS,OTH_INS,Other Insurance,100
+co_deductible_IND_UNI,IND_UNI,Industry Union,100
+co_deductible_SEC_UNI,SEC_UNI,Sector Union,100
+co_deductible_SUB_UNI,SUB_UNI,Subsector Union,100
+co_deductible_REG_UNI,REG_UNI,Regional Union,100
+co_deductible_CTY_UNI,CTY_UNI,City Union,100
+co_deductible_OTH_UNI,OTH_UNI,Other Union,100
+co_deductible_BON,BON,Bonus Periodics,100
+co_deductible_OTH_BON,OTH_BON,Other Periodics,100
