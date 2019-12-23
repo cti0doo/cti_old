@@ -2,39 +2,53 @@
 
 from odoo import models, fields, api
 
+class ProductTemplateCostStructure(models.Model):
+    _inherit = 'report.mrp_account_enterprise.product_template_cost_structure'
+
+    def get_report_analysis_values(docids):
+        return _get_report_values(docids)
+
 class MrpProduction(models.Model):
     _inherit = 'mrp.production'
 
 
-    original_product_price = fields.Float()
+    original_product_price = fields.Float(default=0.0)
 
-    real_cost = fields.Float(compute='_compute_real_cost')
-    real_cost_cal = fields.Boolean(default=False)
+    real_cost = fields.Float(default=0.0)
 
-    @api.depends('state')
-    def _compute_real_cost(self):
-        if not self.real_cost_cal:
-            if self.state == "done":
-                self.real_cost = 666.666
-                self.real_cost_cal = True
-            else:
-                self.real_cost = 0.0
+    def write(self, values):
+
+        if self.real_cost <= 0.0 and self.state == 'done':
+            analysis_model = self.env['report.mrp_account_enterprise.mrp_cost_structure']
+
+            report_values = analysis_model.get_report_analysis_values(self.id)
+            unit_cost = []
+            for line in report_values:
+                total_cost = line['total_cost']
+                mo_qty = line['mo_qty']
+                operations = line['operations']
+                opcost = 0.0
+
+                for row in operations:
+                    optcost = opcost + row[3] * row[4]
+                
+                unit_cost.append((total_cost + opcost) / mo_qty)
+
+            values['real_cost'] = unit_cost[0]
+
+        res = super(MrpProduction, self).write(values)
+        return res
 
 
     @api.model
     def create(self, values):
-        if not values.get('name', False) or values['name'] == _('New'):
-            picking_type_id = values.get('picking_type_id') or self._get_default_picking_type()
-            picking_type_id = self.env['stock.picking.type'].browse(picking_type_id)
-            if picking_type_id:
-                values['name'] = picking_type_id.sequence_id.next_by_id()
-            else:
-                values['name'] = self.env['ir.sequence'].next_by_code('mrp.production') or _('New')
+     
+        #New
         prod_cost = values.get('product_id')
         prod_cost = self.env['product.product'].browse(prod_cost)
         values['original_product_price'] = prod_cost.standard_price
-        if not values.get('procurement_group_id'):
-            values['procurement_group_id'] = self.env["procurement.group"].create({'name': values['name']}).id
-        return super(MrpProduction, self).create(values)
+        
+        res = super(MrpProduction, self).create(values)
+        return res
 
 

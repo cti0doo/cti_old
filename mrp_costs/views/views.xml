@@ -7,6 +7,7 @@
       <field name="arch" type="xml">
         <xpath expr="//field[@name='product_qty']" position="after">
           <field name="original_product_price"/>
+          <field name="real_cost"/>
         </xpath>
       </field>
     </record>
