@@ -1,60 +1,14 @@
 <odoo>
   <data>
-    <!-- explicit list view definition -->
-    <!--
-    <record model="ir.ui.view" id="mrp_costs.list">
-      <field name="name">mrp_costs list</field>
-      <field name="model">mrp_costs.mrp_costs</field>
+    <record id="mrp_production_tree_view_cost" model="ir.ui.view">
+      <field name="name">mrp.production.tree.cost</field>
+      <field name="model">mrp.production</field>
+      <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
       <field name="arch" type="xml">
-        <tree>
-          <field name="name"/>
-          <field name="value"/>
-          <field name="value2"/>
-        </tree>
+        <xpath expr="//field[@name='product_qty']" position="after">
+          <field name="original_product_price"/>
+        </xpath>
       </field>
     </record>
-    -->
-
-    <!-- actions opening views on models -->
-    <!--
-    <record model="ir.actions.act_window" id="mrp_costs.action_window">
-      <field name="name">mrp_costs window</field>
-      <field name="res_model">mrp_costs.mrp_costs</field>
-      <field name="view_mode">tree,form</field>
-    </record>
-    -->
-
-    <!-- server action to the one above -->
-    <!--
-    <record model="ir.actions.server" id="mrp_costs.action_server">
-      <field name="name">mrp_costs server</field>
-      <field name="model_id" ref="model_mrp_costs_mrp_costs"/>
-      <field name="state">code</field>
-      <field name="code">
-        action = {
-          "type": "ir.actions.act_window",
-          "view_mode": "tree,form",
-          "res_model": self._name,
-        }
-      </field>
-    </record>
-    -->
-
-    <!-- Top menu item -->
-    <!--
-    <menuitem name="mrp_costs" id="mrp_costs.menu_root"/>
-    -->
-    <!-- menu categories -->
-    <!--
-    <menuitem name="Menu 1" id="mrp_costs.menu_1" parent="mrp_costs.menu_root"/>
-    <menuitem name="Menu 2" id="mrp_costs.menu_2" parent="mrp_costs.menu_root"/>
-    -->
-    <!-- actions -->
-    <!--
-    <menuitem name="List" id="mrp_costs.menu_1_list" parent="mrp_costs.menu_1"
-              action="mrp_costs.action_window"/>
-    <menuitem name="Server to list" id="mrp_costs" parent="mrp_costs.menu_2"
-              action="mrp_costs.action_server"/>
-    -->
   </data>
 </odoo>

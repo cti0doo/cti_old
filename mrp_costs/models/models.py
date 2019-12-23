@@ -30,9 +30,9 @@ class MrpProduction(models.Model):
                 values['name'] = picking_type_id.sequence_id.next_by_id()
             else:
                 values['name'] = self.env['ir.sequence'].next_by_code('mrp.production') or _('New')
-        prod_id = values['product_id']
-        a = product.product([prod_id])
-        values['original_product_price'] = a.standard_price
+        prod_cost = values.get('product_id')
+        prod_cost = self.env['product.product'].browse(prod_cost)
+        values['original_product_price'] = prod_cost.standard_price
         if not values.get('procurement_group_id'):
             values['procurement_group_id'] = self.env["procurement.group"].create({'name': values['name']}).id
         return super(MrpProduction, self).create(values)
