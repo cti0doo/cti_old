@@ -2,12 +2,6 @@
 
 from odoo import models, fields, api
 
-class ProductTemplateCostStructure(models.Model):
-    _inherit = 'report.mrp_account_enterprise.product_template_cost_structure'
-
-    def get_report_analysis_values(docids):
-        return _get_report_values(docids)
-
 class MrpProduction(models.Model):
     _inherit = 'mrp.production'
 
@@ -16,12 +10,16 @@ class MrpProduction(models.Model):
 
     real_cost = fields.Float(default=0.0)
 
+    def get_report_values(self, proid):
+        productions = self.env['mrp.production'].search([('product_id', 'in', (proid,)), ('state', '=', 'done')])
+        res = self.env['report.mrp_account_enterprise.mrp_cost_structure'].get_lines(productions)
+        return res
+
     def write(self, values):
 
         if self.real_cost <= 0.0 and self.state == 'done':
-            analysis_model = self.env['report.mrp_account_enterprise.mrp_cost_structure']
 
-            report_values = analysis_model.get_report_analysis_values(self.id)
+            report_values = self.get_report_values(self.id)
             unit_cost = []
             for line in report_values:
                 total_cost = line['total_cost']
