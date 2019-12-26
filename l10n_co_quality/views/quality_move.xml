@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="view_account_move_mrp_form">
+            <field name="name">account.move.mrp.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+
+                <field name="invoice_date" position="attributes">
+                    <attribute name="required">True</attribute>
+                </field>
+
+                <xpath expr="//page[@id='other_tab_entry']" position="after">
+                    <page string="Milk invoice">
+                        <group>
+                            <group>
+                                <field name="type_test"/>
+                            </group>
+                            <group>
+                                <field name="amount_quality"/>
+                                <button name="invoice_calculate" states="draft" string="Calculate milk invoice"
+                                        type="object"/>
+                            </group>
+                        </group>
+                        <notebook string="Milk invoice">
+                            <page string="Quality checks">
+                                <field name="quality_ids" readonly="True">
+                                    <tree>
+                                        <field name="name"/>
+                                        <field name="product_id"/>
+                                        <field name="lot_id"/>
+                                        <field name="control_date"/>
+                                        <field name="user_id"/>
+                                        <field name="quality_state"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Monthly Inventory Movements">
+                                <field name="mim_id">
+                                    <tree delete="0" create="0">
+                                        <field name="m1"/>
+                                        <field name="m2"/>
+                                        <field name="m3"/>
+                                        <field name="m4"/>
+                                        <field name="m5"/>
+                                        <field name="m6"/>
+                                        <field name="m7"/>
+                                        <field name="m8"/>
+                                        <field name="m9"/>
+                                        <field name="m10"/>
+                                        <field name="m11"/>
+                                        <field name="m12"/>
+                                        <field name="accumulated"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Compositional Information">
+                                <field name="ci_id">
+                                    <tree delete="0" create="0">
+                                        <field name="product_id"/>
+                                        <field name="quality_id"/>
+                                        <field name="title"/>
+                                        <field name="qna1"/>
+                                        <field name="qna2"/>
+                                        <field name="qna3"/>
+                                        <field name="avg"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Daily Reception">
+                                <field name="dr_id">
+                                    <tree delete="0" create="0">
+                                        <field name="value"/>
+                                        <field name="d1"/>
+                                        <field name="d2"/>
+                                        <field name="d3"/>
+                                        <field name="d4"/>
+                                        <field name="d5"/>
+                                        <field name="d6"/>
+                                        <field name="d7"/>
+                                        <field name="d8"/>
+                                        <field name="d9"/>
+                                        <field name="d10"/>
+                                        <field name="d11"/>
+                                        <field name="d12"/>
+                                        <field name="d13"/>
+                                        <field name="d14"/>
+                                        <field name="d15"/>
+                                        <field name="d16"/>
+                                        <field name="total_value"/>
+                                        <field name="total"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Concepts">
+                                <field name="cq_id">
+                                    <tree>
+                                        <field name="code"/>
+                                        <field name="name"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                        </notebook>
+                    </page>
+                </xpath>
+
+            </field>
+        </record>
+        <record model="ir.ui.view" id="concepts_quality_view">
+            <field name="name">concepts.quality.form.view</field>
+            <field name="model">concepts.quality</field>
+            <field name="arch" type="xml">
+                <form string="Concepts Quality">
+                    <group>
+                        <field name="code"/>
+                        <field name="name"/>
+                        <field name="amount"/>
+                        <field name="code_python"/>
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="quality_point_extended_concepts">
+            <field name="name">quality.point.extended.concepts.form</field>
+            <field name="model">quality.point</field>
+            <field name="inherit_id" ref="quality.quality_point_view_form"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook/page[2]" position="after">
+                    <page string="Quality params">
+                        <group name="invoice">
+                            <field name="hygienic_quality"/>
+                            <field name="sanitary_quality"/>
+                            <field name="temperature"/>
+                            <field name="certificate"/>
+                            <field name="distance"/>
+                            <field name="transport"/>
+                            <field name="fat"/>
+                            <field name="protein"/>
+                            <field name="sng"/>
+                            <field name="st"/>
+                            <field name="density"/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+
+        <record model="ir.ui.view" id="view_partner_distance">
+            <field name="name">res.partner.distance.view</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"></field>
+            <field name="arch" type="xml">
+                <xpath expr="//sheet/notebook/page/field/form/sheet/group/group[2]/field[@name='mobile']"
+                       position="after">
+                    <field name="distance"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="view_quality_check_extended_view">
+            <field name="name">quality.check.extended.view</field>
+            <field name="model">quality.check</field>
+            <field name="inherit_id" ref="quality_control.quality_check_view_form"></field>
+            <field name="arch" type="xml">
+                <field name="product_id" position="before">
+                    <field name="partner_id" attrs="{'readonly': [('quality_state','!=','none')]}"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

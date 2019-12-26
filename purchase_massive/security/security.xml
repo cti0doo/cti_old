@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="category_purchase_massive">
+            <field name="name">Purchase massive</field>
+        </record>
+
+        <record model="res.groups" id="user_purchase_massive">
+            <field name="name">User</field>
+            <field name="category_id" ref="category_purchase_massive"/>
+        </record>
+    </data>
+</odoo>

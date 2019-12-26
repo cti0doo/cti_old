@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="res_partner_city_form">
+            <field name="name">res.partner.city.form</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="model">res.partner</field>
+            <field name="arch" type="xml">
+                <field name="city" position="replace">
+                    <field name="city_id" placeholder="City" class="o_address_city"
+                           options='{"no_open": True}'
+                           attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                    <field name="city" invisible="1"/>
+                </field>
+                <xpath expr="//notebook/page[1]/field/kanban/field[@name='city']" position="replace">
+                    <field name="city_id" placeholder="City" class="o_address_city"
+                           options='{"no_open": True}'/>
+                    <field name="city" invisible="1"/>
+                </xpath>
+                <xpath expr="//notebook/page[1]/field/form/sheet/group/group/div/div/field[@name='city']"
+                       position="replace">
+                    <field name="city_id" placeholder="City" class="o_address_city"
+                           options='{"no_open": True}'/>
+                    <field name="city" invisible="1"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

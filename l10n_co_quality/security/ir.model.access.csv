@@ -1,0 +1,5 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_concepts_quality,concepts.quality,model_concepts_quality,base.group_user,1,1,1,1
+access_daily.reception,daily.reception,model_daily_reception,base.group_user,1,1,1,1
+access_compositional_information,compositional.information,model_compositional_information,base.group_user,1,1,1,1
+access_monthly_inventory_movements,monthly.inventory.movements,model_monthly_inventory_movements,base.group_user,1,1,1,1

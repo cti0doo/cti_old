@@ -1,0 +1,10 @@
+<odoo>
+    <data>
+        <!--<record id="seq_supplies_order" model="ir.sequence">-->
+            <!--<field name="name">Supplies Order</field>-->
+            <!--<field name="code">supplies.order</field>-->
+            <!--<field name="prefix">SPO/%(year)s/</field>-->
+            <!--<field name="padding">4</field>-->
+        <!--</record>-->
+    </data>
+</odoo>

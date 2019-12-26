@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data noupdate="0">
+        <record id="massive_purchase_code" model="ir.sequence">
+            <field name="name">Massive purchase</field>
+            <field name="code">massive.purchase</field>
+            <field name="implementation">no_gap</field>
+            <field name="active">True</field>
+            <field name="prefix">MPO/</field>
+            <field name="padding">5</field>
+            <field name="number_increment">1</field>
+            <field name="number_next_actual">1</field>
+        </record>
+    </data>
+</odoo>

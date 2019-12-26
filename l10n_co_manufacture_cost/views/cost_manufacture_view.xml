@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="mrp_production_cost_manufacture">
+            <field name="name">mrp.production.cost.manufacture</field>
+            <field name="model">mrp.production</field>
+            <field name="inherit_id" ref="mrp.mrp_production_form_view"></field>
+            <field name="arch" type="xml">
+                <notebook position="inside">
+                    <page string="Cost Manufacture">
+                        <group>
+                            <group string="Cost Manufacture Special">
+                                <field name="st"/>
+                                <field name="ov"/>
+                                <field name="ov1"/>
+                                <field name="sng_percentage"/>
+                                <field name="st_percentage"/>
+                                <field name="gr_sl"/>
+                            </group>
+                        </group>
+                    </page>
+                    <!--<page string="Quality checks">-->
+                    <!--<field name="quality_ids"/>-->
+                    <!--</page>-->
+                </notebook>
+                <!--<field name="finished_move_line_ids" position="replace">-->
+                <!--<field name="finished_move_line_ids" options="{'reload_on_button': True}"-->
+                <!--context="{'default_location_id': location_src_id, 'default_location_dest_id': location_dest_id}">-->
+                <!--<tree editable="bottom" delete="0" default_order="is_done desc,sequence"-->
+                <!--decoration-muted="is_done" decoration-warning="quantity_done&gt;product_uom_qty"-->
+                <!--decoration-success="quantity_done==product_uom_qty" create="0">-->
+                <!--<field name="product_id" required="1"/>-->
+                <!--<field name="product_uom_id" groups="product.group_uom"/>-->
+                <!--<field name="is_done" invisible="1"/>-->
+                <!--&lt;!&ndash;<field name="sequence" invisible="1"/>&ndash;&gt;-->
+                <!--<field name="has_tracking" invisible="1"/>-->
+                <!--<field name="location_id" domain="[('id', 'child_of', parent.location_id)]" invisible="1"/>-->
+                <!--<field name="location_dest_id" domain="[('id', 'child_of', parent.location_dest_id)]"-->
+                <!--invisible="1"/>-->
+                <!--<field name="state" invisible="1"/>-->
+                <!--<field name="product_uom_qty" readonly="1"-->
+                <!--attrs="{'required': [('product_id', '!=', False)]}" string="To Produce"/>-->
+                <!--<field name="quantity_done"-->
+                <!--attrs="{'readonly': ['|', ('is_done', '=', True), ('has_tracking', 'in', ['lot','serial'])]}"-->
+                <!--string="Produced"/>-->
+                <!--<field name="price_unit"/>-->
+                <!--<button name="split_move_lot" string="Register lots" type="object" icon="fa-list"-->
+                <!--attrs="{'invisible': [('has_tracking', 'not in', ['lot','serial'])]}"/>-->
+                <!--</tree>-->
+                <!--</field>-->
+                <!--</field>-->
+            </field>
+        </record>
+
+        <!--<record model="ir.ui.view" id="qc_test_question_extended">-->
+        <!--<field name="name">qc.test.question.extended.form</field>-->
+        <!--<field name="model">qc.test.question</field>-->
+        <!--<field name="inherit_id" ref="l10n_co_quality_control.qc_test_question_form_view"></field>-->
+        <!--<field name="arch" type="xml">-->
+        <!--<group name="qualitative" position="before">-->
+        <!--<group name="cost_manufacture">-->
+        <!--<field name="fat"/>-->
+        <!--<field name="density"/>-->
+        <!--<field name="sng"/>-->
+        <!--<field name="protein"/>-->
+        <!--<field name="st"/>-->
+        <!--</group>-->
+        <!--</group>-->
+        <!--</field>-->
+        <!--</record>-->
+        <record model="ir.ui.view" id="product_attribute_cost">
+            <field name="name">product.attribute.cost</field>
+            <field name="model">product.attribute</field>
+            <field name="inherit_id" ref="product.product_attribute_view_form"></field>
+            <field name="arch" type="xml">
+                <field name="name" position="after">
+                    <field name="fat"/>
+                </field>
+            </field>
+        </record>
+        <record model="ir.ui.view" id="product_product_base_cost">
+            <field name="name">product.product.base.cost</field>
+            <field name="model">product.product</field>
+            <field name="inherit_id" ref="product.product_normal_form_view"></field>
+            <field name="arch" type="xml">
+                <field name="default_code" position="after">
+                    <field name="cost_special"/>
+                </field>
+            </field>
+        </record>
+        <!--<record model="ir.ui.view" id="mrp_workorder_cost">-->
+        <!--<field name="name">mrp.workorder.cost</field>-->
+        <!--<field name="model">mrp.workorder</field>-->
+        <!--<field name="inherit_id" ref="mrp.mrp_production_workcenter_form_view_inherit"></field>-->
+        <!--<field name="arch" type="xml">-->
+        <!--<notebook position="inside">-->
+        <!--<page string="Cost">-->
+        <!--<group>-->
+        <!--<field name="default_cost"/>-->
+        <!--<field name="default_cost_per_labor"/>-->
+        <!--<field name="real_cost"/>-->
+        <!--<field name="real_cost_per_labor"/>-->
+        <!--<field name="total_cost" class="oe_subtotal_footer_separator"/>-->
+        <!--</group>-->
+        <!--</page>-->
+        <!--</notebook>-->
+        <!--</field>-->
+        <!--</record>-->
+        <!--<record model="ir.ui.view" id="mrp_routing_workcenter_cost_form_view">-->
+        <!--<field name="name">mrp.routing.workcenter.cost</field>-->
+        <!--<field name="model">mrp.routing.workcenter</field>-->
+        <!--<field name="inherit_id" ref="mrp.mrp_routing_workcenter_form_view"></field>-->
+        <!--<field name="arch" type="xml">-->
+        <!--<notebook position="inside">-->
+        <!--<page string="Cost">-->
+        <!--<group>-->
+        <!--<field name="default_cost"/>-->
+        <!--<field name="default_cost_per_labor"/>-->
+        <!--<field name="total_cost" class="oe_subtotal_footer_separator"/>-->
+        <!--</group>-->
+        <!--</page>-->
+        <!--</notebook>-->
+        <!--</field>-->
+        <!--</record>-->
+        <!--6040201-->
+
+        <!--<record model="ir.ui.view" id="mrp_workcenter_cost_form_view">-->
+        <!--<field name="name">mrp.workcenter.cost</field>-->
+        <!--<field name="model">mrp.workcenter</field>-->
+        <!--<field name="inherit_id" ref="mrp.mrp_workcenter_view"></field>-->
+        <!--<field name="arch" type="xml">-->
+        <!--<xpath expr="//notebook/page" position="replace">-->
+        <!--<page string="General Information">-->
+        <!--<group>-->
+        <!--<group name="capacity">-->
+        <!--<label for="time_efficiency"/>-->
+        <!--<div class="o_row">-->
+        <!--<field name="time_efficiency"/>-->
+        <!--%-->
+        <!--</div>-->
+        <!--<field name="capacity"/>-->
+
+        <!--<label for="oee_target"/>-->
+        <!--<div class="o_row">-->
+        <!--<field name="oee_target"/>-->
+        <!--%-->
+        <!--</div>-->
+        <!--</group>-->
+        <!--<group>-->
+        <!--<label for="time_start"/>-->
+        <!--<div>-->
+        <!--<field name="time_start" widget="float_time" class="oe_inline"/>-->
+        <!--minutes-->
+        <!--</div>-->
+        <!--<label for="cost_start"/>-->
+        <!--<div>-->
+        <!--<field name="cost_start" class="oe_inline"/>-->
+        <!--</div>-->
+        <!--<label for="time_stop"/>-->
+        <!--<div>-->
+        <!--<field name="time_stop" widget="float_time" class="oe_inline"/>-->
+        <!--minutes-->
+        <!--</div>-->
+        <!--<label for="cost_stop"/>-->
+        <!--<div>-->
+        <!--<field name="cost_stop" class="oe_inline"/>-->
+        <!--</div>-->
+        <!--<label for="costs_hour"/>-->
+        <!--<div>-->
+        <!--<field name="costs_hour" class="oe_inline"/>-->
+        <!--</div>-->
+        <!--</group>-->
+        <!--</group>-->
+        <!--<separator string="Description"/>-->
+        <!--<field name="note" nolabel="1" placeholder="Description of the work center..."/>-->
+        <!--</page>-->
+        <!--</xpath>-->
+        <!--</field>-->
+        <!--</record>-->
+    </data>
+</odoo>

@@ -1,0 +1,59 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="ie_massive_filter_view">
+            <field name="name">Import/Export massive filter</field>
+            <field name="model">ie.massive.filter</field>
+            <field name="arch" type="xml">
+                <tree string="Import/Export massive filter" editable="bottom">
+                    <field name="model_id"/>
+                    <field name="filter"/>
+                    <field name="write_date" readonly="True"/>
+                    <field name="write_uid" readonly="True"/>
+                </tree>
+            </field>
+        </record>
+
+        <!-- actions opening views on models -->
+        <record model="ir.actions.act_window" id="ie_massive_filter_action_window">
+            <field name="name">Import/Export massive filter</field>
+            <field name="res_model">ie.massive.filter</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <menuitem name="Configuration" id="ir_massive_configuration_menu_parent" parent="ir_massive_menu_parent"
+                  sequence="20" groups="ie_massive.avanced_ie"/>
+
+        <menuitem name="Filter" id="ir_massive_filter_menu" sequence="10"
+                  parent="ir_massive_configuration_menu_parent"
+                  action="ie_massive_filter_action_window"/>
+
+
+        <!-- MAP -->
+
+        <record model="ir.ui.view" id="ie_massive_map_view">
+            <field name="name">Import/Export massive map</field>
+            <field name="model">ie.massive.map</field>
+            <field name="arch" type="xml">
+                <tree string="Import/Export massive map" editable="bottom">
+                    <field name="import_id"/>
+                    <field name="fields"/>
+                    <field name="origin"/>
+                    <field name="destination"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.actions.act_window" id="ie_massive_map_action_window">
+            <field name="name">Import/Export massive map</field>
+            <field name="res_model">ie.massive.map</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+
+        <menuitem name="Map" id="ir_massive_map_menu" sequence="10"
+                  parent="ir_massive_configuration_menu_parent"
+                  action="ie_massive_map_action_window"/>
+
+    </data>
+</odoo>

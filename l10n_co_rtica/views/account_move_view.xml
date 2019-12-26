@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="account_move_partner_view">
+            <field name="name">account.move.commercial.partner</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"></field>
+            <field name="arch" type="xml">
+                <field name="partner_id" position="after">
+                    <field name="commercial_partner_id"/>
+                    <field name="partner_shipping_id" domain="[('parent_id','=',commercial_partner_id)]"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

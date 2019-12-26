@@ -1,0 +1,2259 @@
+<odoo>
+    <data>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SMMLV_es_CO" model="ir.translation">
+            <field name="src">Minimun Salary</field>
+            <field name="value">Salario Minimo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SMMLV')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_UVT_es_CO" model="ir.translation">
+            <field name="src">Unit Value Tax</field>
+            <field name="value">Unidad Valor Tributario</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_UVT')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_LST_AVG_INC_es_CO" model="ir.translation">
+            <field name="src">Last Average Income</field>
+            <field name="value">Ultimo Ingreso Promedio</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_LST_AVG_INC')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_UNI_PER_es_CO" model="ir.translation">
+            <field name="src">Union Permit</field>
+            <field name="value">Permiso Sindical</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_UNI_PER')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EPS_PER_es_CO" model="ir.translation">
+            <field name="src">EPS Permit</field>
+            <field name="value">Permiso EPS</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EPS_PER')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CON_SAL_es_CO" model="ir.translation">
+            <field name="src">Contract Salary</field>
+            <field name="value">Salario Contrato</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CON_SAL')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_BAS_SAL_es_CO" model="ir.translation">
+            <field name="src">Basic Salary</field>
+            <field name="value">Salario Básico</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_BAS_SAL')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EPS_INA_SUB_es_CO" model="ir.translation">
+            <field name="src">EPS Inability Subsidy</field>
+            <field name="value">Permiso EPS Subsidiado</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EPS_INA_SUB')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PAI_LEA_es_CO" model="ir.translation">
+            <field name="src">Paid Leave</field>
+            <field name="value">Permiso Remunerado</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PAI_LEA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EPS_INA_es_CO" model="ir.translation">
+            <field name="src">EPS Inability</field>
+            <field name="value">Incapacidad Salud</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EPS_INA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EPS_INA_180_es_CO" model="ir.translation">
+            <field name="src">EPS Inability > 180 Days</field>
+            <field name="value">Incapacidad Salud > 180 Días</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EPS_INA_180')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_MAT_LIC_es_CO" model="ir.translation">
+            <field name="src">Maternity License</field>
+            <field name="value">Licencia Maternidad</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_MAT_LIC')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_ARL_INA_es_CO" model="ir.translation">
+            <field name="src">ARL Inability</field>
+            <field name="value">Incapacidad ARL</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_ARL_INA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SAL_ADJ_es_CO" model="ir.translation">
+            <field name="src">Salary Adjust</field>
+            <field name="value">Ajuste Salario</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SAL_ADJ')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EPS_INA_SUB_es_CO" model="ir.translation">
+            <field name="src">EPS Inability Subsidy</field>
+            <field name="value">Permiso Salud Subsidiado</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EPS_INA_SUB')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_COM_es_CO" model="ir.translation">
+            <field name="src">Commissions</field>
+            <field name="value">Comisiones</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_COM')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_BON_es_CO" model="ir.translation">
+            <field name="src">Bonus</field>
+            <field name="value">Bonificaciones</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_BON')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OTH_BON_es_CO" model="ir.translation">
+            <field name="src">Other Bonus</field>
+            <field name="value">Otras Bonificaciones</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_BON')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EDT_es_CO" model="ir.translation">
+            <field name="src">Extra Day Time</field>
+            <field name="value">Horas Extras Diurnas</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EDT')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EDT_SH_es_CO" model="ir.translation">
+            <field name="src">Extra Day Time Dominical And Hollidays</field>
+            <field name="value">Horas Extras Diurnas Dominicales Y Festivos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EDT_SH')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_ENT_es_CO" model="ir.translation">
+            <field name="src">Extra Night Time</field>
+            <field name="value">Horas Extras Nocturnas</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_ENT')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_ENT_SH_es_CO" model="ir.translation">
+            <field name="src">Extra Night Time Domincal And Hollidays</field>
+            <field name="value">Horas Extras Nocturnas Dominical Y Festivos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_ENT_SH')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_NS_es_CO" model="ir.translation">
+            <field name="src">Night Surcharge</field>
+            <field name="value">Recargo Nocturno</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_NS')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SH_es_CO" model="ir.translation">
+            <field name="src">Sunday And Holidays Surcharge</field>
+            <field name="value">Recargo Dominical Y Festivo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SH')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_VIA_es_CO" model="ir.translation">
+            <field name="src">Viatics</field>
+            <field name="value">Viaticos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_VIA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_VAC_ACR_es_CO" model="ir.translation">
+            <field name="src">Vacation Accrued</field>
+            <field name="value">Causación Vacaciones</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_VAC_ACR')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PRM_ACR_es_CO" model="ir.translation">
+            <field name="src">Premium Accrued</field>
+            <field name="value">Causación Prima Servicios</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PRM_ACR')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CES_INT_ACR_es_CO" model="ir.translation">
+            <field name="src">Cesant Interest Accrued</field>
+            <field name="value">Causación Intereses Cesantias</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CES_INT_ACR')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SAL_ASI_es_CO" model="ir.translation">
+            <field name="src">Assistance / Subsidies</field>
+            <field name="value">Subsidios / Auxilios</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SAL_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SUB_es_CO" model="ir.translation">
+            <field name="src">Assistance / Subsidies (Not Salary)</field>
+            <field name="value">Subsidios / Auxlios (No Salario)</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SUB')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_TRA_ASI_es_CO" model="ir.translation">
+            <field name="src">Transport Assistance</field>
+            <field name="value">Auxilio Transporte</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_TRA_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_LOA_es_CO" model="ir.translation">
+            <field name="src">Labor Loan</field>
+            <field name="value">Prestamo Laboral</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_INS_LOA_es_CO" model="ir.translation">
+            <field name="src">Institutional Loan</field>
+            <field name="value">Prestamo Institucional</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_INS_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_INS_es_CO" model="ir.translation">
+            <field name="src">Insurance</field>
+            <field name="value">Seguro</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_INS')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_FUN_INS_es_CO" model="ir.translation">
+            <field name="src">Funeral Insurance</field>
+            <field name="value">Seguro Funeraria</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_FUN_INS')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OTH_INS_es_CO" model="ir.translation">
+            <field name="src">Other Insurance</field>
+            <field name="value">Otro Seguro</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_INS')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_IBC_SS_es_CO" model="ir.translation">
+            <field name="src">IBC Social Security</field>
+            <field name="value">IBC Seguridad Social</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_IBC_SS')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EPS_es_CO" model="ir.translation">
+            <field name="src">Helth Contribution</field>
+            <field name="value">Aporte Salud</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EPS')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EPS_PAT_es_CO" model="ir.translation">
+            <field name="src">Employer Helth Contribution</field>
+            <field name="value">Aporte Salud Empleador</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EPS_PAT')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_IBC_SB_es_CO" model="ir.translation">
+            <field name="src">IBC Social Benefits</field>
+            <field name="value">IBC Social</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_IBC_SB')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_AFP_es_CO" model="ir.translation">
+            <field name="src">Pension</field>
+            <field name="value">Pensión</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_AFP')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_AFP_PAT_es_CO" model="ir.translation">
+            <field name="src">Employer Pension Contribution</field>
+            <field name="value">Aporte Pension Empleador</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_AFP_PAT')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_AFP_VOL_es_CO" model="ir.translation">
+            <field name="src">Voluntary Pension</field>
+            <field name="value">Pension Voluntaria</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_AFP_VOL')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SOL_FUN_es_CO" model="ir.translation">
+            <field name="src">Solitarity Fund</field>
+            <field name="value">Fondo Solidaridad</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SOL_FUN')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_RET_FTE_es_CO" model="ir.translation">
+            <field name="src">src Retention</field>
+            <field name="value">Retención Fuente</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_RET_FTE')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CES_ACR_es_CO" model="ir.translation">
+            <field name="src">Cesant</field>
+            <field name="value">Cesantias</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CES_ACR')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CES_INT_ACR_es_CO" model="ir.translation">
+            <field name="src">Cesant Interest</field>
+            <field name="value">Intereses Cesantias</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CES_INT_ACR')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PRM_SER_ACR_es_CO" model="ir.translation">
+            <field name="src">Service Premium</field>
+            <field name="value">Prima Servicios</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PRM_SER_ACR')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_VAC_MON_es_CO" model="ir.translation">
+            <field name="src">Vacation In Money</field>
+            <field name="value">Vacaciones En Dinero</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_VAC_MON')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CCF_es_CO" model="ir.translation">
+            <field name="src">Familiar Compensation Boxes</field>
+            <field name="value">Cajas de Compensación Familiar</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CCF')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_IBC_ARL_es_CO" model="ir.translation">
+            <field name="src">IBC Risk</field>
+            <field name="value">IBC Riesgos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_IBC_ARL')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_ARL_es_CO" model="ir.translation">
+            <field name="src">Professional Risk</field>
+            <field name="value">Riesgos Profesionales</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_ARL')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OPT_ASI_es_CO" model="ir.translation">
+            <field name="src">Optical Assistance</field>
+            <field name="value">Auxilio Optico</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OPT_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_BIR_ASI_es_CO" model="ir.translation">
+            <field name="src">Birth Assistance</field>
+            <field name="value">Auxilio De Natalidad</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_BIR_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EDU_ASI_es_CO" model="ir.translation">
+            <field name="src">Educational Assistance</field>
+            <field name="value">Auxilio Educativo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EDU_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OTH_ASI_es_CO" model="ir.translation">
+            <field name="src">Other Educational Assistance</field>
+            <field name="value">Otro Auxilio Educativo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PAR_ASI_es_CO" model="ir.translation">
+            <field name="src">Parvul Educational Assistance</field>
+            <field name="value">Auxilio Educativo Parvulos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PAR_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PRI_ASI_es_CO" model="ir.translation">
+            <field name="src">Primary Educational Assistance</field>
+            <field name="value">Auxilio Educativo Primaria</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PRI_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SEC_ASI_es_CO" model="ir.translation">
+            <field name="src">Secondary Educational Assistance</field>
+            <field name="value">Auxilio Educativo Secundaria</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SEC_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_UNI_ASI_es_CO" model="ir.translation">
+            <field name="src">University Educational Assistance</field>
+            <field name="value">Auxilio Educativo Universidad</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_UNI_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_TEC_ASI_es_CO" model="ir.translation">
+            <field name="src">Tecnical Educational Assistance</field>
+            <field name="value">Auxilio Educativo Tecnica</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_TEC_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PRA_ASI_es_CO" model="ir.translation">
+            <field name="src">Practitioners Assistance</field>
+            <field name="value">Auxilio A Practicantes</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PRA_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PRA_TRA_ASI_es_CO" model="ir.translation">
+            <field name="src">Practitioners Transport Assistance</field>
+            <field name="value">Auxilio Transporte Practicantes</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PRA_TRA_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_MAI_ASI_es_CO" model="ir.translation">
+            <field name="src">Maintenance Assistance</field>
+            <field name="value">Auxilio Mantenimineto</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_MAI_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_FEE_ASI_es_CO" model="ir.translation">
+            <field name="src">Food Assistance</field>
+            <field name="value">Auxilio Alimenticio</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_FEE_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_DEA_ASI_es_CO" model="ir.translation">
+            <field name="src">Death Assistance</field>
+            <field name="value">Auxilio Defunción</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_DEA_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_FED_ASI_es_CO" model="ir.translation">
+            <field name="src">Feed Assistance</field>
+            <field name="value">Auxilio Alimentación</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_FED_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CLO_ASI_es_CO" model="ir.translation">
+            <field name="src">Clothe Assistance</field>
+            <field name="value">Auxilio Vestuario</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CLO_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_HOU_ASI_es_CO" model="ir.translation">
+            <field name="src">Housing Assistance</field>
+            <field name="value">Auxilio Vivienda</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_HOU_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CON_ASI_es_CO" model="ir.translation">
+            <field name="src">Conveyance Assistance</field>
+            <field name="value">Auxilio Medio De Transporte</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CON_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_COO_es_CO" model="ir.translation">
+            <field name="src">Cooperative</field>
+            <field name="value">Cooperativa</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_COO')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_FON_es_CO" model="ir.translation">
+            <field name="src">Employee Association</field>
+            <field name="value">Fondo Empleados</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_FON')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OTH_ASO_es_CO" model="ir.translation">
+            <field name="src">Other Association</field>
+            <field name="value">Otra Asociación</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_ASO')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EXE_JUD_es_CO" model="ir.translation">
+            <field name="src">Execut Judicial</field>
+            <field name="value">Embargo Ejecutivo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EXE_JUD')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_FEE_JUD_es_CO" model="ir.translation">
+            <field name="src">Feed Judicial</field>
+            <field name="value">Embargo Alimentos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_FEE_JUD')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OTH_JUD_es_CO" model="ir.translation">
+            <field name="src">Other Judicial</field>
+            <field name="value">Otro Embargo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_JUD')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_HOU_LOA_es_CO" model="ir.translation">
+            <field name="src">Housing Loan</field>
+            <field name="value">Prestamo Vivienda</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_HOU_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_LAB_LOA_es_CO" model="ir.translation">
+            <field name="src">Laboral Loan</field>
+            <field name="value">Prestamo Laboral</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_LAB_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_INS_LOA_es_CO" model="ir.translation">
+            <field name="src">Institutional Loan</field>
+            <field name="value">Prestamo Institucional</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_INS_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_LAB_LOA_es_CO" model="ir.translation">
+            <field name="src">Institutional Loan</field>
+            <field name="value">Prestamo Institucional</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_LAB_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CAR_LOA_es_CO" model="ir.translation">
+            <field name="src">Car Loan</field>
+            <field name="value">Prestamo Vehiculo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CAR_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EDU_LOA_es_CO" model="ir.translation">
+            <field name="src">Educational Loan</field>
+            <field name="value">Prestamo Educación</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EDU_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_MED_LOA_es_CO" model="ir.translation">
+            <field name="src">Medical Loan</field>
+            <field name="value">Prestamo Medico</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_MED_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CAL_LOA_es_CO" model="ir.translation">
+            <field name="src">Calamity Loan</field>
+            <field name="value">Prestamo Calamidad</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CAL_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_VAR_LOA_es_CO" model="ir.translation">
+            <field name="src">Variety Loan</field>
+            <field name="value">Prestamos Varios</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_VAR_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_POS_CON_LOA_es_CO" model="ir.translation">
+            <field name="src">POS Consume Loan</field>
+            <field name="value">Prestamo Consumo En POS</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_POS_CON_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_REC_LOA_es_CO" model="ir.translation">
+            <field name="src">Recreation Loan</field>
+            <field name="value">Prestamo Recreacional</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_REC_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OTH_LOA_es_CO" model="ir.translation">
+            <field name="src">Other Loan</field>
+            <field name="value">Prestamo Otros</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_IND_UNI_es_CO" model="ir.translation">
+            <field name="src">Industry Union</field>
+            <field name="value">Sindicato Industria</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_IND_UNI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SEC_UNI_es_CO" model="ir.translation">
+            <field name="src">Sector Union</field>
+            <field name="value">Sindicato Sectorial</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SEC_UNI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_REG_UNI_es_CO" model="ir.translation">
+            <field name="src">Region Union</field>
+            <field name="value">Sindicato Region</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_REG_UNI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CTY_UNI_es_CO" model="ir.translation">
+            <field name="src">City Union</field>
+            <field name="value">Sindicato Ciudad</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CTY_UNI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OTH_UNI_es_CO" model="ir.translation">
+            <field name="src">Other Union</field>
+            <field name="value">Sindicato Otro</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_UNI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_NET_PAY_es_CO" model="ir.translation">
+            <field name="src">Net To Pay</field>
+            <field name="value">Neto A Pagar</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_NET_PAY')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PER_DED_es_CO" model="ir.translation">
+            <field name="src">Deductions Percent</field>
+            <field name="value">Porciento Descuentos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PER_DED')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_TOT_PAY_es_CO" model="ir.translation">
+            <field name="src">Total To Pay</field>
+            <field name="value">Total A Pagar</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_TOT_PAY')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_VIA_es_CO" model="ir.translation">
+            <field name="src">Viatics</field>
+            <field name="value">Viaticos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_VIA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_VAC_ACR_es_CO" model="ir.translation">
+            <field name="src">Vacation Accrued</field>
+            <field name="value">Causación Vacaciones</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_VAC_ACR')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PRM_ACR_es_CO" model="ir.translation">
+            <field name="src">Premium Accrued</field>
+            <field name="value">Causación Prima Servicios</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PRM_ACR')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CES_INT_ACR_es_CO" model="ir.translation">
+            <field name="src">Cesant Interest Accrued</field>
+            <field name="value">Causación Intereses Cesantias</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CES_INT_ACR')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SAL_ASI_es_CO" model="ir.translation">
+            <field name="src">Assistance / Subsidies</field>
+            <field name="value">Subsidios / Auxilios</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SAL_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SUB_es_CO" model="ir.translation">
+            <field name="src">Assistance / Subsidies(Not Salary)</field>
+            <field name="value">Subsidios / Auxlios (No Salario)</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SUB')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_TRA_ASI_es_CO" model="ir.translation">
+            <field name="src">Transport Assistance</field>
+            <field name="value">Auxilio Transporte</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_TRA_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_LOA_es_CO" model="ir.translation">
+            <field name="src">Labor Loan</field>
+            <field name="value">Prestamo Laboral</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_INS_LOA_es_CO" model="ir.translation">
+            <field name="src">Institutional Loan</field>
+            <field name="value">Prestamo Institucional</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_INS_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_INS_es_CO" model="ir.translation">
+            <field name="src">Insurance</field>
+            <field name="value">Seguro</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_INS')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_IBC_SS_es_CO" model="ir.translation">
+            <field name="src">IBC Helth</field>
+            <field name="value">IBC Salud</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_IBC_SS')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EPS_es_CO" model="ir.translation">
+            <field name="src">Helth Contribution</field>
+            <field name="value">Aporte Salud</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EPS')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EPS_PAT_es_CO" model="ir.translation">
+            <field name="src">Employer Helth Contribution</field>
+            <field name="value">Aporte Salud Empleador</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EPS_PAT')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_IBC_SB_es_CO" model="ir.translation">
+            <field name="src">IBC Social Benfits</field>
+            <field name="value">IBC Prestaciones Sociales</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_IBC_SB')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_AFP_es_CO" model="ir.translation">
+            <field name="src">Pension</field>
+            <field name="value">Pensión</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_AFP')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_AFP_PAT_es_CO" model="ir.translation">
+            <field name="src">Employer Pension Contribution</field>
+            <field name="value">Aporte Pension Empleador</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_AFP_PAT')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_AFP_VOL_es_CO" model="ir.translation">
+            <field name="src">Voluntary Pension</field>
+            <field name="value">Pension Voluntaria</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_AFP_VOL')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SOL_FUN_es_CO" model="ir.translation">
+            <field name="src">Solitarity Fund</field>
+            <field name="value">Fondo Solidaridad</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SOL_FUN')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_RET_FTE_es_CO" model="ir.translation">
+            <field name="src">src Retention</field>
+            <field name="value">Retención Fuente</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_RET_FTE')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CES_ACR_es_CO" model="ir.translation">
+            <field name="src">Cesant Accrued</field>
+            <field name="value">Cesantias Causadas</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CES_ACR')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CES_INT_ACR_es_CO" model="ir.translation">
+            <field name="src">Cesant Interest Accrued</field>
+            <field name="value">Intereses Cesantias Causadas</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CES_INT_ACR')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PRM_SER_es_CO" model="ir.translation">
+            <field name="src">Service Premium</field>
+            <field name="value">Prima Servicios</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PRM_SER')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_VAC_MON_es_CO" model="ir.translation">
+            <field name="src">Vacation In Money</field>
+            <field name="value">Vacaciones En Dinero</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_VAC_MON')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CCF_es_CO" model="ir.translation">
+            <field name="src">Familiar Compensation Boxes</field>
+            <field name="value">Cajas de Compensación Familiar</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CCF')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_IBC_ARL_es_CO" model="ir.translation">
+            <field name="src">IBC Risk</field>
+            <field name="value">IBC Riesgos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_IBC_ARL')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_ARL_es_CO" model="ir.translation">
+            <field name="src">Professional Risk</field>
+            <field name="value">Riesgos Profesionales</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_ARL')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OPT_ASI_es_CO" model="ir.translation">
+            <field name="src">Optical Assistance</field>
+            <field name="value">Auxilio Optico</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OPT_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_BIR_ASI_es_CO" model="ir.translation">
+            <field name="src">Birth Assistance</field>
+            <field name="value">Auxilio De Natalidad</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_BIR_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EDU_ASI_es_CO" model="ir.translation">
+            <field name="src">Educational Assistance</field>
+            <field name="value">Auxilio Educativo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EDU_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PAR_ASI_es_CO" model="ir.translation">
+            <field name="src">Child Educational Assistance</field>
+            <field name="value">Auxilio Educativo Hijos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PAR_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PRA_ASI_es_CO" model="ir.translation">
+            <field name="src">Practitioners Assistance</field>
+            <field name="value">Auxilio A Practicantes</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PRA_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PRA_TRA_ASI_es_CO" model="ir.translation">
+            <field name="src">Practitioners Transport Assistance</field>
+            <field name="value">Auxilio Transporte Practicantes</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PRA_TRA_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_MAI_ASI_es_CO" model="ir.translation">
+            <field name="src">Maintenance Assistance</field>
+            <field name="value">Auxilio Mantenimineto</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_MAI_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_FEE_ASI_es_CO" model="ir.translation">
+            <field name="src">Food Assistance</field>
+            <field name="value">Auxilio Alimenticio</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_FEE_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_DEA_ASI_es_CO" model="ir.translation">
+            <field name="src">Death Assistance</field>
+            <field name="value">Auxilio Defunción</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_DEA_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_FED_ASI_es_CO" model="ir.translation">
+            <field name="src">Feed Assistance</field>
+            <field name="value">Auxilio Alimentación</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_FED_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CLO_ASI_es_CO" model="ir.translation">
+            <field name="src">Clothe Assistance</field>
+            <field name="value">Auxilio Vestuario</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CLO_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_HOU_ASI_es_CO" model="ir.translation">
+            <field name="src">Housing Assistance</field>
+            <field name="value">Auxilio Vivienda</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_HOU_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CON_ASI_es_CO" model="ir.translation">
+            <field name="src">Conveyance Assistance</field>
+            <field name="value">Auxilio Medio De Transporte</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CON_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PRO_PRE_ASI_es_CO" model="ir.translation">
+            <field name="src">Production Premium Assistance</field>
+            <field name="value">Auxilio Prima Producción</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PRO_PRE_ASI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_HOU_LOA_es_CO" model="ir.translation">
+            <field name="src">Housing Loan</field>
+            <field name="value">Prestamo Vivienda</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_HOU_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CAR_LOA_es_CO" model="ir.translation">
+            <field name="src">Car Loan</field>
+            <field name="value">Prestamo Vehiculo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CAR_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EDU_LOA_es_CO" model="ir.translation">
+            <field name="src">Educational Loan</field>
+            <field name="value">Prestamo Educación</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EDU_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_MED_LOA_es_CO" model="ir.translation">
+            <field name="src">Medical Loan</field>
+            <field name="value">Prestamo Medico</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_MED_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CAL_LOA_es_CO" model="ir.translation">
+            <field name="src">Calamity Loan</field>
+            <field name="value">Prestamo Calamidad</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CAL_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_VAR_LOA_es_CO" model="ir.translation">
+            <field name="src">Variety Loan</field>
+            <field name="value">Prestamos Varios</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_VAR_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_POS_CON_LOA_es_CO" model="ir.translation">
+            <field name="src">POS Consume Loan</field>
+            <field name="value">Prestamo Consumo En POS</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_POS_CON_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_REC_LOA_es_CO" model="ir.translation">
+            <field name="src">Recreation Loan</field>
+            <field name="value">Prestamo Recreacional</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_REC_LOA')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_IND_UNI_es_CO" model="ir.translation">
+            <field name="src">Industry Union</field>
+            <field name="value">Sindicato Industria</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_IND_UNI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SEC_UNI_es_CO" model="ir.translation">
+            <field name="src">Sector Union</field>
+            <field name="value">Sindicato Sectorial</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SEC_UNI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_REG_UNI_es_CO" model="ir.translation">
+            <field name="src">Region Union</field>
+            <field name="value">Sindicato Region</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_REG_UNI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CTY_UNI_es_CO" model="ir.translation">
+            <field name="src">City Union</field>
+            <field name="value">Sindicato Ciudad</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CTY_UNI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OTH_UNI_es_CO" model="ir.translation">
+            <field name="src">Other Union</field>
+            <field name="value">Sindicato Otro</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_UNI')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SRC_RET_es_CO" model="ir.translation">
+            <field name="src">src Retention</field>
+            <field name="value">Retención Fuente</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SRC_RET')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_HOU_DED_es_CO" model="ir.translation">
+            <field name="src">Interest Deduction</field>
+            <field name="value">Deducción Intereses</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_HOU_DED')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_DEP_DED_es_CO" model="ir.translation">
+            <field name="src">Dependant Deduction</field>
+            <field name="value">Deducción Dependientes</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_DEP_DED')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_MED_DED_es_CO" model="ir.translation">
+            <field name="src">Medical Deduction</field>
+            <field name="value">Deducción Medica</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_MED_DED')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_AFP_VOL_es_CO" model="ir.translation">
+            <field name="src">AFP Volunteer Deduction</field>
+            <field name="value">AFP Voluntaria Deducción</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_AFP_VOL')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_AFC_DED_es_CO" model="ir.translation">
+            <field name="src">AFC Deduction</field>
+            <field name="value">AFC Deducción</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_AFC_DED')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_BAS_RET_es_CO" model="ir.translation">
+            <field name="src">Base Retention</field>
+            <field name="value">Base De Retención</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_BAS_RET')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SRC_RET_VAL_es_CO" model="ir.translation">
+            <field name="src">src Retention Value</field>
+            <field name="value">Calculo Retención Fuente</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SRC_RET_VAL')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_NET_PAY_es_CO" model="ir.translation">
+            <field name="src">Net To Pay</field>
+            <field name="value">Neto A Pagar</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_NET_PAY')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PER_DED_es_CO" model="ir.translation">
+            <field name="src">Deductions Percent</field>
+            <field name="value">Porciento Descuentos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PER_DED')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_TOT_PAY_es_CO" model="ir.translation">
+            <field name="src">Total To Pay</field>
+            <field name="value">Total A Pagar</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_TOT_PAY')"/>
+            <field name="name">hr.salary.rule.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SAL_ADJ_INPUT_es_CO" model="ir.translation">
+            <field name="src">Salary Adjust</field>
+            <field name="value">Ajuste Salario</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SAL_ADJ_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_VAC_MON_INPUT_es_CO" model="ir.translation">
+            <field name="src">Vacation In Money</field>
+            <field name="value">Vacaciones En Dinero</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_VAC_MON_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SUB_INPUT_es_CO" model="ir.translation">
+            <field name="src">Assistance / Subsidies (Not Salary)</field>
+            <field name="value">Subsidios / Auxilios (No Salario)</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SUB_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_COM_INPUT_es_CO" model="ir.translation">
+            <field name="src">Commissions</field>
+            <field name="value">Comisiones</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_COM_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_BON_INPUT_es_CO" model="ir.translation">
+            <field name="src">Bonus</field>
+            <field name="value">Bonificaciones</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_BON_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OTH_BON_INPUT_es_CO" model="ir.translation">
+            <field name="src">Other Bonus</field>
+            <field name="value">Otras Bonificaciones</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_BON_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EDT_INPUT_es_CO" model="ir.translation">
+            <field name="src">Extra Day Time</field>
+            <field name="value">Horas Extras Diurnas</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EDT_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EDT_SH_INPUT_es_CO" model="ir.translation">
+            <field name="src">Extra Day Time Dominical And Hollidays</field>
+            <field name="value">Horas Extras Diurnas Dominicales Y Festivos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EDT_SH_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_ENT_INPUT_es_CO" model="ir.translation">
+            <field name="src">Extra Night Time</field>
+            <field name="value">Horas Extras Nocturnas</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_ENT_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_ENT_SH_INPUT_es_CO" model="ir.translation">
+            <field name="src">Extra Night Time Domincal And Hollidays</field>
+            <field name="value">Horas Extras Nocturnas Dominical Y Festivos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_ENT_SH_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_NS_INPUT_es_CO" model="ir.translation">
+            <field name="src">Night Surcharge</field>
+            <field name="value">Recargo Nocturno</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_NS_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_SH_INPUT_es_CO" model="ir.translation">
+            <field name="src">Sunday And Holiday Surcharge</field>
+            <field name="value">Recargo Dominical Y Festivo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SH_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_VIA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Viatics</field>
+            <field name="value">Viaticos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_VIA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Labor Loan</field>
+            <field name="value">Prestamo Laboral</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_INS_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Institutional Loan</field>
+            <field name="value">Prestamo Institucional</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_INS_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_LAB_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Labor Loan</field>
+            <field name="value">Prestamo Laboral</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_LAB_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_INS_INPUT_es_CO" model="ir.translation">
+            <field name="src">Insurance</field>
+            <field name="value">Seguro</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_INS_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_FUN_INS_INPUT_es_CO" model="ir.translation">
+            <field name="src">Funeral Insurance</field>
+            <field name="value">Seguro Funerario</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_FUN_INS_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_AFP_VOL_INPUT_es_CO" model="ir.translation">
+            <field name="src">Voluntary Pension</field>
+            <field name="value">Pension Voluntaria</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_AFP_VOL_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_RET_FTE_INPUT_es_CO" model="ir.translation">
+            <field name="src">src Retention</field>
+            <field name="value">Retención Fuente</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_RET_FTE_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OPT_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Optical Assistance</field>
+            <field name="value">Auxilio Optico</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OPT_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_BIR_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Birth Assistance</field>
+            <field name="value">Auxilio De Natalidad</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_BIR_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EDU_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Educational Assistance</field>
+            <field name="value">Auxilio Educativo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EDU_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PAR_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Child Educational Assistance</field>
+            <field name="value">Auxilio Educativo Hijos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PAR_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PRA_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Practitioners Assistance</field>
+            <field name="value">Auxilio A Practicantes</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PRA_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_PRA_TRA_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Practitioners Transport Assistance</field>
+            <field name="value">Auxilio Transporte Practicantes</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_PRA_TRA_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_MAI_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Maintenance Assistance</field>
+            <field name="value">Auxilio Mantenimineto</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_MAI_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_FEE_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Food Assistance</field>
+            <field name="value">Auxilio Alimenticio</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_FEE_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_DEA_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Death Assistance</field>
+            <field name="value">Auxilio Defunción</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_DEA_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_FED_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Feed Assistance</field>
+            <field name="value">Auxilio Alimentación</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_FED_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CLO_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Clothe Assistance</field>
+            <field name="value">Auxilio Vestuario</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CLO_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_HOU_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Housing Assistance</field>
+            <field name="value">Auxilio Vivienda</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_HOU_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CON_ASI_INPUT_es_CO" model="ir.translation">
+            <field name="src">Conveyance Assistance</field>
+            <field name="value">Auxilio Medio De Transporte</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CON_ASI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EXE_JUD_INPUT_es_CO" model="ir.translation">
+            <field name="src">Execut Judicial</field>
+            <field name="value">Embargo Ejecutivo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EXE_JUD_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_FEE_JUD_INPUT_es_CO" model="ir.translation">
+            <field name="src">Feed Judicial</field>
+            <field name="value">Embargo Alimentos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_FEE_JUD_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OTH_JUD_INPUT_es_CO" model="ir.translation">
+            <field name="src">Other Judicial</field>
+            <field name="value">Otro Embargo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_JUD_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_COO_INPUT_es_CO" model="ir.translation">
+            <field name="src">Cooperative</field>
+            <field name="value">Cooperativa</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_COO_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_FON_INPUT_es_CO" model="ir.translation">
+            <field name="src">Employee Association</field>
+            <field name="value">Fondo Empleados</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_FON_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OTH_ASO_INPUT_es_CO" model="ir.translation">
+            <field name="src">Other Association</field>
+            <field name="value">Otra Asociación</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_ASO_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_HOU_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Housing Loan</field>
+            <field name="value">Prestamo Vivienda</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_HOU_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CAR_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Car Loan</field>
+            <field name="value">Prestamo Vehiculo</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CAR_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_EDU_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Educational Loan</field>
+            <field name="value">Prestamo Educación</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_EDU_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_MED_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Medical Loan</field>
+            <field name="value">Prestamo Medico</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_MED_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_CAL_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Calamity Loan</field>
+            <field name="value">Prestamo Calamidad</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CAL_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_VAR_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Variety Loan</field>
+            <field name="value">Prestamos Varios</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_VAR_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_POS_CON_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">POS Consume Loan</field>
+            <field name="value">Prestamo Consumo En POS</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_POS_CON_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_REC_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Recreation Loan</field>
+            <field name="value">Prestamo Recreacional</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_REC_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_VAR_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Variety Loan</field>
+            <field name="value">Prestamos Varios</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_VAR_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.COMERCIAL_OTH_LOA_INPUT_es_CO" model="ir.translation">
+            <field name="src">Other Loan</field>
+            <field name="value">Otros Prestamos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_LOA_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+         <record id="l10n_co_hr_payroll.COMERCIAL_IND_UNI_es_CO" model="ir.translation">
+            <field name="src">Industry Union</field>
+            <field name="value">Sindicato Industria</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_IND_UNI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+         <record id="l10n_co_hr_payroll.COMERCIAL_SEC_UNI_es_CO" model="ir.translation">
+            <field name="src">Sector Union</field>
+            <field name="value">Sindicato Sectorial</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SEC_UNI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+         <record id="l10n_co_hr_payroll.COMERCIAL_SUB_UNI_es_CO" model="ir.translation">
+            <field name="src">Subsector Union</field>
+            <field name="value">Sindicato Subsectorial</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_SUB_UNI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+         <record id="l10n_co_hr_payroll.COMERCIAL_REG_UNI_es_CO" model="ir.translation">
+            <field name="src">Region Union</field>
+            <field name="value">Sindicato Regional</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_REG_UNI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+         <record id="l10n_co_hr_payroll.COMERCIAL_CTY_UNI_es_CO" model="ir.translation">
+            <field name="src">City Union</field>
+            <field name="value">Sindicato Local</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_CTY_UNI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+         <record id="l10n_co_hr_payroll.COMERCIAL_OTH_UNI_es_CO" model="ir.translation">
+            <field name="src">Other Union</field>
+            <field name="value">Sindicato Otros</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.COMERCIAL_OTH_UNI_INPUT')"/>
+            <field name="name">hr.rule.input.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.CATEGORY_IBC_es_CO" model="ir.translation">
+            <field name="src">Quotation Base Index</field>
+            <field name="value">Indice Base Cotización</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.CATEGORY_IBC')"/>
+            <field name="name">hr.salary.rule.category.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.CATEGORY_INC_es_CO" model="ir.translation">
+            <field name="src">Incomes</field>
+            <field name="value">Ingresos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.CATEGORY_INC')"/>
+            <field name="name">hr.salary.rule.category.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.CATEGORY_OTH_INC_es_CO" model="ir.translation">
+            <field name="src">Other Income</field>
+            <field name="value">Otros Ingresos</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.CATEGORY_OTH_INC')"/>
+            <field name="name">hr.salary.rule.category.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.CATEGORY_TOT_es_CO" model="ir.translation">
+            <field name="src">Total To Pay</field>
+            <field name="value">Total A Pagar</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.CATEGORY_TOT')"/>
+            <field name="name">hr.salary.rule.category.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.CATEGORY_DIS_es_CO" model="ir.translation">
+            <field name="src">Discount</field>
+            <field name="value">Descuento</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.CATEGORY_DIS')"/>
+            <field name="name">hr.salary.rule.category.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.CATEGORY_DED_es_CO" model="ir.translation">
+            <field name="src">Deduction</field>
+            <field name="value">Deducción</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.CATEGORY_DED')"/>
+            <field name="name">hr.salary.rule.category.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.CATEGORY_NET_es_CO" model="ir.translation">
+            <field name="src">Net To Pay</field>
+            <field name="value">Neto A Pagar</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.CATEGORY_NET')"/>
+            <field name="name">hr.salary.rule.category.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.CATEGORY_OTH_DED_es_CO" model="ir.translation">
+            <field name="src">Other Deduction</field>
+            <field name="value">Otras Deducciones</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.CATEGORY_OTH_DED')"/>
+            <field name="name">hr.salary.rule.category.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.CATEGORY_ACR_es_CO" model="ir.translation">
+            <field name="src">Accrued</field>
+            <field name="value">Causación</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.CATEGORY_ACR')"/>
+            <field name="name">hr.salary.rule.category.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+        <record id="l10n_co_hr_payroll.CATEGORY_CON_es_CO" model="ir.translation">
+            <field name="src">Contribuition</field>
+            <field name="value">Contribución</field>
+            <field name="module">hr_payroll</field>
+            <field name="res_id" eval="ref('l10n_co_hr_payroll.CATEGORY_CON')"/>
+            <field name="name">hr.salary.rule.category.template,name</field>
+            <field name="lang">es_CO</field>
+            <field name="type">model</field>
+        </record>
+
+   </data>
+</odoo>
+
+
+

@@ -1,0 +1,48 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="account_budget_line_additional_info_tree">
+            <field name="name">account.budget.line.additional.info</field>
+            <field name="model">crossovered.budget.lines</field>
+            <field name="inherit_id" ref="account_budget.view_crossovered_budget_line_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='analytic_account_id']" position="after">
+                    <field name="product_id"></field>
+                    <field name="partner_id"></field>
+                </xpath>
+                <xpath expr="//field[@name='percentage']" position="replace">
+                    <field name="percentage"/>
+                    <field name="planned_quantity" widget="monetary"/>
+                    <field name="practical_quantity" widget="monetary"/>
+                    <field name="theoretical_quantity" widget="monetary"/>
+                    <field name="percentage_quantity"/>
+                </xpath>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="account_budget_line_additinal_info_form">
+            <field name="name">account.budget.line.additional.info</field>
+            <field name="model">crossovered.budget.lines</field>
+            <field name="inherit_id" ref="account_budget.view_crossovered_budget_line_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='analytic_account_id']" position="after">
+                    <field name="product_id"/>
+                    <field name="partner_id"/>
+                </xpath>
+                <xpath expr="//field[@name='planned_amount']" position="after">
+                    <field name="planned_quantity" widget="monetary"/>
+                </xpath>
+                <xpath expr="//field[@name='practical_amount']" position="after">
+                    <field name="practical_quantity" widget="monetary"/>
+                </xpath>
+                <xpath expr="//field[@name='theoritical_amount']" position="after">
+                    <field name="theoretical_quantity" widget="monetary"/>
+                </xpath>
+                <xpath expr="//field[@name='percentage']" position="replace">
+                    <field name="percentage" widget="progressbar"/>
+                    <field name="percentage_quantity" widget="progressbar"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,42 @@
+<odoo>
+    <data>
+
+        <record model="ir.ui.view" id="account_budget_additional_info_tree">
+            <field name="name">account.budget.additional.info</field>
+            <field name="model">crossovered.budget</field>
+            <field name="inherit_id" ref="account_budget.crossovered_budget_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="/form/sheet/notebook/page/field/tree/field[@name='general_budget_id']" position="after">
+                    <field name="product_id"/>
+                    <field name="partner_id"/>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page/field/tree/field[@name='planned_amount']" position="after">
+                    <field name="planned_quantity"/>
+                </xpath>
+                <!-- xpath expr="/form/sheet/notebook/page/field/tree/field[@name='paid_date']"  position="attributes">
+                  <attribute name="invisible">True</attribute>
+                </xpath -->
+                <xpath expr="/form/sheet/notebook/page/field/tree/field[@name='practical_amount']"
+                       position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page/field/tree/field[@name='theoritical_amount']"
+                       position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page/field/tree/field[@name='percentage']" position="attributes">
+                    <attribute name="invisible">True</attribute>
+                </xpath>
+
+                <xpath expr="/form/sheet/notebook/page/field/form//field[@name='general_budget_id']" position="after">
+                    <field name="product_id"/>
+                    <field name="partner_id"/>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page/field/form//field[@name='planned_amount']" position="after">
+                    <field name="planned_quantity"/>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+</odoo>

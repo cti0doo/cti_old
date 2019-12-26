@@ -1,0 +1,403 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- ESTRUCTURA SALARIAL CON TODOS LOS REQUISITOS -->
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_CESANTIAS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>NOMINA_LEY_CESANTIAS</field>
+            <field name='name'>Nomina Cesantías</field>
+            <!--<field name='parent_id' ref=''/>-->
+        </record>
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_PRIMA_SEMESTRAL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>NOMINA_LEY_PRIMA_SEMESTRAL</field>
+            <field name='name'>Nomina Prima Semestral</field>
+            <!--<field name='parent_id' ref=''/>-->
+        </record>
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_INTEGRAL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>NOMINA_LEY_INTEGRAL</field>
+            <field name='name'>Nomina Integral</field>
+            <!--<field name='parent_id' ref=''/>-->
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [
+                                                                                ref('COMERCIAL_CON_SAL_INT'),
+                                                                                ref('COMERCIAL_IBC_EPS_INT'),
+                                                                                ref('COMERCIAL_IBC_SS'),
+                                                                                ref('COMERCIAL_IBC_CCF_INT'),
+                                                                                ref('COMERCIAL_IBC_ARL_INT'),
+                                                                                ref('COMERCIAL_CON_SAL_INT'),
+                                                                                ref('COMERCIAL_BAS_SAL_INT'),
+                                                                                ref('COMERCIAL_EPS_INA_SUB_INT'),
+                                                                                ref('COMERCIAL_PAI_LEA_INT'),
+                                                                                ref('COMERCIAL_EPS_INA_INT'),
+                                                                                ref('COMERCIAL_EPS_INA_180_INT'),
+                                                                                ref('COMERCIAL_MAT_LIC_INT'),
+                                                                                ref('COMERCIAL_ARL_INA_INT'),
+                                                                                ref('COMERCIAL_SAL_ADJ_INT'),
+                                                                                ref('COMERCIAL_COM_INT'),
+                                                                                ref('COMERCIAL_VIA_INT'),
+                                                                                ref('COMERCIAL_VAC_ACR_INT'),
+                                                                                ref('COMERCIAL_SAL_ASI_INT'),
+                                                                                ref('COMERCIAL_SUB_INT'),
+                                                                                ref('COMERCIAL_LOA_INT'),
+                                                                                ref('COMERCIAL_EPS_INT'),
+                                                                                ref('COMERCIAL_AFP_INT'),
+                                                                                ref('COMERCIAL_AFP_VOL_INT'),
+                                                                                ref('COMERCIAL_SOL_FUN_INT'),
+                                                                                ref('COMERCIAL_RET_FTE_INT'),
+                                                                                ref('COMERCIAL_EPS_PAT_INT'),
+                                                                                ref('COMERCIAL_AFP_PAT_INT'),
+                                                                                ref('COMERCIAL_VAC_MON_INT'),
+                                                                                ref('COMERCIAL_CCF_INT'),
+                                                                                ref('COMERCIAL_ARL_INT'),
+                                                                                ref('COMERCIAL_IBC_SENA_ICBF_INT'),
+                                                                                ref('COMERCIAL_SENA_INT'),
+                                                                                ref('COMERCIAL_ICBF_INT'),
+                                                                                ref('COMERCIAL_NET_PAY_INT'),
+                                                                                ref('COMERCIAL_PER_DED_INT'),
+                                                                                ref('COMERCIAL_TOT_PAY_INT'),
+                                                                                ])]"/>
+        </record>
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_PASANTES'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>PASANTES</field>
+            <field name='name'>Pasantes</field>
+            <!--<field name='parent_id' ref=''/>-->
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [
+                                                                                ref('COMERCIAL_SMMLV'),
+                                                                                ref('COMERCIAL_UVT'),
+                                                                                ref('COMERCIAL_CON_SAL'),
+                                                                                ref('COMERCIAL_BAS_SAL'),
+                                                                                ref('COMERCIAL_NET_PAY'),
+                                                                                ref('COMERCIAL_TOT_PAY'),
+                                                                                ])]"/>
+        </record>
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_SENA_LECTIVA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>NOMINA_SENA_LECTIVA</field>
+            <field name='name'>Aprendiz SENA Etapa Lectiva</field>
+            <!--<field name='parent_id' ref=''/>-->
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('COMERCIAL_SMMLV'),
+                                                                                ref('COMERCIAL_UVT'),
+                                                                                ref('COMERCIAL_CON_SAL'),
+                                                                                ref('COMERCIAL_BAS_SAL'),
+                                                                                ref('COMERCIAL_EPS_PAT'),
+                                                                                ref('COMERCIAL_EPS_INA_SUB'),
+                                                                                ref('COMERCIAL_PAI_LEA'),
+                                                                                ref('COMERCIAL_EPS_INA'),
+                                                                                ref('COMERCIAL_EPS_INA_180'),
+                                                                                ref('COMERCIAL_MAT_LIC'),
+                                                                                ref('COMERCIAL_NET_PAY'),
+                                                                                ref('COMERCIAL_TOT_PAY'),
+                                                                                ])]"/>
+        </record>
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_SENA_PRODUCTIVA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>NOMINA_SENA_PRODUCTIVA</field>
+            <field name='name'>Aprendiz SENA Etapa Productiva</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  
+                                                                                ref('COMERCIAL_SMMLV'),
+                                                                                ref('COMERCIAL_UVT'),
+                                                                                ref('COMERCIAL_IBC_ARL'),
+                                                                                ref('COMERCIAL_CON_SAL'),
+                                                                                ref('COMERCIAL_BAS_SAL'),
+                                                                                ref('COMERCIAL_EPS_PAT'),
+                                                                                ref('COMERCIAL_EPS_INA_SUB'),
+                                                                                ref('COMERCIAL_PAI_LEA'),
+                                                                                ref('COMERCIAL_EPS_INA'),
+                                                                                ref('COMERCIAL_EPS_INA_180'),
+                                                                                ref('COMERCIAL_MAT_LIC'),
+                                                                                ref('COMERCIAL_ARL_INA'),
+                                                                                ref('COMERCIAL_ARL'),
+                                                                                ref('COMERCIAL_NET_PAY'),
+                                                                                ref('COMERCIAL_TOT_PAY'),
+                                                                                ])]"/>
+        </record>
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_PENSIONADO'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>NOMINA_LEY_PENSIONADO</field>
+            <field name='name'>Nomina Pensionados</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [
+                                                                                ref('COMERCIAL_SMMLV'),
+                                                                                ref('COMERCIAL_UVT'),
+                                                                                ref('COMERCIAL_IBC_SS'),
+                                                                                ref('COMERCIAL_IBC_CCF'),
+                                                                                ref('COMERCIAL_IBC_ARL'),
+                                                                                ref('COMERCIAL_CON_SAL'),
+                                                                                ref('COMERCIAL_BAS_SAL'),
+                                                                                ref('COMERCIAL_EPS_INA_SUB'),
+                                                                                ref('COMERCIAL_PAI_LEA'),
+                                                                                ref('COMERCIAL_EPS_INA'),
+                                                                                ref('COMERCIAL_EPS_INA_180'),
+                                                                                ref('COMERCIAL_MAT_LIC'),
+                                                                                ref('COMERCIAL_ARL_INA'),
+                                                                                ref('COMERCIAL_COM'),
+                                                                                ref('COMERCIAL_BON'),
+                                                                                ref('COMERCIAL_EDT'),
+                                                                                ref('COMERCIAL_EDT_SH'),
+                                                                                ref('COMERCIAL_ENT'),
+                                                                                ref('COMERCIAL_ENT_SH'),
+                                                                                ref('COMERCIAL_NS'),
+                                                                                ref('COMERCIAL_VIA'),
+                                                                                ref('COMERCIAL_VAC_ACR'),
+                                                                                ref('COMERCIAL_PRM_ACR'),
+                                                                                ref('COMERCIAL_SAL_ASI'),
+                                                                                ref('COMERCIAL_SUB'),
+                                                                                ref('COMERCIAL_TRA_ASI'),
+                                                                                ref('COMERCIAL_LOA'),
+                                                                                ref('COMERCIAL_EPS'),
+                                                                                ref('COMERCIAL_RET_FTE'),
+                                                                                ref('COMERCIAL_EPS_PAT'),
+                                                                                ref('COMERCIAL_CES_ACR'),
+                                                                                ref('COMERCIAL_CES_INT_ACR'),
+                                                                                ref('COMERCIAL_PRM_SER_ACR'),
+                                                                                ref('COMERCIAL_VAC_MON'),
+                                                                                ref('COMERCIAL_CCF'),
+                                                                                ref('COMERCIAL_ARL'),
+                                                                                ref('COMERCIAL_IBC_SENA_ICBF'),
+                                                                                ref('COMERCIAL_SENA'),
+                                                                                ref('COMERCIAL_ICBF'),
+                                                                                ref('COMERCIAL_SRC_RET'),
+                                                                                ref('COMERCIAL_NET_PAY'),
+                                                                                ref('COMERCIAL_PER_DED'),
+                                                                                ref('COMERCIAL_TOT_PAY'),
+                                                                                ])]"/>
+        </record>
+
+        <record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>NOMINA_LEY</field>
+            <field name='name'>Nomina</field>
+            <field name='parent_id' ref=''/>
+            <field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [
+                                                                                ref('COMERCIAL_SMMLV'),
+                                                                                ref('COMERCIAL_UVT'),
+                                                                                ref('COMERCIAL_BAS_SAL'),
+                                                                                ref('COMERCIAL_VAC_MON'),
+                                                                                ref('COMERCIAL_UNI_PER'),
+                                                                                ref('COMERCIAL_EPS_PER'),
+                                                                                ref('COMERCIAL_COM'),
+                                                                                ref('COMERCIAL_BON'),
+                                                                                ref('COMERCIAL_OTH_BON'),
+                                                                                ref('COMERCIAL_EDT'),
+                                                                                ref('COMERCIAL_EDT_SH'),
+                                                                                ref('COMERCIAL_ENT'),
+                                                                                ref('COMERCIAL_ENT_SH'),
+                                                                                ref('COMERCIAL_NS'),
+                                                                                ref('COMERCIAL_SH'),
+                                                                                ref('COMERCIAL_VIA'),
+                                                                                ref('COMERCIAL_CON_SAL'),
+                                                                                ref('COMERCIAL_SAL_ADJ'),
+                                                                                ref('COMERCIAL_EPS_INA_SUB'),
+                                                                                ref('COMERCIAL_PAI_LEA'),
+                                                                                ref('COMERCIAL_EPS_INA'),
+                                                                                ref('COMERCIAL_EPS_INA_180'),
+                                                                                ref('COMERCIAL_MAT_LIC'),
+                                                                                ref('COMERCIAL_ARL_INA'),
+                                                                                ref('COMERCIAL_SUB_INC'),
+                                                                                ref('COMERCIAL_OPT_ASI'),
+                                                                                ref('COMERCIAL_BIR_ASI'),
+                                                                                ref('COMERCIAL_EDU_ASI'),
+                                                                                ref('COMERCIAL_PAR_ASI'),
+                                                                                ref('COMERCIAL_PRI_ASI'),
+                                                                                ref('COMERCIAL_SEC_ASI'),
+                                                                                ref('COMERCIAL_UNI_ASI'),
+                                                                                ref('COMERCIAL_TEC_ASI'),
+                                                                                ref('COMERCIAL_PRA_ASI'),
+                                                                                ref('COMERCIAL_PRA_TRA_ASI'),
+                                                                                ref('COMERCIAL_MAI_ASI'),
+                                                                                ref('COMERCIAL_FEE_ASI'),
+                                                                                ref('COMERCIAL_DEA_ASI'),
+                                                                                ref('COMERCIAL_FED_ASI'),
+                                                                                ref('COMERCIAL_CLO_ASI'),
+                                                                                ref('COMERCIAL_HOU_ASI'),
+                                                                                ref('COMERCIAL_CON_ASI'),
+                                                                                ref('COMERCIAL_SAL_ASI'),
+                                                                                ref('COMERCIAL_OTH_ASI'),
+                                                                                ref('COMERCIAL_PRE_ASI'),
+                                                                                ref('COMERCIAL_SPE_ASI'),
+                                                                                ref('COMERCIAL_PRO_PRE_ASI'),
+                                                                                ref('COMERCIAL_LAB_LOA_ASI'),
+                                                                                ref('COMERCIAL_SUB'),
+                                                                                ref('COMERCIAL_TRA_ASI'),
+                                                                                ref('COMERCIAL_SUB_OTH_INC'),
+                                                                                ref('COMERCIAL_TOT_INC'),
+                                                                                ref('COMERCIAL_IBC_SS'),
+                                                                                ref('COMERCIAL_IBC_SS'),
+                                                                                ref('COMERCIAL_IBC_CCF'),
+                                                                                ref('COMERCIAL_IBC_ARL'),
+                                                                                ref('COMERCIAL_EPS'),
+                                                                                ref('COMERCIAL_AFP'),
+                                                                                ref('COMERCIAL_AFP_VOL'),
+                                                                                ref('COMERCIAL_SOL_FUN'),
+                                                                                ref('COMERCIAL_RET_FTE'),
+                                                                                ref('COMERCIAL_CCF'),
+                                                                                ref('COMERCIAL_SUB_DED'),
+                                                                                ref('COMERCIAL_INS'),
+                                                                                ref('COMERCIAL_EXE_JUD'),
+                                                                                ref('COMERCIAL_FEE_JUD'),
+                                                                                ref('COMERCIAL_OTH_JUD'),
+                                                                                ref('COMERCIAL_COO'),
+                                                                                ref('COMERCIAL_FON'),
+                                                                                ref('COMERCIAL_OTH_ASO'),
+                                                                                ref('COMERCIAL_INS_LOA'),
+                                                                                ref('COMERCIAL_LAB_LOA'),
+                                                                                ref('COMERCIAL_HOU_LOA'),
+                                                                                ref('COMERCIAL_CAR_LOA'),
+                                                                                ref('COMERCIAL_EDU_LOA'),
+                                                                                ref('COMERCIAL_MED_LOA'),
+                                                                                ref('COMERCIAL_CAL_LOA'),
+                                                                                ref('COMERCIAL_VAR_LOA'),
+                                                                                ref('COMERCIAL_POS_CON_LOA'),
+                                                                                ref('COMERCIAL_REC_LOA'),
+                                                                                ref('COMERCIAL_OTH_LOA'),
+                                                                                ref('COMERCIAL_INS'),
+                                                                                ref('COMERCIAL_FUN_INS'),
+                                                                                ref('COMERCIAL_OTH_INS'),
+                                                                                ref('COMERCIAL_IND_UNI'),
+                                                                                ref('COMERCIAL_SEC_UNI'),
+                                                                                ref('COMERCIAL_SUB_UNI'),
+                                                                                ref('COMERCIAL_REG_UNI'),
+                                                                                ref('COMERCIAL_CTY_UNI'),
+                                                                                ref('COMERCIAL_OTH_UNI'),
+                                                                                ref('COMERCIAL_SRC_RET'),
+                                                                                ref('COMERCIAL_SUB_DIS'),
+                                                                                ref('COMERCIAL_TOT_DED'),
+                                                                                ref('COMERCIAL_PER_DED'),
+                                                                                ref('COMERCIAL_LAB_LOA'),
+                                                                                ref('COMERCIAL_OTH_DIS'),
+                                                                                ref('COMERCIAL_LST_AVG_INC'),
+                                                                                ref('COMERCIAL_PAY_CES'),
+                                                                                ref('COMERCIAL_PRM_SER'),
+                                                                                ref('COMERCIAL_ARL'),
+                                                                                ref('COMERCIAL_IBC_SENA_ICBF'),
+                                                                                ref('COMERCIAL_SENA'),
+                                                                                ref('COMERCIAL_ICBF'),
+                                                                                ref('COMERCIAL_VAC_ACR'),
+                                                                                ref('COMERCIAL_PRM_ACR'),
+                                                                                ref('COMERCIAL_CES_ACR'),
+                                                                                ref('COMERCIAL_PRM_SER_ACR'),
+                                                                                ref('COMERCIAL_CES_INT_ACR'),
+                                                                                ref('COMERCIAL_NS'),
+                                                                                ref('COMERCIAL_EPS_PAT'),
+                                                                                ref('COMERCIAL_AFP_PAT'),
+                                                                                ])]"/>
+        </record>
+
+        <!--<record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_VENTAS'>-->
+        <!--<field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>-->
+        <!--<field name='code'>NOMINA_LEY_VENTAS</field>-->
+        <!--<field name='name'>Nomina Venta</field>-->
+        <!--<field name='parent_id' ref=''/>-->
+        <!--<field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  -->
+        <!--ref('COMERCIAL_SMMLV'),-->
+        <!--ref('COMERCIAL_IBC_SALUD_VENTAS'),-->
+        <!--ref('COMERCIAL_IBC_PENSION_VENTAS'),-->
+        <!--ref('COMERCIAL_IBC_CAJA_VENTAS'),-->
+        <!--ref('COMERCIAL_IBC_RIESGOS_VENTAS'),-->
+        <!--ref('COMERCIAL_SALARIO_CONTRATO_VENTAS'),-->
+        <!--ref('COMERCIAL_SALARIO_BASICO_VENTAS'),-->
+        <!--ref('COMERCIAL_SUBSIDIO_INCAPACIDAD_SALUD_VENTAS'),-->
+        <!--ref('COMERCIAL_PEMISO_REMUNERADO_VENTAS'),-->
+        <!--ref('COMERCIAL_INCAPACIDAD_SALUD_VENTAS'),-->
+        <!--ref('COMERCIAL_INCAPACIDAD_SALUD_180_VENTAS'),-->
+        <!--ref('COMERCIAL_LICENCIA_MATERNIDAD_VENTAS'),-->
+        <!--ref('COMERCIAL_INCAPACIDAD_ARL_VENTAS'),-->
+        <!--ref('COMERCIAL_AJUSTE_SALARIO_VENTAS'),-->
+        <!--ref('COMERCIAL_COMISIONES_VENTAS'),-->
+        <!--ref('COMERCIAL_BONIFICACION_VENTAS'),-->
+        <!--ref('COMERCIAL_HORAS_EXTRA_VENTAS'),-->
+        <!--ref('COMERCIAL_VIATICOS_VENTAS'),-->
+        <!--ref('COMERCIAL_VACACIONES_DEVENGADAS_VENTAS'),-->
+        <!--ref('COMERCIAL_PRIMA_DEVENGADAS_VENTAS'),-->
+        <!--ref('COMERCIAL_AUXILIOS_SALARIO_VENTAS'),-->
+        <!--ref('COMERCIAL_SUBSIDIOS_VENTAS'),-->
+        <!--ref('COMERCIAL_AUXILIO_TRANSPORTE_VENTAS'),-->
+        <!--ref('COMERCIAL_PRMSTAMO_VENTAS'),-->
+        <!--ref('COMERCIAL_SALUD_VENTAS'),-->
+        <!--ref('COMERCIAL_PENSION_VENTAS'),-->
+        <!--ref('COMERCIAL_PENSION_VOLUNTARIA_VENTAS'),-->
+        <!--ref('COMERCIAL_FONDO_SOLIDARIDAD_VENTAS'),-->
+        <!--ref('COMERCIAL_RETENCION_FUENTE_VENTAS'),-->
+        <!--ref('COMERCIAL_SALUD_EMPLEADOR_VENTAS'),-->
+        <!--ref('COMERCIAL_PENSION_EMPLEADOR_VENTAS'),-->
+        <!--ref('COMERCIAL_CESANTIAS_VENTAS'),-->
+        <!--ref('COMERCIAL_INTERES_CESANTIAS_DEVENGADAS_VENTAS'),-->
+        <!--ref('COMERCIAL_INTERES_CESANTIAS_VENTAS'),-->
+        <!--ref('COMERCIAL_PRIMA_SERVICIO_VENTAS'),-->
+        <!--ref('COMERCIAL_VACACIONES_PESO_VENTAS'),-->
+        <!--ref('COMERCIAL_CCF_VENTAS'),-->
+        <!--ref('COMERCIAL_ARL_VENTAS'),-->
+        <!--ref('COMERCIAL_IBC_SENA_ICBF_VENTAS'),-->
+        <!--ref('COMERCIAL_SENA_VENTAS'),-->
+        <!--ref('COMERCIAL_ICBF_VENTAS'),-->
+        <!--ref('COMERCIAL_NETO_PAGAR_VENTAS'),-->
+        <!--ref('COMERCIAL_PORCIENTO_DESCUENTOS_VENTAS'),-->
+        <!--ref('COMERCIAL_TOTAL_PAGAR_VENTAS'),-->
+        <!--])]"/>-->
+        <!--</record>-->
+
+        <!--<record model='hr.payroll.structure.template' id='COMERCIAL_NOMINA_LEY_PRODUCCION'>-->
+        <!--<field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>-->
+        <!--<field name='code'>NOMINA_LEY_PRODUCCION</field>-->
+        <!--<field name='name'>Nomina Produccion</field>-->
+        <!--<field name='parent_id' ref=''/>-->
+        <!--<field name='rule_ids' model="hr.salary.rule.template" eval="[(6, 0, [  -->
+        <!--ref('COMERCIAL_SMMLV'),-->
+        <!--ref('COMERCIAL_IBC_SALUD_PRODUCCION'),-->
+        <!--ref('COMERCIAL_IBC_PENSION_PRODUCCION'),-->
+        <!--ref('COMERCIAL_IBC_CAJA_PRODUCCION'),-->
+        <!--ref('COMERCIAL_IBC_RIESGOS_PRODUCCION'),-->
+        <!--ref('COMERCIAL_SALARIO_CONTRATO_PRODUCCION'),-->
+        <!--ref('COMERCIAL_SALARIO_BASICO_PRODUCCION'),-->
+        <!--ref('COMERCIAL_SUBSIDIO_INCAPACIDAD_SALUD_PRODUCCION'),-->
+        <!--ref('COMERCIAL_PEMISO_REMUNERADO_PRODUCCION'),-->
+        <!--ref('COMERCIAL_INCAPACIDAD_SALUD_PRODUCCION'),-->
+        <!--ref('COMERCIAL_INCAPACIDAD_SALUD_180_PRODUCCION'),-->
+        <!--ref('COMERCIAL_LICENCIA_MATERNIDAD_PRODUCCION'),-->
+        <!--ref('COMERCIAL_INCAPACIDAD_ARL_PRODUCCION'),-->
+        <!--ref('COMERCIAL_AJUSTE_SALARIO_PRODUCCION'),-->
+        <!--ref('COMERCIAL_COMISIONES_PRODUCCION'),-->
+        <!--ref('COMERCIAL_BONIFICACION_PRODUCCION'),-->
+        <!--ref('COMERCIAL_HORAS_EXTRA_PRODUCCION'),-->
+        <!--ref('COMERCIAL_VIATICOS_PRODUCCION'),-->
+        <!--ref('COMERCIAL_VACACIONES_DEVENGADAS_PRODUCCION'),-->
+        <!--ref('COMERCIAL_PRIMA_DEVENGADAS_PRODUCCION'),-->
+        <!--ref('COMERCIAL_AUXILIOS_SALARIO_PRODUCCION'),-->
+        <!--ref('COMERCIAL_SUBSIDIOS_PRODUCCION'),-->
+        <!--ref('COMERCIAL_AUXILIO_TRANSPORTE_PRODUCCION'),-->
+        <!--ref('COMERCIAL_PRMSTAMO_PRODUCCION'),-->
+        <!--ref('COMERCIAL_SALUD_PRODUCCION'),-->
+        <!--ref('COMERCIAL_PENSION_PRODUCCION'),-->
+        <!--ref('COMERCIAL_PENSION_VOLUNTARIA_PRODUCCION'),-->
+        <!--ref('COMERCIAL_FONDO_SOLIDARIDAD_PRODUCCION'),-->
+        <!--ref('COMERCIAL_RETENCION_FUENTE_PRODUCCION'),-->
+        <!--ref('COMERCIAL_SALUD_EMPLEADOR_PRODUCCION'),-->
+        <!--ref('COMERCIAL_PENSION_EMPLEADOR_PRODUCCION'),-->
+        <!--ref('COMERCIAL_CESANTIAS_PRODUCCION'),-->
+        <!--ref('COMERCIAL_INTERES_CESANTIAS_DEVENGADAS_PRODUCCION'),-->
+        <!--ref('COMERCIAL_INTERES_CESANTIAS_PRODUCCION'),-->
+        <!--ref('COMERCIAL_PRIMA_SERVICIO_PRODUCCION'),-->
+        <!--ref('COMERCIAL_VACACIONES_PESO_PRODUCCION'),-->
+        <!--ref('COMERCIAL_CCF_PRODUCCION'),-->
+        <!--ref('COMERCIAL_ARL_PRODUCCION'),-->
+        <!--ref('COMERCIAL_IBC_SENA_ICBF_PRODUCCION'),-->
+        <!--ref('COMERCIAL_SENA_PRODUCCION'),-->
+        <!--ref('COMERCIAL_ICBF_PRODUCCION'),-->
+        <!--ref('COMERCIAL_NETO_PAGAR_PRODUCCION'),-->
+        <!--ref('COMERCIAL_PORCIENTO_DESCUENTOS_PRODUCCION'),-->
+        <!--ref('COMERCIAL_TOTAL_PAGAR_PRODUCCION'),-->
+        <!--])]"/>-->
+        <!--</record>-->
+    </data>
+</odoo>

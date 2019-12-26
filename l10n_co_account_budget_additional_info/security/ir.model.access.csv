@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_budget_line_report,l10n_co_account_budget_additional_info.budget_line_report,model_budget_line_report,base.group_user,1,0,0,0

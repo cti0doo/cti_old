@@ -1,0 +1,15 @@
+<odoo>
+  <data>
+    <record id="mrp_production_tree_view_cost" model="ir.ui.view">
+      <field name="name">mrp.production.tree.cost</field>
+      <field name="model">mrp.production</field>
+      <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
+      <field name="arch" type="xml">
+        <xpath expr="//field[@name='product_qty']" position="after">
+          <field name="original_product_price"/>
+          <field name="real_cost"/>
+        </xpath>
+      </field>
+    </record>
+  </data>
+</odoo>

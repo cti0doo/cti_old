@@ -1,0 +1,6 @@
+id,name,bank_account_code_prefix,cash_account_code_prefix,transfer_account_code_prefix,use_anglo_saxon,currency_id:id
+l10n_co_chart_template_comercial,COLOMBIA - PUC COMERCIAL,1110,1105,1105,TRUE,base.COP
+l10n_co_chart_template_solidario,COLOMBIA - PUC SOLIDARIO,1110,1105,1105,TRUE,base.COP
+l10n_co_chart_template_financiero,COLOMBIA - PUC FINANCIERO,1110,1105,1105,TRUE,base.COP
+l10n_co_chart_template_niif_solidario,COLOMBIA - NIIF SOLIDARIO,1110,1105,1105,TRUE,base.COP
+l10n_co_chart_template_niif_financiero,COLOMBIA - NIIF FINANCIERO,1110,1105,1105,TRUE,base.COP

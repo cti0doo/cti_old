@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!-- CATEGORIES -->
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_IBC'>
+            <field name='code'>IBC</field>
+            <field name='name'>Index Basic Cotizacion</field>
+        </record>
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_INC'>
+            <field name='code'>INC</field>
+            <field name='name'>Income</field>
+        </record>
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_OTH_INC'>
+            <field name='code'>OTH_INC</field>
+            <field name='name'>Other Income</field>
+        </record>
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_DED'>
+            <field name='code'>DED</field>
+            <field name='name'>Deductiones</field>
+        </record>
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_ASI'>
+            <field name='code'>ASI</field>
+            <field name='name'>Assistance</field>
+        </record>
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_DIS'>
+            <field name='code'>DIS</field>
+            <field name='name'>Discounts</field>
+        </record>
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_NET'>
+            <field name='code'>NET</field>
+            <field name='name'>Net To Pay</field>
+        </record>
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_CON'>
+            <field name='code'>CON</field>
+            <field name='name'>Contribution</field>
+        </record>
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_ACR'>
+            <field name='code'>ACR</field>
+            <field name='name'>Accrued</field>
+        </record>
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_DAY'>
+            <field name='code'>DAY</field>
+            <field name='name'>Days Helth/Pension</field>
+        </record>
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_TOT'>
+            <field name='code'>TOT</field>
+            <field name='name'>Total To Pay</field>
+        </record>
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_TOT_INC'>
+            <field name='code'>TOT_INC</field>
+            <field name='name'>Total Income</field>
+        </record>
+
+        <record model='hr.salary.rule.category.template' id='CATEGORY_TOT_DED'>
+            <field name='code'>TOT_DED</field>
+            <field name='name'>Total Deductions</field>
+        </record>
+
+    </data>
+</odoo>

@@ -1,0 +1,1666 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+        <!--                                                                                                                                    DEVENGADO -->
+        <!-- Extralegal Assistances -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_OPT_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>OPT_ASI</field>
+            <field name='name'>Optical Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.OPT_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'OPT_ASI'):
+  total = float(attr.value)
+max = inputs.OPT_ASI.amount if inputs.OPT_ASI.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_OPT_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Optical Assistance</field>
+            <field name='code'>OPT_ASI</field>
+            <field name='input_id' ref='COMERCIAL_OPT_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_BIR_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>BIR_ASI</field>
+            <field name='name'>Birth Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.BIR_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'BIR_ASI'):
+  total = float(attr.value)
+max = inputs.BIR_ASI.amount if inputs.BIR_ASI.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_BIR_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Birth Assistance</field>
+            <field name='code'>BIR_ASI</field>
+            <field name='input_id' ref='COMERCIAL_BIR_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EDU_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>EDU_ASI</field>
+            <field name='name'>Educational Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>30</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.EDU_ASI.amount)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'EDU_ASI'):
+  total = float(attr.value)
+max = inputs.EDU_ASI.amount if inputs.EDU_ASI.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_EDU_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Educational Assistance</field>
+            <field name='code'>EDU_ASI</field>
+            <field name='input_id' ref='COMERCIAL_EDU_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PAR_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>PAR_ASI</field>
+            <field name='name'>Parvuls Educational Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>30</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.PAR_ASI.amount)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'PAR_ASI'):
+  total = float(attr.value)
+max = inputs.PAR_ASI.amount if inputs.PAR_ASI.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_PAR_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Parvuls Educational Assistance</field>
+            <field name='code'>PAR_ASI</field>
+            <field name='input_id' ref='COMERCIAL_PAR_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PRE_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>PRE_ASI</field>
+            <field name='name'>Prescolar Educational Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>30</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.PRE_ASI.amount)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'PRE_ASI'):
+  total = float(attr.value)
+max = inputs.PRE_ASI.amount if inputs.PRE_ASI.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_PRE_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Prescolar Educational Assistance</field>
+            <field name='code'>PRE_ASI</field>
+            <field name='input_id' ref='COMERCIAL_PRE_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PRI_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>PRI_ASI</field>
+            <field name='name'>Primary Educational Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>30</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.PRI_ASI.amount)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'PRI_ASI'):
+  total = float(attr.value)
+max = inputs.PRI_ASI.amount if inputs.PRI_ASI.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_PRI_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Primary Educational Assistance</field>
+            <field name='code'>PRI_ASI</field>
+            <field name='input_id' ref='COMERCIAL_PRI_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SEC_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>SEC_ASI</field>
+            <field name='name'>Secondary Educational Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>30</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.SEC_ASI.amount)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'SEC_ASI'):
+  total = float(attr.value)
+max = inputs.SEC_ASI.amount if inputs.SEC_ASI.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_SEC_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Secondary Educational Assistance</field>
+            <field name='code'>SEC_ASI</field>
+            <field name='input_id' ref='COMERCIAL_SEC_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_UNI_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>UNI_ASI</field>
+            <field name='name'>University Educational Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>30</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.UNI_ASI.amount)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'UNI_ASI'):
+  total = float(attr.value)
+max = inputs.UNI_ASI.amount if inputs.UNI_ASI.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_UNI_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>University Educational Assistance</field>
+            <field name='code'>UNI_ASI</field>
+            <field name='input_id' ref='COMERCIAL_UNI_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_TEC_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>TEC_ASI</field>
+            <field name='name'>Tecnical Educational Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>30</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.TEC_ASI.amount)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'TEC_ASI'):
+  total = float(attr.value)
+max = inputs.TEC_ASI.amount if inputs.TEC_ASI.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_TEC_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Tecnical Educational Assistance</field>
+            <field name='code'>TEC_ASI</field>
+            <field name='input_id' ref='COMERCIAL_TEC_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_OTH_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>OTH_ASI</field>
+            <field name='name'>Other Educational Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.OTH_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = inputs.OTH_ASI.amount * 100 if inputs.OTH_ASI.amount > 0 and inputs.OTH_ASI.amount < 1 else 100
+result = categories.INC if inputs.OTH_ASI.amount > 0 and inputs.OTH_ASI.amount < 0 else inputs.OTH_ASI.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_OTH_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Other Educational Assistance</field>
+            <field name='code'>OTH_ASI</field>
+            <field name='input_id' ref='COMERCIAL_OTH_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SPE_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>SPE_ASI</field>
+            <field name='name'>Special Educational Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>30</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.SPE_ASI.amount)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'SPE_ASI'):
+  total = float(attr.value)
+max = inputs.SPE_ASI.amount if inputs.SPE_ASI.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_SPE_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Special Educational Assistance</field>
+            <field name='code'>SPE_ASI</field>
+            <field name='input_id' ref='COMERCIAL_SPE_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_LAB_LOA_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>LAB_LOA_ASI</field>
+            <field name='name'>Labor Loan Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>30</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.LAB_LOA_ASI.amount)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'LAB_LOA_ASI'):
+  total = float(attr.value)
+max = inputs.LAB_LOA_ASI.amount if inputs.LAB_LOA_ASI.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_LAB_LOA_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Labor Loan Assistance</field>
+            <field name='code'>LAB_LOA_ASI</field>
+            <field name='input_id' ref='COMERCIAL_LAB_LOA_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PRO_PRE_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>PRO_PRE_ASI</field>
+            <field name='name'>Production Premium Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>30</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.PRO_PRE_ASI.amount)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'PRO_PRE_ASI'):
+  total = float(attr.value)
+max = inputs.PRO_PRE_ASI.amount if inputs.PRO_PRE_ASI.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_PRO_PRE_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Production Premium Assistance</field>
+            <field name='code'>PRO_PRE_ASI</field>
+            <field name='input_id' ref='COMERCIAL_PRO_PRE_ASI'/>
+        </record>
+
+        <!-- Ajuste -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PRA_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>PRA_ASI</field>
+            <field name='name'>Practitioners Assitance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.PRA_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = inputs.PRA_ASI.amount * 100 if inputs.PRA_ASI.amount > 0 and inputs.PRA_ASI.amount < 1 else 100
+result = categories.INC if inputs.PRA_ASI.amount > 0 and inputs.PRA_ASI.amount < 0 else inputs.PRA_ASI.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_PRA_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Practitioners Assitance</field>
+            <field name='code'>PRA_ASI</field>
+            <field name='input_id' ref='COMERCIAL_PRA_ASI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PRA_TRA_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>PRA_TRA_ASI</field>
+            <field name='name'>Practitioners Transport Assitance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.PRA_TRA_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = inputs.PRA_TRA_ASI.amount * 100 if inputs.PRA_TRA_ASI.amount > 0 and inputs.PRA_TRA_ASI.amount < 1 else 100
+result = categories.INC if inputs.PRA_TRA_ASI.amount > 0 and inputs.PRA_TRA_ASI.amount < 0 else inputs.PRA_TRA_ASI.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_PRA_TRA_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Practitioners Transport Assitance</field>
+            <field name='code'>PRA_TRA_ASI</field>
+            <field name='input_id' ref='COMERCIAL_PRA_TRA_ASI'/>
+        </record>
+
+        <!-- Comisiones -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_MAI_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>MAI_ASI</field>
+            <field name='name'>Maintenance Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.MAI_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = inputs.MAI_ASI.amount * 100 if inputs.MAI_ASI.amount > 0 and inputs.MAI_ASI.amount < 1 else 100
+result = categories.INC if inputs.MAI_ASI.amount > 0 and inputs.MAI_ASI.amount < 0 else inputs.MAI_ASI.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_MAI_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Maintenance Assitance</field>
+            <field name='code'>MAI_ASI</field>
+            <field name='input_id' ref='COMERCIAL_MAI_ASI'/>
+        </record>
+
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_FEE_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>FEE_ASI</field>
+            <field name='name'>Food Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'><![CDATA[
+result_qty = 1
+result_rate = inputs.FEE_ASI.amount * 100 if inputs.FEE_ASI.amount > 0 and inputs.FEE_ASI.amount < 1 else 100
+result = categories.INC if inputs.FEE_ASI.amount > 0 and inputs.FEE_ASI.amount < 0 else inputs.FEE_ASI.amount]]>
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.FEE_ASI.amount</field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_FEE_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Food Assistance</field>
+            <field name='code'>FEE_ASI</field>
+            <field name='input_id' ref='COMERCIAL_FEE_ASI'/>
+        </record>
+
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_DEA_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>DEA_ASI</field>
+            <field name='name'>Death Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.DEA_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = inputs.DEA_ASI.amount * 100 if inputs.DEA_ASI.amount > 0 and inputs.DEA_ASI.amount < 1 else 100
+result = categories.INC if inputs.DEA_ASI.amount > 0 and inputs.DEA_ASI.amount < 0 else inputs.DEA_ASI.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_DEA_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Death Assistance</field>
+            <field name='code'>DEA_ASI</field>
+            <field name='input_id' ref='COMERCIAL_DEA_ASI'/>
+        </record>
+
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_FED_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>FED_ASI</field>
+            <field name='name'>Feed Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.FED_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = inputs.FED_ASI.amount * 100 if inputs.FED_ASI.amount > 0 and inputs.FED_ASI.amount < 1 else 100
+result = categories.INC if inputs.FED_ASI.amount > 0 and inputs.FED_ASI.amount < 0 else inputs.FED_ASI.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_FED_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Feed Assistance</field>
+            <field name='code'>FED_ASI</field>
+            <field name='input_id' ref='COMERCIAL_FED_ASI'/>
+        </record>
+
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_CLO_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>CLO_ASI</field>
+            <field name='name'>Clothe Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.CLO_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = inputs.CLO_ASI.amount * 100 if inputs.CLO_ASI.amount > 0 and inputs.CLO_ASI.amount < 1 else 100
+result = categories.INC if inputs.CLO_ASI.amount > 0 and inputs.CLO_ASI.amount < 0 else inputs.CLO_ASI.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_CLO_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Clothe Assistance</field>
+            <field name='code'>CLO_ASI</field>
+            <field name='input_id' ref='COMERCIAL_CLO_ASI'/>
+        </record>
+
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_HOU_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>HOU_ASI</field>
+            <field name='name'>Housing Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.HOU_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = inputs.HOU_ASI.amount * 100 if inputs.HOU_ASI.amount > 0 and inputs.HOU_ASI.amount < 1 else 100
+result = categories.INC if inputs.HOU_ASI.amount > 0 and inputs.HOU_ASI.amount < 0 else inputs.HOU_ASI.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_HOU_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Housing Assistance</field>
+            <field name='code'>HOU_ASI</field>
+            <field name='input_id' ref='COMERCIAL_HOU_ASI'/>
+        </record>
+
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_CON_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>CON_ASI</field>
+            <field name='name'>Conveyance Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.CON_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = inputs.CON_ASI.amount * 100 if inputs.CON_ASI.amount > 0 and inputs.CON_ASI.amount < 1 else 100
+result = categories.INC if inputs.CON_ASI.amount > 0 and inputs.CON_ASI.amount < 0 else inputs.CON_ASI.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_CON_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Conveyance Assistance</field>
+            <field name='code'>CON_ASI</field>
+            <field name='input_id' ref='COMERCIAL_CON_ASI'/>
+        </record>
+        
+        <!-- Judicial -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EXE_JUD'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>EXE_JUD</field>
+            <field name='name'>Housing Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'EXE_JUD'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.EXE_JUD.amount if inputs.EXE_JUD.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_EXE_JUD'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_EXE_JUD_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Housing Loan</field>
+            <field name='code'>EXE_JUD</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_EXE_JUD'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_FEE_JUD'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>FEE_JUD</field>
+            <field name='name'>Housing Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'FEE_JUD'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.FEE_JUD.amount if inputs.FEE_JUD.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_FEE_JUD'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_FEE_JUD_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Housing Loan</field>
+            <field name='code'>FEE_JUD</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_FEE_JUD'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_OTH_JUD'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>OTH_JUD</field>
+            <field name='name'>Housing Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'OTH_JUD'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.OTH_JUD.amount if inputs.OTH_JUD.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_OTH_JUD'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_OTH_JUD_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Housing Loan</field>
+            <field name='code'>OTH_JUD</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_OTH_JUD'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_COO'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>COO</field>
+            <field name='name'>Cooperative</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'COO'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.COO.amount if inputs.COO.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_COO'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_COO_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Cooperative</field>
+            <field name='code'>COO</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_COO'/>
+        </record>
+
+         <record model='hr.salary.rule.template' id='COMERCIAL_FON'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>FON</field>
+            <field name='name'>Employee Association</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'FON'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.FON.amount if inputs.FON.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_FON'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_FON_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Employee Association</field>
+            <field name='code'>FON</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_FON'/>
+        </record>
+
+         <record model='hr.salary.rule.template' id='COMERCIAL_OTH_ASO'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>OTH_ASO</field>
+            <field name='name'>Other Association</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'OTH_ASO'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.OTH_ASO.amount if inputs.OTH_ASO.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_OTH_ASO'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_OTH_ASO_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Other Association</field>
+            <field name='code'>OTH_ASO</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_OTH_ASO'/>
+        </record>
+
+       <!-- Loans -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_HOU_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>HOU_LOA</field>
+            <field name='name'>Housing Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'HOU_LOA'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.HOU_LOA.amount if inputs.HOU_LOA.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_HOU_LOA'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_HOU_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Housing Loan</field>
+            <field name='code'>HOU_LOA</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_HOU_LOA'/>
+        </record>
+
+        <!-- Loans -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_CAR_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>CAR_LOA</field>
+            <field name='name'>Car Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'CAR_LOA'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.CAR_LOA.amount if inputs.CAR_LOA.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_CAR_LOA'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_CAR_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Car Loan</field>
+            <field name='code'>CAR_LOA</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_CAR_LOA'/>
+        </record>
+
+
+        <!-- Viaticos -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EDU_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>EDU_LOA</field>
+            <field name='name'>Education Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'EDU_LOA'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.EDU_LOA.amount if inputs.HOU_LOA.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_EDU_LOA'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_EDU_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Education Loan</field>
+            <field name='code'>EDU_LOA</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_EDU_LOA'/>
+        </record>
+
+        <!-- Vacaciones Disfrutadas -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_MED_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>MED_LOA</field>
+            <field name='name'>Medical Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'MED_LOA'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.MED_LOA.amount if inputs.MED_LOA.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_MED_LOA'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_MED_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Medical Loan</field>
+            <field name='code'>MED_LOA</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_MED_LOA'/>
+        </record>
+
+
+        <!-- Primas Devengadas -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_CAL_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>CAL_LOA</field>
+            <field name='name'>Calamity Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'CAL_LOA'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.CAL_LOA.amount if inputs.HOU_LOA.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_CAL_LOA'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_271020'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_CAL_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Calamity Loan</field>
+            <field name='code'>CAL_LOA</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_CAL_LOA'/>
+        </record>
+
+        <!-- Interes sobre Cesantias -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_POS_CON_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>POS_CON_LOA</field>
+            <field name='name'>POS Consume Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'VAR_LOA'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.POS_CON_LOA.amount if inputs.POS_CON_LOA.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_POS_CON_LOA'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_271015'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_POS_CON_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>POS Consume Loan</field>
+            <field name='code'>POS_CON_LOA</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_POS_CON_LOA'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_VAR_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>VAR_LOA</field>
+            <field name='name'>Variety Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'VAR_LOA'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.VAR_LOA.amount if inputs.HOU_LOA.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_VAR_LOA'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_271015'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_VAR_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Variety Loan</field>
+            <field name='code'>VAR_LOA</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_VAR_LOA'/>
+        </record>
+
+        <!-- Bonus -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_OTH_BON'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>OTH_BON</field>
+            <field name='name'>Other Bonus</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'OTH_BON'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.OTH_BON.amount if inputs.OTH_BON.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_OTH_BON_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Other Bonus</field>
+            <field name='code'>OTH_BON</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_OTH_BON'/>
+        </record>
+
+        <!-- Bonus -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_BON'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>BON</field>
+            <field name='name'>Bonus</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'BON'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.BON.amount if inputs.BON.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_BON_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Bonus</field>
+            <field name='code'>BON</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_BON'/>
+        </record>
+        <!-- Subsidios No Salario -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_REC_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>REC_LOA</field>
+            <field name='name'>Recreation Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+        <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'REC_LOA'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.REC_LOA.amount if inputs.REC_LOA.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_REC_LOA'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_REC_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Recreation Loan</field>
+            <field name='code'>REC_LOA</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_REC_LOA'/>
+        </record>
+
+        <!-- Subsidios No Salario -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_OTH_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>OTH_LOA</field>
+            <field name='name'>Other Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>80</field>
+
+        <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'OTH_LOA'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.OTH_LOA.amount if inputs.OTH_LOA.amount else total
+result = bool(total)
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total > 0 and total < 0 else total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_OTH_LOA'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_OTH_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Other Loan</field>
+            <field name='code'>OTH_LOA</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_OTH_LOA'/>
+        </record>
+
+        <!-- Subsidios No Salario -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_OTH_DIS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>OTH_DIS</field>
+            <field name='name'>Other Discount</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>80</field>
+
+        <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.OTH_DIS.amount)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'OTH_DIS'):
+  total = float(attr.value)
+max = inputs.OTH_DIS.amount if inputs.OTH_DIS.amount < total else total
+result_qty = 1
+result_rate = max * 100 if max > 0 and max < 1 else 100
+result = categories.INC * max if max > 0 and max < 1 else max]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_OTH_LOA'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_OTH_DIS_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Other Discount</field>
+            <field name='code'>OTH_DIS</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_OTH_DIS'/>
+        </record>
+
+        <!-- Union Afiliatttions -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_IND_UNI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>IND_UNI</field>
+            <field name='name'>Industry Union</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+
+            <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'IND_UNI'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.IND_UNI.amount if inputs.IND_UNI.amount else total if total > 0 else 0
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total > 0 and total < 0 else total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237035'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_IND_UNI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Industry Union</field>
+            <field name='code'>IND_UNI</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_IND_UNI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SEC_UNI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>SEC_UNI</field>
+            <field name='name'>Sector Union</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+            <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'SEC_UNI'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.SEC_UNI.amount if inputs.SEC_UNI.amount else total if total > 0 else 0
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total > 0 and total < 0 else total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_SEC_UNI'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237035'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_SEC_UNI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Sector Union</field>
+            <field name='code'>SEC_UNI</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_SEC_UNI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SUB_UNI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>SUB_UNI</field>
+            <field name='name'>Subsector Union</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+            <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'SUB_UNI'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.SUB_UNI.amount if inputs.SUB_UNI.amount else total if total > 0 else 0
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total > 0 and total < 0 else total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_SUB_UNI'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237035'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_SUB_UNI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Subsector Union</field>
+            <field name='code'>SUB_UNI</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_SUB_UNI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_REG_UNI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>REG_UNI</field>
+            <field name='name'>Regional Union</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+            <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'REG_UNI'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.REG_UNI.amount if inputs.REG_UNI.amount else total if total > 0 else 0
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total > 0 and total < 0 else total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_REG_UNI'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237035'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_REG_UNI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Regional Union</field>
+            <field name='code'>REG_UNI</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_REG_UNI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_CTY_UNI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>CTY_UNI</field>
+            <field name='name'>City Union</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+            <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'CTY_UNI'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.CTY_UNI.amount if inputs.CTY_UNI.amount else total if total > 0 else 0
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total > 0 and total < 0 else total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_CTY_UNI'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237035'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_CTY_UNI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>City Union</field>
+            <field name='code'>CTY_UNI</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_CTY_UNI'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_OTH_UNI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+
+            <field name='code'>OTH_UNI</field>
+            <field name='name'>Other Union</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+            <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'OTH_UNI'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.OTH_UNI.amount if inputs.OTH_UNI.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total > 0 and total < 0 else total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DIS'/>
+            <field name='register_id' ref='REGISTER_OTH_UNI'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237035'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_OTH_UNI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_niif_solidario'/>
+            <field name='name'>Other Union</field>
+            <field name='code'>OTH_UNI</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_OTH_UNI'/>
+        </record>
+
+    </data>
+</odoo>

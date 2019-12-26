@@ -1,0 +1,150 @@
+<odoo>
+    <data>
+        <!-- account.payment.order -->
+        <record model="ir.ui.view" id="account_payment_order_tree_view">
+            <field name="name">account.payment.order.tree</field>
+            <field name="model">account.payment.order</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="journal_id"/>
+                    <field name="date"/>
+                    <field name="amount"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="account_payment_order_form_view">
+            <field name="name">account.payment.order.form</field>
+            <field name="model">account.payment.order</field>
+            <field name="arch" type="xml">
+                <form string="Payment order">
+                    <header>
+                        <button name="get_pays" string="Get payment" type="object" states="draft"/>
+                        <button name="create_file" string="Create file" type="object" states="draft"/>
+                        <button name="posted" string="Posted" type="object" states="draft"/>
+                        <button name="cancel" string="Cancel" type="object" states="posted"/>
+                        <button name="to_draft" string="To draft" type="object" states="cancel"/>
+                        <field name="state" widget="statusbar" statusbar_visible="draft,posted,cancel"/>
+                    </header>
+                    <sheet>
+                        <div class="oe_title">
+                            <label for="name" class="oe_edit_only"/>
+                            <h1>
+                                <field name="name" placeholder="Payment's description"/>
+                            </h1>
+                            <group>
+                                <group>
+                                    <field name="date"/>
+                                    <field name="journal_id"/>
+                                    <field name="type"/>
+                                </group>
+                                <group>
+                                    <field name="res_bank_id"/>
+                                    <field name="bank_ids" widget="many2many_tags"/>
+                                    <field name="file" filename="filename"/>
+                                    <field name="filename" invisible="1"/>
+                                    <field name="amount"/>
+                                </group>
+                            </group>
+                        </div>
+                        <notebook>
+                            <page string="Payments">
+                                <field name="payment_ids">
+                                    <tree>
+                                        <field name="payment_date"/>
+                                        <field name="name"/>
+                                        <field name="journal_id"/>
+                                        <field name="amount"/>
+                                    </tree>
+                                </field>
+                            </page>
+                            <page string="Description">
+                                <field name="description"/>
+                            </page>
+                            <page string="Moves">
+                                <field name="move_id"/>
+                            </page>
+                        </notebook>
+                    </sheet>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_payment_order" model="ir.actions.act_window">
+            <field name="name">Account payment order</field>
+            <field name="res_model">account.payment.order</field>
+            <field name="view_mode">tree,form</field>
+            <field name="help">Payment order</field>
+        </record>
+
+        <menuitem name="Payment order" action="action_payment_order" id="menu_action_account_payment_order"
+                  parent="account.menu_finance_payables" sequence="20"/>
+
+        <record model="ir.ui.view" id="account_payment_order_type_tree_view">
+            <field name="name">account.payment.order.type.tree</field>
+            <field name="model">account.payment.order.type</field>
+            <field name="arch" type="xml">
+                <tree editable="bottom">
+                    <field name="name"/>
+                    <field name="account_ids"/>
+                </tree>
+            </field>
+        </record>
+
+        <record id="action_payment_order_type" model="ir.actions.act_window">
+            <field name="name">Account payment order type</field>
+            <field name="res_model">account.payment.order.type</field>
+            <field name="view_mode">tree</field>
+            <field name="help">Payment order type</field>
+        </record>
+
+        <menuitem name="Payment order type" action="action_payment_order_type"
+                  id="menu_action_account_payment_order_type"
+                  parent="account.root_payment_menu" sequence="20"/>
+
+        <!-- Wizard -->
+        <record model="ir.ui.view" id="account_payment_order_wizard_form_view">
+            <field name="name">account.payment.order.wizard.form</field>
+            <field name="model">account.payment.order.wizard</field>
+            <field name="arch" type="xml">
+                <form string="Payment order wizard">
+                    <group>
+                        <group>
+                            <field name="journal_id"/>
+                            <field name="partner_id"/>
+                            <field name="date_maturity"/>
+                        </group>
+                        <group>
+                            <field name="move_ids"/>
+                        </group>
+                    </group>
+                    <footer>
+                        <button name="add_move" string="Add move" type="object" default_focus="1"
+                                class="oe_highlight"/>
+                        <button string="Cancel" class="btn btn-default" special="cancel"/>
+                    </footer>
+                </form>
+            </field>
+        </record>
+
+        <record id="action_account_payment_order_wizard" model="ir.actions.act_window">
+            <field name="name">Account payment order wizard</field>
+            <field name="res_model">account.payment.order.wizard</field>
+            <field name="view_mode">form</field>
+            <field name="target">new</field>
+            <field name="context">{'type': [type]}</field>
+        </record>
+
+        <record model="ir.ui.view" id="account_payment_bank_tree_view">
+            <field name="name">account.payment.bank.tree</field>
+            <field name="model">account.payment</field>
+            <field name="inherit_id" ref="account.view_account_payment_form"/>
+            <field name="arch" type="xml">
+                <field name="payment_transaction_id" position="after">
+                    <field name="res_bank_id"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>
