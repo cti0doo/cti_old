@@ -607,7 +607,7 @@ class ImportExportMassiveLines(models.Model):
                             for i in range(0, len(record)):
                                 new_data[attributes[i]] = record[i]
                             data_write[my_id] = new_data
-                        elif self.to_load or self.to_create:
+                        elif (self.to_load or self.to_create) and not to_update:
                             datos.append(record)
 
         _logger.info(_('Preparation finished:') + str(datetime.now() - start))
