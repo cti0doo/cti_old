@@ -1,0 +1,53 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <record id="hr_payslip_run_form" model="ir.ui.view">
+            <field name="name">hr.payslip.run.form</field>
+            <field name="model">hr.payslip.run</field>
+            <field name="inherit_id" ref="hr_payroll.hr_payslip_run_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//button[@name='action_validate']" position="before">
+                    <button name="confirm_payslip_run" type="object" string="Confirm" states="draft"
+                            class="oe_highlight"/>
+                    <button name="compute_payslips" type="object" string="Compute payslips" states="draft"
+                            class="oe_highlight"/>
+                    <button name="action_payslip_advance" type="object" string="Generate advance" class="oe_highlight"/>
+                </xpath>
+                <xpath expr="//sheet" position="replace">
+                    <sheet>
+                        <!--<label for="name" class="oe_edit_only"/>-->
+                        <!--<h1>-->
+                            <!--<field name="name"/>-->
+                        <!--</h1>-->
+                        <group col="4">
+                            <field name="date_range_fy"/>
+                            <field name="date_range"/>
+                            <label for="date_start" string="Period"/>
+                            <div>
+                                <field name="date_start" class="oe_inline"/>
+                                -
+                                <field name="date_end" class="oe_inline"/>
+                            </div>
+                            <field name="credit_note"/>
+                            <field name="struct_id"/>
+                        </group>
+                        <separator string="Payslips"/>
+                        <field name="slip_ids" attrs="{'readonly': [('state','=','close')]}"/>
+                    </sheet>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="account_journal_advance_form" model="ir.ui.view">
+            <field name="name">account.journal.advance.form</field>
+            <field name="model">account.journal</field>
+            <field name="inherit_id" ref="account.view_account_journal_form"/>
+            <field name="arch" type="xml">
+                <field name="default_credit_account_id" position="after">
+                    <field name="account_advance_id"/>
+                </field>
+            </field>
+        </record>
+
+    </data>
+</odoo>

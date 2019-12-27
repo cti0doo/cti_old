@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_account_ciiu,l10n_co_rtica.account_ciiu,model_account_ciiu,account.group_account_user,1,1,1,1
+access_account_ciiu_lines,l10n_co_rtica.account_ciiu_lines,model_account_ciiu_lines,account.group_account_user,1,1,1,1
+access_date_range_date_range_type,l10n_co_rtica.account_ciiu_lines,model_account_ciiu_lines,account.group_account_user,1,1,1,1

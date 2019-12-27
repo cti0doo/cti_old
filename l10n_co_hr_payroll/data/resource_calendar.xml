@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <record model='resource.calendar.template' id='SEMANA_32A'>
+            <field name='name'>48h / Semana</field>
+
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_LU_M'>
+            <field name='name'>Lunes / Mañana</field>
+            <field name='day_of_week'>0</field>
+            <field name='hour_from'>8</field>
+            <field name='hour_to'>12</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_LU_T'>
+            <field name='name'>Lunes / Tarde</field>
+            <field name='day_of_week'>0</field>
+            <field name='hour_from'>13</field>
+            <field name='hour_to'>17</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_MA_M'>
+            <field name='name'>Martes / Mañana</field>
+            <field name='day_of_week'>1</field>
+            <field name='hour_from'>8</field>
+            <field name='hour_to'>12</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_MA_T'>
+            <field name='name'>Martes / Tarde</field>
+            <field name='day_of_week'>1</field>
+            <field name='hour_from'>13</field>
+            <field name='hour_to'>17</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_MI_M'>
+            <field name='name'>Miercoles / Mañana</field>
+            <field name='day_of_week'>2</field>
+            <field name='hour_from'>8</field>
+            <field name='hour_to'>12</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_MI_T'>
+            <field name='name'>Miercoles / Tarde</field>
+            <field name='day_of_week'>2</field>
+            <field name='hour_from'>13</field>
+            <field name='hour_to'>17</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_JU_M'>
+            <field name='name'>Jueves / Mañana</field>
+            <field name='day_of_week'>3</field>
+            <field name='hour_from'>8</field>
+            <field name='hour_to'>12</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_JU_T'>
+            <field name='name'>Jueves / Tarde</field>
+            <field name='day_of_week'>3</field>
+            <field name='hour_from'>13</field>
+            <field name='hour_to'>17</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_VI_M'>
+            <field name='name'>Viernes / Mañana</field>
+            <field name='day_of_week'>4</field>
+            <field name='hour_from'>8</field>
+            <field name='hour_to'>12</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_VI_T'>
+            <field name='name'>Viernes / Tarde</field>
+            <field name='day_of_week'>4</field>
+            <field name='hour_from'>13</field>
+            <field name='hour_to'>17</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_SA_M'>
+            <field name='name'>Sabado / Mañana</field>
+            <field name='day_of_week'>5</field>
+            <field name='hour_from'>8</field>
+            <field name='hour_to'>12</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_SA_T'>
+            <field name='name'>Sabado / Tarde</field>
+            <field name='day_of_week'>5</field>
+            <field name='hour_from'>13</field>
+            <field name='hour_to'>17</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_DO_M'>
+            <field name='name'>Domingo / Mañana</field>
+            <field name='day_of_week'>6</field>
+            <field name='hour_from'>8</field>
+            <field name='hour_to'>12</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+        <record model='resource.calendar.attendance.template' id='SEMANA_32A_DO_T'>
+            <field name='name'>Domingo / Tarde</field>
+            <field name='day_of_week'>6</field>
+            <field name='hour_from'>13</field>
+            <field name='hour_to'>17</field>
+            <field name='calendar_id' ref='SEMANA_32A'/>
+        </record>
+
+    </data>
+</odoo>
+       

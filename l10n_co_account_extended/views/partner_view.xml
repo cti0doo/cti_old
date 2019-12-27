@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="view_partner_name_form">
+            <field name="name">res.partner.name</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group/group/field[@name='type']" position="after">
+                    <field name="firstname" attrs="{'required':[('company_type','=','person')]}"/>
+                    <field name="other_name"/>
+                    <field name="lastname" attrs="{'required':[('company_type','=','person')]}"/>
+                    <field name="other_lastname"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

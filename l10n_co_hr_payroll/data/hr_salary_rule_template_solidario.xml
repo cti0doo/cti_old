@@ -1,0 +1,1302 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <!--                                                                                                                                    ACRENGADO -->
+        <!-- Salary -->
+        <record model='hr.salary.rule.template' id='SOLIDARIO_SMMLV'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>SMMLV</field>
+            <field name='name'>Salario minimo</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>0</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = 0
+                for attr in payslip.date_range_fy.attributes_ids:
+                if attr.name == 'SALARIO_MINIMO':
+                result = attr.value
+            </field>
+
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref=''/>
+
+        </record>
+
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_SAL_CON'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>SAL_CON</field>
+            <field name='name'>Salario en Contrato</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>1</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = contract.wage</field>
+
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+        </record>
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_BAS_SAL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>BAS_SAL</field>
+            <field name='name'>Salario Básico</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>20</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.WORK100 and worked_days.WORK100.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(( contract.wage / 30 ) *
+                worked_days.WORK100.number_of_days, 0)
+            </field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510506'/>
+            <field name='account_credit' ref=''/>
+
+        </record>
+
+        <!-- Incapacidad Salud -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_EPS_INA_SUB'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>EPS_INA_SUB</field>
+            <field name='name'>Subsidio Incapacidad por Salud</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>20</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.EPS_INA_SUB and
+                worked_days.EPS_INA_SUB.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(( contract.wage / 30 ) *
+                worked_days.EPS_INA_SUB.number_of_days, 0)
+            </field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EPS'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_520524'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Permiso Remunerado -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_PAI_LEA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>PAI_LEA</field>
+            <field name='name'>Permiso Remunerado</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>20</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.PAI_LEA and
+                worked_days.PAI_LEA.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(( contract.wage / 30 ) *
+                worked_days.PAI_LEA.number_of_days, 0)
+            </field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_ARL'/>
+
+
+            <!--            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_245015'/>-->
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Incapacidad Salud (EPS) -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_EPS_INA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>EPS_INA</field>
+            <field name='name'>Incapacidad por Salud</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.EPS_INA and
+                worked_days.EPS_INA.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+base = (( contract.wage * 0.6667 ) > MINIMUM_WAGES) and (( contract.wage / 30 ) * 0.6667 ) or ( MINIMUM_WAGES / 30 )
+result = round( base * worked_days.EPS_INA.number_of_days, 0 )]]></field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <!--            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_245005'/>-->
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Incapacidad Salud más de 180 dias (EPS) -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_EPS_INA_180'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>EPS_INA_180</field>
+            <field name='name'>Incapacidad por Salud > 180 días</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.EPS_INA_180 and
+                worked_days.EPS_INA_180.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+base = (( contract.wage * 0.50 ) > MINIMUM_WAGES) and (( contract.wage / 30 ) * 0.50 ) or ( MINIMUM_WAGES / 30 )
+result = round( base * worked_days.EPS_INA_180.number_of_days, 0 )]]></field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <!--            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_245005'/>-->
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Licencia Maternidad (EPS) -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_MAT_LIC'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>MAT_LIC</field>
+            <field name='name'>Incapacidad por Salud > 180 días</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>20</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.MAT_LIC and
+                worked_days.MAT_LIC.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(( contract.wage / 30 ) *
+                worked_days.MAT_LIC.number_of_days, 0)
+            </field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <!--            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_245005'/>-->
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Incapacidad ARL -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_ARL_INA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>ARL_INA</field>
+            <field name='name'>Subsidio Incapacidad Profesional</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.ARL_INA and
+                worked_days.ARL_INA.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(( contract.wage / 30 ) *
+                worked_days.ARL_INA.number_of_days, 0)
+            </field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_ARL'/>
+
+
+            <!--            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_245015'/>-->
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Ajuste -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_SAL_ADJ'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>SAL_ADJ</field>
+            <field name='name'>Ajuste al Salario</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_SAL_ADJ.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_SAL_ADJ.amount</field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510506'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_SAL_ADJ_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Ajuste al Salario (PESOS)</field>
+            <field name='code'>INPUT_SAL_ADJ</field>
+            <field name='input_id' ref='SOLIDARIO_SAL_ADJ'/>
+        </record>
+
+        <!-- Comisiones -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_COM'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>COM</field>
+            <field name='name'>Comisiones</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_COM.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_COM.amount</field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510518'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_COM_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Comisiones (PESOS)</field>
+            <field name='code'>INPUT_COM</field>
+            <field name='input_id' ref='SOLIDARIO_COM'/>
+        </record>
+
+        <!-- Bonificaciones -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_BON'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>BON</field>
+            <field name='name'>Bonificaciones (SALARIO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_BON.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_BON.amount</field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510548'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_BON_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Bonificacion (PESOS)</field>
+            <field name='code'>INPUT_BON</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_BON'/>
+        </record>
+
+        <!-- Horas Extras -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_ET'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>EDT</field>
+            <field name='name'>Horas Extra Diurnas (PESO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_EDT.amount or
+                inputs.INPUT_EDT_DF.amount or inputs.INPUT_ENT.amount)
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result += round(inputs.INPUT_EDT.amount * ( contract.wage / 240 ) * 1.25, 0) 
+result += round(inputs.INPUT_EDT_DF.amount * ( contract.wage / 240 ) * 2.0, 0)
+result += round(inputs.INPUT_ENT.amount * ( contract.wage / 240 ) * 1.75, 0)
+result += round(inputs.INPUT_ENT_DF.amount * ( contract.wage / 240 ) * 2.5, 0)
+result += round(inputs.INPUT_NS.amount * ( contract.wage / 240 ) * 2.1, 0)
+        ]]> </field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510515'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_EDT_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Horas Extra Diurnas (06:00am a 10:00pm)</field>
+            <field name='code'>INPUT_EDT</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='SOLIDARIO_ET'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_EDT_DF_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Horas Extra Diurnas Dominical y Festivo(06:00am a 10:00pm)</field>
+            <field name='code'>INPUT_EDT_DF</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='SOLIDARIO_ET'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_ENT_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Horas Extra Nocturnas (10:00pm a 06:00am)</field>
+            <field name='code'>INPUT_ENT</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='SOLIDARIO_ET'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_ENT_DF_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Horas Extra Nocturnas Dominical y Festivo (10:00pm a 06:00am)</field>
+            <field name='code'>INPUT_ENT_DF</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='SOLIDARIO_ET'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_NS_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Horas Nocturnas Dominical y Festivo (10:00pm a 06:00am)</field>
+            <field name='code'>INPUT_NS</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='SOLIDARIO_ET'/>
+        </record>
+
+        <!-- Viaticos -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_VIA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>VIA</field>
+            <field name='name'>Viaticos (PESO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_VIA.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_VIA.amount</field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <!--            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_282530'/>-->
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_VIA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Viaticos (PESOS)</field>
+            <field name='code'>INPUT_VIA</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_VIA'/>
+        </record>
+
+        <!-- Vacaciones Disfrutadas -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_VAC_ACR'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>VAC_ACR</field>
+            <field name='name'>Vacaciones Devengadas (PESO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.INPUT_VAC_ACR.amount) or
+                bool(worked_days.VACACIONES and worked_days.VACACIONES.number_of_days)
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = round(inputs.INPUT_VAC_ACR.amount or (
+                (contract.wage / 2 ) / 15 ) * worked_days.VACACIONES.number_of_days, 0)
+            </field>
+
+            <field name='category_id' ref='CATEGORY_ACR_CON'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_282515'/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_271025'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_VAC_ACR_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Vacaciones Devengadas (PESOS)</field>
+            <field name='code'>INPUT_VAC_ACR</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_VAC_ACR'/>
+        </record>
+
+
+        <!-- Primas Devengadas -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_PRE_ACR'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>PRE_ACR</field>
+            <field name='name'>Primas Devengadas (PESO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>40</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_PRE_ACR.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_PRE_ACR.amount</field>
+
+            <field name='category_id' ref='CATEGORY_ACR_CON'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <!--            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_282520'/>-->
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_271020'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_PRE_ACR_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Primas Devengadas (PESO)</field>
+            <field name='code'>INPUT_PRE_ACR</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_PRE_ACR'/>
+        </record>
+
+        <!-- Interes sobre Cesantias -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_INT_CES_ACR'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>INT_CES_ACR</field>
+            <field name='name'>Intereses Cesantias Devengadas (PESO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>40</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_INT_CES_ACR.amount )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_INT_CES_ACR.amount</field>
+
+            <field name='category_id' ref='CATEGORY_ACR_CON'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_282510'/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_271015'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_INT_CES_ACR_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Intereses Cesantias Devengadas (PESO)</field>
+            <field name='code'>INPUT_INT_CES_ACR</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_INT_CES_ACR'/>
+        </record>
+
+        <!-- Subsidios Salario -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_SAL_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>SAL_ASI</field>
+            <field name='name'>Auxilios / Subsidios</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10
+            </field>                               <!-- Secuencias luego de CON y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_SAL_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_SAL_ASI.amount</field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_SAL_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Auxilios / Subsidios (PESOS)</field>
+            <field name='code'>INPUT_SAL_ASI</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_SAL_ASI'/>
+        </record>
+
+        <!-- Subsidios No Salario -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_SUB'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>SUB</field>
+            <field name='name'>Auxilios / Subsidios (NO SALARIO)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>80
+            </field>                               <!-- Secuencias luego de CON y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_SUB.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_SUB.amount</field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_SUB_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Auxilios / Subsidios NO SALARIO (PESOS)</field>
+            <field name='code'>INPUT_SUB</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_SUB'/>
+        </record>
+
+        <!-- Auxilio -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_TRA_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>TRA_ASI</field>
+            <field name='name'>Auxilio al Transporte</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>30
+            </field>                               <!-- Secuencias luego de CON y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = (contract.employee_id.vehicle_distance &gt; 1) and (( categories.ACR
+                / MINIMUM_WAGES ) &lt;= 2.0)
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>rresult = 0
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'AT'):
+ result = float(attr.value)
+result = result / 30 * worked_days.WORK100.number_of_days</field>
+
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510527'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!--                                                                                                                                    DEDUCCIONES -->
+        <!-- Anticipo -->
+
+        <!-- Prestamos Laboral -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>LOA</field>
+            <field name='name'>Prestamo Laboral</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_LOA.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_LOA.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref=''/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_163510'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Prestamos Laboral(PESOS)</field>
+            <field name='code'>INPUT_LOA</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_LOA'/>
+        </record>
+
+        <!-- Prestamos Intitucional -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_INS_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>INS_LOA</field>
+            <field name='name'>Prestamo Institucional</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_INS_LOA.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_INS_LOA.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_INS_LOA'/>
+
+            <field name='account_debit' ref=''/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_245095'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_INS_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Prestamo Institucional (PESOS)</field>
+            <field name='code'>INPUT_INS_LOA</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_INS_LOA'/>
+        </record>
+
+        <!-- Seguro -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_INS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>INS</field>
+            <field name='name'>Seguro</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_INS.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_INS.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_INS'/>
+
+            <field name='account_debit' ref=''/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_245095'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_INS_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Seguro (PESOS)</field>
+            <field name='code'>INPUT_INS</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_INS'/>
+        </record>
+
+        <!-- EPS -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_IBC_EPS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>IBC_EPS</field>
+            <field name='name'>IBC Salud</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>22</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+total_days = worked_days.EPS_INA and worked_days.EPS_INA.number_of_days or 0.0
+total_days += worked_days.EPS_INA_180 and worked_days.EPS_INA_180.number_of_days or 0.0
+pre_amount = ((contract.wage / 30) * total_days) + categories.ACR + categories.ACR_CON
+result = pre_amount ]]></field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+        </record>
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_EPS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>EPS</field>
+            <field name='name'>Salud</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>23</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>4.0</field>
+            <field name='amount_percentage_base'>IBC_EPS</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EPS'/>
+
+            <field name='account_debit' ref=''/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_245005'/>       -->     <!-- Solo lleva CREDITO -->
+        </record>
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_EPS_PAT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>EPS_PAT</field>
+            <field name='name'>Salud Empleador</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>23</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = not contract.employee_id.company_id or (( (categories.ACR +
+                categories.ACR_CON) / MINIMUM_WAGES ) &gt;= 10.0)
+            </field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>8.5</field>
+            <field name='amount_percentage_base'>IBC_EPS</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_EPS'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510569'/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_245005'/>-->
+        </record>
+        <!-- Pension -->
+
+        <!-- EPS -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_IBC_AFP'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>IBC_AFP</field>
+            <field name='name'>IBC Pension</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>22</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+total_days = worked_days.EPS_INA and worked_days.EPS_INA.number_of_days or 0.0
+total_days += worked_days.EPS_INA_180 and worked_days.EPS_INA_180.number_of_days or 0.0
+pre_amount = ((contract.wage / 30) * total_days) + categories.ACR + categories.ACR_CON
+result = pre_amount ]]></field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+        </record>
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_AFP'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>AFP</field>
+            <field name='name'>Pension</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>23</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>4.0</field>
+            <field name='amount_percentage_base'>IBC_AFP</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_AFP'/>
+
+            <field name='account_debit' ref=''/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_245010'/>-->            <!-- Solo lleva CREDITO -->
+        </record>
+
+        <!-- Pension -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_AFP_PAT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>AFP_PAT</field>
+            <field name='name'>Pensión Empleador</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>23</field>
+
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>12.0</field>
+            <field name='amount_percentage_base'>IBC_AFP</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_AFP'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510570'/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_245010'/>-->
+        </record>
+
+        <!-- Pension Voluntaria -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_AFP_VOL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>AFP_VOL</field>
+            <field name='name'>Pension Voluntaria</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_AFP_VOL.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_AFP_VOL.amount</field>
+
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_AFP'/>
+
+            <field name='account_debit' ref=''/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_245010'/> -->           <!-- Solo lleva CREDITO -->
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_AFP_VOL_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Pension Voluntaria (PESOS)</field>
+            <field name='code'>INPUT_AFP_VOL</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_AFP_VOL'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_SOL_FUN'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>SOL_FUN</field>
+            <field name='name'>Fondo Solidaridad</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>23</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'><![CDATA[
+result = IBC_AFP  > (4 * MINIMUM_WAGES)
+]]></field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+if IBC_AFP < (16 * MINIMUM_WAGES):
+    factor = 0.01
+elif IBC_AFP < (17 * MINIMUM_WAGES):
+    factor = 0.012
+elif IBC_AFP < (18 * MINIMUM_WAGES):
+    factor = 0.014
+elif IBC_AFP < (19 * MINIMUM_WAGES):
+    factor = 0.016
+elif IBC_AFP < (20 * MINIMUM_WAGES):
+    factor = 0.018
+elif IBC_AFP > (20 * MINIMUM_WAGES):
+    factor = 0.02
+result = round( IBC_AFP * factor, 0)]]></field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref=''/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_245045'/>-->
+
+        </record>
+
+        <!--                                                                                                RETENCION EN LA FUENTE -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_SRC_RET'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>SRC_RET</field>
+            <field name='name'>Retencion en la Fuente</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>20</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.INPUT_SRC_RET.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_SRC_RET.amount</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref=''/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_244505'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_SRC_RET_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>Retención en la Fuente (PESOS)</field>
+            <field name='code'>INPUT_SRC_RET</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_SRC_RET'/>
+        </record>
+
+        <!-- Cesantias -->
+
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_CES'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>CES</field>
+            <field name='name'>Cesantias</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>31</field>
+
+
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>8.33</field>
+            <field name='amount_percentage_base'>categories.ACR + categories.ACR_CON</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_AFC'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510530'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_282505'/>
+        </record>
+
+        <!-- Cesantias Intereses -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_INT_CES'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>INT_CES</field>
+            <field name='name'>Interes sobre la Cesantias</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>32</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>12.0</field>
+            <field name='amount_percentage_base'>CES</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510533'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_282510'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_PRE'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>PRE</field>
+            <field name='name'>Prima de Servicios</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>31</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>8.33</field>
+            <field name='amount_percentage_base'>categories.ACR + categories.ACR_CON</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510536'/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_282520'/>-->
+        </record>
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_VAC_MON'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>VAC_MON</field>
+            <field name='name'>Vacaciones</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>28</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>4.17</field>
+            <field name='amount_percentage_base'>categories.ACR + categories.ACR_CON</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510539'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_282515'/>
+        </record>
+
+        <!--                                                                                                                                    DEDUCCIONES -->
+        <!-- CON PARAFISCALES -->
+
+
+        <!-- SENA -->
+        <record model='hr.salary.rule.template' id='SOLIDARIO_IBC_SENA_ICBF'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>IBC_SENA_ICBF</field>
+            <field name='name'>IBC Sena/ICBF</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>21</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = not contract.employee_id.company_id or (( (categories.ACR +
+                categories.ACR_CON) / MINIMUM_WAGES ) &gt;= 10.0)
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+pre_amount = categories.ACR + categories.ACR_CON
+result = pre_amount]]></field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+        </record>
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_SENA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>SENA</field>
+            <field name='name'>SENA</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>22</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = not contract.employee_id.company_id or (( (categories.ACR +
+                categories.ACR_CON) / MINIMUM_WAGES ) &gt;= 10.0)
+            </field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>2.00</field>
+            <field name='amount_percentage_base'>IBC_SENA_ICBF</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_CAJACOMP'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510578'/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_245010'/>-->
+        </record>
+
+        <!-- ICBF -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_ICBF'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>ICBF</field>
+            <field name='name'>ICBF</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>22</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = not contract.employee_id.company_id or (( (categories.ACR +
+                categories.ACR_CON) / MINIMUM_WAGES ) &gt;= 10.0)
+            </field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>3.00</field>
+            <field name='amount_percentage_base'>IBC_SENA_ICBF</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_CAJACOMP'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510575'/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_245010'/>-->
+        </record>
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_IBC_CCF'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>IBC_CCF</field>
+            <field name='name'>IBC Caja</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>21</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = not contract.employee_id.company_id or (( (categories.ACR + categories.ACR_CON) / MINIMUM_WAGES ) >= 10.0)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+pre_amount = categories.ACR + categories.ACR_CON
+result = pre_amount]]></field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+        </record>
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_CCF'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>CCF</field>
+            <field name='name'>Cajas de Compenzación Familiar</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>22</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>4.00</field>
+            <field name='amount_percentage_base'>IBC_CCF</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_CAJACOMP'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510572'/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_245010'/>-->
+        </record>
+
+
+        <!-- SEGURIDAD SOCIAL -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_IBC_ARL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>IBC_ARL</field>
+            <field name='name'>IBC Riesgos</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>21</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+pre_amount = categories.ACR + categories.ACR_CON
+result = pre_amount]]></field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+        </record>
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_ARL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>ARL</field>
+            <field name='name'>A.R.L.</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>22</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+            
+factor = inputs.INPUT_ARL.amount
+if not factor in (2.0,3.0,4.0,5.0):
+   factor = 1.0
+    
+categoria = {1.0: 0.522, 2.0: 1.044, 3.0: 2.436, 4.0: 4.350, 5.0: 6.960}            
+result = (IBC_ARL * categoria[factor]) / 100
+]]></field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_ARL'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510568'/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_245015'/>-->
+        </record>
+
+
+        <record model='hr.rule.input.template' id='SOLIDARIO_ARL_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+            <field name='name'>ARL Categoria (defecto=1,2,3,4,5)</field>
+            <field name='code'>INPUT_ARL</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='SOLIDARIO_ARL'/>
+        </record>
+
+        <!--                                                                                                    NET ACRENGADO PARA CALCULO DE SEGURIDAD SOCIAL -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_NET_PAGAR'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>NET_PAGAR</field>
+            <field name='name'>Neto a PAGAR</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>100</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = - categories.DED + categories.ACR</field>
+
+            <field name='category_id' ref='CATEGORY_NET'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_271005'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_PER_DED'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>PER_DED</field>
+            <field name='name'>Porciento Descuentos</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>998</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = (categories.DED * 100) / ((categories.ACR_CON +
+                categories.ACR) or 1)
+            </field>
+
+            <field name='category_id' ref='CATEGORY_NET'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+
+        <!--                                                                                                    TOTAL ACRENGADO PARA CALCULO DE SEGURIDAD SOCIAL -->
+
+        <record model='hr.salary.rule.template' id='SOLIDARIO_TOT_PAY'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_solidario'/>
+
+            <field name='code'>TOT_PAY</field>
+            <field name='name'>Total a PAGAR</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>999</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.ACR_CON + categories.ACR - categories.DED</field>
+
+            <field name='category_id' ref='CATEGORY_TOTAL'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+
+
+    </data>
+</odoo>

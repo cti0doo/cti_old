@@ -1,0 +1,46 @@
+id,adjust,character,format,function,name,sequence,size,type,type_format,bank_h_id:id,bank_id:id
+l10n_co_bank_conf_1,Right,1,,1,Tipo de registro,1,1,Text,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_2,Right, ,,payment.res_bank_id.partner_id.vat,Nit entidad Originadora,20,15,Python,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_3,Right,,,I,Aplicación,30,1,Text,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_4,Right,,,,Filler,40,15,Text,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_5,Right,,,225,Clase de transacción,50,3,Text,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_6,Right,,,payment_line.communication,Descripción propósito transacciones,60,10,Python,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_7,Right,,%Y%m%d,payment.date, Fecha Transmisión de lote,70,8,Python,Date,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_8,Right,0,,get_sequence, Secuencia envio de lotes ese día,80,2,Python,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_9,Right,,%Y%m%d,payment.date, Fecha aplicación transacciones,90,8,Python,Date,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_10,Right,0,,len(payment.payment_ids), Número de registros,100,6,Python,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_11,Right,0,,0, Sumatoria de débitos,110,17,Text,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_12,Right,0,,payment.amount, Sumatoria de créditos,120,17,Python,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_13,Right,0,,payment.res_bank_id.acc_number,Cuenta cliente a debitar,130,11,Python,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_14,Right,,,payment.res_bank_id.type, Tipo de cuenta cliente a debitar,140,1,Python,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_15,Right, ,,, Filler,150,149,Text,,l10n_co_location.co_bank_007,
+l10n_co_bank_conf_16,Right,,,6,Tipo de registro,10,1,Text,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_17,Right,,,payment_line.partner_id.vat, Nit beneficiario,20,15,Python,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_18,Right,,,payment_line.partner_id.name, Nombre del beneficiario,30,30,Python,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_19,Right,0,,payment_line.res_bank_id.bank_id.bic, Banco cuenta del beneficiario (destino),40,9,Python,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_20,Right,0,,payment_line.res_bank_id.acc_number, Número cuenta del beneficiario,50,17,Python,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_21,Right,0,,0,Indicador Lugar de pago,60,1,Text,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_22,Right,,,27, Tipo de transacción,70,2,Text,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_23,Right,0,,payment_line.amount,Valor transacción,80,17,Python,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_24,Right,,%Y%m%d,payment_line.date_payment, Fecha aplicación,90,8,Python,Date,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_25,Right,,,,Referencia,100,21,Text,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_26,Right,,,,Tipo de documento de identificación,110,1,Text,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_27,Right,,,,Oficina de entrega,120,5,Text,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_28,Right,,,,Número de Fax,130,15,Text,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_29,Right,,,, e-mail,140,80,Text,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_30,Right,,,,Número identificación del autorizado,150,15,Text,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_31,Right,,,,Filler,160,27,Text,,,l10n_co_location.co_bank_007
+l10n_co_bank_conf_32,Right,0,,payment_line.partner_id.vat,Identificación del tercero,5,15,Python,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_33,Right,0,,payment_line.partner_id.vat_type,Tipo de identificación,10,2,Python,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_34,Right,0,,payment_line.partner_id.vat_vd or 0,Digito de verificación,15,1,Python,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_35,Right,,,payment_line.partner_id.name,Nombre del tercero,20,50,Python,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_36,Right,,,3,Forma de pago,25,1,Python,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_37,Right,,,payment_line.res_bank_id.bank_id.bic,Bic del Banco,30,3,Python,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_38,Right,,,1 if payment_line.res_bank_id.type == 'S' else 2,Tipo de cuenta,35,1,Python,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_39,Right,,,payment_line.res_bank_id.acc_number,Número de cuenta,40,20,Python,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_40,Right,9,,,Código de oficina,45,4,Text,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_41,Right,,,str(payment_line.payment_date)[0:4],Año limite,50,4,Python,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_42,Right,,,str(payment_line.payment_date)[5:7],Mes limite,55,2,Python,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_43,Right,,,str(payment_line.payment_date)[8:10],Dia limite,60,2,Python,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_44,Right,,,payment_line.amount or 0,Monto pago,65,19,Python,,,l10n_co_location.co_bank_013
+l10n_co_bank_conf_45,Right,,,payment_line.communication or '',Descripción,70,60,Python,,,l10n_co_location.co_bank_013

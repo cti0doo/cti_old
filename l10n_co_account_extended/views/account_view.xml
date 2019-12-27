@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="account_tax_retention_view">
+            <field name="name">account.tax.retention</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form"></field>
+            <field name="arch" type="xml">
+                <field name="hide_tax_exigibility" position="before">
+                    <field name="limit"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.ui.view" id="crossovered_budget_budget_bom">
+            <field name="name">crossovered.budget.form</field>
+            <field name="model">crossovered.budget</field>
+            <field name="inherit_id" ref="account_budget.crossovered_budget_view_form"></field>
+            <field name="arch" type="xml">
+                <field name="company_id" position="after">
+                    <field name="budget_id"/>
+                </field>
+                <button name="action_budget_confirm" position="after">
+                    <button string="Budget from bom" name="create_budget_for_bom" states="validate,done" type="object"/>
+                </button>
+                <xpath expr="/form/sheet/notebook/page/field/tree/field[@name='analytic_account_id']" position="before">
+                    <field name="bom_id"/>
+                </xpath>
+                <xpath expr="/form/sheet/notebook/page/field/form/group/group[1]/field[@name='analytic_account_id']"
+                       position="before">
+                    <field name="bom_id"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
+

@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <!-- TODO por verificar -->
+        <!--<record model="ir.ui.view" id="product_product_retention_view">-->
+            <!--<field name="name">product.template.retention</field>-->
+            <!--<field name="model">product.template</field>-->
+            <!--<field name="inherit_id" ref="sale.product_template_form_view_invoice_policy"></field>-->
+            <!--<field name="arch" type="xml">-->
+                <!--<field name="invoice_policy" position="after">-->
+                    <!--<field name="tope_retention"/>-->
+                <!--</field>-->
+            <!--</field>-->
+        <!--</record>-->
+
+        <record model="ir.ui.view" id="product_category_retention_view">
+            <field name="name">product.category.retention</field>
+            <field name="model">product.category</field>
+            <field name="inherit_id" ref="account.view_category_property_form"></field>
+            <field name="arch" type="xml">
+                <field name="property_account_expense_categ_id" position="after">
+                    <field name="tope_retention"/>
+                </field>
+            </field>
+        </record>
+    </data>
+</odoo>

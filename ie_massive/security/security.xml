@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="ir.module.category" id="category_ie">
+            <field name="name">Import/Export</field>
+        </record>
+
+        <record model="res.groups" id="user_ie">
+            <field name="name">User</field>
+            <field name="category_id" ref="category_ie"/>
+        </record>
+
+        <record model="res.groups" id="avanced_ie">
+            <field name="name">Avanced</field>
+            <field name="category_id" ref="category_ie"/>
+            <field name="implied_ids" eval="[(4, ref('ie_massive.user_ie'))]"/>
+        </record>
+
+        <record model="res.users" id="base.user_admin">
+            <field name="groups_id" eval="[(4,ref('ie_massive.avanced_ie'))]"/>
+        </record>
+    </data>
+</odoo>

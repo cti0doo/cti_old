@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record model="res.bank" id="l10n_co_location.co_bank_007">
+            <field name="valid_line">re.match(r'\d{1,2}/\d{1,2}',line)</field>
+            <field name="separator_columns">r'\t+'</field>
+        </record>
+
+        <record model="res.bank" id="l10n_co_location.co_bank_013">
+            <field name="valid_line">re.match(r'\d{1,2}-\d{1,2}',line)</field>
+            <field name="separator_columns">r'\t+'</field>
+        </record>
+    </data>
+</odoo>

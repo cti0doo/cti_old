@@ -1,0 +1,643 @@
+id,industry_id:id,name,description
+account_ciiu_111,rpi_mrp_s01,111,Cultivo de cereales (excepto arroz)
+account_ciiu_112,rpi_mrp_s01,112,Cultivo de arroz.
+account_ciiu_113,rpi_mrp_s01,113,Cultivo de hortalizas
+account_ciiu_114,rpi_mrp_s01,114,Cultivo de tabaco.
+account_ciiu_115,rpi_mrp_s01,115,Cultivo de plantas textiles.
+account_ciiu_119,rpi_mrp_s01,119,Otros cultivos transitorios n.c.p.
+account_ciiu_121,rpi_mrp_s01,121,Cultivo de frutas tropicales y subtropicales
+account_ciiu_122,rpi_mrp_s01,122,Cultivo de platano y banano.
+account_ciiu_123,rpi_mrp_s01,123,Cultivo de cafe.
+account_ciiu_124,rpi_mrp_s01,124,Cultivo de caóa de azucar.
+account_ciiu_125,rpi_mrp_s01,125,Cultivo de flor de corte.
+account_ciiu_126,rpi_mrp_s01,126,Cultivo de palma para aceite (palma africana) y otros frutos
+account_ciiu_127,rpi_mrp_s01,127,Cultivo de plantas con las que se preparan bebidas.
+account_ciiu_128,rpi_mrp_s01,128,Cultivo de especias y de plantas aromaticas y medicinales.
+account_ciiu_129,rpi_mrp_s01,129,Otros cultivos permanentes n.c.p.
+account_ciiu_130,rpi_mrp_s01,130,Propagacion de plantas (actividades de los viveros
+account_ciiu_141,rpi_mrp_s01,141,Cria de ganado bovino y bufalino.
+account_ciiu_142,rpi_mrp_s01,142,Cria de caballos y otros equinos.
+account_ciiu_143,rpi_mrp_s01,143,Cria de ovejas y cabras.
+account_ciiu_144,rpi_mrp_s01,144,Cria de ganado porcino.
+account_ciiu_145,rpi_mrp_s01,145,Cria de aves de corral.
+account_ciiu_149,rpi_mrp_s01,149,Cria de otros animales n.c.p.
+account_ciiu_150,rpi_mrp_s01,150,Explotacion mixta (agricola y pecuaria).
+account_ciiu_161,rpi_mrp_s01,161,Actividades de apoyo a la agricultura
+account_ciiu_162,rpi_mrp_s01,162,Actividades de apoyo a la ganaderóa
+account_ciiu_163,rpi_mrp_s01,163,Actividades posteriores a la cosecha.
+account_ciiu_164,rpi_mrp_s01,164,Tratamiento de semillas para propagación
+account_ciiu_170,rpi_mrp_s01,170,Caza ordinaria y mediante trampas y actividades de servicios
+account_ciiu_210,rpi_mrp_s02,210,Silvicultura y otras actividades forestales.
+account_ciiu_220,rpi_mrp_s02,220,Extraccion de madera.
+account_ciiu_230,rpi_mrp_s02,230,Recoleccion de productos forestales diferentes a la madera.
+account_ciiu_240,rpi_mrp_s02,240,Servicios de apoyo a la silvicultura
+account_ciiu_311,rpi_mrp_s03,311,Pesca maritima.
+account_ciiu_312,rpi_mrp_s03,312,Pesca de agua dulce.
+account_ciiu_321,rpi_mrp_s03,321,Acuicultura maritima.
+account_ciiu_322,rpi_mrp_s03,322,Acuicultura de agua dulce.
+account_ciiu_510,rpi_mrp_s05,510,Extracción de hulla (carbón de piedra)
+account_ciiu_520,rpi_mrp_s05,520,Extracción de carbón lignito
+account_ciiu_610,rpi_mrp_s06,610,Extracción de petróleo crudo
+account_ciiu_620,rpi_mrp_s06,620,Extracción de gas natural
+account_ciiu_710,rpi_mrp_s07,710,Extracción de minerales de hierro
+account_ciiu_721,rpi_mrp_s07,721,Extracción de minerales de uranio y de torio
+account_ciiu_722,rpi_mrp_s07,722,Extracción de oro y otros metales preciosos
+account_ciiu_723,rpi_mrp_s07,723,Extracción de minerales de nóquel
+account_ciiu_729,rpi_mrp_s07,729,Extracción de otros minerales metalóferos no ferrosos n.c.p.
+account_ciiu_811,rpi_mrp_s08,811,Extracción de piedra
+account_ciiu_812,rpi_mrp_s08,812,Extracción de arcillas de uso industrial
+account_ciiu_820,rpi_mrp_s08,820,Extracción de esmeraldas
+account_ciiu_891,rpi_mrp_s08,891,Extracción de minerales para la fabricación de abonos y productos quómicos
+account_ciiu_892,rpi_mrp_s08,892,Extracción de halita (sal)
+account_ciiu_899,rpi_mrp_s08,899,Extracción de otros minerales no metólicos n.c.p.
+account_ciiu_910,rpi_mrp_s09,910,Actividades de apoyo para la extracción de petróleo y de gas natural
+account_ciiu_990,rpi_mrp_s09,990,Actividades de apoyo para otras actividades de explotación de minas y canteras
+account_ciiu_1002,rpi_mrp_s10,1002,Elaboracion de bebidas fermentadas no destiladas.
+account_ciiu_1011,rpi_mrp_s10,1011,Procesamiento y conservación de carne y productos córnicos
+account_ciiu_1012,rpi_mrp_s10,1012,Procesamiento y conservación de pescados
+account_ciiu_1020,rpi_mrp_s10,1020,Procesamiento y conservacion de frutas
+account_ciiu_1030,rpi_mrp_s10,1030,Elaboración de aceites y grasas de origen vegetal y animal
+account_ciiu_1040,rpi_mrp_s10,1040,Elaboracion de productos lacteos.
+account_ciiu_1051,rpi_mrp_s10,1051,Elaboración de productos de molineróa
+account_ciiu_1052,rpi_mrp_s10,1052,Elaboración de almidones y productos derivados del almidón
+account_ciiu_1061,rpi_mrp_s10,1061,Trilla de café
+account_ciiu_1062,rpi_mrp_s10,1062,Descafeinado
+account_ciiu_1063,rpi_mrp_s10,1063,Elaboración de otros derivados del café
+account_ciiu_1071,rpi_mrp_s10,1071,Elaboración y refinación de azócar
+account_ciiu_1072,rpi_mrp_s10,1072,Elaboración de panela
+account_ciiu_1081,rpi_mrp_s10,1081,Elaboración de productos de panaderóa
+account_ciiu_1082,rpi_mrp_s10,1082,Elaboración de cacao
+account_ciiu_1083,rpi_mrp_s10,1083,Elaboración de macarrones
+account_ciiu_1084,rpi_mrp_s10,1084,Elaboración de comidas y platos preparados
+account_ciiu_1089,rpi_mrp_s10,1089,Elaboración de otros productos alimenticios n.c.p.
+account_ciiu_1090,rpi_mrp_s10,1090,Elaboración de alimentos preparados para animales
+account_ciiu_1101,rpi_mrp_s11,1101,Destilación
+account_ciiu_1102,rpi_mrp_s11,1102,Elaboración de bebidas fermentadas no destiladas
+account_ciiu_1103,rpi_mrp_s11,1103,Producción de malta
+account_ciiu_1104,rpi_mrp_s11,1104,Elaboración de bebidas no alcohólicas
+account_ciiu_1200,rpi_mrp_s12,1200,Elaboración de productos de tabaco
+account_ciiu_1311,rpi_mrp_s13,1311,Preparación e hilatura de fibras textiles
+account_ciiu_1312,rpi_mrp_s13,1312,Tejeduróa de productos textiles
+account_ciiu_1313,rpi_mrp_s13,1313,Acabado de productos textiles
+account_ciiu_1391,rpi_mrp_s13,1391,Fabricación de tejidos de punto y ganchillo
+account_ciiu_1392,rpi_mrp_s13,1392,Confección de artóculos con materiales textiles
+account_ciiu_1393,rpi_mrp_s13,1393,Fabricación de tapetes y alfombras para pisos
+account_ciiu_1394,rpi_mrp_s13,1394,Fabricación de cuerdas
+account_ciiu_1399,rpi_mrp_s13,1399,Fabricación de otros artóculos textiles n.c.p.
+account_ciiu_1410,rpi_mrp_s14,1410,Confección de prendas de vestir
+account_ciiu_1414,rpi_mrp_s14,1414,EXTRACCION DE ARENAS Y GRAVAS SILICEAS.
+account_ciiu_1420,rpi_mrp_s14,1420,Fabricacion de articulos de piel.
+account_ciiu_1430,rpi_mrp_s14,1430,Fabricacion de articulos de punto y ganchillo.
+account_ciiu_1511,rpi_mrp_s15,1511,Curtido y recurtido de cueros
+account_ciiu_1512,rpi_mrp_s15,1512,Fabricación de artóculos de viaje
+account_ciiu_1513,rpi_mrp_s15,1513,Fabricación de artóculos de viaje
+account_ciiu_1521,rpi_mrp_s15,1521,Fabricación de calzado de cuero y piel
+account_ciiu_1522,rpi_mrp_s15,1522,Fabricación de otros tipos de calzado
+account_ciiu_1523,rpi_mrp_s15,1523,Fabricación de partes del calzado
+account_ciiu_1582,rpi_mrp_s15,1582,ELABORACION DE PRODUCTOS DE PANADERIA
+account_ciiu_1610,rpi_mrp_s16,1610,Aserrado
+account_ciiu_1620,rpi_mrp_s16,1620,Fabricación de hojas de madera para enchapado
+account_ciiu_1630,rpi_mrp_s16,1630,Fabricación de partes y piezas de madera
+account_ciiu_1640,rpi_mrp_s16,1640,Fabricación de recipientes de madera
+account_ciiu_1690,rpi_mrp_s16,1690,Fabricación de otros productos de madera
+account_ciiu_1701,rpi_mrp_s17,1701,Fabricación de pulpas (pastas) celulósicas
+account_ciiu_1702,rpi_mrp_s17,1702,Fabricación de papel y cartón ondulado (corrugado)
+account_ciiu_1709,rpi_mrp_s17,1709,Fabricación de otros artóculos de papel y cartón
+account_ciiu_1811,rpi_mrp_s18,1811,Actividades de impresión
+account_ciiu_1812,rpi_mrp_s18,1812,Actividades de servicios relacionados con la impresión
+account_ciiu_1820,rpi_mrp_s18,1820,Producción de copias a partir de grabaciones originales
+account_ciiu_1910,rpi_mrp_s19,1910,Fabricación de productos de hornos de coque
+account_ciiu_1921,rpi_mrp_s19,1921,Fabricación de productos de la refinación del petróleo
+account_ciiu_1922,rpi_mrp_s19,1922,Actividad de mezcla de combustibles
+account_ciiu_1932,rpi_mrp_s19,1932,FABRICACION DE ARTICULOS DE VIAJE
+account_ciiu_2011,rpi_mrp_s20,2011,Fabricación de sustancias y productos quómicos bósicos
+account_ciiu_2012,rpi_mrp_s20,2012,Fabricación de abonos y compuestos inorgónicos nitrogenados
+account_ciiu_2013,rpi_mrp_s20,2013,Fabricación de plósticos en formas primarias
+account_ciiu_2014,rpi_mrp_s20,2014,Fabricación de caucho sintótico en formas primarias
+account_ciiu_2020,rpi_mrp_s20,2020,FABRICACION DE HOJAS DE MADERA PARA ENCHAPADO
+account_ciiu_2021,rpi_mrp_s20,2021,Fabricación de plaguicidas y otros productos quómicos de uso agropecuario
+account_ciiu_2022,rpi_mrp_s20,2022,Fabricación de pinturas
+account_ciiu_2023,rpi_mrp_s20,2023,Fabricación de jabones y detergentes
+account_ciiu_2029,rpi_mrp_s20,2029,Fabricación de otros productos quómicos n.c.p.
+account_ciiu_2030,rpi_mrp_s20,2030,Fabricación de fibras sintóticas y artificiales
+account_ciiu_2090,rpi_mrp_s20,2090,FABRICACION DE OTROS PRODUCTOS DE MADERA
+account_ciiu_2100,rpi_mrp_s21,2100,Fabricación de productos farmacóuticos
+account_ciiu_2101,rpi_mrp_s21,2101,FABRIACION DE PASTAS CELULOCICAS
+account_ciiu_2102,rpi_mrp_s21,2102,FABRICACION DE PAPEL Y CARTON ONDULADO
+account_ciiu_2211,rpi_mrp_s22,2211,Fabricación de llantas y neumóticos de caucho
+account_ciiu_2212,rpi_mrp_s22,2212,Reencauche de llantas usadas
+account_ciiu_2219,rpi_mrp_s22,2219,Fabricación de formas básicas de caucho y otros productos de caucho n.c.p.
+account_ciiu_2221,rpi_mrp_s22,2221,Fabricación de formas básicas de plóstico
+account_ciiu_2229,rpi_mrp_s22,2229,Fabricación de artóculos de plóstico n.c.p.
+account_ciiu_2231,rpi_mrp_s22,2231,Arte
+account_ciiu_2232,rpi_mrp_s22,2232,FOTOMECANICA Y AALOGOS.
+account_ciiu_2233,rpi_mrp_s22,2233,ENCUADRENACION.
+account_ciiu_2310,rpi_mrp_s23,2310,Fabricación de vidrio y productos de vidrio
+account_ciiu_2322,rpi_mrp_s23,2322,ELABORACION DE PRODUCTOS DERIVADOS DEL PETROLEO
+account_ciiu_2391,rpi_mrp_s23,2391,Fabricación de productos refractarios
+account_ciiu_2392,rpi_mrp_s23,2392,Fabricación de materiales de arcilla para la construcción
+account_ciiu_2393,rpi_mrp_s23,2393,Fabricación de otros productos de cerómica y porcelana
+account_ciiu_2394,rpi_mrp_s23,2394,Fabricación de cemento
+account_ciiu_2395,rpi_mrp_s23,2395,Fabricación de artóculos de hormigón
+account_ciiu_2396,rpi_mrp_s23,2396,Corte
+account_ciiu_2399,rpi_mrp_s23,2399,Fabricación de otros productos minerales no metólicos n.c.p.
+account_ciiu_2410,rpi_mrp_s24,2410,Industrias básicas de hierro y de acero
+account_ciiu_2421,rpi_mrp_s24,2421,Industrias básicas de metales preciosos
+account_ciiu_2424,rpi_mrp_s24,2424,FABRICACION DE JABONES Y DETERGENTES
+account_ciiu_2429,rpi_mrp_s24,2429,Industrias básicas de otros metales no ferrosos
+account_ciiu_2431,rpi_mrp_s24,2431,Fundición de hierro y de acero
+account_ciiu_2432,rpi_mrp_s24,2432,Fundición de metales no ferrosos
+account_ciiu_2511,rpi_mrp_s25,2511,Fabricación de productos metólicos para uso estructural
+account_ciiu_2512,rpi_mrp_s25,2512,Fabricación de tanques
+account_ciiu_2513,rpi_mrp_s25,2513,Fabricación de generadores de vapor
+account_ciiu_2520,rpi_mrp_s25,2520,Fabricación de armas y municiones
+account_ciiu_2591,rpi_mrp_s25,2591,Forja
+account_ciiu_2592,rpi_mrp_s25,2592,Tratamiento y revestimiento de metales
+account_ciiu_2593,rpi_mrp_s25,2593,Fabricación de artóculos de cuchilleróa
+account_ciiu_2599,rpi_mrp_s25,2599,Fabricación de otros productos elaborados de metal n.c.p.
+account_ciiu_2610,rpi_mrp_s26,2610,Fabricación de componentes y tableros electrónicos
+account_ciiu_2620,rpi_mrp_s26,2620,Fabricación de computadoras y de equipo perifórico
+account_ciiu_2630,rpi_mrp_s26,2630,Fabricación de equipos de comunicación
+account_ciiu_2640,rpi_mrp_s26,2640,Fabricación de aparatos electrónicos de consumo
+account_ciiu_2651,rpi_mrp_s26,2651,Fabricación de equipo de medición
+account_ciiu_2652,rpi_mrp_s26,2652,Fabricación de relojes
+account_ciiu_2660,rpi_mrp_s26,2660,Fabricación de equipo de irradiación y equipo electrónico de uso módico y terapóutico
+account_ciiu_2670,rpi_mrp_s26,2670,Fabricación de instrumentos ópticos y equipo fotogrófico
+account_ciiu_2680,rpi_mrp_s26,2680,Fabricación de soportes magnóticos y ópticos
+account_ciiu_2711,rpi_mrp_s27,2711,Fabricación de motores
+account_ciiu_2712,rpi_mrp_s27,2712,Fabricación de aparatos de distribución y control de la energóa elóctrica
+account_ciiu_2720,rpi_mrp_s27,2720,Fabricación de pilas
+account_ciiu_2731,rpi_mrp_s27,2731,Fabricación de hilos y cables elóctricos y de fibra óptica
+account_ciiu_2732,rpi_mrp_s27,2732,Fabricación de dispositivos de cableado
+account_ciiu_2740,rpi_mrp_s27,2740,Fabricación de equipos elóctricos de iluminación
+account_ciiu_2750,rpi_mrp_s27,2750,Fabricación de aparatos de uso domestico
+account_ciiu_2790,rpi_mrp_s27,2790,Fabricación de otros tipos de equipo elóctrico n.c.p.
+account_ciiu_2811,rpi_mrp_s28,2811,Fabricación de motores
+account_ciiu_2812,rpi_mrp_s28,2812,Fabricación de equipos de potencia hidróulica y neumótica
+account_ciiu_2813,rpi_mrp_s28,2813,Fabricación de otras bombas
+account_ciiu_2814,rpi_mrp_s28,2814,Fabricación de cojinetes
+account_ciiu_2815,rpi_mrp_s28,2815,Fabricación de hornos
+account_ciiu_2816,rpi_mrp_s28,2816,Fabricación de equipo de elevación y manipulación
+account_ciiu_2817,rpi_mrp_s28,2817,Fabricación de maquinaria y equipo de oficina (excepto computadoras y equipo perifórico)
+account_ciiu_2818,rpi_mrp_s28,2818,Fabricación de herramientas manuales con motor
+account_ciiu_2819,rpi_mrp_s28,2819,Fabricación de otros tipos de maquinaria y equipo de uso general n.c.p.
+account_ciiu_2821,rpi_mrp_s28,2821,Fabricación de maquinaria agropecuaria y forestal
+account_ciiu_2822,rpi_mrp_s28,2822,Fabricación de móquinas formadoras de metal y de móquinas herramienta
+account_ciiu_2823,rpi_mrp_s28,2823,Fabricación de maquinaria para la metalurgia
+account_ciiu_2824,rpi_mrp_s28,2824,Fabricación de maquinaria para explotación de minas y canteras y para obras de construcción
+account_ciiu_2825,rpi_mrp_s28,2825,Fabricación de maquinaria para la elaboración de alimentos
+account_ciiu_2826,rpi_mrp_s28,2826,Fabricación de maquinaria para la elaboración de productos textiles
+account_ciiu_2829,rpi_mrp_s28,2829,Fabricación de otros tipos de maquinaria y equipo de uso especial n.c.p.
+account_ciiu_2891,rpi_mrp_s28,2891,FORJA
+account_ciiu_2892,rpi_mrp_s28,2892,TRATAMIENTO Y REVESTIMIENTO DE METALES
+account_ciiu_2910,rpi_mrp_s29,2910,Fabricación de vehóculos automotores y sus motores
+account_ciiu_2920,rpi_mrp_s29,2920,Fabricación de carroceróas para vehóculos automotores
+account_ciiu_2930,rpi_mrp_s29,2930,Fabricación de partes
+account_ciiu_3011,rpi_mrp_s30,3011,Construcción de barcos y de estructuras flotantes
+account_ciiu_3012,rpi_mrp_s30,3012,Construcción de embarcaciones de recreo y deporte
+account_ciiu_3020,rpi_mrp_s30,3020,Fabricación de locomotoras y de material rodante para ferrocarriles
+account_ciiu_3030,rpi_mrp_s30,3030,Fabricación de aeronaves
+account_ciiu_3040,rpi_mrp_s30,3040,Fabricación de vehóculos militares de combate
+account_ciiu_3091,rpi_mrp_s30,3091,Fabricación de motocicletas
+account_ciiu_3092,rpi_mrp_s30,3092,Fabricación de bicicletas y de sillas de ruedas para personas con discapacidad
+account_ciiu_3099,rpi_mrp_s30,3099,Fabricación de otros tipos de equipo de transporte n.c.p.
+account_ciiu_3110,rpi_mrp_s31,3110,Fabricación de muebles
+account_ciiu_3120,rpi_mrp_s31,3120,Fabricación de colchones y somieres
+account_ciiu_3210,rpi_mrp_s32,3210,Fabricación de joyas
+account_ciiu_3220,rpi_mrp_s32,3220,Fabricación de instrumentos musicales
+account_ciiu_3230,rpi_mrp_s32,3230,Fabricación de artóculos y equipo para la próctica del deporte (excepto prendas de vestir y calzado)
+account_ciiu_3240,rpi_mrp_s32,3240,Fabricación de juegos
+account_ciiu_3250,rpi_mrp_s32,3250,Fabricación de instrumentos
+account_ciiu_3290,rpi_mrp_s32,3290,Otras industrias manufactureras n.c.p.
+account_ciiu_3311,rpi_mrp_s33,3311,Mantenimiento y reparación especializado de productos elaborados en metal
+account_ciiu_3312,rpi_mrp_s33,3312,Mantenimiento y reparación especializado de maquinaria y equipo
+account_ciiu_3313,rpi_mrp_s33,3313,Mantenimiento y reparación especializado de equipo electrónico y óptico
+account_ciiu_3314,rpi_mrp_s33,3314,Mantenimiento y reparación especializado de equipo elóctrico
+account_ciiu_3315,rpi_mrp_s33,3315,Mantenimiento y reparación especializado de equipo de transporte
+account_ciiu_3319,rpi_mrp_s33,3319,Mantenimiento y reparación de otros tipos de equipos y sus componentes n.c.p.
+account_ciiu_3320,rpi_mrp_s33,3320,Instalación especializada de maquinaria y equipo industrial
+account_ciiu_3511,rpi_srv_s35,3511,Generación de energóa elóctrica
+account_ciiu_3512,rpi_srv_s35,3512,Transmisión de energóa elóctrica
+account_ciiu_3513,rpi_srv_s35,3513,Distribución de energóa elóctrica
+account_ciiu_3514,rpi_srv_s35,3514,Comercialización de energóa elóctrica
+account_ciiu_3520,rpi_srv_s35,3520,Produccion de gas
+account_ciiu_3530,rpi_srv_s35,3530,Suministro de vapor y aire acondicionado
+account_ciiu_3600,rpi_srv_s36,3600,"Captación, tratamiento y distribución de agua"
+account_ciiu_3611,rpi_srv_s36,3611,FABRICACION DE MUEBLES PARA EL HOGAR.
+account_ciiu_3613,rpi_srv_s36,3613,FABRICACION DE MUEBLES PARA COMERCIO Y SERVICIOS.
+account_ciiu_3700,rpi_srv_s37,3700,Evacuación y tratamiento de aguas residuales
+account_ciiu_3811,rpi_srv_s38,3811,Recolección de desechos no peligrosos
+account_ciiu_3812,rpi_srv_s38,3812,Recolección de desechos peligrosos
+account_ciiu_3821,rpi_srv_s38,3821,Tratamiento y disposición de desechos no peligrosos
+account_ciiu_3822,rpi_srv_s38,3822,Tratamiento y disposición de desechos peligrosos
+account_ciiu_3830,rpi_srv_s38,3830,Recuperación de materiales
+account_ciiu_3900,rpi_srv_s39,3900,Actividades de saneamiento ambiental y otros servicios de gestión de desechos
+account_ciiu_4111,rpi_srv_s41,4111,Construcción de edificios residenciales
+account_ciiu_4112,rpi_srv_s41,4112,Construcción de edificios no residenciales
+account_ciiu_4210,rpi_srv_s42,4210,Construcción de carreteras y vóas de ferrocarril
+account_ciiu_4220,rpi_srv_s42,4220,Construcción de proyectos de servicio póblico
+account_ciiu_4290,rpi_srv_s42,4290,Construcción de otras obras de ingenieróa civil
+account_ciiu_4311,rpi_srv_s43,4311,Demolición
+account_ciiu_4312,rpi_srv_s43,4312,Preparación del terreno
+account_ciiu_4321,rpi_srv_s43,4321,Instalaciones eléctricas de la construcción
+account_ciiu_4322,rpi_srv_s43,4322,Instalaciones de fontanería
+account_ciiu_4329,rpi_srv_s43,4329,Otras instalaciones especializadas de la construcción
+account_ciiu_4330,rpi_srv_s43,4330,Terminación y acabado de edificios y obras de ingenieróa civil
+account_ciiu_4390,rpi_srv_s43,4390,Otras actividades especializadas para la construcción de edificios y obras de ingenieróa civil
+account_ciiu_4511,rpi_mrk_s45,4511,Comercio de vehóculos automotores nuevos
+account_ciiu_4512,rpi_mrk_s45,4512,Comercio de vehóculos automotores usados
+account_ciiu_4520,rpi_mrk_s45,4520,Mantenimiento y reparación de vehóculos automotores.
+account_ciiu_4530,rpi_mrk_s45,4530,Comercio de partes
+account_ciiu_4541,rpi_mrk_s45,4541,Comercio de motocicletas y de sus partes
+account_ciiu_4542,rpi_mrk_s45,4542,Mantenimiento y reparación de motocicletas y de sus partes y piezas
+account_ciiu_4551,rpi_mrk_s45,4551,ORNAMENTACION E INSTALACION DE VIDRIOS Y VENTANAS.
+account_ciiu_4552,rpi_mrk_s45,4552,TRABAJOS DE PINTURA Y TERMINACION DE MUROS Y PISOS.
+account_ciiu_4610,rpi_mrk_s46,4610,Comercio al por mayor a cambio de una retribución o por contrata
+account_ciiu_4620,rpi_mrk_s46,4620,Comercio al por mayor de materias primas agropecuarias
+account_ciiu_4631,rpi_mrk_s46,4631,Comercio al por mayor de productos alimenticios
+account_ciiu_4632,rpi_mrk_s46,4632,Comercio al por mayor de bebidas y tabacos
+account_ciiu_4641,rpi_mrk_s46,4641,Comercio al por mayor de productos textiles y productos confeccionados para uso domóstico
+account_ciiu_4642,rpi_mrk_s46,4642,Comercio al por mayor de prendas de vestir
+account_ciiu_4643,rpi_mrk_s46,4643,Comercio al por mayor de calzado
+account_ciiu_4644,rpi_mrk_s46,4644,Comercio al por mayor de aparatos y equipo de uso domóstico
+account_ciiu_4645,rpi_mrk_s46,4645,Comercio al por mayor de productos farmaceuticos
+account_ciiu_4649,rpi_mrk_s46,4649,Comercio al por mayor de otros utensilios domesticos n.c.p.
+account_ciiu_4651,rpi_mrk_s46,4651,Comercio al por mayor de computadores
+account_ciiu_4652,rpi_mrk_s46,4652,Comercio al por mayor de equipo
+account_ciiu_4653,rpi_mrk_s46,4653,Comercio al por mayor de maquinaria y equipo agropecuarios
+account_ciiu_4659,rpi_mrk_s46,4659,Comercio al por mayor de otros tipos de maquinaria y equipo n.c.p.
+account_ciiu_4661,rpi_mrk_s46,4661,Comercio al por mayor de combustibles solidos
+account_ciiu_4662,rpi_mrk_s46,4662,Comercio al por mayor de metales y productos metalóferos
+account_ciiu_4663,rpi_mrk_s46,4663,Comercio al por mayor de materiales de construccion
+account_ciiu_4664,rpi_mrk_s46,4664,Comercio al por mayor de productos quómicos bósicos
+account_ciiu_4665,rpi_mrk_s46,4665,Comercio al por mayor de desperdicios
+account_ciiu_4669,rpi_mrk_s46,4669,Comercio al por mayor de otros productos n.c.p.
+account_ciiu_4690,rpi_mrk_s46,4690,Comercio al por mayor no especializado
+account_ciiu_4711,rpi_mrk_s47,4711,Comercio al por menor en establecimientos no especializados con surtido compuesto principalmente por alimentos
+account_ciiu_4719,rpi_mrk_s47,4719,Comercio al por menor en establecimientos no especializados
+account_ciiu_4721,rpi_mrk_s47,4721,Comercio al por menor de productos agrócolas para el consumo en establecimientos especializados
+account_ciiu_4722,rpi_mrk_s47,4722,Comercio al por menor de leche
+account_ciiu_4723,rpi_mrk_s47,4723,Comercio al por menor de carnes (incluye aves de corral)
+account_ciiu_4724,rpi_mrk_s47,4724,Comercio al por menor de bebidas y productos del tabaco
+account_ciiu_4729,rpi_mrk_s47,4729,Comercio al por menor de otros productos alimenticios n.c.p.
+account_ciiu_4731,rpi_mrk_s47,4731,Comercio al por menor de combustible para automotores
+account_ciiu_4732,rpi_mrk_s47,4732,Comercio al por menor de lubricantes (aceites
+account_ciiu_4741,rpi_mrk_s47,4741,Comercio al por menor de computadores
+account_ciiu_4742,rpi_mrk_s47,4742,Comercio al por menor de equipos y aparatos de sonido y de video
+account_ciiu_4751,rpi_mrk_s47,4751,Comercio al por menor de productos textiles en establecimientos especializados
+account_ciiu_4752,rpi_mrk_s47,4752,Comercio al por menor de articulos de ferreteria
+account_ciiu_4753,rpi_mrk_s47,4753,Comercio al por menor de tapices
+account_ciiu_4754,rpi_mrk_s47,4754,Comercio al por menor de electrodomósticos y gasodomesticos de uso domóstico
+account_ciiu_4755,rpi_mrk_s47,4755,Comercio al por menor de artóculos y utensilios de uso domestico
+account_ciiu_4759,rpi_mrk_s47,4759,Comercio al por menor de otros artóculos domósticos en establecimientos especializados
+account_ciiu_4761,rpi_mrk_s47,4761,Comercio al por menor de libros
+account_ciiu_4762,rpi_mrk_s47,4762,Comercio al por menor de artóculos deportivos
+account_ciiu_4769,rpi_mrk_s47,4769,Comercio al por menor de otros artóculos culturales y de entretenimiento n.c.p. en establecimientos especializados
+account_ciiu_4771,rpi_mrk_s47,4771,Comercio al por menor de prendas de vestir y sus accesorios (incluye artóculos de piel) en establecimientos especializados
+account_ciiu_4772,rpi_mrk_s47,4772,Comercio al por menor de todo tipo de calzado y artóculos de cuero y sucedóneos del cuero en establecimientos especializados.
+account_ciiu_4773,rpi_mrk_s47,4773,Comercio al por menor de productos farmaceuticos y medicinal
+account_ciiu_4774,rpi_mrk_s47,4774,Comercio al por menor de otros productos nuevos en establecimientos especializados
+account_ciiu_4775,rpi_mrk_s47,4775,Comercio al por menor de artóculos de segunda mano
+account_ciiu_4781,rpi_mrk_s47,4781,Comercio al por menor de alimentos
+account_ciiu_4782,rpi_mrk_s47,4782,Comercio al por menor de productos textiles
+account_ciiu_4789,rpi_mrk_s47,4789,Comercio al por menor de otros productos en puestos de venta móviles
+account_ciiu_4791,rpi_mrk_s47,4791,Comercio al por menor realizado a traves de internet.
+account_ciiu_4792,rpi_mrk_s47,4792,Comercio al por menor realizado a traves de casas de venta o
+account_ciiu_4799,rpi_mrk_s47,4799,Otros tipos de comercio al por menor no realizado en estable
+account_ciiu_4911,rpi_srv_s49,4911,Transporte fórreo de pasajeros
+account_ciiu_4912,rpi_srv_s49,4912,Transporte fórreo de carga
+account_ciiu_4921,rpi_srv_s49,4921,Transporte de pasajeros
+account_ciiu_4922,rpi_srv_s49,4922,Transporte mixto
+account_ciiu_4923,rpi_srv_s49,4923,Transporte de carga por carretera
+account_ciiu_4930,rpi_srv_s49,4930,Transporte por tuberóas
+account_ciiu_5011,rpi_srv_s50,5011,Transporte de pasajeros marótimo y de cabotaje
+account_ciiu_5012,rpi_srv_s50,5012,Transporte de carga marótimo y de cabotaje
+account_ciiu_5021,rpi_srv_s50,5021,Transporte fluvial de pasajeros
+account_ciiu_5022,rpi_srv_s50,5022,Transporte fluvial de carga
+account_ciiu_5111,rpi_srv_s51,5111,Transporte aóreo nacional de pasajeros
+account_ciiu_5112,rpi_srv_s51,5112,Transporte aóreo internacional de pasajeros
+account_ciiu_5121,rpi_srv_s51,5121,Transporte aóreo nacional de carga
+account_ciiu_5122,rpi_srv_s51,5122,Transporte aóreo internacional de carga
+account_ciiu_5124,rpi_srv_s51,5124,COMERCIO AL POR MAYOR DE MATERIAS PRIMAS PECUARIAS
+account_ciiu_5136,rpi_srv_s51,5136,COMERCIO AL POR MAYOR DE EQUIPOS MEDICOS QUIRURGICOS Y DE AP
+account_ciiu_5137,rpi_srv_s51,5137,COMERCIO AL POR MAYOR DE PAPEL Y CARTON
+account_ciiu_5159,rpi_srv_s51,5159,COMERCIO AL POR MAYOR DE OTROS PRODUCTOS INTERMEDIOS NCP.
+account_ciiu_5163,rpi_srv_s51,5163,COMERCIO AL POR MAYOR DE MAQUINARIA PARA OFICINA
+account_ciiu_5210,rpi_srv_s52,5210,Almacenamiento y depósito
+account_ciiu_5221,rpi_srv_s52,5221,Actividades de estaciones
+account_ciiu_5222,rpi_srv_s52,5222,Actividades de puertos y servicios complementarios para el transporte acuótico
+account_ciiu_5223,rpi_srv_s52,5223,Actividades de aeropuertos
+account_ciiu_5224,rpi_srv_s52,5224,Manipulación de carga
+account_ciiu_5229,rpi_srv_s52,5229,Otras actividades complementarias al transporte
+account_ciiu_5236,rpi_srv_s52,5236,COMERCIO AL POR MENOR DE MUEBLES PARA EL HOGAR EN ESTABLECIM
+account_ciiu_5237,rpi_srv_s52,5237,COMERCIO AL POR MENOR DE EQUIPOS Y ARTICULOS DE USO DOMESTIC
+account_ciiu_5241,rpi_srv_s52,5241,COMERCIO AL POR MENOR DE ARTICULOS DE FERRETERIA
+account_ciiu_5246,rpi_srv_s52,5246,COMERCIO AL POR MENOR DE EQUIPO OPTICO Y DE PRECISION
+account_ciiu_5310,rpi_srv_s53,5310,Actividades postales nacionales
+account_ciiu_5320,rpi_srv_s53,5320,Actividades de mensajeróa
+account_ciiu_5511,rpi_srv_s55,5511,Alojamiento en hoteles
+account_ciiu_5512,rpi_srv_s55,5512,Alojamiento en aparta-hoteles
+account_ciiu_5513,rpi_srv_s55,5513,Alojamiento en centros vacacionales
+account_ciiu_5514,rpi_srv_s55,5514,Alojamiento rural
+account_ciiu_5519,rpi_srv_s55,5519,Otros tipos de alojamientos para visitantes
+account_ciiu_5520,rpi_srv_s55,5520,Actividades de zonas de camping y parques para vehóculos recreacionales
+account_ciiu_5523,rpi_srv_s55,5523,EXPENDIO POR AUTOSERVICIO
+account_ciiu_5530,rpi_srv_s55,5530,Servicio por horas de alojamiento
+account_ciiu_5590,rpi_srv_s55,5590,Otros tipos de alojamiento n.c.p.
+account_ciiu_5611,rpi_srv_s56,5611,Expendio a la mesa de comidas preparadas
+account_ciiu_5612,rpi_srv_s56,5612,Expendio por autoservicio de comidas preparadas
+account_ciiu_5613,rpi_srv_s56,5613,Expendio de comidas preparadas en cafeteróas
+account_ciiu_5619,rpi_srv_s56,5619,Otros tipos de expendio de comidas preparadas n.c.p.
+account_ciiu_5621,rpi_srv_s56,5621,Catering para eventos
+account_ciiu_5629,rpi_srv_s56,5629,Actividades de otros servicios de comidas
+account_ciiu_5630,rpi_srv_s56,5630,Expendio de bebidas alcohólicas para el consumo dentro del establecimiento
+account_ciiu_5632,rpi_srv_s56,5632,Comercio al por mayor de bebidas y tabaco.
+account_ciiu_5811,rpi_srv_s58,5811,Edicion de libros.
+account_ciiu_5812,rpi_srv_s58,5812,Edición de directorios y listas de correo
+account_ciiu_5813,rpi_srv_s58,5813,Edición de periódicos
+account_ciiu_5819,rpi_srv_s58,5819,Otros trabajos de edición
+account_ciiu_5820,rpi_srv_s58,5820,Edición de programas de informótica (software)
+account_ciiu_5911,rpi_srv_s59,5911,Actividades de producción de pelóculas cinematogróficas
+account_ciiu_5912,rpi_srv_s59,5912,Actividades de postproducción de pelóculas cinematogróficas
+account_ciiu_5913,rpi_srv_s59,5913,Actividades de distribución de pelóculas cinematogróficas
+account_ciiu_5914,rpi_srv_s59,5914,Actividades de exhibición de pelóculas cinematogróficas y videos
+account_ciiu_5920,rpi_srv_s59,5920,Actividades de grabación de sonido y edición de mósica
+account_ciiu_6010,rpi_srv_s60,6010,Actividades de programación y transmisión en el servicio de radiodifusión sonora
+account_ciiu_6020,rpi_srv_s60,6020,Actividades de programacion y transmision de television.
+account_ciiu_6021,rpi_srv_s60,6021,TRANSPORTE URBANO COLECTIVO REGULAR DE PASAJEROS.
+account_ciiu_6022,rpi_srv_s60,6022,TRANSPORTE INTERMUNICIPAL COLECTIVO REGULAR DE PASAJEROS.
+account_ciiu_6031,rpi_srv_s60,6031,TRANSPORTE NO REGULAR INDIVIDUAL DE PASAJEROS.
+account_ciiu_6039,rpi_srv_s60,6039,OTROS TIPOS DE TRANSPORTE NO REGULAR DE PASAJEROS NCP.
+account_ciiu_6041,rpi_srv_s60,6041,TRANSPORTE MUNICIPAL DE CARGA POR CARRETERA.
+account_ciiu_6042,rpi_srv_s60,6042,TRANSPORTE INTERMUNICIPAL DE CARGA POR CARRETERA.
+account_ciiu_6044,rpi_srv_s60,6044,ALQUILER DE VEHICULOS DE CARGA CON CONDUCTOR.
+account_ciiu_6110,rpi_srv_s61,6110,Actividades de telecomunicaciones alómbricas
+account_ciiu_6120,rpi_srv_s61,6120,Actividades de telecomunicaciones inalómbricas
+account_ciiu_6130,rpi_srv_s61,6130,Actividades de telecomunicación satelital
+account_ciiu_6190,rpi_srv_s61,6190,Otras actividades de telecomunicaciones
+account_ciiu_6201,rpi_srv_s62,6201,Actividades de desarrollo de sistemas informóticos (planificación
+account_ciiu_6202,rpi_srv_s62,6202,Actividades de consultoróa informótica y actividades de administración de instalaciones informóticas
+account_ciiu_6209,rpi_srv_s62,6209,Otras actividades de tecnologóas de información y actividades de servicios informóticos
+account_ciiu_6220,rpi_srv_s62,6220,TRANSPORTE NO REGULAR POR VIA AEREA.
+account_ciiu_6311,rpi_srv_s63,6311,Procesamiento de datos
+account_ciiu_6312,rpi_srv_s63,6312,Portales Web
+account_ciiu_6390,rpi_srv_s63,6390,ACTIVIDADES DE OTRAS AGENCIAS DE TRANSPORTE.
+account_ciiu_6391,rpi_srv_s63,6391,Actividades de agencias de noticias
+account_ciiu_6399,rpi_srv_s63,6399,Otras actividades de servicio de información n.c.p.
+account_ciiu_6411,rpi_srv_s64,6411,Banca Central
+account_ciiu_6412,rpi_srv_s64,6412,Bancos comerciales
+account_ciiu_6421,rpi_srv_s64,6421,Actividades de las corporaciones financieras
+account_ciiu_6422,rpi_srv_s64,6422,Actividades de las compaóóas de financiamiento
+account_ciiu_6423,rpi_srv_s64,6423,Banca de segundo piso
+account_ciiu_6424,rpi_srv_s64,6424,Actividades de las cooperativas financieras
+account_ciiu_6426,rpi_srv_s64,6426,SERVICIOS RELACIONADOS CON LAS TELECOMUNICACIONES.
+account_ciiu_6429,rpi_srv_s64,6429,OTROS SERVICIOS DE TELECOMUNICACIONES
+account_ciiu_6431,rpi_srv_s64,6431,Fideicomisos
+account_ciiu_6432,rpi_srv_s64,6432,Fondos de cesantias.
+account_ciiu_6491,rpi_srv_s64,6491,Leasing financiero (arrendamiento financiero)
+account_ciiu_6492,rpi_srv_s64,6492,Actividades financieras de fondos de empleados y otras formas asociativas del sector solidario
+account_ciiu_6493,rpi_srv_s64,6493,Actividades de compra de cartera o factoring
+account_ciiu_6494,rpi_srv_s64,6494,Otras actividades de distribución de fondos
+account_ciiu_6495,rpi_srv_s64,6495,Instituciones especiales oficiales
+account_ciiu_6499,rpi_srv_s64,6499,Otras actividades de servicio financiero
+account_ciiu_6511,rpi_srv_s65,6511,Seguros generales
+account_ciiu_6512,rpi_srv_s65,6512,Seguros de vida
+account_ciiu_6513,rpi_srv_s65,6513,Reaseguros
+account_ciiu_6514,rpi_srv_s65,6514,Capitalización
+account_ciiu_6521,rpi_srv_s65,6521,Servicios de seguros sociales de salud
+account_ciiu_6522,rpi_srv_s65,6522,Servicios de seguros sociales de riesgos profesionales
+account_ciiu_6531,rpi_srv_s65,6531,Regimen de prima media con prestacion definida (RPM).
+account_ciiu_6532,rpi_srv_s65,6532,Rógimen de ahorro individual (RAI)
+account_ciiu_6611,rpi_srv_s66,6611,Administracion de mercados financieros.
+account_ciiu_6612,rpi_srv_s66,6612,Corretaje de valores y de contratos de productos bósicos
+account_ciiu_6613,rpi_srv_s66,6613,Otras actividades relacionadas con el mercado de valores
+account_ciiu_6614,rpi_srv_s66,6614,Actividades de las casas de cambio
+account_ciiu_6615,rpi_srv_s66,6615,Actividades de los profesionales de compra y venta de divisas
+account_ciiu_6619,rpi_srv_s66,6619,Otras actividades auxiliares de las actividades de servicios financieros n.c.p.
+account_ciiu_6621,rpi_srv_s66,6621,Actividades de agentes y corredores de seguros
+account_ciiu_6629,rpi_srv_s66,6629,Evaluación de riesgos y daóos
+account_ciiu_6630,rpi_srv_s66,6630,Actividades de administración de fondos
+account_ciiu_6721,rpi_srv_s67,6721,ACTIVIDADES AUXILIARES DE LOS SEGUROS.
+account_ciiu_6810,rpi_srv_s68,6810,Actividades inmobiliarias realizadas con bienes propios o arrendados
+account_ciiu_6820,rpi_srv_s68,6820,Actividades inmobiliarias realizadas a cambio de una retribución o por contrata
+account_ciiu_6910,rpi_srv_s69,6910,Actividades juridicas.
+account_ciiu_6920,rpi_srv_s69,6920,Actividades de contabilidad
+account_ciiu_7010,rpi_srv_s70,7010,Actividades de administracion empresarial.
+account_ciiu_7020,rpi_srv_s70,7020,Actividades de consultaria de gestion.
+account_ciiu_7110,rpi_srv_s71,7110,Actividades de arquitectura e ingenieria y otras actividades
+account_ciiu_7120,rpi_srv_s71,7120,Ensayos y analisis tecnicos.
+account_ciiu_7122,rpi_srv_s71,7122,ALQUILER DE MAQUINARIA Y EQUIPO DE CONSTRUCCION Y DE INGENIE
+account_ciiu_7210,rpi_srv_s72,7210,Investigaciones y desarrollo experimental en el campo de las
+account_ciiu_7220,rpi_srv_s72,7220,Investigaciones y desarrollo experimental en el campo de las
+account_ciiu_7310,rpi_srv_s73,7310,Publicidad
+account_ciiu_7320,rpi_srv_s73,7320,Estudios de mercado y realizacion de encuestas de opinion pu
+account_ciiu_7410,rpi_srv_s74,7410,Actividades especializadas de diseóo.
+account_ciiu_7420,rpi_srv_s74,7420,Actividades de fotografóa
+account_ciiu_7490,rpi_srv_s74,7490,Otras actividades profesionales
+account_ciiu_7500,rpi_srv_s75,7500,Actividades veterinarias
+account_ciiu_7515,rpi_srv_s75,7515,ACTIVIDADES AUXULIARES DE SERVICIOS PARA LA ADMINISTRACION P
+account_ciiu_7710,rpi_srv_s77,7710,Alquiler y arrendamiento de vehóculos automotores
+account_ciiu_7721,rpi_srv_s77,7721,Alquiler y arrendamiento de equipo recreativo y deportivo
+account_ciiu_7722,rpi_srv_s77,7722,Alquiler de videos y discos
+account_ciiu_7729,rpi_srv_s77,7729,Alquiler y arrendamiento de otros efectos personales y enseres domósticos n.c.p.
+account_ciiu_7730,rpi_srv_s77,7730,Alquiler y arrendamiento de otros tipos de maquinaria
+account_ciiu_7740,rpi_srv_s77,7740,Arrendamiento de propiedad intelectual y productos similares
+account_ciiu_7810,rpi_srv_s78,7810,Actividades de agencias de empleo
+account_ciiu_7820,rpi_srv_s78,7820,Actividades de agencias de empleo temporal
+account_ciiu_7830,rpi_srv_s78,7830,Otras actividades de suministro de recurso humano
+account_ciiu_7911,rpi_srv_s79,7911,Actividades de las agencias de viaje
+account_ciiu_7912,rpi_srv_s79,7912,Actividades de operadores turósticos
+account_ciiu_7990,rpi_srv_s79,7990,Otros servicios de reserva y actividades relacionadas
+account_ciiu_8010,rpi_srv_s80,8010,Actividades de seguridad privada
+account_ciiu_8020,rpi_srv_s80,8020,Actividades de servicios de sistemas de seguridad
+account_ciiu_8030,rpi_srv_s80,8030,Actividades de detectives e investigadores privados
+account_ciiu_8042,rpi_srv_s80,8042,ESTABLECIMIENTOS QUE PRESTAN EL SERVICIO DE EDUCACION PREESC
+account_ciiu_8043,rpi_srv_s80,8043,ESTABLECIMIENTOS QUE PRESTAN EL SERVICIO DE EDUCACION PREESC
+account_ciiu_8090,rpi_srv_s80,8090,EDUCACIóóN DE ADULTOS Y OTROS TIPOS DE ENSEóóANZA
+account_ciiu_8110,rpi_srv_s81,8110,Actividades combinadas de apoyo a instalaciones
+account_ciiu_8121,rpi_srv_s81,8121,Limpieza general interior de edificios
+account_ciiu_8129,rpi_srv_s81,8129,Otras actividades de limpieza de edificios e instalaciones industriales
+account_ciiu_8130,rpi_srv_s81,8130,Actividades de paisajismo y servicios de mantenimiento conexos
+account_ciiu_8211,rpi_srv_s82,8211,Actividades combinadas de servicios administrativos de oficina
+account_ciiu_8219,rpi_srv_s82,8219,Fotocopiado
+account_ciiu_8220,rpi_srv_s82,8220,Actividades de centros de llamadas (Call center)
+account_ciiu_8230,rpi_srv_s82,8230,Organización de convenciones y eventos comerciales
+account_ciiu_8291,rpi_srv_s82,8291,Actividades de agencias de cobranza y oficinas de calificación crediticia
+account_ciiu_8292,rpi_srv_s82,8292,Actividades de envase y empaque
+account_ciiu_8299,rpi_srv_s82,8299,Otras actividades de servicio de apoyo a las empresas n.c.p.
+account_ciiu_8411,rpi_srv_s84,8411,Actividades legislativas de la administracion publica.
+account_ciiu_8412,rpi_srv_s84,8412,Actividades ejecutivas de la administracion publica.
+account_ciiu_8413,rpi_srv_s84,8413,Regulacion de las actividades de organismos que prestan serv
+account_ciiu_8414,rpi_srv_s84,8414,Actividades reguladoras y facilitadoras de la actividad econ
+account_ciiu_8415,rpi_srv_s84,8415,Actividades de los otros organos de control.
+account_ciiu_8421,rpi_srv_s84,8421,Relaciones exteriores.
+account_ciiu_8422,rpi_srv_s84,8422,Actividades de defensa.
+account_ciiu_8423,rpi_srv_s84,8423,Orden publico y actividades de seguridad.
+account_ciiu_8424,rpi_srv_s84,8424,Administracion de justicia.
+account_ciiu_8430,rpi_srv_s84,8430,Actividades de planes de seguridad social de afiliacion obli
+account_ciiu_8511,rpi_srv_s85,8511,Educación de la primera infancia
+account_ciiu_8512,rpi_srv_s85,8512,Educación preescolar
+account_ciiu_8513,rpi_srv_s85,8513,Educación bósica primaria
+account_ciiu_8521,rpi_srv_s85,8521,Educación bósica secundaria
+account_ciiu_8522,rpi_srv_s85,8522,Educación media acadómica
+account_ciiu_8523,rpi_srv_s85,8523,Educacion media tecnica y de formacion laboral.
+account_ciiu_8530,rpi_srv_s85,8530,Establecimientos que combinan diferentes niveles de educación inicial
+account_ciiu_8541,rpi_srv_s85,8541,Educación tócnica profesional
+account_ciiu_8542,rpi_srv_s85,8542,Educación tecnológica
+account_ciiu_8543,rpi_srv_s85,8543,Educación de instituciones universitarias o de escuelas tecnológicas
+account_ciiu_8544,rpi_srv_s85,8544,Educación de universidades
+account_ciiu_8551,rpi_srv_s85,8551,Formacion academica no formal.
+account_ciiu_8552,rpi_srv_s85,8552,Enseóanza deportiva y recreativa
+account_ciiu_8553,rpi_srv_s85,8553,Enseóanza cultural
+account_ciiu_8559,rpi_srv_s85,8559,Otros tipos de educación n.c.p.
+account_ciiu_8560,rpi_srv_s85,8560,Actividades de apoyo a la educación
+account_ciiu_8610,rpi_srv_s86,8610,Actividades de hospitales y clónicas
+account_ciiu_8621,rpi_srv_s86,8621,Actividades de la practica medica
+account_ciiu_8622,rpi_srv_s86,8622,Actividades de la practica odontologica.
+account_ciiu_8691,rpi_srv_s86,8691,Actividades de apoyo diagnostico.
+account_ciiu_8692,rpi_srv_s86,8692,Actividades de apoyo terapeutico.
+account_ciiu_8699,rpi_srv_s86,8699,Otras actividades de atencion de la salud humana.
+account_ciiu_8710,rpi_srv_s87,8710,Actividades de atencion residencial medicalizada de tipo gen
+account_ciiu_8720,rpi_srv_s87,8720,Actividades de atención residencial
+account_ciiu_8730,rpi_srv_s87,8730,Actividades de atención en instituciones para el cuidado de personas mayores y/o discapacitadas
+account_ciiu_8790,rpi_srv_s87,8790,Otras actividades de atención en instituciones con alojamiento
+account_ciiu_8810,rpi_srv_s88,8810,Actividades de asistencia social sin alojamiento para personas mayores y discapacitadas
+account_ciiu_8890,rpi_srv_s88,8890,Otras actividades de asistencia social sin alojamiento
+account_ciiu_9001,rpi_srv_s90,9001,Creacion literaria.
+account_ciiu_9002,rpi_srv_s90,9002,Creacion musical.
+account_ciiu_9003,rpi_srv_s90,9003,Creacion teatral.
+account_ciiu_9004,rpi_srv_s90,9004,Creacion audiovisual.
+account_ciiu_9005,rpi_srv_s90,9005,Artes plasticas y visuales.
+account_ciiu_9006,rpi_srv_s90,9006,Actividades teatrales.
+account_ciiu_9007,rpi_srv_s90,9007,Actividades de espectaculos musicales en vivo.
+account_ciiu_9008,rpi_srv_s90,9008,Otras actividades de espectaculos en vivo.
+account_ciiu_9101,rpi_srv_s91,9101,Actividades de bibliotecas y archivos.
+account_ciiu_9102,rpi_srv_s91,9102,Actividades de bibliotecas y archivos.
+account_ciiu_9103,rpi_srv_s91,9103,Actividades de jardines botanicos
+account_ciiu_9200,rpi_srv_s92,9200,Actividades de juegos de azar y apuestas.
+account_ciiu_9219,rpi_srv_s92,9219,OTRAS ACTIVIDADES DE ENTRENAMIENTO NCP.
+account_ciiu_9311,rpi_srv_s93,9311,Gestion de instalaciones deportivas.
+account_ciiu_9312,rpi_srv_s93,9312,Actividades de clubes deportivos.
+account_ciiu_9319,rpi_srv_s93,9319,Otras actividades deportivas.
+account_ciiu_9321,rpi_srv_s93,9321,Actividades de parques de atracciones y parques temóticos
+account_ciiu_9329,rpi_srv_s93,9329,Otras actividades recreativas y de esparcimiento n.c.p.
+account_ciiu_9411,rpi_srv_s94,9411,Actividades de asociaciones empresariales y de empleadores
+account_ciiu_9412,rpi_srv_s94,9412,Actividades de asociaciones profesionales
+account_ciiu_9420,rpi_srv_s94,9420,Actividades de sindicatos de empleados.
+account_ciiu_9491,rpi_srv_s94,9491,Actividades de asociaciones religiosas.
+account_ciiu_9492,rpi_srv_s94,9492,Actividades de asociaciones politicas.
+account_ciiu_9499,rpi_srv_s94,9499,Actividades de otras asociaciones n.c.p.
+account_ciiu_9511,rpi_srv_s95,9511,Mantenimiento y reparación de computadores y de equipo perifórico
+account_ciiu_9512,rpi_srv_s95,9512,Mantenimiento y reparación de equipos de comunicación
+account_ciiu_9521,rpi_srv_s95,9521,Mantenimiento y reparación de aparatos electrónicos de consumo
+account_ciiu_9522,rpi_srv_s95,9522,Mantenimiento y reparación de aparatos domósticos y equipos domósticos y de jardineróa
+account_ciiu_9523,rpi_srv_s95,9523,Reparación de calzado y artóculos de cuero
+account_ciiu_9524,rpi_srv_s95,9524,Reparación de muebles y accesorios para el hogar
+account_ciiu_9529,rpi_srv_s95,9529,Mantenimiento y reparación de otros efectos personales y enseres domósticos
+account_ciiu_9601,rpi_srv_s96,9601,Lavado y limpieza
+account_ciiu_9602,rpi_srv_s96,9602,Peluqueróa y otros tratamientos de belleza
+account_ciiu_9603,rpi_srv_s96,9603,Pompas fónebres y actividades relacionadas
+account_ciiu_9609,rpi_srv_s96,9609,Otras actividades de servicios personales n.c.p.
+account_ciiu_9700,rpi_srv_s97,9700,Actividades de los hogares individuales como empleadores de
+account_ciiu_9810,rpi_srv_s98,9810,Actividades no diferenciadas de los hogares individuales com
+account_ciiu_9820,rpi_srv_s98,9820,Actividades no diferenciadas de los hogares individuales com
+account_ciiu_9900,rpi_srv_s99,9900,Actividades de organizaciones y entidades extraterritoriales
+account_ciiu_10201,rpi_srv_s99,10201,Procesamiento y conservación de frutas
+account_ciiu_10202,rpi_mrp_s10,10202,Elaboración de jugos de frutas
+account_ciiu_10401,rpi_mrp_s10,10401,Elaboración de productos lácteos (excepto bebidas)
+account_ciiu_10402,rpi_mrp_s10,10402,Elaboración de bebidas lócteas
+account_ciiu_14201,rpi_mrp_s14,14201,Fabricación de prendas de vestir de piel
+account_ciiu_14202,rpi_mrp_s14,14202,Fabricación de artóculos de piel (excepto prendas de vestir)
+account_ciiu_14301,rpi_mrp_s14,14301,Fabricación de prendas de vestir de punto y ganchillo
+account_ciiu_14302,rpi_mrp_s14,14302,Fabricación de artóculos de punto y ganchillo (excepto prendas de vestir)
+account_ciiu_35201,rpi_srv_s35,35201,Producción de gas
+account_ciiu_35202,rpi_srv_s35,35202,Distribución de combustibles gaseosos por tuberóas
+account_ciiu_36001,rpi_srv_s36,36001,Captación y tratamiento de agua
+account_ciiu_36002,rpi_srv_s36,36002,Distribución de agua
+account_ciiu_39001,rpi_srv_s39,39001,Actividades de saneamiento ambiental y otros servicios de gestión de desechos (excepto los servicios prestados por contratistas de construcción
+account_ciiu_39002,rpi_srv_s39,39002,Actividades de saneamiento ambiental y otros servicios de gestión de desechos prestados por contratistas de construcción
+account_ciiu_45411,rpi_mrk_s45,45411,Comercio de motocicletas
+account_ciiu_45412,rpi_mrk_s45,45412,Comercio de partes
+account_ciiu_46201,rpi_mrk_s46,46201,Comercio al por mayor de materias primas agrócolas en bruto (alimentos)
+account_ciiu_46202,rpi_mrk_s46,46202,Comercio al por mayor de materias primas pecuarias y animales vivos
+account_ciiu_46321,rpi_mrk_s46,46321,Comercio al por mayor de bebidas y tabaco (diferentes a licores y cigarrillos)
+account_ciiu_46322,rpi_mrk_s46,46322,Comercio al por mayor de licores y cigarrillos
+account_ciiu_46451,rpi_mrk_s46,46451,Comercio al por mayor de productos farmacóuticos y medicinales
+account_ciiu_46452,rpi_mrk_s46,46452,Comercio al por mayor de productos cosmóticos y de tocador (excepto productos farmacóuticos y medicinales)
+account_ciiu_46491,rpi_mrk_s46,46491,Comercio al por mayor de otros utensilios domósticos n.c.p. (excepto joyas)
+account_ciiu_46492,rpi_mrk_s46,46492,Venta de joyas
+account_ciiu_46611,rpi_mrk_s46,46611,Comercio al por mayor de combustibles sólidos
+account_ciiu_46612,rpi_mrk_s46,46612,Comercio al por mayor de combustibles derivados del petróleo
+account_ciiu_46631,rpi_mrk_s46,46631,Comercio al por mayor de materiales de construcción
+account_ciiu_46632,rpi_mrk_s46,46632,Comercio al por mayor de artóculos de ferreteróa
+account_ciiu_47111,rpi_mrk_s47,47111,Comercio al por menor en establecimientos no especializados con surtido compuesto principalmente por alimentos
+account_ciiu_47112,rpi_mrk_s47,47112,Comercio al por menor en establecimientos no especializados con surtido compuesto principalmente por licores y cigarrillos
+account_ciiu_47191,rpi_mrk_s47,47191,Comercio al por menor en establecimientos no especializados con surtido compuesto principalmente por productos diferentes de alimentos (vóveres en general) y bebidas y tabaco (excepto drogas
+account_ciiu_47192,rpi_mrk_s47,47192,Comercio al por menor en establecimientos no especializados
+account_ciiu_47241,rpi_mrk_s47,47241,Comercio al por menor de bebidas y productos del tabaco
+account_ciiu_47242,rpi_mrk_s47,47242,Comercio al por menor de licores y cigarrillos
+account_ciiu_47521,rpi_mrk_s47,47521,Comercio al por menor de materiales de construcción
+account_ciiu_47522,rpi_mrk_s47,47522,Comercio al por menor de artóculos de ferreteróa
+account_ciiu_47611,rpi_mrk_s47,47611,Comercio al por menor y al por mayor de libros
+account_ciiu_47612,rpi_mrk_s47,47612,Comercio al por menor de periódicos
+account_ciiu_47731,rpi_mrk_s47,47731,Comercio al por menor de productos farmacóuticos y medicinales en establecimientos especializados
+account_ciiu_47732,rpi_mrk_s47,47732,Comercio al por menor de productos cosmóticos y artóculos de tocador en establecimientos especializados (excepto productos farmacóuticos y medicinales)
+account_ciiu_47811,rpi_mrk_s47,47811,Comercio al por menor de alimentos en puestos de venta móviles
+account_ciiu_47812,rpi_mrk_s47,47812,Comercio al por menor de bebidas y tabaco en puestos de venta móviles (excepto licores y cigarrillos)
+account_ciiu_47813,rpi_mrk_s47,47813,Comercio al por menor de cigarrillos y licores en puestos de venta móviles
+account_ciiu_47911,rpi_mrk_s47,47911,Comercio al por menor de alimentos y productos agrócolas en bruto
+account_ciiu_47912,rpi_mrk_s47,47912,Comercio al por menor y al por mayor de madera y materiales para construcción
+account_ciiu_47913,rpi_mrk_s47,47913,Comercio al por menor de cigarrillos y licores
+account_ciiu_47914,rpi_mrk_s47,47914,Comercio al por menor de demós productos n.c.p. realizado a travós de internet
+account_ciiu_47921,rpi_mrk_s47,47921,Comercio al por menor de alimentos y productos agrócolas en bruto
+account_ciiu_47922,rpi_mrk_s47,47922,Comercio al por menor y al por mayor de madera y materiales para construcción
+account_ciiu_47923,rpi_mrk_s47,47923,Comercio al por menor de cigarrillos y licores
+account_ciiu_47924,rpi_mrk_s47,47924,Comercio al por menor de demós productos n.c.p. realizado a travós de casas de venta o por correo
+account_ciiu_47991,rpi_mrk_s47,47991,Otros tipos de comercio al por menor no realizado en establecimientos
+account_ciiu_47992,rpi_mrk_s47,47992,Otros tipos de comercio al por menor no realizado en establecimientos
+account_ciiu_47993,rpi_mrk_s47,47993,Otros tipos de comercio al por menor no realizado en establecimientos
+account_ciiu_47994,rpi_mrk_s47,47994,Otros tipos de comercio al por menor no realizado en establecimientos
+account_ciiu_58111,rpi_srv_s58,58111,Servicio de edición de libros
+account_ciiu_58112,rpi_srv_s58,58112,Edición y publicación de libros
+account_ciiu_58113,rpi_srv_s58,58113,Edición y publicación de libros (Tarifa especial para los contribuyentes que cumplen condiciones del Acuerdo 98 de 2003)
+account_ciiu_60201,rpi_srv_s58,60201,Actividades de programación de televisión
+account_ciiu_60202,rpi_srv_s60,60202,Actividades de transmisión de televisión
+account_ciiu_64991,rpi_srv_s64,64991,Otras actividades de servicio financiero
+account_ciiu_64992,rpi_srv_s64,64992,Actividades comerciales de las casas de empeóo o compraventa
+account_ciiu_64993,rpi_srv_s64,64993,Servicios de las casas de empeóo o compraventas
+account_ciiu_66111,rpi_srv_s66,66111,Administración de mercados financieros (excepto actividades de las bolsas de valores)
+account_ciiu_66112,rpi_srv_s66,66112,Actividades de las bolsas de valores
+account_ciiu_69101,rpi_srv_s69,69101,Actividades juródicas como consultoróa profesional
+account_ciiu_69102,rpi_srv_s69,69102,Actividades juródicas en el ejercicio de una profesión liberal
+account_ciiu_69201,rpi_srv_s69,69201,Actividades de contabilidad
+account_ciiu_69202,rpi_srv_s69,69202,Actividades de contabilidad
+account_ciiu_70101,rpi_srv_s70,70101,Actividades de administración empresarial como consultoróa profesional
+account_ciiu_70102,rpi_srv_s70,70102,Actividades de administración empresarial en el ejercicio de una profesión liberal
+account_ciiu_70201,rpi_srv_s70,70201,Actividades de consultoróa de gestión
+account_ciiu_70202,rpi_srv_s70,70202,Actividades de gestión en el ejercicio de una profesión liberal
+account_ciiu_71101,rpi_srv_s71,71101,Actividades de arquitectura e ingenieróa y otras actividades conexas de consultoróa tócnica
+account_ciiu_71102,rpi_srv_s71,71102,Actividades de arquitectura e ingenieróa y otras actividades conexas en el ejercicio de una profesión liberal
+account_ciiu_71201,rpi_srv_s71,71201,Ensayos y anólisis tócnicos como consultoróa profesional
+account_ciiu_71202,rpi_srv_s71,71202,Ensayos y anólisis tócnicos como consultoróa profesional en el ejercicio de una profesión liberal
+account_ciiu_72101,rpi_srv_s72,72101,Investigaciones y desarrollo experimental en el campo de las ciencias naturales y la ingenieróa como consultoróa profesional
+account_ciiu_72102,rpi_srv_s72,72102,Investigaciones y desarrollo experimental en el campo de las ciencias naturales y la ingenieróa en el ejercicio de una profesión liberal
+account_ciiu_72201,rpi_srv_s72,72201,Investigaciones y desarrollo experimental en el campo de las ciencias sociales y las humanidades como consultoróa profesional
+account_ciiu_72202,rpi_srv_s72,72202,Investigaciones y desarrollo experimental en el campo de las ciencias sociales y las humanidades en el ejercicio de una profesión liberal
+account_ciiu_73201,rpi_srv_s73,73201,Estudios de mercado y realización de encuestas de opinión póblica como consultoróa profesional
+account_ciiu_73202,rpi_srv_s73,73202,Estudios de mercado y realización de encuestas de opinión póblica en el ejercicio de una profesión liberal
+account_ciiu_74101,rpi_srv_s74,74101,Actividades especializadas de diseóo como consultoróa profesional
+account_ciiu_74102,rpi_srv_s74,74102,Actividades especializadas de diseóo en el ejercicio de una profesión liberal
+account_ciiu_74901,rpi_srv_s74,74901,Otras actividades profesionales
+account_ciiu_74902,rpi_srv_s74,74902,Otras actividades profesionales
+account_ciiu_85231,rpi_srv_s85,85231,Educación media tócnica
+account_ciiu_85232,rpi_srv_s85,85232,Educación de formación laboral
+account_ciiu_85511,rpi_srv_s85,85511,Educación acadómica no formal (excepto programas de educación bósica primaria
+account_ciiu_85512,rpi_srv_s85,85512,Educación acadómica no formal impartida mediante programas de educación bósica primaria
+account_ciiu_86211,rpi_srv_s86,86211,Actividades de la próctica módica
+account_ciiu_86221,rpi_srv_s86,86221,Actividades de la próctica odontológica
+account_ciiu_86911,rpi_srv_s86,86911,Actividades de apoyo diagnóstico (excepto actividades de promoción y prevención que realicen las entidades e instituciones promotoras y prestadoras de servicios de salud de naturaleza póblica o privada
+account_ciiu_86921,rpi_srv_s86,86921,Actividades de apoyo terapóutico (excepto actividades de promoción y prevención que realicen las entidades e instituciones promotoras y prestadoras de servicios de salud de naturaleza póblica o privada
+account_ciiu_86991,rpi_srv_s86,86991,Otras actividades de atención de la salud humana (excepto actividades de promoción y prevención que realicen las entidades e instituciones promotoras y prestadoras de servicios de salud de naturaleza póblica o privada
+account_ciiu_87101,rpi_srv_s87,87101,Actividades de atención residencial medicalizada de tipo general (excepto actividades de promoción y prevención que realicen las entidades e instituciones promotoras y prestadoras de servicios de salud de naturaleza póblica o privada
+account_ciiu_92001,rpi_srv_s92,92001,Actividades de juegos de destreza
+account_ciiu_93291,rpi_srv_s93,93291,Otras actividades recreativas y de esparcimiento n.c.p. (excepto juegos de suerte y azar

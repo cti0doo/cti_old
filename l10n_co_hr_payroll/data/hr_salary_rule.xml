@@ -1,0 +1,1173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+
+
+        <!-- INPUTS  -->
+
+        <record model='hr.salary.rule' id='SODEXO_DATA'>
+            <field name='code'>SODEXO_DATA</field>
+            <field name='name'>SODEXO Data</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>1</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = inputs.INPUT_SODEXO_DATA.amount > 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_SODEXO_DATA.amount</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+        </record>
+
+        <record model='hr.rule.input' id='INPUT_SODEXO_DATA'>
+            <field name='name'>Bono SODEXO PASS (PESOS)</field>
+            <field name='code'>INPUT_SODEXO_DATA</field>
+            <field name='input_id' ref='SODEXO_DATA'/>
+        </record>
+
+
+        <record model='hr.salary.rule' id='ANTICIPO_DATA'>
+            <field name='code'>ANTICIPO_DATA</field>
+            <field name='name'>Anticipos Data</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>2</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = inputs.INPUT_ANTICIPO_DATA.amount > 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = - inputs.INPUT_ANTICIPO_DATA.amount</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+        </record>
+
+        <record model='hr.rule.input' id='INPUT_ANTICIPO_DATA'>
+            <field name='name'>Anticipo (PESOS)</field>
+            <field name='code'>INPUT_ANTICIPO_DATA</field>
+            <field name='input_id' ref='ANTICIPO_DATA'/>
+        </record>
+
+        <record model='hr.salary.rule' id='COMISIONES_DATA'>
+            <field name='code'>COMISIONES_DATA</field>
+            <field name='name'>Comisiones Data</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>3</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = inputs.INPUT_COMISIONES_DATA.amount > 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_COMISIONES_DATA.amount</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+        </record>
+
+        <record model='hr.rule.input' id='INPUT_COMISIONES_DATA'>
+            <field name='name'>Comisiones (Pesos)</field>
+            <field name='code'>INPUT_COMISIONES_DATA</field>
+            <field name='input_id' ref='COMISIONES_DATA'/>
+        </record>
+
+        <record model='hr.salary.rule' id='VIATICOS_DATA'>
+            <field name='code'>VIATICOS_DATA</field>
+            <field name='name'>Comisiones Data</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>4</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = inputs.INPUT_VIATICOS_DATA.amount > 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_VIATICOS_DATA.amount</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+        </record>
+
+        <record model='hr.rule.input' id='INPUT_VIATICOS_DATA'>
+            <field name='name'>Viaticos (Pesos)</field>
+            <field name='code'>INPUT_VIATICOS_DATA</field>
+            <field name='input_id' ref='VIATICOS_DATA'/>
+        </record>
+
+        <record model='hr.salary.rule' id='HORAS_EXTRAS_NOCTURNAS_DATA'>
+            <field name='code'>HORAS_EXTRAS_NOCTURNAS_DATA</field>
+            <field name='name'>Horas Extras Nocturnas Data</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>5</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = inputs.INPUT_HORAS_EXTRAS_NOCTURNAS_DATA.amount > 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_HORAS_EXTRAS_NOCTURNAS_DATA.amount</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+        </record>
+
+        <record model='hr.rule.input' id='INPUT_HORAS_EXTRAS_NOCTURNAS_DATA'>
+            <field name='name'>Horas Extras Nocturnas de 10:00pm a 06:00am (Horas)</field>
+            <field name='code'>INPUT_HORAS_EXTRAS_NOCTURNAS_DATA</field>
+            <field name='input_id' ref='HORAS_EXTRAS_NOCTURNAS_DATA'/>
+        </record>
+
+        <record model='hr.salary.rule' id='HORAS_EXTRAS_DIURNAS_DATA'>
+            <field name='code'>HORAS_EXTRAS_DIURNAS_DATA</field>
+            <field name='name'>Horas Extras Diurnas Data</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>6</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = inputs.INPUT_HORAS_EXTRAS_DIURNAS_DATA.amount > 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_HORAS_EXTRAS_DIURNAS_DATA.amount</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+        </record>
+
+        <record model='hr.rule.input' id='INPUT_HORAS_EXTRAS_DIURNAS_DATA'>
+            <field name='name'>Horas Extras Diurnas de 06:00am a 10:00pm (Horas)</field>
+            <field name='code'>INPUT_HORAS_EXTRAS_DIURNAS_DATA</field>
+            <field name='input_id' ref='HORAS_EXTRAS_DIURNAS_DATA'/>
+        </record>
+
+        <record model='hr.salary.rule' id='HORAS_NOCTURNAS_DATA'>
+            <field name='code'>HORAS_NOCTURNAS_DATA</field>
+            <field name='name'>Horas Nocturnas Data</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>7</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = inputs.INPUT_HORAS_NOCTURNAS_DATA.amount > 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.INPUT_HORAS_NOCTURNAS_DATA.amount</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+        </record>
+
+        <record model='hr.rule.input' id='INPUT_HORAS_NOCTURNAS_DATA'>
+            <field name='name'>Horas Nocturnas de 10:00pm a 06:00am (Horas)</field>
+            <field name='code'>INPUT_HORAS_NOCTURNAS_DATA</field>
+            <field name='input_id' ref='HORAS_NOCTURNAS_DATA'/>
+        </record>
+
+        <!-- FIN INPUTS -->
+
+
+        <!--                                                                                                    Parametros de Configuracion -->
+
+        <record model='hr.salary.rule' id='UVT_CFG'>
+            <field name='condition_select'>none</field>
+            <field name='code'>UVT_CFG</field>
+            <field name='name'>Unidad de Valor Tributario PARAMETRO</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>0</field>
+
+            <field name='amount_select'>fix</field>
+
+            <field name='amount_fix'>26841.0</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+            <field name="note">UVT - Unidad de Valor Tributario</field>
+        </record>
+
+        <record model='hr.salary.rule' id='AUXILIO_TRANSPORTE_CFG'>
+            <field name='condition_select'>none</field>
+            <field name='code'>AUXILIO_TRANSPORTE_CFG</field>
+            <field name='name'>Auxilio al transporte PARAMETRO</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>0</field>
+
+            <field name='amount_select'>fix</field>
+
+            <field name='amount_fix'>70500.0</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+            <field name="note">Auxilio de transporte vigente 2013</field>
+        </record>
+
+        <record model='hr.salary.rule' id='SMMLV_CFG'>
+            <field name='condition_select'>none</field>
+            <field name='code'>SMMLV_CFG</field>
+            <field name='name'>Salario Minimo PARAMETRO</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>0</field>
+
+            <field name='amount_select'>fix</field>
+
+            <field name='amount_fix'>589500.0</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+            <field name="note">Salario minimo mensual legal vigente 2013</field>
+        </record>
+
+        <record model='hr.salary.rule' id='DIAS_DESCONTADOS'>
+            <field name='code'>DIAS_DESCONTADOS</field>
+            <field name='name'>Días descontados</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>1</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = worked_days.Unpaid and worked_days.Unpaid.number_of_days or False
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result=worked_days.Unpaid.number_of_days</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+            <field name="note">Días de ausencia</field>
+        </record>
+
+        <record model='hr.salary.rule' id='DIAS_TRABAJADOS'>
+            <field name='code'>DIAS_TRABAJADOS</field>
+            <field name='name'>Días Trabajados</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>3</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( 30.0 if ( (worked_days.WORK100.number_of_days ==
+                worked_days.LAST_DAY_OF_MONTH.number_of_days) and ( worked_days.LAST_DAY_OF_MONTH.number_of_days in
+                [28,29,30,31] ) )
+                else 30.0 - DIAS_DESCONTADOS if ( rules.DIAS_DESCONTADOS and (( DIAS_DESCONTADOS +
+                worked_days.WORK100.number_of_days ) == worked_days.LAST_DAY_OF_MONTH.number_of_days ) )
+                else worked_days.WORK100.number_of_days )
+            </field>
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+            <field name="note">Dias trabajados</field>
+        </record>
+
+        <!--                                                                                                    BONOS ADMINISTRACION -->
+
+        <record model='hr.salary.rule' id='SODEXO'>
+            <field name='code'>SODEXO</field>
+            <field name='name'>Bono SODEXO PASS</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.SODEXO_DATA != 0.0</field>
+
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = SODEXO_DATA</field>
+
+            <field name='category_id' ref='CATEGORY_BONOS'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510160)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242590)]"/>
+        </record>
+
+        <!-- Anticipo -->
+
+        <record model='hr.salary.rule' id='ANTICIPO'>
+            <field name='code'>ANTICIPO</field>
+            <field name='name'>Anticipos</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.ANTICIPO_DATA != 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ANTICIPO_DATA</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+
+            <field name='account_debit' model="account.account" search="[('code','=',142090)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+
+        </record>
+
+        <!--                                                                                                     CALCULO DE DOMINA ADMINISTRATIVA -->
+
+        <record model='hr.salary.rule' id='SALARIO'>
+            <field name='code'>SALARIO</field>
+            <field name='name'>Salario</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = contract.wage</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+
+        </record>
+
+        <record model='hr.salary.rule' id='SALARIO_PAGAR'>
+            <field name='code'>SALARIO_PAGAR</field>
+            <field name='name'>Salario a Pagar</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( contract.wage / 30 ) * DIAS_TRABAJADOS</field>
+
+            <field name='category_id' ref='CATEGORY_BASICO'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510101)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+
+        </record>
+
+        <record model='hr.salary.rule' id='COMISIONES'>
+            <field name='code'>COMISIONES</field>
+            <field name='name'>Comisiones</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>12</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.COMISIONES_DATA != 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = COMISIONES_DATA</field>
+
+            <field name='category_id' ref='CATEGORY_BASICO'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510149)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='VIATICOS'>
+            <field name='code'>VIATICOS</field>
+            <field name='name'>Viaticos</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>12</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.VIATICOS_DATA != 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = VIATICOS_DATA</field>
+
+            <field name='category_id' ref='CATEGORY_BASICO'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510147)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='AUXILIO_TRANSPORTE'>
+            <field name='code'>AUXILIO_TRANSPORTE</field>
+            <field name='name'>Auxilio al Transporte</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = ( contract.wage / SMMLV_CFG ) &lt;= 2.0</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = AUXILIO_TRANSPORTE_CFG</field>
+
+
+            <field name='category_id' ref='CATEGORY_AUX'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510123)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <!--                                                                                                    HORAS EXTRAS  -->
+
+        <record model='hr.salary.rule' id='HORAS_EXTRAS_NOCTURNAS'>
+            <field name='code'>HORAS_EXTRAS_NOCTURNAS</field>
+            <field name='name'>Horas Extras Nocturnas</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>11</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.HORAS_EXTRAS_NOCTURNAS_DATA != 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = HORAS_EXTRAS_NOCTURNAS_DATA * ( ( contract.wage / 30 ) * 1.75
+                )
+            </field>
+
+            <field name='category_id' ref='CATEGORY_HORAS_EXTRAS'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510103)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='HORAS_EXTRAS_DIURNAS'>
+            <field name='code'>HORAS_EXTRAS_DIURNAS</field>
+            <field name='name'>Horas Extras Diurnas</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>11</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.HORAS_EXTRAS_DIURNAS_DATA != 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = HORAS_EXTRAS_DIURNAS_DATA * ( ( contract.wage / 30 ) * 1.25 )
+            </field>
+
+            <field name='category_id' ref='CATEGORY_HORAS_EXTRAS'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510103)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='HORAS_NOCTURNAS'>
+            <field name='code'>HORAS_NOCTURNAS</field>
+            <field name='name'>Horas Nocturnas</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>11</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.HORAS_NOCTURNAS_DATA != 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = HORAS_NOCTURNAS_DATA * ( ( contract.wage / 30 ) * 1.35 )
+            </field>
+
+            <field name='category_id' ref='CATEGORY_HORAS_EXTRAS'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510103)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <!-- Salud y Pension administracion -->
+
+        <record model='hr.salary.rule' id='SALUD'>
+            <field name='code'>SALUD</field>
+            <field name='name'>Salud</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = -( categories.DEV - categories.AUX ) * 0.04</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',242519)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='PENSION'>
+            <field name='code'>PENSION</field>
+            <field name='name'>Pension</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = -( categories.DEV - categories.AUX ) * 0.04</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',242518)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <!--                                                                                                    PRESTACIONES SOCIALES -->
+
+        <record model='hr.salary.rule' id='CESANTIAS'>
+            <field name='code'>CESANTIAS</field>
+            <field name='name'>Cesantias</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.DEV * 0.0833</field>
+
+            <field name='category_id' ref='CATEGORY_PRESTACIONES_SOCIALES'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510124)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250801)]"/>
+        </record>
+
+
+        <record model='hr.salary.rule' id='INTERES_CESANTIAS'>
+            <field name='code'>INTERES_CESANTIAS</field>
+            <field name='name'>Interes sobre la cesantias</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>51</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = CESANTIAS * 0.12</field>
+
+            <field name='category_id' ref='CATEGORY_PRESTACIONES_SOCIALES'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510125)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250802)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='PRIMA_SERVICIO'>
+            <field name='code'>PRIMA_SERVICIO</field>
+            <field name='name'>Prima de Servicios</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.DEV * 0.0833</field>
+
+            <field name='category_id' ref='CATEGORY_PRESTACIONES_SOCIALES'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510152)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250804)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='VACACIONES_PESO'>
+            <field name='code'>VACACIONES_PESO</field>
+            <field name='name'>Vacaciones</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.0417</field>
+            <field name='category_id' ref='CATEGORY_PRESTACIONES_SOCIALES'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510117)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250803)]"/>
+        </record>
+
+        <!-- APORTES PARAFISCALES -->
+
+        <record model='hr.salary.rule' id='SENA'>
+            <field name='code'>SENA</field>
+            <field name='name'>SENA</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.02</field>
+
+            <field name='category_id' ref='CATEGORY_APORTE_PARAFISCAL'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510402)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242520)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='ICBF'>
+            <field name='code'>ICBF</field>
+            <field name='name'>ICBF</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.03</field>
+
+            <field name='category_id' ref='CATEGORY_APORTE_PARAFISCAL'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510401)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242520)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='CCF'>
+            <field name='code'>CCF</field>
+            <field name='name'>Cajas de Compenzación Familiar</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.04</field>
+
+            <field name='category_id' ref='CATEGORY_APORTE_PARAFISCAL'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510402)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242520)]"/>
+        </record>
+
+
+        <!-- SEGURIDAD SOCIAL -->
+
+        <record model='hr.salary.rule' id='ARL'>
+            <field name='code'>ARL</field>
+            <field name='name'>A.R.L.</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.00435</field>
+
+            <field name='category_id' ref='CATEGORY_SEGURIDAD_SOCIAL'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510305)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242532)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='SALUD_EMPLEADOR'>
+            <field name='code'>SALUD_EMPLEADOR</field>
+            <field name='name'>Salud Empleador</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.085</field>
+
+            <field name='category_id' ref='CATEGORY_SEGURIDAD_SOCIAL'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510303)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242519)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='PENSION_EMPLEADOR'>
+            <field name='code'>PENSION_EMPLEADOR</field>
+            <field name='name'>Pensión Empleador</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.12</field>
+
+            <field name='category_id' ref='CATEGORY_SEGURIDAD_SOCIAL'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',510306)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242518)]"/>
+        </record>
+
+        <!--                                                                                                    BONOS PRODUCCION -->
+
+        <record model='hr.salary.rule' id='SODEXO_PRODUCCION'>
+            <field name='code'>SODEXO_PRODUCCION</field>
+            <field name='name'>Bono SODEXO PASS</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.SODEXO_DATA != 0.0</field>
+
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = SODEXO_DATA</field>
+
+            <field name='category_id' ref='CATEGORY_BONOS'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750522)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242590)]"/>
+        </record>
+
+        <!--                                                                                                     CALCULO DE DOMINA PROCUDDION -->
+
+        <record model='hr.salary.rule' id='SALARIO_PRODUCCION'>
+            <field name='code'>SALARIO_PRODUCCION</field>
+            <field name='name'>Salario</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = contract.wage</field>
+
+            <field name='category_id' ref='CATEGORY_CONFIG'/>
+
+        </record>
+
+        <record model='hr.salary.rule' id='SALARIO_PAGAR_PRODUCCION'>
+            <field name='code'>SALARIO_PAGAR_PRODUCCION</field>
+            <field name='name'>Salario a Pagar</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( contract.wage / 30 ) * DIAS_TRABAJADOS</field>
+
+            <field name='category_id' ref='CATEGORY_BASICO'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750501)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+
+        </record>
+
+        <record model='hr.salary.rule' id='COMISIONES_PRODUCCION'>
+            <field name='code'>COMISIONES_PRODUCCION</field>
+            <field name='name'>Comisiones</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>12</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.COMISIONES_DATA != 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = COMISIONES_DATA</field>
+
+            <field name='category_id' ref='CATEGORY_BASICO'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750501)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='VIATICOS_PRODUCCION'>
+            <field name='code'>VIATICOS_PRODUCCION</field>
+            <field name='name'>Viaticos</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>12</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.VIATICOS_DATA != 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = VIATICOS_DATA</field>
+
+            <field name='category_id' ref='CATEGORY_BASICO'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750547)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='AUXILIO_TRANSPORTE_PRODUCCION'>
+            <field name='code'>AUXILIO_TRANSPORTE_PRODUCCION</field>
+            <field name='name'>Auxilio al Transporte</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = ( contract.wage / SMMLV_CFG ) &lt;= 2.0</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = AUXILIO_TRANSPORTE_CFG</field>
+
+
+            <field name='category_id' ref='CATEGORY_AUX'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750523)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <!--                                                                                                    HORAS EXTRAS  -->
+
+        <record model='hr.salary.rule' id='HORAS_EXTRAS_NOCTURNAS_PRODUCCION'>
+            <field name='code'>HORAS_EXTRAS_NOCTURNAS_PRODUCCION</field>
+            <field name='name'>Horas Extras Nocturnas</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>11</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.HORAS_EXTRAS_NOCTURNAS_DATA != 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = HORAS_EXTRAS_NOCTURNAS_DATA * ( ( contract.wage / 30 ) * 1.75
+                )
+            </field>
+
+            <field name='category_id' ref='CATEGORY_HORAS_EXTRAS'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750503)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='HORAS_EXTRAS_DIURNAS_PRODUCCION'>
+            <field name='code'>HORAS_EXTRAS_DIURNAS_PRODUCCION</field>
+            <field name='name'>Horas Extras Diurnas</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>11</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.HORAS_EXTRAS_DIURNAS_DATA != 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = HORAS_EXTRAS_DIURNAS_DATA * ( ( contract.wage / 30 ) * 1.25 )
+            </field>
+
+            <field name='category_id' ref='CATEGORY_HORAS_EXTRAS'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750503)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='HORAS_NOCTURNAS_PRODUCCION'>
+            <field name='code'>HORAS_NOCTURNAS_PRODUCCION</field>
+            <field name='name'>Horas Nocturnas</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>11</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = rules.HORAS_NOCTURNAS_DATA != 0.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = HORAS_NOCTURNAS_DATA * ( ( contract.wage / 30 ) * 1.35 )
+            </field>
+
+            <field name='category_id' ref='CATEGORY_HORAS_EXTRAS'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750503)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <!-- Salud y Pension administracion -->
+
+        <record model='hr.salary.rule' id='SALUD_PRODUCCION'>
+            <field name='code'>SALUD_PRODUCCION</field>
+            <field name='name'>Salud</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = -( categories.DEV - categories.AUX ) * 0.04</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',242519)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='PENSION_PRODUCCION'>
+            <field name='code'>PENSION_PRODUCCION</field>
+            <field name='name'>Pension</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = -( categories.DEV - categories.AUX ) * 0.04</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLEDADO'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',242518)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+        </record>
+
+        <!--                                                                                                    PRESTACIONES SOCIALES -->
+
+        <record model='hr.salary.rule' id='CESANTIAS_PRODUCCION'>
+            <field name='code'>CESANTIAS_PRODUCCION</field>
+            <field name='name'>Cesantias</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.DEV * 0.0833</field>
+
+            <field name='category_id' ref='CATEGORY_PRESTACIONES_SOCIALES'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750524)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250801)]"/>
+        </record>
+
+
+        <record model='hr.salary.rule' id='INTERES_CESANTIAS_PRODUCCION'>
+            <field name='code'>INTERES_CESANTIAS_PRODUCCION</field>
+            <field name='name'>Interes sobre la cesantias</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>51</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = CESANTIAS_PRODUCCION * 0.12</field>
+
+            <field name='category_id' ref='CATEGORY_PRESTACIONES_SOCIALES'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750525)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250802)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='PRIMA_SERVICIO_PRODUCCION'>
+            <field name='code'>PRIMA_SERVICIO_PRODUCCION</field>
+            <field name='name'>Prima de Servicios</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.DEV * 0.0833</field>
+
+            <field name='category_id' ref='CATEGORY_PRESTACIONES_SOCIALES'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750552)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250804)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='VACACIONES_PESO_PRODUCCION'>
+            <field name='code'>VACACIONES_PESO_PRODUCCION</field>
+            <field name='name'>Vacaciones</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.0417</field>
+            <field name='category_id' ref='CATEGORY_PRESTACIONES_SOCIALES'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750518)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250803)]"/>
+        </record>
+
+        <!-- APORTES PARAFISCALES -->
+
+        <record model='hr.salary.rule' id='SENA_PRODUCCION'>
+            <field name='code'>SENA_PRODUCCION</field>
+            <field name='name'>SENA</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.02</field>
+
+            <field name='category_id' ref='CATEGORY_APORTE_PARAFISCAL'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750538)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242520)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='ICBF_PRODUCCION'>
+            <field name='code'>ICBF_PRODUCCION</field>
+            <field name='name'>ICBF</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.03</field>
+
+            <field name='category_id' ref='CATEGORY_APORTE_PARAFISCAL'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750536)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242520)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='CCF_PRODUCCION'>
+            <field name='code'>CCF_PRODUCCION</field>
+            <field name='name'>Cajas de Compenzación Familiar</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.04</field>
+
+            <field name='category_id' ref='CATEGORY_APORTE_PARAFISCAL'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750535)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242520)]"/>
+        </record>
+
+
+        <!-- SEGURIDAD SOCIAL -->
+
+        <record model='hr.salary.rule' id='ARL_PRODUCCION'>
+            <field name='code'>ARL_PRODUCCION</field>
+            <field name='name'>A.R.L.</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.00435</field>
+
+            <field name='category_id' ref='CATEGORY_SEGURIDAD_SOCIAL'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750544)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242532)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='SALUD_EMPLEADOR_PRODUCCION'>
+            <field name='code'>SALUD_EMPLEADOR_PRODUCCION</field>
+            <field name='name'>Salud Empleador</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.085</field>
+
+            <field name='category_id' ref='CATEGORY_SEGURIDAD_SOCIAL'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750537)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242519)]"/>
+        </record>
+
+        <record model='hr.salary.rule' id='PENSION_EMPLEADOR_PRODUCCION'>
+            <field name='code'>PENSION_EMPLEADOR_PRODUCCION</field>
+            <field name='name'>Pensión Empleador</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ( categories.DEV - categories.AUX ) * 0.12</field>
+
+            <field name='category_id' ref='CATEGORY_SEGURIDAD_SOCIAL'/>
+            <field name='register_id' ref='REGISTER_COMPANIA'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',750567)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',242518)]"/>
+        </record>
+
+        <!-- FONDO SOLIDARIDAD -->
+
+        <record model='hr.salary.rule' id='FONDO_SOLIDARIDAD'>
+            <field name='code'>FONDO_SOLIDARIDAD</field>
+            <field name='name'>Fondo Solidaridad</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = categories.BASICO &gt;= (4 * SMMLV_CFG)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[if categories.BASICO < (16 * SMMLV_CFG):
+    result = -categories.BASICO * 0.01 
+elif categories.BASICO < (17 * SMMLV_CFG):
+    result = -categories.BASICO * 0.012
+elif categories.BASICO < (18 * SMMLV_CFG):
+    result = -categories.BASICO * 0.014
+elif categories.BASICO < (19 * SMMLV_CFG):
+    result = -categories.BASICO * 0.016
+elif categories.BASICO < (20 * SMMLV_CFG):
+    result = -categories.BASICO * 0.018
+elif categories.BASICO > (20 * SMMLV_CFG):
+    result = -categories.BASICO * 0.02 ]]></field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+
+            <field name='account_debit' model="account.account" search="[('code','=',242518)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+
+        </record>
+
+        <!-- RETENCION EN LA FUENTE -->
+
+        <record model='hr.salary.rule' id='RETENCION_FUENTE'>
+            <field name='code'>RETENCION_FUENTE</field>
+            <field name='name'>Retencion en la Fuente</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = categories.BASICO &gt;= (95 * UVT_CFG)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[if categories.BASICO < (95 * UVT_CFG):
+    result = 0
+elif categories.BASICO < (150 * UVT_CFG):
+    result = -categories.BASICO * 0.019
+elif categories.BASICO < (360 * UVT_CFG):
+    result = -categories.BASICO * 0.028
+elif categories.BASICO > (360 * UVT_CFG):
+    result = -categories.BASICO * 0.033 ]]></field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='account_debit' model="account.account" search="[('code','=',243601)]"/>
+            <field name='account_credit' model="account.account" search="[('code','=',250501)]"/>
+
+        </record>
+
+
+        <!--                                                                                                    TOTAL DEVENGADO PARA CALCULO DE SEGURIDAD SOCIAL -->
+
+        <record model='hr.salary.rule' id='TOTAL_DEVENGADO'>
+            <field name='code'>TOTAL_DEVENGADO</field>
+            <field name='name'>Total devengado</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>49</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.BASICO + categories.HORAS_EXTRAS + categories.AUX
+            </field>
+
+            <field name='category_id' ref='CATEGORY_DEV'/>
+
+        </record>
+
+        <record model='hr.salary.rule' id='TOTAL_DEDUCCIONES'>
+            <field name='code'>TOTAL_DEDUCCIONES</field>
+            <field name='name'>Total deducciones</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>51</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.DED</field>
+
+            <field name='category_id' ref='CATEGORY_TOTAL_DED'/>
+
+        </record>
+
+        <record model='hr.salary.rule' id='NETO_PAGAR'>
+            <field name='code'>NETO_PAGAR</field>
+            <field name='name'>Neto a PAGAR</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>52</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.DEV + categories.DED</field>
+
+            <field name='category_id' ref='CATEGORY_NETO'/>
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+
+        </record>
+
+        <record model='hr.salary.rule' id='TOTAL_APROP'>
+            <field name='code'>TOTAL_APROP</field>
+            <field name='name'>Total Apropiaciones</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>52</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.SEGURIDAD_SOCIAL + categories.APORTE_PARAFISCAL +
+                categories.PRESTACIONES_SOCIALES
+            </field>
+
+            <field name='category_id' ref='CATEGORY_TOTAL_APROP'/>
+
+        </record>
+
+    </data>
+</odoo>
+       

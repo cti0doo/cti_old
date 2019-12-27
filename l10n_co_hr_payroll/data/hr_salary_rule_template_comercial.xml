@@ -1,0 +1,2469 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<odoo>
+    <data noupdate="0">
+        <!--                                                                                                                                    ACRENGADO -->
+        <!-- Salario -->
+        <record model='hr.salary.rule.template' id='COMERCIAL_SMMLV'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>SMMLV</field>
+            <field name='name'>Minimum Salary</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>0</field>
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = 0
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'SMMLV'):
+  result = attr.value]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_UVT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>UVT</field>
+            <field name='name'>Unit Value Tax</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>0</field>
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = 0
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'UVT'):
+  result = attr.value]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Historic Incomes -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_LST_AVG_INC'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>LST_AVG_INC</field>
+            <field name='name'>Last Average Income</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>80</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result, total, i = categories.INC, 0, 0
+start_end = datetime.strptime(payslip.date_from, '%Y-%m-%d')
+date_end = start_end - relativedelta(days=int(start_end.day))
+date_start = start_end - relativedelta(days=int(start_end.day))
+for payslip in contract.payslip_ids.filtered(lambda x: x.date_from == date_start):
+  for income in payslip.line_ids.filtered(lambda x: x.code == 'SUB_INC'):
+    total += income.amount
+result_qty=1
+result_rate=100
+result=total]]></field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_LST_ONE_AVG_INC'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>LST_ONE_AVG_INC</field>
+            <field name='name'>Last One Average Income</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>81</field>
+            <field name='parent_rule_id' ref='COMERCIAL_LST_AVG_INC'/>
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result, total, i = categories.INC, 0, 0
+date_end = datetime.strptime(payslip.date_from, '%Y-%m-%d')
+date_end = date_end - relativedelta(days=int(date_end.day))
+date_start = date_end - relativedelta(days=int(date_end.day))
+date_start = date_start + relativedelta(days= 1)
+for slip in contract.payslip_ids.filtered(lambda x: datetime.strptime(x.date_from,  '%Y-%m-%d') >= date_start and datetime.strptime(x.date_from, '%Y-%m-%d') <= date_end):
+  for income in slip.line_ids.filtered(lambda x: x.code == 'SUB_INC'):
+    total += income.amount
+result_qty=1
+result_rate=100
+result=total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_135505'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_LST_SIX_AVG_INC'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>LST_SIX_AVG_INC</field>
+            <field name='name'>Last Six Average Income</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>81</field>
+            <field name='parent_rule_id' ref='COMERCIAL_LST_AVG_INC'/>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>date_end = datetime.strptime(payslip.date_to, '%Y-%m-%d')
+end_month = int(date_end.month)
+result = True if end_month in (6, 12) else False</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result, total, i, j = categories.INC, 0, 0, 0
+date_end = datetime.strptime(payslip.date_to, '%Y-%m-%d')
+date_start = date_end - relativedelta(days=int(date_end.day))
+date_start = date_start + relativedelta(days=1)
+end_month = int(date_start.month)
+nro_months = end_month  if end_month < 7 else end_month - 6
+if nro_months > 0:
+  date_start = date_start - relativedelta(months=nro_months-1)
+  date_initial = datetime.strptime(contract.date_start, '%Y-%m-%d')
+  if date_initial > date_start:
+    j += 1
+    month_initial = int(date_initial.month)
+    delta_initial = month_initial if month_initial < 7 else month_initial - 6
+    nro_months = nro_months + 1 - delta_initial
+    date_start = date_start + relativedelta(months=month_initial - 1)
+  for slip in contract.payslip_ids.filtered(lambda x: datetime.strptime(x.date_from, '%Y-%m-%d') >= date_start and datetime.strptime(x.date_from, '%Y-%m-%d') <= datetime.strptime(payslip.date_to, '%Y-%m-%d') + relativedelta(days=0)):
+    i += 1
+    for income in slip.line_ids.filtered(lambda x: x.code == 'SUB_INC'):
+      total += income.amount
+  total += SUB_INC
+  porc =   date_end.day if date_end.day < 28 else 30
+  nro_months = nro_months - ((30 - porc) / 30)
+  total = total
+result_qty = i
+result_rate=nro_months
+result=total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <!--<field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>-->
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_LST_TWE_AVG_INC'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>LST_TWE_AVG_INC</field>
+            <field name='name'>List Twelve Average Income</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>81</field>
+            <field name='parent_rule_id' ref='COMERCIAL_LST_AVG_INC'/>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>date_end = datetime.strptime(payslip.date_to, '%Y-%m-%d')
+end_month = int(date_end.month)
+result = True if end_month == 12 else False</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result, total, i = categories.INC, 0, 0
+date_end = datetime.strptime(payslip.date_to, '%Y-%m-%d')
+date_start = date_end - relativedelta(days=int(date_end.day))
+date_start = date_start + relativedelta(days=1)
+end_month = int(date_start.month)
+nro_months = end_month
+if nro_months > 0:
+  date_start = date_start - relativedelta(months=nro_months-1)
+  date_initial = datetime.strptime(contract.date_start, '%Y-%m-%d')
+  if date_initial > date_start:
+    month_initial = int(date_initial.month)
+    delta_initial = month_initial
+    nro_months = nro_months + 1 - delta_initial
+    date_start = date_start + relativedelta(months=month_initial - 1)
+  for slip in contract.payslip_ids.filtered(lambda x: datetime.strptime(x.date_from, '%Y-%m-%d') >= date_start and datetime.strptime(x.date_from, '%Y-%m-%d') <= date_end):
+    for income in slip.line_ids.filtered(lambda x: x.code == 'SUB_INC'):
+      total += income.amount
+  nro_months = nro_months - (30 - worked_days.WORK100.number_of_days) / 30
+  total = total
+result_qty = 1
+result_rate=100 / nro_months
+result=total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_UNI_PER'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>UNI_PER</field>
+            <field name='name'>Union Permit</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.UNI_PER and worked_days.UNI_PER.number_of_days )</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = round(( contract.wage / 30 ) * worked_days.UNI_PER.number_of_days, 0)]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EPS_PER'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>EPS_PER</field>
+            <field name='name'>Eps Permit</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.EPS_PER and worked_days.EPS_PER.number_of_days)</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = round(( contract.wage / 30 ) * worked_days.EPS_PER.number_of_days, 0)]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_CON_SAL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>CON_SAL</field>
+            <field name='name'>Contract Salary</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>0</field>
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = contract.wage</field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_BAS_SAL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>BAS_SAL</field>
+            <field name='name'>Basic Salary</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>10</field>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.WORK100 and worked_days.WORK100.number_of_days )
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = worked_days.WORK100.number_of_days
+result_rate = 100
+result =  contract.wage / 30]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510506'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Incapacidad Salud -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EPS_INA_SUB'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>EPS_INA_SUB</field>
+            <field name='name'>Eps Inability Subsidy</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.EPS_INA_SUB and
+                worked_days.EPS_INA_SUB.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[result = round(( contract.wage / 30 ) *
+                worked_days.EPS_INA_SUB.number_of_days, 0)]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EPS'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_520524'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Permiso Remunerado -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PAI_LEA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>PAI_LEA</field>
+            <field name='name'>Paid Leave</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.PAI_LEA and
+                worked_days.PAI_LEA.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty  = worked_days.PAI_LEA.number_of_days
+result_rate = 100
+result += contract.wage / 30]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_ARL'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237006'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Incapacidad Salud (EPS) -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EPS_INA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>EPS_INA</field>
+            <field name='name'>EPS Inability</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.EPS_INA and
+                worked_days.EPS_INA.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = worked_days.EPS_INA.number_of_days
+result_rate = ( contract.wage * 0.6667 > SMMLV) and  66.67  or  ( 100 * contract.wage / SMMLV)
+result = contract.wage /30]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EPS_INA_COL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>EPS_INA_COL</field>
+            <field name='name'>EPS Inability Collect</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>90</field>
+            <field name='parent_rule_id' ref='COMERCIAL_EPS_INA'/>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.EPS_INA and
+                worked_days.EPS_INA.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = worked_days.EPS_INA.number_of_days
+result_rate = (contract.wage * 0.6667 > SMMLV) and  66.67  or  (100 * contract.wage / SMMLV)
+result = contract.wage /30]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_135505'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EPS_INA_SUB'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>EPS_INA_SUB</field>
+            <field name='name'>EPS Inability Subsidy</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+            <field name='parent_rule_id' ref='COMERCIAL_EPS_INA'/>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.EPS_INA and
+                worked_days.EPS_INA.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = worked_days.EPS_INA.number_of_days
+result_rate = ( contract.wage * 0.6667 > SMMLV) and  33.33  or  ( 100 - (100 * contract.wage / SMMLV))
+result = contract.wage /30]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+
+        <!-- Incapacidad Salud más de 180 dias (EPS) -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EPS_INA_180'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>EPS_INA_180</field>
+            <field name='name'>EPS Inability > 180 Days</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.EPS_INA_180 and
+                worked_days.EPS_INA_180.number_of_days )
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = worked_days.EPS_INA_180.number_of_days
+result_rate = ( contract.wage * 0.5 > SMMLV) and  50.00  or  ( 100 - (100 * contract.wage / SMMLV))
+result = contract.wage /30]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EPS_INA_180_COL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>EPS_INA_180_COL</field>
+            <field name='name'>EPS Inability > 180 Days Collect</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>90</field>
+            <field name='parent_rule_id' ref='COMERCIAL_EPS_INA_180'/>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.EPS_INA_180 and
+                worked_days.EPS_INA_180.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = worked_days.EPS_INA_180.number_of_days
+result_rate = ( contract.wage * 0.5 > SMMLV) and  50.00  or  ( 100 - (100 * contract.wage / SMMLV))
+result = contract.wage /30]]></field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_135505'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EPS_INA_180_SUB'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>EPS_INA_180_SUB</field>
+            <field name='name'>EPS Inability > 180 Days Subsidy</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+            <field name='parent_rule_id' ref='COMERCIAL_EPS_INA_180'/>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.EPS_INA_180 and
+                worked_days.EPS_INA_180.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = worked_days.EPS_INA_180.number_of_days
+result_rate = ( contract.wage * 0.5 > SMMLV) and  50.00  or  ( 100 - (100 * contract.wage / SMMLV))
+result = contract.wage /30]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Licencia Maternidad (EPS) -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_MAT_LIC'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>MAT_LIC</field>
+            <field name='name'>Maternity Licence</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(worked_days.MAT_LIC and
+                worked_days.MAT_LIC.number_of_days)
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = round(( contract.wage / 30 ) * worked_days.MAT_LIC.number_of_days, 0)]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Incapacidad ARL -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_ARL_INA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>ARL_INA</field>
+            <field name='name'>ARL Inability</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>15</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( worked_days.ARL_INA and
+                worked_days.ARL_INA.number_of_days )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = worked_days.ARL_INA.number_of_days
+result_rate = 100
+result = round(contract.wage / 30, 0)]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_ARL'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237006'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Ajuste -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SAL_ADJ'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SAL_ADJ</field>
+            <field name='name'>Salary Adjust</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.SAL_ADJ.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = inputs.SAL_ADJ.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510506'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_SAL_ADJ_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Salary Adjust</field>
+            <field name='code'>SAL_ADJ</field>
+            <field name='input_id' ref='COMERCIAL_SAL_ADJ'/>
+        </record>
+
+        <!-- Comisiones -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_COM'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>COM</field>
+            <field name='name'>Commissions</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>20</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.COM.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = inputs.COM.amount]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510518'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_COM_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Commissions</field>
+            <field name='code'>COM</field>
+            <field name='input_id' ref='COMERCIAL_COM'/>
+        </record>
+
+        <!-- Bonus -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_BON'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>BON</field>
+            <field name='name'>Bonus (Salary)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>45</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.BON.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = inputs.BON.amount]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510548'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_BON_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Bonus</field>
+            <field name='code'>BON</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_BON'/>
+        </record>
+
+        <!-- Extra Time -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EDT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>EDT</field>
+            <field name='name'>Extra Day Time</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.EDT.amount )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty  = inputs.EDT.amount
+result_rate = 125
+result = contract.wage / 240]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510515'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_EDT_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Extra Day Time</field>
+            <field name='code'>EDT</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_EDT'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EDT_SH'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>EDT_SH</field>
+            <field name='name'>Extra Day Time Dominical and Hollydays</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.EDT_SH.amount )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty  = inputs.EDT_SH.amount
+result_rate = 200
+result = contract.wage / 240]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510515'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_EDT_SH_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Extra Day Time Dominical and Hollydays</field>
+            <field name='code'>EDT_SH</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_EDT_SH'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_ENT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>ENT</field>
+            <field name='name'>Extra Night Time</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.ENT.amount )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty  = inputs.ENT.amount
+result_rate = 175
+result = contract.wage / 240]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510515'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_ENT_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Extra Night Time</field>
+            <field name='code'>ENT</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_ENT'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_ENT_SH'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>ENT_SH</field>
+            <field name='name'>Extra Night Time Dominical And Hollidays</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.ENT_SH.amount )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty  = inputs.ENT_SH.amount
+result_rate = 250
+result = contract.wage / 240 ]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510515'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_ENT_SH_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Extra Night Time Sunday And Holidays</field>
+            <field name='code'>ENT_SH</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_ENT_SH'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_NS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>NS</field>
+            <field name='name'>Night Surcharge</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.NS.amount )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty  = inputs.NS.amount
+result_rate = 35
+result = contract.wage / 240]]>
+             </field>
+
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510515'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_NS_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Night Surcharge</field>
+            <field name='code'>NS</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_NS'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SH'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SH</field>
+            <field name='name'>Sunday And Holidays Surcharge</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>25</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.SH.amount )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty  = inputs.NS.amount
+result_rate = 75
+result = contract.wage / 240]]>
+             </field>
+
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510515'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_SH_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Sunday And Holiday Surcharge</field>
+            <field name='code'>SH</field>
+            <field name='assing_value'>0</field>
+            <field name='input_id' ref='COMERCIAL_NS'/>
+        </record>
+
+        <!-- Viaticos -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_VIA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>VIA</field>
+            <field name='name'>Viatics</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>20</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.VIA.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = inputs.VIA.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_261030'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_VIA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Viatics</field>
+            <field name='code'>VIA</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_VIA'/>
+        </record>
+
+        <!-- Vacaciones Disfrutadas -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_VAC_ACR'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>VAC_ACR</field>
+            <field name='name'>Vacation Accrued</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>95</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool(inputs.VAC_ACR.amount) or bool(worked_days.VAC and worked_days.VAC.number_of_days)
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = round(inputs.VAC_ACR.amount or ((contract.wage / 2 ) / 15 ) * worked_days.VAC_ACR.number_of_days, 0)]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_261015'/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_252501'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_VAC_ACR_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Vacation Accrued</field>
+            <field name='code'>VAC_ACR</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_VAC_ACR'/>
+        </record>
+
+
+        <!-- Primas Devengadas -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PRM_ACR'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>PRM_ACR</field>
+            <field name='name'>Premium Accrued</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>95</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.PRM_ACR.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = inputs.PRM_ACR.amount]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_261020'/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_252001'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_PRM_ACR_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Accrued Premium</field>
+            <field name='code'>PRM_ACR</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_PRM_ACR'/>
+        </record>
+
+        <!-- Interes sobre Cesantias -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_CES_INT_ACR'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>CES_INT_ACR</field>
+            <field name='name'>Cesant Interest Accrued</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>95</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.CES_INT_ACR.amount )
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = inputs.CES_INT_ACR.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_261010'/>
+            <!--            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_251501'/>-->
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_CES_INT_ACR_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Cesant Interest Accrued</field>
+            <field name='code'>CES_INT_ACR</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_CES_INT_ACR'/>
+        </record>
+
+        <!-- Subsidies Salario -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SAL_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SAL_ASI</field>
+            <field name='name'>Assistance / Subsidies</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>41</field>
+            <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.SAL_ASI.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = inputs.SAL_ASI.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_SAL_ASI_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Assistance / Subsidies</field>
+            <field name='code'>SAL_ASI</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_SAL_ASI'/>
+        </record>
+
+        <!-- Subsidies No Salario -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SUB'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SUB</field>
+            <field name='name'>Assistance / Subsidies (Not Salary)</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>42</field>
+            <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.SUB.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = inputs.SUB.amount]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510545'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_SUB_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Assistance / Subsidies (Not Salary)</field>
+            <field name='code'>SUB</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_SUB'/>
+        </record>
+
+        <!-- Auxilio -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_TRA_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>TRA_ASI</field>
+            <field name='name'>Transport Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>30</field>
+            <!-- Secuencias luego de APORTES y DEDUCCIONES -->
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = (contract.wage / SMMLV) &lt;= 2.0</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result = 0
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'AT'):
+ result = float(attr.value)
+result = result / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510527'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!--                                                                                                                                    DEDUCCIONES -->
+        <!-- Anticipo -->
+
+        <!-- Prestamos Laboral -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>LOA</field>
+            <field name='name'>Labor Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'LOA'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.LOA.amount if inputs.LOA.amount else total
+result = bool(total)
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_LOA'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_136595'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Labor Loan</field>
+            <field name='code'>LOA</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_LOA'/>
+        </record>
+
+        <!-- Prestamos Intitucional -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_INS_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>INS_LOA</field>
+            <field name='name'>Institucional Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'INS_LOA'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.INS_LOA.amount if inputs.INS_LOA.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_LOA'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_237095'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_INS_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Institutional Loan</field>
+            <field name='code'>INS_LOA</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_INS_LOA'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_LAB_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>LAB_LOA</field>
+            <field name='name'>Institucional Loan</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>60</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'LAB_LOA'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.LAB_LOA.amount if inputs.LAB_LOA.amount else total
+result = bool(total)
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_LOA'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_237095'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_LAB_LOA_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Institutional Loan</field>
+            <field name='code'>LAB_LOA</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_LAB_LOA'/>
+        </record>
+
+        <!-- Seguro -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_INS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>INS</field>
+            <field name='name'>Insurance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'INS'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.INS.amount if inputs.INS.amount else total
+result = bool(total)
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_INS'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_237095'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_INS_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Insurance</field>
+            <field name='code'>INS</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_INS'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_FUN_INS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>FUN_INS</field>
+            <field name='name'>Funeral Insurance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == '_FUN_INS'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.FUN_INS.amount if inputs.FUN_INS.amount else total
+result = bool(total)
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_FUN_INS'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_237095'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_FUN_INS_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Funeral Insurance</field>
+            <field name='code'>FUN_INS</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_FUN_INS'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_OTH_INS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>OTH_INS</field>
+            <field name='name'>Other Insurance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'OTH_INS'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+total = inputs.OTH_INS.amount if inputs.OTH_INS.amount else total
+result = bool(total)
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = total * 100 if total >= -1 and total <= 1 else 100
+result = categories.INC if total >= -1 and total <= 1 else total / 30 * worked_days.WORK100.number_of_days]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_INS'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_237095'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_OTH_INS_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Insurance</field>
+            <field name='code'>OTH_INS</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_OTH_INS'/>
+        </record>
+
+        <!-- EPS -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_IBC_SS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>IBC_SS</field>
+            <field name='name'>IBC Social Security</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>45</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+total_days = worked_days.WORK100 and worked_days.WORK100.number_of_days or 0.0
+total_days += worked_days.EPS_INA and worked_days.EPS_INA.number_of_days or 0.0
+total_days += worked_days.EPS_INA_180 and worked_days.EPS_INA_180.number_of_days or 0.0
+total_days += worked_days.PAI_LEA and worked_days.PAI_LEA.number_of_days or 0.0
+total_days += worked_days.VAC and worked_days.VAC.number_of_days or 0.0
+result_qty = total_days
+result_rate = 100
+result = (categories.INC / total_days)]]></field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EPS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>EPS</field>
+            <field name='name'>Helth Contribution </field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>4.0</field>
+            <field name='amount_percentage_base'>IBC_SS</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EPS'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <!-- Solo lleva CREDITO -->
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_EPS_PAT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>EPS_PAT</field>
+            <field name='name'>Employer Helth Contribution</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>90</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = not contract.employee_id.company_id or (( (categories.ACR +
+                categories.ACR) / SMMLV ) &gt;= 10.0)
+            </field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>8.5</field>
+            <field name='amount_percentage_base'>IBC_SS</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_EPS'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510569'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+        </record>
+        <!-- Pension -->
+
+        <!-- EPS -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_IBC_SB'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>IBC_SB</field>
+            <field name='name'>IBC Social Benefits</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>45</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+total_days = worked_days.EPS_INA and worked_days.EPS_INA.number_of_days or 0.0
+total_days += worked_days.EPS_INA_180 and worked_days.EPS_INA_180.number_of_days or 0.0
+pre_amount = ((contract.wage / 30) * total_days) + categories.INC + categories.OTH_INC
+result = pre_amount ]]></field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_AFP'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>AFP</field>
+            <field name='name'>Pension</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>4.0</field>
+            <field name='amount_percentage_base'>IBC_SS</field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_AFP'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit'
+                   ref='l10n_co_accounting_templates.co_puc_com_238030'/>            <!-- Solo lleva CREDITO -->
+        </record>
+
+        <!-- Pension -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_AFP_PAT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>AFP_PAT</field>
+            <field name='name'>Employer Pension Contribution</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>90</field>
+
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>12.0</field>
+            <field name='amount_percentage_base'>IBC_SS</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_AFP'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510570'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_238030'/>
+        </record>
+
+        <!-- Voluntary Pension -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_AFP_VOL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>AFP_VOL</field>
+            <field name='name'>Voluntary Pension</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>65</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.AFP_VOL.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.AFP_VOL.amount</field>
+
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_AFP'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit'
+                   ref='l10n_co_accounting_templates.co_puc_com_238030'/>            <!-- Solo lleva CREDITO -->
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_AFP_VOL_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Voluntary Pension </field>
+            <field name='code'>AFP_VOL</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_AFP_VOL'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SOL_FUN'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SOL_FUN</field>
+            <field name='name'>Solitarity Fund</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>50</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'><![CDATA[
+ibc = IBC_SS * 30 / worked_days.WORK100.number_of_days
+result = ibc > (4 * SMMLV)
+]]></field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+if ibc < (16 * SMMLV):
+    factor = 0.01
+elif ibc < (17 * SMMLV):
+    factor = 0.012
+elif ibc < (18 * SMMLV):
+    factor = 0.014
+elif ibc < (19 * SMMLV):
+    factor = 0.016
+elif ibc < (20 * SMMLV):
+    factor = 0.018
+elif ibc > (20 * SMMLV):
+    factor = 0.02
+result = round( IBC_SS * factor, 0)]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_237045'/>
+
+        </record>
+
+        <!--                                                                                                RETENCION EN LA FUENTE -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_RET_FTE'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>RET_FTE</field>
+            <field name='name'>Source Retention</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>70</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.RET_FTE.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = inputs.RET_FTE.amount * 100 if inputs.RET_FTE.amount > 0 and inputs.RET_FTE.amount < 1 else 100
+result = categories.INC if inputs.RET_FTE.amount > 0 and inputs.RET_FTE.amount < 0 else inputs.RET_FTE.amount]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_236505'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_RET_FTE_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Source Retention </field>
+            <field name='code'>RET_FTE</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_RET_FTE'/>
+        </record>
+
+        <!-- Cesantias -->
+
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_CES_ACR'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>CES_ACR</field>
+            <field name='name'>Cesant Accrued</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>95</field>
+
+
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>8.33</field>
+            <field name='amount_percentage_base'>categories.INC + categories.OTH_INC</field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_AFC'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510530'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_261005'/>
+        </record>
+
+        <!-- Cesantias Intereses -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_CES_INT_ACR'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>CES_INT_ACR</field>
+            <field name='name'>Cesant Interest Accrued</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>95</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>12.0</field>
+            <field name='amount_percentage_base'>CES_ACR</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510533'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_261010'/>
+        </record>
+
+        <!-- Cesantias Pagadas -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PAY_CES'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>PAY_CES</field>
+            <field name='name'>Paid Cesant</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>70</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = bool( inputs.PAY_CES.amount )</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty = 1
+result_rate = inputs.PAY_CES.amount * 100 if inputs.PAY_CES.amount > 0 and inputs.PAY_CES.amount < 1 else 100
+result = categories.INC if inputs.PAY_CES.amount > 0 and inputs.PAY_CES.amount < 0 else inputs.PAY_CES.amount]]>
+            </field>
+
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_236505'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_RET_FTE_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Source Retention </field>
+            <field name='code'>RET_FTE</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_RET_FTE'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PRM_SER'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>PRM_SER</field>
+            <field name='name'>Service Premium</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>95</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>50</field>
+            <field name='amount_percentage_base'>categories.INC + TRA_ASI</field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510536'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_261020'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PRM_SER_ACR'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>PRM_SER_ACR</field>
+            <field name='name'>Service Premium Accrued</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>95</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>8.33</field>
+            <field name='amount_percentage_base'>categories.INC + TRA_ASI</field>
+
+            <field name='category_id' ref='CATEGORY_ACR'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510536'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_261020'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_VAC_MON'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>VAC_MON</field>
+            <field name='name'>Vacation In Money</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>10</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = inputs.VAC_MON.amount</field>
+            <field name='amount_percentage_base'>categories.INC</field>
+
+            <field name='category_id' ref='CATEGORY_OTH_INC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510539'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_261015'/>
+        </record>
+
+        <record model='hr.rule.input.template' id='COMERCIAL_VAC_MON_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>Vacation In Money</field>
+            <field name='code'>VAC_MON</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_VAC_MON'/>
+        </record>
+
+        <!--                                                                                                                                    DEDUCCIONES -->
+        <!-- APORTES PARAFISCALES -->
+
+
+        <!-- SENA -->
+        <record model='hr.salary.rule.template' id='COMERCIAL_IBC_SENA_ICBF'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>IBC_SENA_ICBF</field>
+            <field name='name'>IBC Sena/ICBF</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>91</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = not contract.employee_id.company_id or (( (categories.ACR + categories.ACR) / SMMLV ) &gt;= 10.0)
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+pre_amount = categories.INC
+result = pre_amount]]></field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SENA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SENA</field>
+            <field name='name'>SENA</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>90</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = not contract.employee_id.company_id or (( (categories.INC) / SMMLV ) &gt;= 10.0)
+            </field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>2.00</field>
+            <field name='amount_percentage_base'>IBC_SS</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_CCF'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510578'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_237010'/>
+        </record>
+
+        <!-- ICBF -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_ICBF'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>ICBF</field>
+            <field name='name'>ICBF</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>90</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = not contract.employee_id.company_id or (( (categories.INC + categories.OTH_INC) / SMMLV ) &gt;= 10.0)
+            </field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>3.00</field>
+            <field name='amount_percentage_base'>categories.INC</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_CCF'/>
+
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510575'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_237010'/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_IBC_CCF'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>IBC_CCF</field>
+            <field name='name'>IBC Cajas</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>90</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+pre_amount = categories.INC + categories.OTH_INC
+result = pre_amount]]></field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_CCF'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>CCF</field>
+            <field name='name'>Familiar Compensation Boxes</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>91</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>percentage</field>
+            <field name='amount_percentage'>4.00</field>
+            <field name='amount_percentage_base'>IBC_CCF</field>
+
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_CCF'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510572'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_237010'/>
+        </record>
+
+
+        <!-- SEGURIDAD SOCIAL -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_IBC_ARL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>IBC_ARL</field>
+            <field name='name'>IBC Risk</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>45</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+pre_amount = categories.INC + categories.OTH_INC
+result = pre_amount]]></field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_ARL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>ARL</field>
+            <field name='name'>Professional Risk</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>90</field>
+
+            <field name='condition_select'>none</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+
+factor = inputs.ARL.amount
+if not factor in (2.0,3.0,4.0,5.0):
+   factor = 1.0
+
+categoria = {1.0: 0.522, 2.0: 1.044, 3.0: 2.436, 4.0: 4.350, 5.0: 6.960}
+result = (IBC_ARL * categoria[factor]) / 100]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_CON'/>
+            <field name='register_id' ref='REGISTER_ARL'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_510568'/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_237006'/>
+        </record>
+
+
+        <record model='hr.rule.input.template' id='COMERCIAL_ARL_INPUT'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='name'>ARL Category (defecto=1,2,3,4,5)</field>
+            <field name='code'>ARL</field>
+            <field name='assing_value'>1</field>
+            <field name='input_id' ref='COMERCIAL_ARL'/>
+        </record>
+
+        <!-- Retention on Source -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SRC_RET'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SRC_RET</field>
+            <field name='name'>Source Retention</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>70</field>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>total, uvt = categories.INC, 0
+for attr in payslip.date_range_fy.attributes_ids.filtered(lambda x: x.code == 'UVT'):
+  uvt = float(attr.value)
+result = uvt and total > 128.96*uvt
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result=total
+result_rate=100
+result_qty=1
+]]></field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_HOU_DED'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>HOU_DED</field>
+            <field name='name'>Interst Housing Deduction</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>71</field>
+            <field name='parent_rule_id' ref='COMERCIAL_SRC_RET'/>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'HOU'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+            </field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty=1
+result_rate=100
+result= UVT * 100 if total > UVT * 100 else total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_135505'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_DEP_DED'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>DEP_DED</field>
+            <field name='name'>Dependant Deduction</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>71</field>
+            <field name='parent_rule_id' ref='COMERCIAL_SRC_RET'/>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'DEP'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty=1
+result_rate=100
+limit =  UVT * 32 if UVT * 32 < categories.INC * 0.1 else categories.INC * 0.1
+result= limit if total > limit else total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_MED_DED'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>MED_DED</field>
+            <field name='name'>Medical Deduction</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>71</field>
+            <field name='parent_rule_id' ref='COMERCIAL_SRC_RET'/>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'MED'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty=1
+result_rate=100
+result= UVT * 16 if total > UVT * 16 else total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_AFP_VOL_DED'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>AFP_VOL_DED</field>
+            <field name='name'>AFP Volunteer Deduction</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>71</field>
+            <field name='parent_rule_id' ref='COMERCIAL_SRC_RET'/>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'AFP_VOL'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty=1
+result_rate=100
+result= total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_AFC_DED'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>AFC_DED</field>
+            <field name='name'>AFC Deduction</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>71</field>
+            <field name='parent_rule_id' ref='COMERCIAL_SRC_RET'/>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'AFC'):
+  total +=deduct.amount
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result=total
+result_rate=100
+result_qty=1]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_VOL_DED'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+            <field name='code'>VOL_DED</field>
+            <field name='name'>Volunteer Deduction</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>71</field>
+            <field name='parent_rule_id' ref='COMERCIAL_SRC_RET'/>
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>total = AFP_VOL_DED if rules.AFP_VOL_DED else 0.0
+total += AFC_DED if rules.AFC_DED else 0.0
+result = True if total>0 else False</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result_qty=1
+result_rate=100
+limit =  UVT * 316.66 if UVT * 316.66 &lt; categories.INC * 0.3 else categories.INC * 0.3
+result= limit if total &gt; limit else total</field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_KND'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>KND</field>
+            <field name='name'>Payment In Kind</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>73</field>
+            <field name='parent_rule_id' ref='COMERCIAL_SRC_RET'/>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'KND'):
+  total +=deduct.amount
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty=1
+result_rate=100
+limit =  UVT * 41 if UVT * 41 < categories.INC * 1 else categories.INC * 1
+result= limit if total > limit else total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_OTH_EXC'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>OTH_EXC</field>
+            <field name='name'>Other Excempt Incomes</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>71</field>
+            <field name='parent_rule_id' ref='COMERCIAL_SRC_RET'/>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'OTH_EXC'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty=1
+result_rate=100
+result= total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_OTH_DED'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>OTH_DED</field>
+            <field name='name'>Other Excempt Incomes</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>73</field>
+            <field name='parent_rule_id' ref='COMERCIAL_SRC_RET'/>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result, total = categories.INC, 0
+for deduct in contract.deductible_ids.filtered(lambda x: x.type.code == 'OTH'):
+  total = deduct.amount if (not deduct.date_from or (deduct.date_from and payslip.date_from >= deduct.date_from)) and (not deduct.date_to or (deduct.date_to and deduct.date_to >= payslip.date_to)) else 0
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty=1
+result_rate=100
+result= total]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- Source Retention Calculation -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_BAS_RET'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>BAS_RET</field>
+            <field name='name'>Retention Base</field>
+            <field name="appears_on_payslip" eval="False"/>
+            <field name='sequence'>74</field>
+            <field name='parent_rule_id' ref='COMERCIAL_SRC_RET'/>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = categories.INC
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty=1
+result_rate=100
+incr =  (categories.INC - EPS - AFP - SOL_FUN) * 30 / worked_days.WORK100.number_of_days
+ded = HOU_DED + DEP_DED + MED_DED
+tre = (AFP_VOL_DED + AFC_DED + OTH_EXC+ OTH_DED)
+dis = (incr - ded - tre) * 0.25
+result = incr * 0.60 if (ded + tre + dis) > incr * 0.4 else incr - (ded + tre + dis)]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_IBC'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_135505'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SRC_RET_VAL'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SRC_RET_VAL</field>
+            <field name='name'>Source Retention Value</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>75</field>
+            <field name='parent_rule_id' ref='COMERCIAL_SRC_RET'/>
+
+            <field name='condition_select'>python</field>
+            <field name='condition_python'>result = categories.INC
+            </field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'><![CDATA[
+result_qty=1
+result_rate=100
+rat = 0
+grad = 0
+uvts = BAS_RET / UVT
+if uvts > 95 and uvts <=150:
+  rat = 19
+  grad = 0
+elif uvts > 150 and uvts <= 360:
+  rat = 28
+  grad = 10
+elif uvts > 360:
+  rat = 33
+  grad = 28
+
+result = round((uvts - 95) * (rat/100) * UVT + (grad * UVT), 0) * worked_days.WORK100.number_of_days / 30]]>
+            </field>
+            <field name='category_id' ref='CATEGORY_DED'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref='l10n_co_accounting_templates.co_puc_com_237005'/>
+            <field name='account_credit' ref=''/>
+        </record>
+
+        <!-- NETO ACRENGADO PARA CALCULO DE SEGURIDAD SOCIAL -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_NET_PAY'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>NET_PAY</field>
+            <field name='name'>Neto a Pagar</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>500</field>
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.INC + categories.OTH_INC - categories.DED</field>
+
+            <field name='category_id' ref='CATEGORY_NET'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit' ref=''/>
+            <field name='account_credit' ref='l10n_co_accounting_templates.co_puc_com_250505'/>
+        </record>
+
+        <!--  TOTAL ACRENGADO PARA CALCULO DE SEGURIDAD SOCIAL -->
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SUB_INC'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SUB_INC</field>
+            <field name='name'>Subtotal Income</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>29</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.INC</field>
+
+            <field name='category_id' ref='CATEGORY_TOT'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SUB_OTH_INC'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SUB_OTH_INC</field>
+            <field name='name'>Total To Pay</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>39</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.OTH_INC - categories.DED</field>
+
+            <field name='category_id' ref='CATEGORY_TOT'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SUB_ASI'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SUB_ASI</field>
+            <field name='name'>Subtotal Assistance</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>49</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.ASI</field>
+
+            <field name='category_id' ref='CATEGORY_TOT'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_TOT_INC'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>TOT_INC</field>
+            <field name='name'>Total Income</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>49</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.INC + categories.OTH_INC</field>
+
+            <field name='category_id' ref='CATEGORY_TOT'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SUB_DED'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SUB_DED</field>
+            <field name='name'>Subtotal Deductions</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>59</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.DED</field>
+
+            <field name='category_id' ref='CATEGORY_TOT'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SUB_DIS'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SUB_DIS</field>
+            <field name='name'>Subtotal Discounts</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>69</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.DIS</field>
+
+            <field name='category_id' ref='CATEGORY_TOT'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_SUB_LOA'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>SUB_LOA</field>
+            <field name='name'>Subtotal Loans</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>590</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.DIS</field>
+
+            <field name='category_id' ref='CATEGORY_TOT'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_TOT_DED'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>TOT_DED</field>
+            <field name='name'>TOTAL Deductions</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>79</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.DED + categories.DIS</field>
+
+            <field name='category_id' ref='CATEGORY_NET'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_PER_DED'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>PER_DED</field>
+            <field name='name'>Porciento Descuentos</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>79</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = ((categories.DED + categories.DIS) * 100) / ((categories.INC + categories.OTH_INC) or 1)
+            </field>
+
+            <field name='category_id' ref='CATEGORY_NET'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+
+        <record model='hr.salary.rule.template' id='COMERCIAL_TOT_PAY'>
+            <field name='chart_template_id' ref='l10n_co_accounting_templates.l10n_co_chart_template_comercial'/>
+
+            <field name='code'>TOT_PAY</field>
+            <field name='name'>Total To Pay</field>
+            <field name="appears_on_payslip" eval="True"/>
+            <field name='sequence'>79</field>
+
+
+            <field name='condition_select'>none</field>
+            <field name='amount_select'>code</field>
+
+            <field name='amount_select'>code</field>
+            <field name='amount_python_compute'>result = categories.INC + categories.OTH_INC - categories.DED - categories.DIS</field>
+
+            <field name='category_id' ref='CATEGORY_TOT'/>
+            <field name='register_id' ref='REGISTER_EMPLOYEE'/>
+
+            <field name='account_debit'></field>
+            <field name='account_credit'></field>
+        </record>
+
+
+    </data>
+</odoo>

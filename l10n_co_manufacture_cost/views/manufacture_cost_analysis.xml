@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <record id="view_cost_manufacture_report_tree" model="ir.ui.view">
+        <field name="name">Manufacture cost</field>
+        <field name="model">manufacture.cost.analysis</field>
+        <field name="arch" type="xml">
+            <tree create="0" delete="0" string="Cost manufacture">
+                <field name="mrp_id"/>
+                <field name="product"/>
+                <field name="planned_qty"/>
+                <field name="unit_cost"/>
+                <field name="planned_cost_total"/>
+                <field name="cons_qty"/>
+                <field name="cons_cost_total"/>
+                <field name="cost_wc"/>
+                <field name="prod_qty"/>
+                <field name="prod_uom"/>
+                <field name="prod_cost"/>
+                <field name="prod_cost_total"/>
+                <field name="state"/>
+            </tree>
+        </field>
+    </record>
+    <record id="view_cost_manufacture_report_pivot" model="ir.ui.view">
+        <field name="name">manufacture.cost.analysis.value.pivot</field>
+        <field name="model">manufacture.cost.analysis</field>
+        <field name="arch" type="xml">
+            <pivot string="Cost manufacture">
+                <field name="mrp_id" type="row"/>
+                <field name="planned_qty" type="measure"/>
+                <field name="unit_cost" type="measure"/>
+                <field name="planned_cost_total" type="measure"/>
+                <field name="cons_qty" type="measure"/>
+                <field name="cons_cost_total" type="measure"/>
+                <field name="prod_qty" type="measure"/>
+                <field name="prod_cost" type="measure"/>
+                <field name="prod_cost_total" type="measure"/>
+            </pivot>
+        </field>
+    </record>
+    <!-- <record id="view_cost_manufacture_report_graph" model="ir.ui.view">
+        <field name="name">manufacture.cost.analysis.value.graph</field>
+        <field name="model">manufacture.cost.analysis</field>
+        <field name="arch" type="xml">
+            <graph string="Cost manufacture">
+                <field name="planned_product"/>
+                <field name="location_id"/>
+                <field name="quantity" type="measure"/>
+            </graph>
+        </field>
+    </record> -->
+    <!--  <record id="view_cost_manufacture_report_search" model="ir.ui.view">
+         <field name="name">manufacture.cost.analysis.report.search</field>
+         <field name="model">manufacture.cost.analysis</field>
+         <field name="arch" type="xml">
+             <search string="Stock Value At Date">
+                 <field name="product_id"/>
+                 <field filter_domain="[('location_id', 'child_of', self)]" name="location_id"/>
+                 <field groups="base.group_multi_company" name="company_id"/>
+                 <group expand="1" string="Group By">
+                     <filter context="{'group_by':'product_id'}" name="group_by_product" string="Product"/>
+                     <filter context="{'group_by':'product_categ_id'}" string="Product Category"/>
+                     <filter context="{'group_by':'product_template_id'}" name="group_by_product_template" string="Product Template"/>
+                     <filter context="{'group_by':'location_id'}" name="group_by_location" string="Location"/>
+                     <filter context="{'group_by':'move_id'}" string="Stock Move"/>
+                     <filter context="{'group_by':'serial_number'}" groups="stock.group_production_lot" string="Lot/Serial Number"/>
+                     <filter context="{'group_by':'company_id'}" groups="base.group_multi_company" string="Company"/>
+                 </group>
+             </search>
+         </field>
+     </record> -->
+
+    <record model="ir.actions.act_window" id="cost_manufacture_report_action">
+        <field name="name">Cost manufacture</field>
+        <field name="res_model">manufacture.cost.analysis</field>
+        <field name="view_mode">tree,pivot</field>
+    </record>
+    <menuitem id="cost_manufacture_report_menu" name="Cost Manufacture" sequence="15"
+              parent="mrp.menu_mrp_reporting" action="cost_manufacture_report_action"/>
+</odoo>
