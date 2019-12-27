@@ -1,0 +1,2 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+access_custom_addons/l10n_co_cei_fe_custom_addons/l10n_co_cei_fe,custom_addons/l10n_co_cei_fe.custom_addons/l10n_co_cei_fe,model_custom_addons/l10n_co_cei_fe_custom_addons/l10n_co_cei_fe,,1,0,0,0

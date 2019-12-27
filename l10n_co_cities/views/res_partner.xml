@@ -1,0 +1,26 @@
+<odoo>
+    <record id="l10n_co_cities_res_partner_view" model="ir.ui.view">
+        <field name="name">l10n_co_cities.tree.partner.form</field>
+        <field name="model">res.partner</field>
+        <field name="inherit_id" ref="base.view_partner_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//form/sheet/group/group/div/field[@name='city']" position="attributes">
+                <attribute name="attrs">{'invisible': [('fe_habilitada_compania', '=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//form/sheet/group/group/div/field[@name='city']" position="after">
+                <field name="cities" placeholder="Ciudad" class="o_address_city"
+                       domain="[('state_id', '=?', state_id)]"
+                       context="{'default_state_id': state_id}"/>
+            </xpath>
+            <xpath expr="//field[@name='state_id']" position="attributes">
+                <attribute name="domain">[('country_id', '=?', country_id)]</attribute>
+            </xpath>
+            <xpath expr="//field[@name='cities']" position="attributes">
+                <attribute name="attrs">{'required': [('fe_habilitada_compania', '=', True), ('fe_habilitada', '=', True)], 'invisible': [('fe_habilitada_compania', '!=', True)]}</attribute>
+            </xpath>
+            <xpath expr="//form/sheet/notebook/page/field[@name='child_ids']/form/sheet/group/group/div/div[@class='o_address_format']/field[@name='state_id']" position="after">
+                <field name="cities" attrs="{'required': [('type','!=', 'contact'),('fe_habilitada_compania', '=', True)], 'invisible': [('fe_habilitada_compania', '!=', True)]}" class="o_address_state" placeholder="Ciudad" options='{"no_open": True}'/>
+            </xpath>
+        </field>
+    </record>
+</odoo>

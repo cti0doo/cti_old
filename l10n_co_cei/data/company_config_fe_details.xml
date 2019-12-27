@@ -1,0 +1,69 @@
+<odoo>
+    <data>
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_company_ciudad">
+            <field name="name">company_ciudad</field>
+            <field name="description">Nombre ciudad de la compañía</field>
+            <field name="tipo">l10n_co_cities.city</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_company_departamento">
+            <field name="name">company_departamento</field>
+            <field name="description">Nombre departamento de la compañía</field>
+            <field name="tipo">res.country.state</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_company_direccion">
+            <field name="name">company_direccion</field>
+            <field name="description">Dirección de la compañía</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_company_tipo_documento">
+            <field name="name">company_tipo_documento</field>
+            <field name="description">Tipo de documento de la compañía</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_company_nit">
+            <field name="name">company_nit</field>
+            <field name="description">NIT de la empresa</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_company_digito_verificacion">
+            <field name="name">company_digito_verificacion</field>
+            <field name="description">Dígito verificación de la empresa</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_company_tipo_regimen">
+            <field name="name">company_tipo_regimen</field>
+            <field name="description">Tipo de régimen de la compañía</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_company_email_from">
+            <field name="name">company_email_from</field>
+            <field name="description">Correo de salida de la compañía para facturación electrónica</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_company_telefono">
+            <field name="name">company_telefono</field>
+            <field name="description">Teléfono de la compañía</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_company_matricula_mercantil">
+            <field name="name">company_matricula_mercantil</field>
+            <field name="description">Matrícula mercantil de la compañía</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_company_responsabilidad_fiscal">
+            <field name="name">company_responsabilidad_fiscal</field>
+            <field name="description">Responsabilidad fiscal de la compañía</field>
+            <field name="tipo">str</field>
+        </record>
+    </data>
+</odoo>

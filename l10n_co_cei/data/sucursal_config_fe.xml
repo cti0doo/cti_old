@@ -1,0 +1,34 @@
+<odoo>
+    <data noupdate="1">
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_sucursal_departamento">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_sucursal_departamento" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">fe_sucursal.state_id</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_sucursal_ciudad">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_sucursal_ciudad" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">fe_sucursal.cities</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_sucursal_direccion">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_sucursal_direccion" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">fe_sucursal.street</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_sucursal_to_email">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_sucursal_to_email" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">fe_sucursal.email</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_sucursal_telefono">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_sucursal_telefono" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">fe_sucursal.phone</field>
+        </record>
+    </data>
+</odoo>

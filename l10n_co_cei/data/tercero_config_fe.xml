@@ -1,0 +1,106 @@
+<odoo>
+    <data noupdate="1">
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_departamento">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_departamento" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.state_id</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_ciudad">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_ciudad" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.cities</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_direccion">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_direccion" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.street</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_razon_social">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_razon_social" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_razon_social</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_primer_apellido">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_primer_apellido" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_primer_apellido</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_segundo_apellido">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_segundo_apellido" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_segundo_apellido</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_primer_nombre">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_primer_nombre" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_primer_nombre</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_segundo_nombre">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_segundo_nombre" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_segundo_nombre</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_tipo_documento">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_tipo_documento" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_tipo_documento</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_nit">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_nit" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_nit</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_digito_verificacion">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_digito_verificacion" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_digito_verificacion</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_es_compania">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_es_compania" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_es_compania</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_to_email">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_to_email" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_correo_electronico</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_tipo_regimen">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_tipo_regimen" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_tipo_regimen</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_telefono">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_telefono" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.phone</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_matricula_mercantil">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_matricula_mercantil" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_matricula_mercantil</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_tercero_responsabilidad_fiscal">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_tercero_responsabilidad_fiscal" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">partner_id.fe_responsabilidad_fiscal.codigo_fe_dian</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,492 @@
+<odoo>
+    <data>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_0" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Ingresos y patrimonio</field>
+            <field name="codigo_fe_dian">O-06</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_1" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Retención en la fuente a título de renta</field>
+            <field name="codigo_fe_dian">O-07</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_2" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Retención timbre nacional</field>
+            <field name="codigo_fe_dian">O-08</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_3" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Retención en la fuente en el impuesto sobre las ventas</field>
+            <field name="codigo_fe_dian">O-09</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_4" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Ventas régimen común</field>
+            <field name="codigo_fe_dian">O-11</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_5" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Ventas régimen simplificado</field>
+            <field name="codigo_fe_dian">O-12</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_6" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Gran contribuyente</field>
+            <field name="codigo_fe_dian">O-13</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_7" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Informante de exógena</field>
+            <field name="codigo_fe_dian">O-14</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_8" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Autorretenedor</field>
+            <field name="codigo_fe_dian">O-15</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_9" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Obligación de facturar por ingresos de bienes y/o servicios excluidos</field>
+            <field name="codigo_fe_dian">O-16</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_10" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Profesionales de compra y venta de divisas</field>
+            <field name="codigo_fe_dian">O-17</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_11" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Productor y/o exportador de bienes exentos</field>
+            <field name="codigo_fe_dian">O-19</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_12" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Obligado a cumplir deberes formales a nombre de terceros</field>
+            <field name="codigo_fe_dian">O-22</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_13" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Agente de retención en el impuesto sobre las ventas</field>
+            <field name="codigo_fe_dian">O-23</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_14" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Impuesto Nacional a la Gasolina y al ACPM</field>
+            <field name="codigo_fe_dian">O-32</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_15" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Impuesto Nacional al consumo</field>
+            <field name="codigo_fe_dian">O-33</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_16" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Régimen simplificado impuesto nacional consumo rest y bares</field>
+            <field name="codigo_fe_dian">O-34</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_17" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Establecimiento Permanente</field>
+            <field name="codigo_fe_dian">O-36</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_18" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Obligado a Facturar Electrónicamente Modelo 2242</field>
+            <field name="codigo_fe_dian">O-37</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_19" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Facturación Electrónica Voluntaria Modelo 2242</field>
+            <field name="codigo_fe_dian">O-38</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_20" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Proveedor de Servicios Tecnológicos PST Modelo 2242</field>
+            <field name="codigo_fe_dian">O-39</field>
+        </record>
+         <record id="l10n_co_cei_settings.responsabilidad_fiscal_21" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Régimen Simple de Tributación – SIMPLE</field>
+            <field name="codigo_fe_dian">O-47</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_22" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Impuesto sobre las ventas – IVA</field>
+            <field name="codigo_fe_dian">O-48</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_23" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">No responsable de IVA</field>
+            <field name="codigo_fe_dian">O-49</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_24" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Facturador electrónico</field>
+            <field name="codigo_fe_dian">O-52</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_25" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Otro tipo de obligado</field>
+            <field name="codigo_fe_dian">O-99</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_26" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Clientes del Exterior</field>
+            <field name="codigo_fe_dian">R-00-PN</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_27" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">PN Factor PN</field>
+            <field name="codigo_fe_dian">R-12-PN</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_28" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">PN Mandatario PN</field>
+            <field name="codigo_fe_dian">R-16-PN</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_29" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">PN Agente Interventor PN</field>
+            <field name="codigo_fe_dian">R-25-PN</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_30" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">No responsable PN</field>
+            <field name="codigo_fe_dian">R-99-PN</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_31" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">PJ Apoderado especial PJ</field>
+            <field name="codigo_fe_dian">R-06-PJ</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_32" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">PJ Apoderado general PJ</field>
+            <field name="codigo_fe_dian">R-07-PJ</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_33" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">PJ Factor PJ</field>
+            <field name="codigo_fe_dian">R-12-PJ</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_34" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">PJ Mandatario PJ</field>
+            <field name="codigo_fe_dian">R-16-PJ</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_35" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">PJ Otro tipo de responsable PJ</field>
+            <field name="codigo_fe_dian">R-99-PJ</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_36" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Agente de carga internacional</field>
+            <field name="codigo_fe_dian">A-01</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_37" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Agente marítimo</field>
+            <field name="codigo_fe_dian">A-02</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_38" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Almacén general de depósito</field>
+            <field name="codigo_fe_dian">A-03</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_39" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Comercializadora internacional (C.I.)</field>
+            <field name="codigo_fe_dian">A-04</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_40" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Comerciante de la zona aduanera especial de Inírida, Puerto Carreño,
+                Cumaribo y Primavera
+            </field>
+            <field name="codigo_fe_dian">A-05</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_41" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Comerciantes de la zona de régimen aduanero especial de Leticia</field>
+            <field name="codigo_fe_dian">A-06</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_42" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Comerciantes de la zona de régimen aduanero especial de Maicao, Uribia y Manaure
+            </field>
+            <field name="codigo_fe_dian">A-07</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_43" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Comerciantes de la zona de régimen aduanero especial de Urabá, Tumaco y Guapí
+            </field>
+            <field name="codigo_fe_dian">A-08</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_44" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Comerciantes del puerto libre de San Andrés, Providencia y Santa Catalina</field>
+            <field name="codigo_fe_dian">A-09</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_45" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Depósito público de apoyo logístico internacional</field>
+            <field name="codigo_fe_dian">A-10</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_46" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Depósito privado para procesamiento industrial</field>
+            <field name="codigo_fe_dian">A-11</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_47" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Depósito privado de transformación o ensamble</field>
+            <field name="codigo_fe_dian">A-12</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_48" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Depósito franco</field>
+            <field name="codigo_fe_dian">A-13</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_49" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Depósito privado aeronáutico</field>
+            <field name="codigo_fe_dian">A-14</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_50" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Depósito privado para distribución internacional</field>
+            <field name="codigo_fe_dian">A-15</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_51" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Depósito privado de provisiones de a bordo para consumo y para llevar</field>
+            <field name="codigo_fe_dian">A-16</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_52" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Depósito privado para envíos urgentes</field>
+            <field name="codigo_fe_dian">A-17</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_53" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Depósito privado</field>
+            <field name="codigo_fe_dian">A-18</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_54" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Depósito público</field>
+            <field name="codigo_fe_dian">A-19</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_55" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Depósito público para distribución internacional</field>
+            <field name="codigo_fe_dian">A-20</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_56" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Exportador de café</field>
+            <field name="codigo_fe_dian">A-21</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_57" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Exportador</field>
+            <field name="codigo_fe_dian">A-22</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_58" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Importador</field>
+            <field name="codigo_fe_dian">A-23</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_59" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Intermediario de tráfico postal y envíos urgentes</field>
+            <field name="codigo_fe_dian">A-24</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_60" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Operador de transporte multimodal</field>
+            <field name="codigo_fe_dian">A-25</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_61" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Sociedad de intermediación aduanera</field>
+            <field name="codigo_fe_dian">A-26</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_62" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Titular de puertos y muelles de servicio público o privado</field>
+            <field name="codigo_fe_dian">A-27</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_63" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Transportador 232nfor régimen de importación y/o exportación
+            </field>
+            <field name="codigo_fe_dian">A-28</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_64" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Transportista nacional para operaciones del régimen de tránsito aduanero
+            </field>
+            <field name="codigo_fe_dian">A-29</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_65" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Usuario comercial zona franca</field>
+            <field name="codigo_fe_dian">A-30</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_66" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Usuario industrial de bienes zona franca</field>
+            <field name="codigo_fe_dian">A-32</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_67" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Usuario industrial de servicios zona franca</field>
+            <field name="codigo_fe_dian">A-34</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_68" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Usuario operador de zona franca</field>
+            <field name="codigo_fe_dian">A-36</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_69" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Usuario aduanero permanente</field>
+            <field name="codigo_fe_dian">A-37</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_70" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Usuario altamente exportador</field>
+            <field name="codigo_fe_dian">A-38</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_71" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Usuario de zonas económicas especiales de exportación</field>
+            <field name="codigo_fe_dian">A-39</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_72" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Deposito privado de instalaciones industriales</field>
+            <field name="codigo_fe_dian">A-40</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_73" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Beneficiarios de programas especiales de exportación PEX</field>
+            <field name="codigo_fe_dian">A-41</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_74" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Depósitos privados para mercancías en tránsito San Andrés
+            </field>
+            <field name="codigo_fe_dian">A-42</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_75" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Observadores de las operaciones de importación</field>
+            <field name="codigo_fe_dian">A-43</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_76" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Usuarios sistemas especiales Importación exportación</field>
+            <field name="codigo_fe_dian">A-44</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_77" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Transportador 232nformac régimen de importación y/o exportación
+            </field>
+            <field name="codigo_fe_dian">A-46</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_78" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Transportador terrestre régimen de importación y/o exportación
+            </field>
+            <field name="codigo_fe_dian">A-47</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_79" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Aeropuerto de servicio publico o privado</field>
+            <field name="codigo_fe_dian">A-48</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_80" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Transportador fluvial régimen de importación</field>
+            <field name="codigo_fe_dian">A-49</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_81" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Usuario industrial zona franca especial</field>
+            <field name="codigo_fe_dian">A-50</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_82" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Agencias de aduanas 1</field>
+            <field name="codigo_fe_dian">A-53</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_83" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Usuario Operador Zona Franca Especial</field>
+            <field name="codigo_fe_dian">A-54</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_84" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Agencias de aduanas 2</field>
+            <field name="codigo_fe_dian">A-55</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_85" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Agencias de aduanas 3</field>
+            <field name="codigo_fe_dian">A-56</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_86" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Agencias de aduanas 4</field>
+            <field name="codigo_fe_dian">A-57</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_87" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Transportador aéreo nacional</field>
+            <field name="codigo_fe_dian">A-58</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_88" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Transportador aéreo, marítimo o fluvial modalidad Cabotaje</field>
+            <field name="codigo_fe_dian">A-60</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_89" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Importador de alimentos de consumo humano y animal</field>
+            <field name="codigo_fe_dian">A-61</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_90" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Importador Ocasional</field>
+            <field name="codigo_fe_dian">A-62</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_91" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Importador de maquinaría y sus partes Decreto 2261 de 2012</field>
+            <field name="codigo_fe_dian">A-63</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_92" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Beneficiario Programa de Fomento Industria Automotriz-PROFIA</field>
+            <field name="codigo_fe_dian">A-64</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_93" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Otro tipo de agente aduanero</field>
+            <field name="codigo_fe_dian">A-99</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_94" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Agencia</field>
+            <field name="codigo_fe_dian">E-01</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_95" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Establecimiento de comercio</field>
+            <field name="codigo_fe_dian">E-02</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_96" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Centro de explotación agrícola</field>
+            <field name="codigo_fe_dian">E-03</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_97" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Centro de explotación animal</field>
+            <field name="codigo_fe_dian">E-04</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_98" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Centro de explotación minera</field>
+            <field name="codigo_fe_dian">E-05</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_99" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Centro de explotación de transformación</field>
+            <field name="codigo_fe_dian">E-06</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_100" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Centro de explotación de servicios</field>
+            <field name="codigo_fe_dian">E-07</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_101" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Oficina</field>
+            <field name="codigo_fe_dian">E-08</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_102" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Sede</field>
+            <field name="codigo_fe_dian">E-09</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_103" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Sucursal</field>
+            <field name="codigo_fe_dian">E-10</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_104" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Consultorio</field>
+            <field name="codigo_fe_dian">E-11</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_105" model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Administraciones</field>
+            <field name="codigo_fe_dian">E-12</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_106"
+                model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Seccionales</field>
+            <field name="codigo_fe_dian">E-13</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_107"
+                model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Regionales</field>
+            <field name="codigo_fe_dian">E-14</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_108"
+                model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Intendencias</field>
+            <field name="codigo_fe_dian">E-15</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_109"
+                model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Local o negocio</field>
+            <field name="codigo_fe_dian">E-16</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_110"
+                model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Punto de venta</field>
+            <field name="codigo_fe_dian">E-17</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_111"
+                model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Fábrica</field>
+            <field name="codigo_fe_dian">E-18</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_112"
+                model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Taller</field>
+            <field name="codigo_fe_dian">E-19</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_113"
+                model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Cantera</field>
+            <field name="codigo_fe_dian">E-20</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_114"
+                model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Pozo de Petróleo y Gas</field>
+            <field name="codigo_fe_dian">E-21</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_115"
+                model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Otro lug de tipo de extrac explotación de recursos naturales</field>
+            <field name="codigo_fe_dian">E-22</field>
+        </record>
+        <record id="l10n_co_cei_settings.responsabilidad_fiscal_116"
+                model="l10n_co_cei_settings.responsabilidad_fiscal">
+            <field name="significado">Otro tipo de establecimiento</field>
+            <field name="codigo_fe_dian">E-99</field>
+        </record>
+    </data>
+</odoo>

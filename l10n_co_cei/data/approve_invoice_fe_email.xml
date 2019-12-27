@@ -1,0 +1,88 @@
+<odoo>
+    <data>
+        <record id="approve_invoice_fe_email_template" model="mail.template">
+            <field name="name">Aprobación Factura Electrónica</field>
+            <field name="use_default_to" eval="False"/>
+            <field name="email_to">${object.partner_id.fe_correo_electronico}</field>
+            <field name="subject">Aprobación Factura: ${object.company_resolucion_id.prefijo}${object.number} - ${object.company_id.name}</field>
+            <field name="model_id" ref="account.model_account_move"/>
+            <field name="partner_to" >${object.partner_id.id}</field>
+            <field name="report_name">${object.filename}</field>
+            <field name="report_template" ref="account_invoices_fe"/>
+            <field name="auto_delete" eval="False"/>
+            <field name="body_html"><![CDATA[
+                <style>
+                    <link rel='stylesheet' href='${object.get_base_url()}/web/static/lib/bootstrap/css/bootstrap.css'/>
+                </style>
+                <div style="background:#F0F0F0;color:#515166;padding:10px 0px;font-family:Arial,Helvetica,sans-serif;font-size:14px;">
+                    % set access_token = object.access_token
+                    <table style="width:600px;margin:5px auto;">
+                        <tbody>
+                            <tr>
+                                <td>
+                                    <a href="/"><img src="${object.get_base_url()}/web/binary/company_logo" style="vertical-align:baseline;max-width:100px;" /></a>
+                                </td>
+                                <td style="text-align:right;vertical-align:middle;">
+                                    ${object.company_id.name} - Aprobación Factura Electrónica ${object.company_resolucion_id.prefijo}${object.number}
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="width:600px;margin:0px auto;background:white;border:1px solid #e1e1e1;">
+                        <tbody>
+                            <tr>
+                                <td style="padding:15px 20px 10px 20px;">
+                                    <p>Hola,</p>
+                                    <p>Por favor tome un momento para revisar la factura "<strong>${object.company_resolucion_id.prefijo}${object.number}</strong>" que se ha generado a su nombre.
+                                        <p>Agradecemos sus comentarios. Nos ayuda a mejorar continuamente.</p>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td style="padding:10px 20px">
+                                    <table summary="o_mail_notification" style="width:100%;border-top:1px solid #e1e1e1;">
+                                        <tr>
+                                            <td style="text-align:center;">
+                                                <h2 style="font-weight:300;font-size:18px;">
+                                                Después de revisar el archivo adjunto, por favor <b>Apruebe</b> o <b>Rechace</b> la factura recibida:
+                                            </h2>
+                                                <div style="text-color: #888888">(Dar click sobre la opción deseada)</div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td style="padding:10px 10px;">
+                                                <table style="width:100%;text-align:center;">
+                                                    <tr>
+                                                        <td>
+                                                            <a href="${object.get_base_url()}/approve-factura-electronica/${access_token}/True" class="btn btn-success">
+                                                            Aprobar
+                                                        </a>
+                                                        </td>
+                                                        <td>
+                                                            <a href="${object.get_base_url()}/approve-factura-electronica/${access_token}/False" class="btn btn-danger">
+                                                            Rechazar
+                                                        </a>
+                                                        </td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                    <table style="width:600px;margin:auto;text-align:center;font-size:12px;">
+                        <tbody>
+                            <tr>
+                                <td style="padding-top:10px;color:#afafaf;">
+                                    <p>Email automatically sent by <a target="_blank" href="https://www.odoo.com/page/project-management" style="color:#875A7B;text-decoration:none;">Odoo Project</a> for <a href="${object.company_id.website}" style="color:#875A7B;text-decoration:none;">${object.company_id.name}</a></p>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            ]]>
+            </field>
+        </record>
+    </data>
+</odoo>

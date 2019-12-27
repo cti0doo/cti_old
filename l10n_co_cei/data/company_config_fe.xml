@@ -1,0 +1,70 @@
+<odoo>
+    <data noupdate="1">
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_company_departamento">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_company_departamento" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">company_id.partner_id.state_id</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_company_ciudad">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_company_ciudad" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">company_id.partner_id.cities</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_company_direccion">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_company_direccion" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">company_id.partner_id.street</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_company_tipo_documento">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_company_tipo_documento" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">company_id.partner_id.fe_tipo_documento</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_company_nit">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_company_nit" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">company_id.partner_id.fe_nit</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_company_digito_verificacion">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_company_digito_verificacion" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">company_id.partner_id.fe_digito_verificacion</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_company_tipo_regimen">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_company_tipo_regimen" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">company_id.partner_id.fe_tipo_regimen</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_company_email_from">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_company_email_from" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">company_id.partner_id.fe_correo_electronico</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_company_telefono">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_company_telefono" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">company_id.partner_id.phone</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_company_matricula_mercantil">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_company_matricula_mercantil" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">company_id.partner_id.fe_matricula_mercantil</field>
+        </record>
+        <record model="l10n_co_cei.config_fe" id="kfeco_config_fe_company_responsabilidad_fiscal">
+            <field name="config_fe_detail_id"
+                ref="kfeco_config_fe_detail_company_responsabilidad_fiscal" />
+            <field name="model_name">account.move</field>
+            <field name="field_name">company_id.partner_id.fe_responsabilidad_fiscal.codigo_fe_dian</field>
+        </record>
+    </data>
+</odoo>

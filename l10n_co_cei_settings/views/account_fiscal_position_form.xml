@@ -1,0 +1,19 @@
+<odoo>
+    <data>
+        <record id="l10n_co_cei_settings_account_fiscal_position_form_view" model="ir.ui.view">
+            <field name="name">account.fiscal.position.form</field>
+            <field name="model">account.fiscal.position</field>
+            <field name="inherit_id" ref="account.view_account_position_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//form/sheet/group" position="inside">
+                        <group string="Facturación Electronica">
+                            <field name="fe_habilitada_compania" attrs="{'invisible': True}"/>
+                            <field name="fe_codigo_dian" attrs="{'invisible': [('fe_habilitada_compania', '!=', True)]}"/>
+                        </group>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

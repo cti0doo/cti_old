@@ -1,0 +1,105 @@
+<odoo>
+    <data>
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_ciudad">
+            <field name="name">tercero_ciudad</field>
+            <field name="description">Nombre ciudad del tercero</field>
+            <field name="tipo">l10n_co_cities.city</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_departamento">
+            <field name="name">tercero_departamento</field>
+            <field name="description">Nombre departamento del tercero</field>
+            <field name="tipo">res.country.state</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_direccion">
+            <field name="name">tercero_direccion</field>
+            <field name="description">Dirección del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_razon_social">
+            <field name="name">tercero_razon_social</field>
+            <field name="description">Razón social del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_primer_apellido">
+            <field name="name">tercero_primer_apellido</field>
+            <field name="description">Primer apellido del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_segundo_apellido">
+            <field name="name">tercero_segundo_apellido</field>
+            <field name="description">Segundo apellido del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_primer_nombre">
+            <field name="name">tercero_primer_nombre</field>
+            <field name="description">Primer nombre del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_segundo_nombre">
+            <field name="name">tercero_segundo_nombre</field>
+            <field name="description">Segundo nombre del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_tipo_documento">
+            <field name="name">tercero_tipo_documento</field>
+            <field name="description">Tipo de documento del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_nit">
+            <field name="name">tercero_nit</field>
+            <field name="description">NIT del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_digito_verificacion">
+            <field name="name">tercero_digito_verificacion</field>
+            <field name="description">Dígito de verificación del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+        
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_es_compania">
+            <field name="name">tercero_es_compania</field>
+            <field name="description">Tipo de persona</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_to_email">
+            <field name="name">tercero_to_email</field>
+            <field name="description">Correo electrónico del tercero para facturación electrónica</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_tipo_regimen">
+            <field name="name">tercero_tipo_regimen</field>
+            <field name="description">Tipo de régimen del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_telefono">
+            <field name="name">tercero_telefono</field>
+            <field name="description">Teléfono del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_matricula_mercantil">
+            <field name="name">tercero_matricula_mercantil</field>
+            <field name="description">Matrícula mercantil del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_tercero_responsabilidad_fiscal">
+            <field name="name">tercero_responsabilidad_fiscal</field>
+            <field name="description">Responsabilidad fiscal del tercero</field>
+            <field name="tipo">str</field>
+        </record>
+    </data>
+</odoo>

@@ -1,0 +1,16 @@
+<odoo>
+    <data>
+        <record id="l10n_co_cei_settings_account_fiscal_position_tree_view" model="ir.ui.view">
+            <field name="name">account.fiscal.position.tree</field>
+            <field name="model">account.fiscal.position</field>
+            <field name="inherit_id" ref="account.view_account_position_tree"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//tree/field[@name='name']" position="after">
+                        <field name="fe_codigo_dian" />
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+</odoo>

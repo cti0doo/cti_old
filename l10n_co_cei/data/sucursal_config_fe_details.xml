@@ -1,0 +1,33 @@
+<odoo>
+    <data>
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_sucursal_ciudad">
+            <field name="name">sucursal_ciudad</field>
+            <field name="description">Nombre ciudad del sucursal</field>
+            <field name="tipo">l10n_co_cities.city</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_sucursal_departamento">
+            <field name="name">sucursal_departamento</field>
+            <field name="description">Nombre departamento del sucursal</field>
+            <field name="tipo">res.country.state</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_sucursal_direccion">
+            <field name="name">sucursal_direccion</field>
+            <field name="description">Dirección del sucursal</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_sucursal_to_email">
+            <field name="name">sucursal_to_email</field>
+            <field name="description">Correo electrónico del sucursal para facturación electrónica</field>
+            <field name="tipo">str</field>
+        </record>
+
+        <record model="l10n_co_cei.config_fe_details" id="kfeco_config_fe_detail_sucursal_telefono">
+            <field name="name">sucursal_telefono</field>
+            <field name="description">Teléfono del sucursal</field>
+            <field name="tipo">str</field>
+        </record>
+    </data>
+</odoo>

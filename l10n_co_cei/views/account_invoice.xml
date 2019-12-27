@@ -1,0 +1,158 @@
+<odoo>
+    <data>
+        <!-- Descarga archivo xml -->
+        <record id="action_download_xml_invoice_fe" model="ir.actions.server">
+            <field name="name">Descargar factura electrónica</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_move" />
+            <field name="binding_model_id" ref="model_account_move" />
+            <field name="state">code</field>
+            <field name="code">action = records.download_xml()</field>
+        </record>
+
+        <!-- Descarga archivo firmado -->
+        <record id="action_download_xml_firmado_invoice_fe" model="ir.actions.server">
+            <field name="name">Descargar ZIP con factura electrónica</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_move" />
+            <field name="binding_model_id" ref="model_account_move" />
+            <field name="state">code</field>
+            <field name="code">action = records.download_xml_firmado()</field>
+        </record>
+    </data>
+
+    <!-- Envio de factura a dian -->
+    <data>
+        <record id="action_enviar_a_invoice_fe" model="ir.actions.server">
+            <field name="name">Enviar factura electrónica</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_move" />
+            <field name="binding_model_id" ref="model_account_move" />
+            <field name="state">code</field>
+            <field name="code">action = records.intento_envio_factura_electronica()</field>
+        </record>
+    </data>
+
+    <!-- formulario de factura -->
+    <data>
+        <record id="l10n_co_cei_invoice_form" model="ir.ui.view">
+            <field name="name">account.move.form</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_move_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <!-- Pestaña de Archivos de correo-->
+                    <xpath expr="//form/sheet/notebook/page" position="after">
+                        <page string="Archivos Soporte" attrs="{'invisible': [('fe_habilitada_compania', '!=', True)]}">
+                            <group>
+                                <field name="fe_archivos_email" widget="one2many_list" >
+                                    <tree editable="bottom">
+                                        <field name="nombre_archivo_envio" />
+                                        <field name="archivo_envio" />
+                                    </tree>
+                                </field>
+                            </group>
+                        </page>
+                    </xpath>
+
+                    <!-- Pestaña de facturación electrónica-->
+                    <xpath expr="//form/sheet/notebook/page" position="after">
+                        <page string="Facturación Electrónica" attrs="{'invisible': ['|',('tipo_resolucion', '!=', 'facturacion-electronica'),('fe_habilitada_compania', '!=', True)]}">
+                            <group>
+                                <field name="enviada"
+                                    string="Enviada a la DIAN"
+                                    attrs="{'invisible': [('state', 'in', 'draft')]}"
+                                    readonly="1"
+                                />
+                                <field name="envio_fe_id"
+                                    string="Registro de envío"
+                                    attrs="{'invisible': [('envio_fe_id', '=', False)]}"
+                                    readonly="1"
+                                />
+                                <field name="fe_approved"
+                                    attrs="{'invisible': [('state', 'in', 'draft')]}"
+                                    readonly="1"
+                                />
+                                <field name="fe_feedback"
+                                    attrs="{'invisible': [('fe_approved', '!=', 'rechazada')]}"
+                                    readonly="1"
+                                />
+                            </group>
+                        </page>
+                    </xpath>
+                    <!--Establece el campo incoterms como obligatorio para facturas de exportación -->
+                    <xpath expr="//field[@name='invoice_incoterm_id']" position="attributes">
+                        <attribute name="attrs">{'required': [('es_factura_exportacion', '=', True), ('fe_habilitada_compania', '=', True)]}</attribute>
+                    </xpath>
+
+                    <!-- Desplegable para medios de pago -->
+                    <xpath expr="//field[@name='journal_id']" position="before" options="{'no_create': True}">
+                        <field name='fe_habilitar_facturacion_related' invisible="1" />
+                        <field name='tipo_resolucion_diario_f' invisible="1" />
+                        <field name='tipo_resolucion_diario_n' invisible="1" />
+                        <field name='company_id' invisible="1" />
+                        <field name='tipo_resolucion' invisible="1" />
+                        <field name="fe_habilitada_compania" invisible="1" />
+                        <field name="forma_de_pago" attrs="{'required': ['|',('tipo_resolucion_diario_f', '=', 'facturacion-electronica'),('tipo_resolucion_diario_n', '=', 'facturacion-electronica'),('fe_habilitar_facturacion_related','=',True),('fe_habilitada_compania', '=', True)],'invisible': [('fe_habilitada_compania', '!=', True)]}"/>
+                        <field name="payment_mean_id" attrs="{'required': ['|',('tipo_resolucion_diario_f', '=', 'facturacion-electronica'),('tipo_resolucion_diario_n', '=', 'facturacion-electronica'),('fe_habilitar_facturacion_related','=',True),('fe_habilitada_compania', '=', True)],'invisible': [('fe_habilitada_compania', '!=', True)]}"/>
+                        <field name="concepto_correccion_debito"
+                               attrs="{'invisible': ['|',('fe_habilitada_compania', '!=', True),('es_nota_debito', '=', False)],
+                                       'required': [('es_nota_debito', '=', True),('fe_habilitada_compania', '=', True)]}"/>
+                        <field name="es_factura_exportacion"
+                               attrs="{'readonly': [('fe_habilitada_compania', '=', True),('state', 'in', ('open','in_payment','paid','posted'))],
+                                       'invisible': [('fe_habilitada_compania', '!=', True)]}"/>
+                        <field name="es_nota_debito"
+                               attrs="{'readonly': [('fe_habilitada_compania', '=', True)],
+                                       'invisible': [('es_nota_debito', '!=', True)]}"/>
+                        <field name="concepto_correccion_credito"
+                               attrs="{'invisible': ['|',('type', '!=', 'out_refund'),('fe_habilitada_compania', '!=', True)],
+                                       'required': [('type', '=', 'out_refund'),('fe_habilitada_compania', '=', True)]}"/>
+                    </xpath>
+
+                    <!-- Factura de origen para nota débito -->
+                    <xpath expr="//field[@name='invoice_user_id']" position="after">
+                        <field name="credited_invoice_id" attrs="{'readonly': [('fe_habilitada_compania', '=', True)], 'invisible': [('es_nota_debito', '=', False),('fe_habilitada_compania', '!=', True)]}"/>
+                        <field name="company_partner_id" attrs="{'invisible': True}"/>
+                        <field name="fe_sucursal" domain="[('parent_id', '=', company_partner_id), ('type','!=','contact')]" attrs="{'invisible': [('fe_habilitada_compania', '!=', True)]}"/>
+                    </xpath>
+
+                    <!--Establece el campo Términos de pago como obligatorio -->
+                    <xpath expr="//field[@name='invoice_payment_term_id']" position="attributes">
+                        <attribute name="attrs">{'required': ['|',('tipo_resolucion_diario_f', '=', 'facturacion-electronica'),('tipo_resolucion_diario_n', '=', 'facturacion-electronica'),('type', '!=', 'out_refund'),('fe_habilitar_facturacion_related','=',True),('fe_habilitada_compania', '=', True)]}</attribute>
+                    </xpath>
+
+                    <xpath expr="//button[@name='button_draft']" position="before">
+                        <field name="estado_dian" attrs="{'invisible': True}"/>
+
+                        <button name="action_generar_nota_debito"
+                            type="object"
+                            string="Agregar Nota Débito"
+                            attrs="{'invisible': ['|','|','|','|',('es_nota_debito', '=', True),('state', 'not in', ['open','in_payment','paid','posted']),('fe_habilitada_compania','!=',True),('tipo_resolucion_diario_f', '!=', 'facturacion-electronica')]}"/>
+
+                        <button name="action_regenerar_xml" type="object"
+                            string="Regenerar factura electrónica" groups="account.group_account_invoice"
+                            attrs="{'invisible':['|',('estado_dian','not in', ['Validación contiene errores en campos mandatorios.','TrackId no existe en los registros de la DIAN.']),('fe_habilitada_compania', '!=', True)]}"
+                        />
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="l10n_co_cei_invoice_form_invoice_tree">
+            <field name="name">Vista facturas de venta</field>
+            <field name="model">account.move</field>
+            <field name="inherit_id" ref="account.view_invoice_tree"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='invoice_user_id']" position="after">
+                    <field name="credited_invoice_id"/>
+                </xpath>
+                <xpath expr="//field[@name='state']" position="after">
+                    <field name="fe_approved"/>
+                </xpath>
+                <xpath expr="//field[@name='fe_approved']" position="after">
+                     <field name="estado_dian"/>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>
