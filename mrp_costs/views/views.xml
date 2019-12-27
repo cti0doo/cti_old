@@ -6,10 +6,23 @@
       <field name="inherit_id" ref="mrp.mrp_production_tree_view"/>
       <field name="arch" type="xml">
         <xpath expr="//field[@name='product_qty']" position="after">
-          <field name="original_product_price"/>
-          <field name="real_cost"/>
+          <field name="std_cost"/>
+          <field name="prod_cost"/>
+          <field name="adjusted_cost"/>
         </xpath>
       </field>
     </record>
+    <record id="action_update_monthly_cost" model="ir.actions.server">
+      <field name="name">Update Monthly Costs</field>
+      <field name="model_id"  ref="mrp.model_mrp_production" />
+      <field name="state">code</field>
+      <field name="code">action = model.update_monthly_cost()</field>
+    </record>
+    <menuitem id="menu_update_cost"
+      name="Update Costs"
+      parent="mrp.menu_mrp_manufacturing"
+      action="action_update_monthly_cost"/>
   </data>
 </odoo>
+
+
