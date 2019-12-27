@@ -2,3 +2,13 @@ suds-jurko
 pandas
 firebase-admin
 phonenumbers
+pyldap>=3.0.0
+pg-xmlsig>=0.0.2
+pg-xades>=0.0.6
+pyOpenSSL>=19.0.0
+pyqrcode>=1.2.1
+xmltodict>=0.12.0
+py4j>=0.10.8.1
+pypng>=0.0.20
+validators>=0.14.0
+xmlsig>=0.1.3
