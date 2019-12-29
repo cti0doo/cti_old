@@ -33,4 +33,7 @@
     ],
     # only loaded in demonstration mode
     'demo': [],
+    'installable': True,
+    'application': False,
+    'auto_install': False,
 }

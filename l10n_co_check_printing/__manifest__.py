@@ -27,6 +27,7 @@ This module supports the three most common check formats and will work out of th
         'report/print_check_bottom.xml',
     ],
     'installable': True,
+    'application': False,
     'auto_install': False,
     'license': 'OEEL-1',
 }

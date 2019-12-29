@@ -18,7 +18,7 @@
     'version': '13.0.0',
     'sequence': 110,
     # any module necessary for this one to work correctly
-    'depends': ['sale_stock'],
+    'depends': ['sale_stock','sale_renting'],
 
     # always loaded
     'data': [

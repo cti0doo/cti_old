@@ -24,5 +24,7 @@
         "views/view_account_type.xml",
     ],
     "demo": ["demo/res_groups.xml"],
-    "installable": True,
+    'installable': True,
+    'application': False,
+    'auto_install': False,
 }

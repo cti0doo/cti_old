@@ -16,5 +16,6 @@
         'views/partner_view.xml',
     ],
     'installable': True,
+    'application': False,
     'auto_install': False,
 }

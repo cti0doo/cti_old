@@ -45,7 +45,7 @@
         'views/magnetic_media_views.xml',
     ],
     'demo': [],
-    'installable': True,  # Tiene problemas con las referencias a cuentas contables
+    'installable': True,
     'application': False,
     'auto_install': False,
     'license': 'AGPL-3',
