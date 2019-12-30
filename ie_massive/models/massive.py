@@ -300,7 +300,7 @@ class ImportExportMassiveLines(models.Model):
 
     def getUpdate(self, line, position, record, condition):
         condition_final = []
-        if str(condition).count('{}') != len(position):
+        if str(condition).count('{}') > len(position):
             position *= str(condition).count('{}')
         condition_final.append(list(eval(str(condition).format(*[record[x] for x in position]))))
         id_record = SOCK.execute_kw(DB, UID, PASSWORD, line.model_id.model, 'search_read', condition_final,

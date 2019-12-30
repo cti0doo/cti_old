@@ -1,7 +1,7 @@
 id,process,massive_id:id,description,condition,model_id,to_update,to_load,to_create
 ie_massive_line_Massive_Filter,TRUE,ie_massive_Massive,Filter,"[[[1,'=',1]]]",ie.massive.filter,TRUE,TRUE,FALSE
 ie_massive_line_Massive_Massive,TRUE,ie_massive_Massive,Massive,"[[[1,'=',1]]]",ie.massive,TRUE,TRUE,FALSE
-ie_massive_line_Massive_Lines,TRUE,ie_massive_Massive,Lines,"[[[1,'=',1]]]",ie.massive.lines,TRUE,TRUE,FALSE
+ie_massive_line_Massive_Maps,TRUE,ie_massive_Map,Lines,"[[[1,'=',1]]]",ie.massive.map,TRUE,TRUE,FALSE
 ie_massive_line_Base_Date_Ranges,TRUE,ie_massive_Bases,Date Range,"[[[1,'=',1]]]",date.range,TRUE,TRUE,FALSE
 ie_massive_line_Base_Accounts,TRUE,ie_massive_Bases,Accounts,"[[[1,'=',1]]]",account.account,TRUE,TRUE,FALSE
 ie_massive_line_Accounts_Groups,TRUE,ie_massive_Accounts,Groups,"[[[1,'=',1]]]",account.group,TRUE,TRUE,FALSE
@@ -10,11 +10,13 @@ ie_massive_line_Assets_Categories,TRUE,ie_massive_Assets,Categories,"[[[1,'=',1]
 ie_massive_line_Assets_Accounts,TRUE,ie_massive_Assets,Analytic Accounts,"[[[1,'=',1]]]",account.analytic.account,TRUE,TRUE,FALSE
 ie_massive_line_Assets_Partners,TRUE,ie_massive_Assets,Partners,"[[[1,'=',1]]]",res.partner,TRUE,TRUE,FALSE
 ie_massive_line_Assets_Assets,TRUE,ie_massive_Assets,Assets,"[[[1,'=',1]]]",account.asset,TRUE,TRUE,FALSE
-ie_massive_line_Employees_Deprtments,TRUE,ie_massive_Employees,Departments,"[[[1,'=',1]]]",hr.department,TRUE,TRUE,FALSE
+ie_massive_line_Employees_Groups,TRUE,ie_massive_Employees,Departments,"[[[1,'=',1]]]",hr.department,TRUE,TRUE,FALSE
+ie_massive_line_Employees_Departments,TRUE,ie_massive_Employees,Departments,"[[[1,'=',1]]]",hr.department,TRUE,TRUE,FALSE
 ie_massive_line_Employees_Jobs,TRUE,ie_massive_Employees,Jobs,"[[[1,'=',1]]]",hr.job,TRUE,TRUE,FALSE
 ie_massive_line_Employees_Employee_Partners,TRUE,ie_massive_Employees,Employee Partners,"[[[1,'=',1]]]",res.partner,TRUE,TRUE,FALSE
 ie_massive_line_Employees_Employee_Accounts,TRUE,ie_massive_Employees,Employee Accounts,"[[[1,'=',1]]]",res.partner.bank,TRUE,TRUE,FALSE
 ie_massive_line_Employees_Employees,TRUE,ie_massive_Employees,Employees,"[[[1,'=',1]]]",hr.employee,TRUE,TRUE,FALSE
+ie_massive_line_Employees_Contracts,TRUE,ie_massive_Contracts,Contracts,"[[[1,'=',1]]]",hr.contract,TRUE,TRUE,FALSE
 ie_massive_line_Entries_Balance,TRUE,ie_massive_Entries,Balance,"[[[1,'=',1]]]",account.move,TRUE,TRUE,FALSE
 ie_massive_line_Entries_Cash,TRUE,ie_massive_Entries,Cash,"[[[1,'=',1]]]",account.move,TRUE,TRUE,FALSE
 ie_massive_line_Entries_Investments,TRUE,ie_massive_Entries,Investments,"[[[1,'=',1]]]",account.move,TRUE,TRUE,FALSE

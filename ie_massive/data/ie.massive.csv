@@ -1,23 +1,23 @@
 id,name,url,database,user,password
-ie_massive_Massive,I/E Massive,https://0doo.odoo.com,0doo-13-0-675104,support@cti.com.co,0doo.uo
-ie_massive_Bases,Bases,https://0doo.odoo.com,0doo-13-0-675105,support@cti.com.co,0doo.uo
-ie_massive_Accounts,Accounts,https://0doo.odoo.com,0doo-13-0-675106,support@cti.com.co,0doo.uo
-ie_massive_Assets,Assets,https://0doo.odoo.com,0doo-13-0-675106,support@cti.com.co,0doo.uo
-ie_massive_Employees,Employees,https://0doo.odoo.com,0doo-13-0-675108,support@cti.com.co,0doo.uo
-ie_massive_Entries,Entries,https://0doo.odoo.com,0doo-13-0-675109,support@cti.com.co,0doo.uo
-ie_massive_Inventories,Inventories,https://0doo.odoo.com,0doo-13-0-675112,support@cti.com.co,0doo.uo
-ie_massive_Leaves,Leaves,https://0doo.odoo.com,0doo-13-0-675113,support@cti.com.co,0doo.uo
-ie_massive_Massive Purchase,Massive Purchase,https://0doo.odoo.com,0doo-13-0-675114,support@cti.com.co,0doo.uo
-ie_massive_Milk Prices,Milk Prices,https://0doo.odoo.com,0doo-13-0-675115,support@cti.com.co,0doo.uo
-ie_massive_Partners,Partners,https://0doo.odoo.com,0doo-13-0-675110,support@cti.com.co,0doo.uo
-ie_massive_Payrolls,Payrolls,https://0doo.odoo.com,0doo-13-0-675116,support@cti.com.co,0doo.uo
-ie_massive_Payroll Inputs,Payroll Inputs,https://0doo.odoo.com,0doo-13-0-675111,support@cti.com.co,0doo.uo
-ie_massive_Products,Products,https://0doo.odoo.com,0doo-13-0-675117,support@cti.com.co,0doo.uo
-ie_massive_Productions,Productions,https://0doo.odoo.com,0doo-13-0-675119,support@cti.com.co,0doo.uo
-ie_massive_Projects,Projects,https://0doo.odoo.com,0doo-13-0-675120,support@cti.com.co,0doo.uo
-ie_massive_Purchases,Purchases,https://0doo.odoo.com,0doo-13-0-675107,support@cti.com.co,0doo.uo
-ie_massive_Qualities,Qualities,https://0doo.odoo.com,0doo-13-0-675121,support@cti.com.co,0doo.uo
-ie_massive_Sales,Sales,https://0doo.odoo.com,0doo-13-0-675122,support@cti.com.co,0doo.uo
-ie_massive_Suppliers,Supplier,https://0doo.odoo.com,0doo-13-0-675123,support@cti.com.co,0doo.uo
-ie_massive_Transfers,Transfer,https://0doo.odoo.com,0doo-13-0-675124,support@cti.com.co,0doo.uo
-ie_massive_Warehouses,Warehouses,https://0doo.odoo.com,0doo-13-0-675124,support@cti.com.co,0doo.uo
+ie_massive_Massive,I/E Massive,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Bases,Bases,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Accounts,Accounts,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Assets,Assets,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Employees,Employees,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Entries,Entries,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Inventories,Inventories,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Leaves,Leaves,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Massive Purchase,Massive Purchase,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Milk Prices,Milk Prices,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Partners,Partners,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Payrolls,Payrolls,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Payroll Inputs,Payroll Inputs,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Products,Products,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Productions,Productions,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Projects,Projects,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Purchases,Purchases,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Qualities,Qualities,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Sales,Sales,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Suppliers,Supplier,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Transfers,Transfer,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
+ie_massive_Warehouses,Warehouses,https://kls-v13.odoo.com,kls-v13-master-777655,support,0doo.uo
