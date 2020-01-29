@@ -73,7 +73,7 @@ class EnvioFE(models.Model):
         data = self.invoice_id.consulta_fe_dian()
         response_xml = data['contenido_respuesta']
 
-        self.write({
+        self.sudo().write({
             'codigo_respuesta_validacion': data['codigo_respuesta'],
             'respuesta_validacion': data['descripcion_estado'],
             'fecha_validacion': data['hora_actual'],

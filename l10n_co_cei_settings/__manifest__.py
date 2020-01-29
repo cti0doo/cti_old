@@ -18,7 +18,7 @@
     # Check https://github.com/odoo/odoo/blob/10.0/odoo/addons/base/module/module_data.xml
     # for the full list
     'category': 'Invoicing & Payments',
-    'version': '13.0.4.0',
+    'version': '13.3.3.0',
     'license': 'OPL-1',
     'support': 'soporte.fe@pragmatic.com.co',
 

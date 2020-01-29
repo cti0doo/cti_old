@@ -724,7 +724,7 @@ class Invoice(models.Model):
                     output = invoice.generar_creditnote_xml()
                     _logger.info('Nota crédito {} generada'.format(invoice.name))
 
-                invoice.write({
+                invoice.sudo().write({
                     'file': base64.b64encode(output.encode())
                 })
 
@@ -868,7 +868,11 @@ class Invoice(models.Model):
 
                     # Suma al total de cada código, y añade información por cada tarifa.
                     if tax.amount not in tax_total_values[tax.codigo_fe_dian]['info']:
-                        tax_total_values[tax.codigo_fe_dian]['total'] += round(line_id.price_subtotal * tax['amount'] / 100, 2)
+
+                        aux_total = tax_total_values[tax.codigo_fe_dian]['total']
+                        aux_total = aux_total + line_id.price_subtotal * tax['amount'] / 100
+                        aux_total = round(aux_total, 2)
+                        tax_total_values[tax.codigo_fe_dian]['total'] = aux_total
 
                         tax_total_values[tax.codigo_fe_dian]['info'][tax.amount] = {
                             'taxable_amount': line_id.price_subtotal,
@@ -876,9 +880,18 @@ class Invoice(models.Model):
                             'technical_name': tax.nombre_tecnico_dian
                         }
                     else:
-                        tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['value'] += round(line_id.price_subtotal * tax['amount'] / 100, 2)
-                        tax_total_values[tax.codigo_fe_dian]['total'] += round(line_id.price_subtotal * tax['amount'] / 100, 2)
-                        tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['taxable_amount'] += line_id.price_subtotal
+                        aux_tax = tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['value']
+                        aux_total = tax_total_values[tax.codigo_fe_dian]['total']
+                        aux_taxable = tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['taxable_amount']
+                        aux_tax = aux_tax + line_id.price_subtotal * tax['amount'] / 100
+                        aux_total = aux_total + line_id.price_subtotal * tax['amount'] / 100
+                        aux_taxable = aux_taxable + line_id.price_subtotal
+                        aux_tax = round(aux_tax, 2)
+                        aux_total = round(aux_total, 2)
+                        aux_taxable = round(aux_taxable, 2)
+                        tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['value'] = aux_tax
+                        tax_total_values[tax.codigo_fe_dian]['total'] = aux_total
+                        tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['taxable_amount'] = aux_taxable
 
             for index, invoice_line_id in enumerate(self.invoice_line_ids):
                 taxes = invoice_line_id.tax_ids
@@ -895,7 +908,11 @@ class Invoice(models.Model):
 
                     # Suma al total de cada código, y añade información por cada tarifa para cada línea.
                     if tax.amount not in tax_info[tax.codigo_fe_dian]['info']:
-                        tax_info[tax.codigo_fe_dian]['total'] += round(invoice_line_id.price_subtotal * tax['amount'] / 100, 2)
+
+                        aux_total = tax_info[tax.codigo_fe_dian]['total']
+                        aux_total = aux_total + invoice_line_id.price_subtotal * tax['amount'] / 100
+                        aux_total = round(aux_total, 2)
+                        tax_info[tax.codigo_fe_dian]['total'] = aux_total
 
                         tax_info[tax.codigo_fe_dian]['info'][tax.amount] = {
                             'taxable_amount': invoice_line_id.price_subtotal,
@@ -903,10 +920,18 @@ class Invoice(models.Model):
                             'technical_name': tax.nombre_tecnico_dian
                         }
                     else:
-                        tax_info[tax.codigo_fe_dian]['info'][tax.amount]['value'] += round(
-                            invoice_line_id.price_subtotal * tax['amount'] / 100, 2)
-                        tax_info[tax.codigo_fe_dian]['total'] += round(invoice_line_id.price_subtotal * tax['amount'] / 100, 2)
-                        tax_info[tax.codigo_fe_dian]['info'][tax.amount]['taxable_amount'] += invoice_line_id.price_subtotal
+                        aux_tax = tax_info[tax.codigo_fe_dian]['info'][tax.amount]['value']
+                        aux_total = tax_info[tax.codigo_fe_dian]['total']
+                        aux_taxable = tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['taxable_amount']
+                        aux_tax = aux_tax + invoice_line_id.price_subtotal * tax['amount'] / 100
+                        aux_total = aux_total + invoice_line_id.price_subtotal * tax['amount'] / 100
+                        aux_taxable = aux_taxable + invoice_line_id.price_subtotal
+                        aux_tax = round(aux_tax, 2)
+                        aux_total = round(aux_total, 2)
+                        aux_taxable = round(aux_taxable, 2)
+                        tax_info[tax.codigo_fe_dian]['info'][tax.amount]['value'] = aux_tax
+                        tax_info[tax.codigo_fe_dian]['total'] = aux_total
+                        tax_info[tax.codigo_fe_dian]['info'][tax.amount]['taxable_amount'] = aux_taxable
 
                 invoice_lines.append({
                     'id': index + 1,
@@ -1086,7 +1111,11 @@ class Invoice(models.Model):
 
                 # Suma al total de cada código, y añade información por cada tarifa.
                 if tax.amount not in tax_total_values[tax.codigo_fe_dian]['info']:
-                    tax_total_values[tax.codigo_fe_dian]['total'] += round(line_id.price_subtotal * tax['amount'] / 100, 2)
+
+                    aux_total = tax_total_values[tax.codigo_fe_dian]['total']
+                    aux_total = aux_total + line_id.price_subtotal * tax['amount'] / 100
+                    aux_total = round(aux_total, 2)
+                    tax_total_values[tax.codigo_fe_dian]['total'] = aux_total
 
                     tax_total_values[tax.codigo_fe_dian]['info'][tax.amount] = {
                         'taxable_amount': line_id.price_subtotal,
@@ -1094,10 +1123,18 @@ class Invoice(models.Model):
                         'technical_name': tax.nombre_tecnico_dian
                     }
                 else:
-                    tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['value'] += round(
-                        line_id.price_subtotal * tax['amount'] / 100, 2)
-                    tax_total_values[tax.codigo_fe_dian]['total'] += round(line_id.price_subtotal * tax['amount'] / 100, 2)
-                    tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['taxable_amount'] += line_id.price_subtotal
+                    aux_tax = tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['value']
+                    aux_total = tax_total_values[tax.codigo_fe_dian]['total']
+                    aux_taxable = tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['taxable_amount']
+                    aux_tax = aux_tax + line_id.price_subtotal * tax['amount'] / 100
+                    aux_total = aux_total + line_id.price_subtotal * tax['amount'] / 100
+                    aux_taxable = aux_taxable + line_id.price_subtotal
+                    aux_tax = round(aux_tax, 2)
+                    aux_total = round(aux_total, 2)
+                    aux_taxable = round(aux_taxable, 2)
+                    tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['value'] = aux_tax
+                    tax_total_values[tax.codigo_fe_dian]['total'] = aux_total
+                    tax_total_values[tax.codigo_fe_dian]['info'][tax.amount]['taxable_amount'] = aux_taxable
 
         for index, invoice_line_id in enumerate(self.invoice_line_ids):
             taxes = invoice_line_id.tax_ids
@@ -1114,7 +1151,11 @@ class Invoice(models.Model):
 
                 # Suma al total de cada código, y añade información por cada tarifa para cada línea.
                 if tax.amount not in tax_info[tax.codigo_fe_dian]['info']:
-                    tax_info[tax.codigo_fe_dian]['total'] += round(invoice_line_id.price_subtotal * tax['amount'] / 100, 2)
+
+                    aux_total = tax_info[tax.codigo_fe_dian]['total']
+                    aux_total = aux_total + invoice_line_id.price_subtotal * tax['amount'] / 100
+                    aux_total = round(aux_total, 2)
+                    tax_info[tax.codigo_fe_dian]['total'] = aux_total
 
                     tax_info[tax.codigo_fe_dian]['info'][tax.amount] = {
                         'taxable_amount': invoice_line_id.price_subtotal,
@@ -1122,11 +1163,18 @@ class Invoice(models.Model):
                         'technical_name': tax.nombre_tecnico_dian
                     }
                 else:
-                    tax_info[tax.codigo_fe_dian]['info'][tax.amount]['value'] += round(
-                        invoice_line_id.price_subtotal * tax['amount'] / 100, 2)
-                    tax_info[tax.codigo_fe_dian]['total'] += round(invoice_line_id.price_subtotal * tax['amount'] / 100,
-                                                                   2)
-                    tax_info[tax.codigo_fe_dian]['info'][tax.amount]['taxable_amount'] += invoice_line_id.price_subtotal
+                    aux_tax = tax_info[tax.codigo_fe_dian]['info'][tax.amount]['value']
+                    aux_total = tax_info[tax.codigo_fe_dian]['total']
+                    aux_taxable = tax_info[tax.codigo_fe_dian]['info'][tax.amount]['taxable_amount']
+                    aux_tax = aux_tax + invoice_line_id.price_subtotal * tax['amount'] / 100
+                    aux_total = aux_total + invoice_line_id.price_subtotal * tax['amount'] / 100
+                    aux_taxable = aux_taxable + invoice_line_id.price_subtotal
+                    aux_tax = round(aux_tax, 2)
+                    aux_total = round(aux_total, 2)
+                    aux_taxable = round(aux_taxable, 2)
+                    tax_info[tax.codigo_fe_dian]['info'][tax.amount]['value'] = aux_tax
+                    tax_info[tax.codigo_fe_dian]['total'] = aux_total
+                    tax_info[tax.codigo_fe_dian]['info'][tax.amount]['taxable_amount'] = aux_taxable
 
             creditnote_lines.append({
                 'id': index + 1,
@@ -1321,7 +1369,7 @@ class Invoice(models.Model):
             'type': 'binary',
         })
 
-        invoice.write({
+        invoice.sudo().write({
 
             'file': base64.b64encode(firmado),
             'firmado': True,
@@ -1459,10 +1507,10 @@ class Invoice(models.Model):
         }
 
         if self.company_id.fe_tipo_ambiente == '1':  # Producción
-            dian_webservice_url = self.env['ir.config_parameter'].search(
+            dian_webservice_url = self.env['ir.config_parameter'].sudo().search(
                 [('key', '=', 'dian.webservice.url')], limit=1).value
         else:
-            dian_webservice_url = self.env['ir.config_parameter'].search(
+            dian_webservice_url = self.env['ir.config_parameter'].sudo().search(
                 [('key', '=', 'dian.webservice.url.pruebas')], limit=1).value
 
         service = WsdlQueryHelper(
@@ -1516,7 +1564,7 @@ class Invoice(models.Model):
             else:
                 respuesta_envio = processed_message[0].text if processed_message else self.cufe
 
-            envio_fe = self.env['l10n_co_cei.envio_fe'].create({
+            envio_fe = self.env['l10n_co_cei.envio_fe'].sudo().create({
                 'invoice_id': self.id,
                 'fecha_envio': datetime.datetime.now(),
                 'codigo_respuesta_envio': service.get_response_status_code(),
@@ -1923,10 +1971,10 @@ class Invoice(models.Model):
         }
 
         if self.company_id.fe_tipo_ambiente == '1':  # Producción
-            dian_webservice_url = self.env['ir.config_parameter'].search(
+            dian_webservice_url = self.env['ir.config_parameter'].sudo().search(
                 [('key', '=', 'dian.webservice.url')], limit=1).value
         else:
-            dian_webservice_url = self.env['ir.config_parameter'].search(
+            dian_webservice_url = self.env['ir.config_parameter'].sudo().search(
                 [('key', '=', 'dian.webservice.url.pruebas')], limit=1).value
 
         service = WsdlQueryHelper(

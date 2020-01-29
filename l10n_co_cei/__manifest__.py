@@ -17,7 +17,7 @@
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
     'category': 'Invoicing & Payments',
-    'version': '13.0.9.0',
+    'version': '13.3.3.0',
     'license': 'OPL-1',
     'support': 'soporte.fe@pragmatic.com.co',
     'price': '99',
@@ -66,6 +66,7 @@
         'data/approve_invoice_fe_email.xml',
         # security
         'security/ir.model.access.csv',
+        'security/ir.rule.csv',
         # registration rules
         'data/regla_registro_fe_enviadas.xml',
 

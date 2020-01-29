@@ -158,7 +158,7 @@ class ResPartner(models.Model):
     @api.onchange('parent_id')
     def compute_company_partner_id(self):
         for partner in self:
-            partner.company_partner_id = partner.env.company_id.partner_id
+            partner.company_partner_id = partner.env.user.company_id.partner_id
 
     @staticmethod
     def check_create_requirements(values):

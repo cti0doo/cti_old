@@ -114,10 +114,12 @@
          </cac:PartyName>
          <cac:PhysicalLocation>
             <cac:Address>
+               {% if invoice_customer_country_code == 'CO' %}
                <cbc:ID>{{invoice_customer_city_code}}</cbc:ID>
                <cbc:CityName>{{invoice_customer_city}}</cbc:CityName>
                <cbc:CountrySubentity>{{invoice_customer_department}}</cbc:CountrySubentity>
                <cbc:CountrySubentityCode>{{invoice_customer_department_code}}</cbc:CountrySubentityCode>
+               {% endif %}
                <cac:AddressLine>
                   <cbc:Line>{{invoice_customer_address_line}}</cbc:Line>
                </cac:AddressLine>

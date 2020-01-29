@@ -23,7 +23,11 @@
                                     <a href="/"><img src="${object.get_base_url()}/web/binary/company_logo" style="vertical-align:baseline;max-width:100px;" /></a>
                                 </td>
                                 <td style="text-align:right;vertical-align:middle;">
+                                    %if object.company_resolucion_id.prefijo:
                                     ${object.company_id.name} - Aprobación Factura Electrónica ${object.company_resolucion_id.prefijo}${object.number}
+                                    %else:
+                                    ${object.company_id.name} - Aprobación Factura Electrónica ${object.number}
+                                    %endif
                                 </td>
                             </tr>
                         </tbody>

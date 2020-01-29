@@ -17,7 +17,7 @@
     # Check https://github.com/odoo/odoo/blob/12.0/odoo/addons/base/data/ir_module_category_data.xml
     # for the full list
     'category': 'Invoicing & Payments',
-    'version': '13.2.5.0',
+    'version': '13.3.3.0',
     'license': 'OPL-1',
     'support': 'soporte.fe@pragmatic.com.co',
 

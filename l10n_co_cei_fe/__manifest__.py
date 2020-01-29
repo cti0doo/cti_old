@@ -16,7 +16,7 @@
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
     'category': 'Invoicing & Payments',
-    'version': '13.3.0.0',
+    'version': '13.3.3.0',
     'license': 'OPL-1',
     'support': 'soporte.fe@pragmatic.com.co',
     'price': '99',
